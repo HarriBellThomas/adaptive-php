@@ -1,4 +1,6 @@
-tar -czf package.tgz $TRAVIS_BUILD_DIR && \
+mkdir pkg && \
+cp -r $TRAVIS_BUILD_DIR pkg && \
+tar -czf package.tgz pkg && \
 openssl aes-256-cbc -K $encrypted_c9ee5b34b6c3_key -iv $encrypted_c9ee5b34b6c3_iv -in deploy.enc -out deploy-hbt-adaptive -d && \
 ls -la && \
 chmod 0700 deploy-hbt-adaptive && \
