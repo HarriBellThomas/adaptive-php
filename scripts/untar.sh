@@ -2,7 +2,7 @@
 set -x
 
 cd /var/www && \
-tar zxvf package.tgz -C . && \
+tar zxvf travis-deploy.tgz -C . && \
 rm -rf html && \
 mv pkg/adaptive-web html && \
 rm -rf pkg 
