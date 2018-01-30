@@ -4,5 +4,6 @@ set -x
 cd /var/www && \
 tar zxvf travis-deploy.tgz -C . && \
 rm -rf html && \
-mv pkg/adaptive-web html && \
+mkdir html && \
+cp -r pkg/adaptive-web html && \
 rm -rf pkg 
