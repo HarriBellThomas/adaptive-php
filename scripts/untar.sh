@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 set -x
 
-echo "Travis" | wall
-cd /var/www/html && \
-tar zxvf package.tgz -C . 
+cd /var/www && \
+tar zxvf package.tgz -C . && \
+rm -rf html && \
+mv pkg/adaptive-web html && \
+rm -rf pkg 
