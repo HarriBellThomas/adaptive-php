@@ -17,6 +17,8 @@ env:
   - REMOTE_USER=deploy
   - REMOTE_HOST=159.89.250.133
   - PORT=8080
+before_script:
+- chmod 600 deploy && mv deploy ~/.ssh/id_rsa
 script: phpunit --coverage-text tests/*
 after_success:
 - "./scripts/deploy.sh"
