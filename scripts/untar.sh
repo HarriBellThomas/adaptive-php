@@ -5,6 +5,6 @@ cd /var/www && \
 tar zxvf travis-deploy.tgz -C . && \
 rm -rf html && \
 mkdir html && \
-chown www-data:www-data html && \
-cp -r pkg/adaptive-web/* html && \
+chown deploy:www-data html && \
+cp -r pkg/adaptive-php/* html && \
 rm -rf pkg 
