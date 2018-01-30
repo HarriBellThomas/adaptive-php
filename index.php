@@ -1,1 +1,1 @@
-<?php echo "hello - with continuous deployment"; ?>
+<?php echo "hello - with continuous deployment - proof!"; ?>
