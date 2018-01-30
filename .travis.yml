@@ -23,5 +23,6 @@ script: phpunit --coverage-text tests/*
 before_install:
 - openssl aes-256-cbc -K $encrypted_c9ee5b34b6c3_key -iv $encrypted_c9ee5b34b6c3_iv
   -in deploy.enc -out deploy -d
-deploy:
+after_success:
+- ssh-add deploy
 - "./scripts/deploy.sh"
