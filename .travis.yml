@@ -17,7 +17,7 @@ env:
   - REMOTE_USER=deploy
   - REMOTE_HOST=159.89.250.133
   - PORT=8080
-script: phpunit --coverage-text test/*
+script: phpunit --coverage-text tests/*
 after_success:
 - "./scripts/deploy.sh"
 before_install:
