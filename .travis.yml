@@ -17,8 +17,7 @@ env:
   - REMOTE_USER=deploy
   - REMOTE_HOST=159.89.250.133
   - PORT=8080
-script:
-  - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+script: phpunit --configuration phpunit_$DB.xml --coverage-text test/*
 after_success:
 - "./scripts/deploy.sh"
 before_install:
