@@ -2,9 +2,13 @@
 set -x
 
 cd /var/www && \
-tar zxvf travis-deploy.tgz -C . && \
 rm -rf html && \
-mkdir html && \
-chown deploy:www-data html && \
-cp -r pkg/adaptive-php/src/* html && \
-rm -rf src 
+tar zxvf travis-deploy.tgz -C . && \
+find ./app -not -name '.env' -not -name 'vendor' -delete && \
+cp -r pkg/adaptive-php/src/* app && \
+ln -s app/public html
+cd app && \
+chown -R deploy:www-data storage && \
+chmod -R 775 storage && \
+chown -R deploy:www-data bootstrap/cache && \
+chmod -R 775 bootstrap/cache
