@@ -3,6 +3,7 @@ set -x
 
 cd /var/www && \
 rm -rf html && \
+rm -rf pkg && \
 tar zxvf travis-deploy.tgz -C ./ && \
 cd app && \
 find . ! -name '.env' ! -name 'vendor' -type f -exec rm -f {} + && \
