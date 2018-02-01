@@ -5,7 +5,7 @@ cd /var/www && \
 rm -rf html && \
 tar zxvf travis-deploy.tgz -C ./ && \
 cd app && \
-find . ! -name '.env' ! -name 'vendor' -type f -exec rm -f {} + && \
+find . ! -name '.env' ! -path './vendor/*' -type f -exec rm -f {} + && \
 cd .. && \
 chown -R deploy:www-data app
 cp -r pkg/adaptive-php/src/* app && \
