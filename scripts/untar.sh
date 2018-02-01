@@ -14,4 +14,4 @@ cd app && \
 chown -R deploy:www-data storage && \
 chmod -R 775 storage && \
 chown -R deploy:www-data bootstrap/cache && \
-chmod -R 775 bootstrap/cache
+chmod -R 775 bootstrap/cache && \

@@ -68,7 +68,7 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
-                    The Adaptive Web: Coming Very Soon
+                    The Adaptive Web: Coming Very Soon (with deployment)
                 </div>
             </div>
         </div>
