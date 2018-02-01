@@ -3,7 +3,7 @@ set -x
 
 cd /var/www && \
 rm -rf html && \
-tar zxvf travis-deploy.tgz -C . && \
+tar zxvf travis-deploy.tgz -C ./ && \
 cd app && \
 find . ! -name '.env' ! -name 'vendor' -type f -exec rm -f {} + && \
 cd .. && \
@@ -14,4 +14,4 @@ cd app && \
 chown -R deploy:www-data storage && \
 chmod -R 775 storage && \
 chown -R deploy:www-data bootstrap/cache && \
-chmod -R 775 bootstrap/cache 
+chmod -R 775 bootstrap/cache
