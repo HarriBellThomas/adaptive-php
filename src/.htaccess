@@ -1,0 +1,14 @@
+# BEGIN GZIP
+<ifmodule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript
+</ifmodule>
+# END GZIP
+
+# set homepage locations (try index.php first or .html if nonexistent)
+DirectoryIndex index.php index.html
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://adaptive.org.uk%{REQUEST_URI} [L,NE,R=301]
+
+#ErrorDocument 404 /404/index.html
