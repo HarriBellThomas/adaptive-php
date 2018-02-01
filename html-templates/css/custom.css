@@ -1,1 +1,10 @@
 /*! Place your custom styles here */
+span#we-support img {
+    margin-bottom: 0;
+    height: 35px;
+    padding: 5px;
+}
+
+span#we-support-desc {
+    margin-bottom: 10px;
+}
