@@ -4,12 +4,19 @@
 
 function iframeRedirected() {
     var x = document.getElementById("auth_frame");
-    var y = (x.contentWindow || x.contentDocument);
-    if (y.document)y = y.document;
-    y.body.style.backgroundColor = "red";
-    if(y.documentElement.className == "success") {
-        console.log(y.querySelector("#id").value);
-    }
+    
+    // var y = (x.contentWindow || x.contentDocument);
+    // if (y.document)y = y.document;
+    // y.body.style.backgroundColor = "red";
+    // if(y.documentElement.className == "success") {
+    //     console.log(y.querySelector("#id").value);
+    // }
+
+    x.contentWindow.postMessage("test-b", '*');
 }
+
+window.addEventListener('message', function(event) {
+    console.log(event.data);
+});
 
 </script>
