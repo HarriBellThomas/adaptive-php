@@ -55,7 +55,7 @@ header("Access-Control-Allow-Origin: *");
                     <div class="row">
                         <div class="col-sm-7 col-md-5">
 
-                            <?php if(isset($_GET["success"])) { ?>
+                            <?php if(!isset($_GET["success"])) { ?>
 
                             <h2>Login to continue</h2>
                             <a class="btn block btn--icon bg--facebook type--uppercase" href="?success=true">
