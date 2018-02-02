@@ -7,7 +7,7 @@ if(isset($_GET["success"])) {
 
 ?>
 
-<html style="success">
+<html class="success">
 <body>
     <input id="id" type="hidden" value="12345" />
     <h1>Success</h1>
@@ -20,7 +20,7 @@ if(isset($_GET["success"])) {
 
 ?>
 
-<html style="pending">
+<html class="pending">
 <body>
     <h1>Auth</h1>
     <a href="?success=true">Link<a>
