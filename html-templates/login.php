@@ -1,3 +1,10 @@
+<?php
+
+// Allow manipulative iFraming
+header("Access-Control-Allow-Origin: *");
+
+?>
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -47,6 +54,9 @@
                 <div class="container pos-vertical-center">
                     <div class="row">
                         <div class="col-sm-7 col-md-5">
+
+                            <?php if(isset($_GET["success"])) { ?>
+
                             <h2>Login to continue</h2>
                             <a class="btn block btn--icon bg--facebook type--uppercase" href="#">
                                 <span class="btn__text">
@@ -60,6 +70,21 @@
                                     Join with Google
                                 </span>
                             </a>
+
+                            <?php } else { ?>
+
+                            <h2>Authentication Successful</h2>
+                            <input id="id" type="hidden" value="12345" />
+
+                            <script>
+                            window.addEventListener('message', function(event) {
+                                console.log(event.data);
+                                window.parent.postMessage("12345", '*');
+                                return;
+                            });
+                            </script>
+
+                            <?php } ?>
                         </div>
                     </div>
                     <!--end of row-->
@@ -68,7 +93,7 @@
             </section>
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="js/flickity.min.js"></script>
         <script src="js/easypiechart.min.js"></script>
         <script src="js/parallax.js"></script>
@@ -83,7 +108,9 @@
         <script src="js/twitterfetcher.min.js"></script>
         <script src="js/spectragram.min.js"></script>
         <script src="js/smooth-scroll.min.js"></script>
-        <script src="js/scripts.js"></script>
+        <script src="js/scripts.js"></script> -->
+
+
 
     </body>
 </html>

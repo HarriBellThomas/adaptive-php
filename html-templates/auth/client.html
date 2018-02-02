@@ -1,22 +1,14 @@
-<iframe id="auth_frame" style="width:100%;height:100%;" onLoad="iframeRedirected();" src="https://html.adaptive.org.uk/auth/auth.php"></iframe>
+<iframe id="auth_frame" style="width:100%;height:100%;" onLoad="iframeRedirected();" src="https://html.adaptive.org.uk/login.php"></iframe>
 
 <script>
 
 function iframeRedirected() {
     var x = document.getElementById("auth_frame");
-    
-    // var y = (x.contentWindow || x.contentDocument);
-    // if (y.document)y = y.document;
-    // y.body.style.backgroundColor = "red";
-    // if(y.documentElement.className == "success") {
-    //     console.log(y.querySelector("#id").value);
-    // }
-
-    x.contentWindow.postMessage("test-b", '*');
+    x.contentWindow.postMessage("authResult", '*');
 }
 
 window.addEventListener('message', function(event) {
-    console.log(event.data);
+    alert(event.data);
 });
 
 </script>
