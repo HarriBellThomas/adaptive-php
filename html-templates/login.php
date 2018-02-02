@@ -58,13 +58,13 @@ header("Access-Control-Allow-Origin: *");
                             <?php if(isset($_GET["success"])) { ?>
 
                             <h2>Login to continue</h2>
-                            <a class="btn block btn--icon bg--facebook type--uppercase" href="#">
+                            <a class="btn block btn--icon bg--facebook type--uppercase" href="?success=true">
                                 <span class="btn__text">
                                     <i class="socicon-facebook"></i>
                                     Login with Facebook
                                 </span>
                             </a>
-                            <a class="btn block btn--icon bg--googleplus type--uppercase" href="#">
+                            <a class="btn block btn--icon bg--googleplus type--uppercase" href="?success=true">
                                 <span class="btn__text">
                                     <i class="socicon socicon-google"></i>
                                     Join with Google
