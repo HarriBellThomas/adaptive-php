@@ -68,7 +68,8 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
-                    The Adaptive Web: Coming Very Very Soon (with deployment)
+                    The Adaptive Web: Coming Very Very Soon (with deployment) <br />
+                    <a href="{{url('/redirect')}}" class="btn btn-primary"> Login with Facebook </a>
                 </div>
             </div>
         </div>
