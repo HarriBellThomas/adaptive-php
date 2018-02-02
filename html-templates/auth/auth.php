@@ -15,7 +15,7 @@ if(isset($_GET["success"])) {
     window.addEventListener('message', function(event) {
 
         console.log(event.data);
-        window.parent.postMessage("test-a", '*')
+        window.parent.postMessage("test-a", '*');
         return;
         // IMPORTANT: Check the origin of the data!
         // if (~event.origin.indexOf('http://yoursite.com')) {
