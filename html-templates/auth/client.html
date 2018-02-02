@@ -7,7 +7,9 @@ function iframeRedirected() {
     var y = (x.contentWindow || x.contentDocument);
     if (y.document)y = y.document;
     y.body.style.backgroundColor = "red";
-    console.log(y.html.className);
+    if(y.documentElement.className == "success") {
+        console.log(y.querySelector("#id"));
+    }
 }
 
 </script>
