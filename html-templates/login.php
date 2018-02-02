@@ -78,8 +78,9 @@ header("Access-Control-Allow-Origin: *");
 
                             <script>
                             window.addEventListener('message', function(event) {
-                                console.log(event.data);
-                                window.parent.postMessage("12345", '*');
+                                if(event.data == "authResult" && window.frameElement) {
+                                    window.parent.postMessage("12345", '*');
+                                }
                                 return;
                             });
                             </script>
