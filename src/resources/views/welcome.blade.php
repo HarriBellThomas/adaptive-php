@@ -69,7 +69,8 @@
             <div class="content">
                 <div class="title m-b-md">
                     The Adaptive Web: Coming Very Very Soon (with deployment) <br />
-                    <a href="{{url('/redirect')}}" class="btn btn-primary"> Login with Facebook </a>
+                    <a href="{{url('/redirect/facebook')}}" class="btn btn-primary"> Login with Facebook </a> <br />
+                    <a href="{{url('/redirect/google')}}" class="btn btn-primary"> Login with Google </a>
                 </div>
             </div>
         </div>

@@ -19,8 +19,8 @@ Route::get('/', function () {
 Route::resource('/user', 'UserController', ['only' => ['index', 'show']]);
 Route::resource('/style', 'StyleController', ['only' => ['index', 'show']]);
 
-Route::get('/redirect/{data?}', 'SocialAuthFacebookController@redirect');
-Route::get('/callback', 'SocialAuthFacebookController@callback');
+Route::get('/redirect/{provider}/{data?}', 'SocialAuthController@redirect');
+Route::get('/callback/{provider}', 'SocialAuthController@callback');
 
 Auth::routes();
 

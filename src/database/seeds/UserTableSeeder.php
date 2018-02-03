@@ -12,7 +12,7 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-          'user_name' => 'Niall Egan',
+          'user_name' => 'Jim Bob',
         ]);
 
         DB::table('users')->insert([
@@ -20,7 +20,7 @@ class UserTableSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-          'user_name' => 'Harri Bell-Thomas',
+          'user_name' => 'Jake James',
         ]);
 
         DB::table('users')->insert([
