@@ -19,7 +19,7 @@ class SocialAuthFacebookController extends Controller {
         else {
             // Authenticated
             if($data != null) {
-                $redirect = json_decode(base64_decode($state))->redirect_url;
+                $redirect = json_decode(base64_decode($data))->redirect_url;
                 return redirect()->to($redirect.'#'.base64_encode("qwerty"));
             }
             return redirect()->to('/home');
