@@ -99,10 +99,10 @@
         <script src="js/granim.min.js"></script>
         <script src="js/jquery.steps.min.js"></script>
         <script src="js/countdown.min.js"></script>
-        <script src="js/twitterfetcher.min.js"></script>-->
+        <script src="js/twitterfetcher.min.js"></script>
         <script src="js/spectragram.min.js"></script>
-        <!--<script src="js/smooth-scroll.min.js"></script>-->
-        <script src="js/scripts.js"></script>
+        <script src="js/smooth-scroll.min.js"></script>
+        <script src="js/scripts.js"></script>-->
 
         <script>
         if(window.location.hash) {

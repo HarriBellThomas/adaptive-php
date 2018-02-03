@@ -10,10 +10,16 @@ use App\Services\SocialFacebookAccountService;
 
 class SocialAuthFacebookController extends Controller {
     public function redirect($data = null) {
-        if($data != null) {
-            return Socialite::driver('facebook')->stateless()->with(["state" => $data])->redirect();
+        if (!Auth::check()) {
+            if($data != null) {
+                return Socialite::driver('facebook')->stateless()->with(["state" => $data])->redirect();
+            }
+            return Socialite::driver('facebook')->stateless()->redirect();
         }
-        return Socialite::driver('facebook')->stateless()->redirect();
+        else {
+            // Authenticated
+            return redirect()->to('/home');
+        }
     }
 
     public function callback(SocialFacebookAccountService $service) {
