@@ -51,7 +51,7 @@ header("Access-Control-Allow-Origin: *");
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12">
-                            <span>Logging you in for <strong>www.google.com</strong></span>
+                            <span style="font-weight:1.2em">Logging you in for <strong>www.google.com</strong></span>
                         </div>
                     </div>
                     <!--end of row-->
@@ -120,8 +120,8 @@ header("Access-Control-Allow-Origin: *");
         <script src="js/countdown.min.js"></script>
         <script src="js/twitterfetcher.min.js"></script>-->
         <script src="js/spectragram.min.js"></script>
-        <!--<script src="js/smooth-scroll.min.js"></script>
-        <script src="js/scripts.js"></script> -->
+        <!--<script src="js/smooth-scroll.min.js"></script>-->
+        <script src="js/scripts.js"></script>
 
 
 
