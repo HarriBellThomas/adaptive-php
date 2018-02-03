@@ -20,7 +20,7 @@ class SocialAuthFacebookController extends Controller {
             // Authenticated
             if($data != null) {
                 $redirect = json_decode(base64_decode($data))->redirect_url;
-                return redirect()->to('https://html.adaptive.org.uk/login.php#'.base64_encode($redirect));
+                return redirect()->to($redirect.'#'.base64_encode("qwerty"));
             }
             return redirect()->to('/home');
         }
