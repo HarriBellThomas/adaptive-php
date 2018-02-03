@@ -8,17 +8,23 @@ use App\Services\SocialFacebookAccountService;
 
 
 
-class SocialAuthFacebookController extends Controller
-{
-  public function redirect()
-  {
-     return Socialite::driver('facebook')->redirect();
-  }
+class SocialAuthFacebookController extends Controller {
+    public function redirect($data = null) {
+        if($data != null) {
+            return Socialite::driver('facebook')->with(["state" => $data])->redirect();
+        }
+        return Socialite::driver('facebook')->stateless()->redirect();
+    }
 
- public function callback(SocialFacebookAccountService $service)
- {
-    $user = $service->createOrGetUser(Socialite::driver('facebook')->user());
-    auth()->login($user);
-    return redirect()->to('/home');
- }
+    public function callback(SocialFacebookAccountService $service) {
+        $user = $service->createOrGetUser(Socialite::driver('facebook')->stateless()->user());
+        auth()->login($user);
+
+        $state = request()->input("state");
+        if($state != "") {
+            $redirect = json_decode(base64_decode($state))->redirect_url;
+            return redirect()->to($redirect.'#'.base64_encode("qwerty"));
+        }
+        return redirect()->to('/home');
+    }
 }
