@@ -18,4 +18,9 @@ class Style extends Model
   {
     return $this->belongsToMany('App\Tag', 'tags_styles', 'style_id', 'tag_id');
   }
+
+  public function reviews()
+  {
+    return $this->hasMany('App\Review');
+  }
 }

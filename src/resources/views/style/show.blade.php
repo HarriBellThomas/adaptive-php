@@ -8,23 +8,21 @@
         <title>User Index</title>
     </head>
     <body>
-      <table>
-        <thead><tr>
-        <th> Style Id </th>
-        <th> Style Name </th>
-        <th> Style JSON </th>
-        <th> Style Tags </th>
-        <th> Style owen </th>
-      </tr></thead>
-      <tbdoy>
-      <tr>
-        <td>{{$style['id']}}</td>
-        <td>{{$style['name']}}</td>
-        <td>{{$style['style']}}</td>
-        <td>{{$style->tags}}</td>
-        <td>{{$style->user['user_name']}}</td>
-      </tr>
-    </tbody>
-    </table>
+      <h1> {{$style['name']}} (id: {{$style['id']}}) by {{$style->user['user_name']}}</h1>
+      <h2> JSON Description: </h2> <p> {{$style['style']}} </p>
+      <h2> Tags: </h2>
+      <ul>
+        @foreach($style->tags as $tag)
+          <li>{{$tag['tag_name']}}</li>
+        @endforeach
+      </ul>
+      <h2> Reviews: </h2>
+      <ul>
+        @foreach($style->reviews as $review)
+          <li>Reviewer: {{$review['user']['user_name']}}<br/>
+              Rating: {{$review['stars']}} / 5 <br />
+              Review: {{$review['review']}}
+          </li>
+        @endforeach
   </body>
 </html>

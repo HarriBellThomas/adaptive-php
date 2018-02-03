@@ -32,5 +32,10 @@ class User extends Authenticatable
       return $this->belongsToMany('App\Style', 'users_styles', 'user_id', 'style_id');
     }
 
+    public function reviews()
+    {
+      return $this->hasMany('App\Review');
+    }
+
 
 }
