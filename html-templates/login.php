@@ -47,6 +47,18 @@ header("Access-Control-Allow-Origin: *");
 
         <div class="main-container">
 
+            <section class="text-center cta cta-4 space--xxs border--bottom imagebg" data-gradient-bg="#4876BD,#5448BD,#8F48BD,#BD48B1"><canvas id="granim-0" width="414" height="98"></canvas>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <span>Logging you in for <strong>www.google.com</strong></span>
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </section>
+
             <section class="height-50 text-center">
                 <!-- <div class="background-image-holder"> -->
                     <!-- <img alt="background" src="img/inner-6.jpg" /> -->
