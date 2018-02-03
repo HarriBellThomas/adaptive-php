@@ -6,11 +6,12 @@
 document.getElementById("login").addEventListener("click", function(event){
     event.preventDefault();
     var lastIndex = window.location.href.indexOf('#');
-    var url = window.location.href.substr(0, lastIndex)
+    if(lastIndex > -1) var url = window.location.href.substr(0, lastIndex);
+    else var url = window.location.href;
     var pageData = JSON.stringify({
-        "redirect_url":url,
-        "time":Date.now(),
-        "hostname":window.location.hostname
+        "redirect_url": url,
+        "time": Date.now(),
+        "hostname": window.location.hostname
     });
     window.location.replace("https://html.adaptive.org.uk/login.php#" + window.btoa(pageData));
 });

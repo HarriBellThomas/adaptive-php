@@ -73,7 +73,7 @@
                                     Login with Facebook
                                 </span>
                             </a>
-                            <a class="btn block btn--icon bg--googleplus type--uppercase" href="?success=true">
+                            <a id="googleLogin" class="btn block btn--icon bg--googleplus type--uppercase" href="?success=true">
                                 <span class="btn__text">
                                     <i class="socicon socicon-google"></i>
                                     Join with Google
@@ -112,7 +112,10 @@
           document.getElementById("hostname").innerHTML = data["hostname"];
 
           var fb = document.getElementById("facebookLogin");
-          fb.href = "https://adaptive.org.uk/redirect/" + window.location.hash.substr(1, window.location.hash.length - 1);
+          fb.href = "https://adaptive.org.uk/redirect/facebook/" + window.location.hash.substr(1, window.location.hash.length - 1);
+
+          var ggl = document.getElementById("googleLogin");
+          ggl.href = "https://adaptive.org.uk/redirect/google/" + window.location.hash.substr(1, window.location.hash.length - 1);
         } else {
           // Fragment doesn't exist
           alert("Invalid");
