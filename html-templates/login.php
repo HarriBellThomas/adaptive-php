@@ -108,7 +108,7 @@
         if(window.location.hash) {
           // Fragment exists
           var fb = document.getElementById("facebookLogin");
-          fb.href = "https://adaptive.org.uk/redirect/" + window.location.hash;
+          fb.href = "https://adaptive.org.uk/redirect/" + window.location.hash.substr(1, window.location.hash.length - 1);
         } else {
           // Fragment doesn't exist
           alert("Invalid");
