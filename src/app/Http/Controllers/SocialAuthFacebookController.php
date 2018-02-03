@@ -10,7 +10,7 @@ use App\Services\SocialFacebookAccountService;
 
 class SocialAuthFacebookController extends Controller {
     public function redirect($data = null) {
-        if (!Auth::check()) {
+        if (!auth()->check()) {
             if($data != null) {
                 return Socialite::driver('facebook')->stateless()->with(["state" => $data])->redirect();
             }
