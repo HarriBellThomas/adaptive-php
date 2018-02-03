@@ -1,7 +1,7 @@
 <?php
 
 // Allow manipulative iFraming
-// header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Origin: *");
 
 ?>
 
@@ -66,8 +66,11 @@
                 <div class="container pos-vertical-center">
                     <div class="row">
                         <div class="col-sm-7 col-md-5">
+
+                            <?php if(!isset($_GET["success"])) { ?>
+
                             <h2>Login to continue</h2>
-                            <a id="facebookLogin" class="btn block btn--icon bg--facebook type--uppercase" href="#">
+                            <a class="btn block btn--icon bg--facebook type--uppercase" href="?success=true">
                                 <span class="btn__text">
                                     <i class="socicon-facebook"></i>
                                     Login with Facebook
@@ -79,6 +82,22 @@
                                     Join with Google
                                 </span>
                             </a>
+
+                            <?php } else { ?>
+
+                            <h2>Authentication Successful</h2>
+                            <input id="id" type="hidden" value="12345" />
+
+                            <script>
+                            window.addEventListener('message', function(event) {
+                                if(event.data == "authResult" && window.frameElement) {
+                                    window.parent.postMessage("12345", '*');
+                                }
+                                return;
+                            });
+                            </script>
+
+                            <?php } ?>
                         </div>
                     </div>
                     <!--end of row-->
@@ -103,17 +122,6 @@
         <script src="js/spectragram.min.js"></script>
         <!--<script src="js/smooth-scroll.min.js"></script>-->
         <script src="js/scripts.js"></script>
-
-        <script>
-        if(window.location.hash) {
-          // Fragment exists
-          var fb = document.getElementById("facebookLogin");
-          fb.href = "https://adaptive.org.uk/redirect/" + window.location.hash;
-        } else {
-          // Fragment doesn't exist
-          alert("Invalid");
-        }
-        </script>
 
 
 
