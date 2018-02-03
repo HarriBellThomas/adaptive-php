@@ -47,7 +47,7 @@ header("Access-Control-Allow-Origin: *");
 
         <div class="main-container">
 
-            <section class="text-center cta cta-4 space--xxs border--bottom imagebg" data-gradient-bg="#4876BD,#5448BD,#8F48BD,#BD48B1"><canvas id="granim-0" width="414" height="98"></canvas>
+            <section class="text-center cta cta-4 space--xxs border--bottom imagebg" data-gradient-bg="#4876BD,#5448BD,#8F48BD,#BD48B1" style="margin-top:2em;margin-bottom:4em;"><canvas id="granim-0" width="414" height="98"></canvas>
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12">
@@ -59,7 +59,7 @@ header("Access-Control-Allow-Origin: *");
                 <!--end of container-->
             </section>
 
-            <section class="height-50 text-center">
+            <section class="text-center">
                 <!-- <div class="background-image-holder"> -->
                     <!-- <img alt="background" src="img/inner-6.jpg" /> -->
                 <!-- </div> -->
@@ -118,9 +118,9 @@ header("Access-Control-Allow-Origin: *");
         <script src="js/granim.min.js"></script>
         <script src="js/jquery.steps.min.js"></script>
         <script src="js/countdown.min.js"></script>
-        <script src="js/twitterfetcher.min.js"></script>
+        <script src="js/twitterfetcher.min.js"></script>-->
         <script src="js/spectragram.min.js"></script>
-        <script src="js/smooth-scroll.min.js"></script>
+        <!--<script src="js/smooth-scroll.min.js"></script>
         <script src="js/scripts.js"></script> -->
 
 
