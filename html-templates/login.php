@@ -51,7 +51,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12">
-                            <span style="font-weight:1.2em">Logging you in for <strong>www.google.com</strong></span>
+                            <span style="font-weight:1.2em">Logging you in for <strong id="hostname"></strong></span>
                         </div>
                     </div>
                     <!--end of row-->
@@ -107,6 +107,10 @@
         <script>
         if(window.location.hash) {
           // Fragment exists
+
+          var data = JSON.parse(atob(window.location.hash.substr(1, window.location.hash.length - 1)));
+          document.getElementById("hostname").innerHTML = data["hostname"];
+
           var fb = document.getElementById("facebookLogin");
           fb.href = "https://adaptive.org.uk/redirect/" + window.location.hash.substr(1, window.location.hash.length - 1);
         } else {

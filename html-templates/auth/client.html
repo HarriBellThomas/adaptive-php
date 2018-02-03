@@ -7,7 +7,11 @@ document.getElementById("login").addEventListener("click", function(event){
     event.preventDefault();
     var lastIndex = window.location.href.indexOf('#');
     var url = window.location.href.substr(0, lastIndex)
-    var pageData = JSON.stringify({"redirect_url":url, "time":Date.now()});
+    var pageData = JSON.stringify({
+        "redirect_url":url,
+        "time":Date.now(),
+        "hostname":window.location.hostname
+    });
     window.location.replace("https://html.adaptive.org.uk/login.php#" + window.btoa(pageData));
 });
 
