@@ -76,7 +76,7 @@
                             <a id="googleLogin" class="btn block btn--icon bg--googleplus type--uppercase" href="?success=true">
                                 <span class="btn__text">
                                     <i class="socicon socicon-google"></i>
-                                    Join with Google
+                                    Login with Google
                                 </span>
                             </a>
                         </div>
