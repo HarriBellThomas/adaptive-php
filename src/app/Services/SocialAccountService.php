@@ -14,13 +14,19 @@ class SocialAccountService
         if ($account) {
             return $account->user;
         } else {
-          // TODO: Check to see if user has logged in with something else
+            $user = User::where('email', $providerUser->getEmail())->first();
+
+            if ($user) {
+              return $user;
+            }
+
             $account = new SocialAccount([
                 'provider_user_id' => $providerUser->getId(),
                 'provider' => $provider
             ]);
             $user = User::create([
                 'user_name' => $providerUser->getName(),
+                'email' => $providerUser->getEmail(),
             ]);
             $account->user()->associate($user);
             $account->save();

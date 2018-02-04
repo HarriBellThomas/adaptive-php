@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'user_name'
+        'user_name', 'email'
     ];
 
     protected $guarded = ['id'];
@@ -30,11 +30,6 @@ class User extends Authenticatable
       // The actual one-to-one nature of this relationship
       // is enforced by the schema
       return $this->belongsToMany('App\Style', 'users_styles', 'user_id', 'style_id');
-    }
-
-    public function reviews()
-    {
-      return $this->hasMany('App\Review');
     }
 
 
