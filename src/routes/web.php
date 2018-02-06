@@ -22,6 +22,9 @@ Route::resource('/style', 'StyleController', ['only' => ['index', 'show']]);
 Route::get('/redirect/{provider}/{data?}', 'SocialAuthController@redirect');
 Route::get('/callback/{provider}', 'SocialAuthController@callback');
 
+Route::get('/api/login', function() {
+  return view('api.login');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

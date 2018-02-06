@@ -20,3 +20,7 @@ Homestead.json
 .rocketeer/
 deploy
 deploy
+
+.DS_STORE
+.gitignore.swp
+
