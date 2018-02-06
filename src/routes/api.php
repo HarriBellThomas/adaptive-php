@@ -13,6 +13,5 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/default/{id}', 'UserController@default_style');
+Route::get('/style/{id}', 'StyleController@style');

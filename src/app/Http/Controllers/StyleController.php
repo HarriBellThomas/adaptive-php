@@ -16,4 +16,10 @@ class StyleController extends Controller
   {
     return view('style.index', ['styles' => Style::all()]);
   }
+
+  public function style($id)
+  {
+    $style = Style::findOrFail($id);
+    return response()->json($style['style'], 200);
+  }
 }

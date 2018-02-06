@@ -12,6 +12,17 @@ class UserController extends Controller
       return view('user.profile', ['user' => User::findOrFail($id)]);
     }
 
+    public function default_style($id)
+    {
+      $user = User::findOrFail($id);
+      $default_style = $user->default_style[0]['style'];
+      if ($default_style) {
+        return response()->json($default_style, 200);
+      } else {
+        return response(500);
+      }
+    }
+
     public function index()
     {  // Temp method for testing to view the users
       return view('user.index', ['users' => User::all()]);
