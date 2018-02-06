@@ -6,15 +6,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Site Description Here">
-        <link href="{{ URL::asset('css/bootstrap.css'); }}" rel="stylesheet" type="text/css" media="all" />
-        <link href="{{ URL::asset('css/stack-interface.css'); }}" rel="stylesheet" type="text/css" media="all" />
-        <link href="{{ URL::asset('css/socicon.css'); }}" rel="stylesheet" type="text/css" media="all" />
-        <link href="{{ URL::asset('css/lightbox.min.css'); }}" rel="stylesheet" type="text/css" media="all" />
-        <link href="{{ URL::asset('css/flickity.css'); }}" rel="stylesheet" type="text/css" media="all" />
-        <link href="{{ URL::asset('css/iconsmind.css'); }}" rel="stylesheet" type="text/css" media="all" />
-        <link href="{{ URL::asset('css/jquery.steps.css'); }}" rel="stylesheet" type="text/css" media="all" />
-        <link href="{{ URL::asset('css/theme.css'); }}" rel="stylesheet" type="text/css" media="all" />
-        <link href="{{ URL::asset('css/custom.css'); }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ URL::asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ URL::asset('css/stack-interface.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ URL::asset('css/socicon.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ URL::asset('css/lightbox.min.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ URL::asset('css/flickity.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ URL::asset('css/iconsmind.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ URL::asset('css/jquery.steps.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ URL::asset('css/theme.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ URL::asset('css/custom.css') }}" rel="stylesheet" type="text/css" media="all" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
