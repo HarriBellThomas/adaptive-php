@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 
 Route::resource('/user', 'UserController', ['only' => ['index', 'show']]);
-Route::resource('/style', 'StyleController', ['only' => ['index', 'show']]);
+Route::resource('/style', 'StyleController', ['only' => ['index', 'show', 'store', 'create']])->middleware('auth');
 
 Route::get('/redirect/{provider}/{data?}', 'SocialAuthController@redirect');
 Route::get('/callback/{provider}', 'SocialAuthController@callback');
