@@ -20,7 +20,7 @@ class SocialAuthController extends Controller {
             // Authenticated
             if($data != null) {
                 $redirect = json_decode(base64_decode($data))->redirect_url;
-                return redirect()->to($redirect.'#'.base64_encode("qwerty"));
+                return redirect()->to($redirect.'#'.base64_encode("{'style_id':'asdfghjkl'}"));
             }
             return redirect()->to('/home');
         }
@@ -33,7 +33,7 @@ class SocialAuthController extends Controller {
       $state = request()->input("state");
       if($state != "") {
           $redirect = json_decode(base64_decode($state))->redirect_url;
-          return redirect()->to($redirect.'#'.base64_encode("qwerty"));
+          return redirect()->to($redirect.'#'.base64_encode("{'style_id':'asdfghjkl'}"));
       }
       return redirect()->to('/home');
   }
