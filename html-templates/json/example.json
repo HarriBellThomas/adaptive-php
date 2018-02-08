@@ -1,7 +1,7 @@
 {
     "modules": [
         {
-            "module": "linkHighligther",
+            "module": "linkHighlighter",
             "properties": {
                 "color": "#FF0000",
                 "backgroundColor": "#FF0000",
