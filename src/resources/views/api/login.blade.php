@@ -100,15 +100,19 @@
         <script>
         if(window.location.hash) {
           // Fragment exists
+          try {
+              var data = JSON.parse(atob(window.location.hash.substr(1, window.location.hash.length - 1)));
+              document.getElementById("hostname").innerHTML = data["hostname"];
 
-          var data = JSON.parse(atob(window.location.hash.substr(1, window.location.hash.length - 1)));
-          document.getElementById("hostname").innerHTML = data["hostname"];
+              var fb = document.getElementById("facebookLogin");
+              fb.href = "https://adaptive.org.uk/redirect/facebook/" + window.location.hash.substr(1, window.location.hash.length - 1);
 
-          var fb = document.getElementById("facebookLogin");
-          fb.href = "https://adaptive.org.uk/redirect/facebook/" + window.location.hash.substr(1, window.location.hash.length - 1);
-
-          var ggl = document.getElementById("googleLogin");
-          ggl.href = "https://adaptive.org.uk/redirect/google/" + window.location.hash.substr(1, window.location.hash.length - 1);
+              var ggl = document.getElementById("googleLogin");
+              ggl.href = "https://adaptive.org.uk/redirect/google/" + window.location.hash.substr(1, window.location.hash.length - 1);
+          }
+          catch(e) {
+              console.log("Invalid Hash");
+          }
         } else {
           // Fragment doesn't exist
           alert("Invalid");
