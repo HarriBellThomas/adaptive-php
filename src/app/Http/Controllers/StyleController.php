@@ -32,13 +32,20 @@ class StyleController extends Controller
   {
 
     $arr = array('modules' => array(array(
-                  'linkHighlighter' => array('bgColor' => $request->linkHighlighter_bgColor,
-                                            'textColor' => $request->linkHighlighter_textColor,
-                                            'size' => $request->linkHighlighter_size),
-                 'clickDelay' => array('delay' => $request->clickDelay_delay,
-                                       'doubleClick' => $request->clickDelay_doubleClick),
-                 'colourManipulations' => array('changeSaturation' => array('factor' => $request->colourManipulations_changeSaturation_factor)),
-                 'imageColourShifter' => array('identifier' =>  $request->imageColourShifter_name))));
+                  array('module' => 'linkHighlighter', 'properties' =>
+                                            array('bgColor' => $request->linkHighlighter_bgColor,
+                                                  'textColor' => $request->linkHighlighter_textColor,
+                                                  'size' => $request->linkHighlighter_size)),
+
+                 array('module' => 'clickDelay', 'properties' =>
+                                            array('delay' => $request->clickDelay_delay,
+                                                  'doubleClick' => $request->clickDelay_doubleClick)),
+
+                 array('module' => 'colourManipulations', 'properties' =>
+                                            array('changeSaturation' => array('factor' => $request->colourManipulations_changeSaturation_factor))),
+
+                 array('module' => 'imageColourShifter', 'propeties' =>
+                                            array('identifier' =>  $request->imageColourShifter_name)))));
 
     return json_encode($arr);
   }
