@@ -1,0 +1,23 @@
+{
+    "modules": [
+        {
+            "linkHighligther": {
+                "backgroundColor": "#FF0000",
+                "textColour": "#FFFFFF",
+                "size": "10px"
+            },
+            "clickDelay": {
+                "delay": 10,
+                "doubleClick": true
+            },
+            "colourManipulations": {
+                "changeSaturation": {
+                    "factor": 1.5
+                }
+            },
+            "imageColourShifter": {
+                "identifier": "No idea..."
+            }
+        }
+    ]
+}
