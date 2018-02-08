@@ -1,21 +1,32 @@
 {
     "modules": [
         {
-            "linkHighligther": {
+            "module": "linkHighligther",
+            "properties": {
+                "color": "#FF0000",
                 "backgroundColor": "#FF0000",
                 "textColour": "#FFFFFF",
                 "size": "10px"
-            },
-            "clickDelay": {
+            }
+        },
+        {
+            "module": "clickDelay",
+            "properties": {
                 "delay": 10,
                 "doubleClick": true
-            },
-            "colourManipulations": {
+            }
+        },
+        {
+            "module": "colourManipulations",
+            "properties": {
                 "changeSaturation": {
                     "factor": 1.5
                 }
-            },
-            "imageColourShifter": {
+            }
+        },
+        {
+            "module": "imageColourShifter",
+            "properties": {
                 "identifier": "No idea..."
             }
         }
