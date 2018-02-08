@@ -76,7 +76,9 @@ class StyleController extends Controller
     $style_object->save();
 
     if ($request->default_style) {
-      Auth::user()->default_style()->detach(Auth::user()->default_style[0]->id);
+      if(sizeof(Auth::user()->default_style) > 0) {
+        Auth::user()->default_style()->detach(Auth::user()->default_style[0]->id);
+      }
       Auth::user()->default_style()->save($style_object);
     }
 
