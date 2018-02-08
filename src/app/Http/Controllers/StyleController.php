@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Style;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 
 class StyleController extends Controller
 {
@@ -23,33 +27,53 @@ class StyleController extends Controller
     return view('style.create', $data);
   }
 
-  public function store($request)
+
+  private function create_json(Request $request)
+  {
+
+    $arr = array('modules' => array(array(
+                  'linkHighlighter' => array('bgColor' => $request->linkHighlighter_bgColor,
+                                            'textColor' => $request->linkHighlighter_textColor,
+                                            'size' => $request->linkHighlighter_size),
+                 'clickDelay' => array('delay' => $request->clickDelay_delay,
+                                       'doubleClick' => $request->clickDelay_doubleClick),
+                 'colourManipulations' => array('changeSaturation' => array('factor' => $request->colourManipulations_changeSaturation_factor)),
+                 'imageColourShifter' => array('identifier' =>  $request->imageColourShifter_name))));
+
+    return json_encode($arr);
+  }
+
+  public function store(Request $request)
   {
     $style = $this->validate(request(), [
-      'default_style' => 'required|boolean',
+
+      'name' => 'required',
 
       /* Stuff for the JSON configuration */
-      'linkHighlighter-bgColor' => 'required',
-      'linkHighlighter-textColor' => 'required',
-      'linkHighlighter-size' => 'required',
-      'clickDelay-delay' => 'required',
-      'clickDelay-doubleClick' => 'boolean|required',
-      'colourManipulations-changeSaturation-factor' => 'required',
-      'imageColourShifter-name' => 'required',
+      'linkHighlighter_bgColor' => 'required',
+      'linkHighlighter_textColor' => 'required',
+      'linkHighlighter_size' => 'required',
+      'clickDelay_delay' => 'required',
+      'colourManipulations_changeSaturation_factor' => 'required',
+      'imageColourShifter_name' => 'required',
     ]);
 
-    $json = create_json($style);
+    $json = $this->create_json($request);
 
     $style_object = new Style;
     $style_object->style = $json;
-    $style_object->user = Auth::user()->id;
-    Auth::user()->styles()->attach($style_object->id);
+    $style_object->user()->associate(Auth::user()->id);
+    $style_object->name = $request->name;
     // TODO: Add tags to style
 
-    if ($request->default_style) {
-      Auth::user()->default_style()->save($style_object)
-    }
     $style_object->save();
+
+    if ($request->default_style) {
+      Auth::user()->default_style()->detach(Auth::user()->default_style[0]->id);
+      Auth::user()->default_style()->save($style_object);
+    }
+
+    return back()->with('success', 'Observation added successfuly');
   }
 
 
