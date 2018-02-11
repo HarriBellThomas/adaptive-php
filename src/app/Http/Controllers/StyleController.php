@@ -82,7 +82,7 @@ class StyleController extends Controller
       Auth::user()->default_style()->save($style_object);
     }
 
-    return back()->with('success', 'Observation added successfuly');
+    return redirect('/home');
   }
 
 
