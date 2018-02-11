@@ -11,8 +11,8 @@ cd .. && \
 cp -r pkg/adaptive-php/src/* app && \
 ln -s app/public html && \
 cd app && \
-chown -R deploy:www-data storage && \
-chmod -R 775 storage && \
+#chown -R deploy:www-data storage && \
+#chmod -R 775 storage && \
 chown -R deploy:www-data bootstrap/cache && \
 chmod -R 775 bootstrap/cache && \
 cd .. && \
