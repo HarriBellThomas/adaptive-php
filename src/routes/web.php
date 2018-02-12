@@ -22,10 +22,13 @@ Route::resource('/style', 'StyleController', ['only' => ['index', 'show', 'store
 Route::get('/redirect/{provider}/{data?}', 'SocialAuthController@redirect');
 Route::get('/callback/{provider}', 'SocialAuthController@callback');
 
+Route::get('/make_default/{id}', 'StyleController@make_default_style')->middleware('auth');
+
 Route::get('/api/login', function() {
   return view('api.login');
 });
 
 Route::auth();
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');

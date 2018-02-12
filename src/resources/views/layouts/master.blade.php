@@ -67,8 +67,11 @@
                                 </span>
                             </a>
                           @else
-                            <a class="btn btn--sm type--uppercase" href=/'home'>
+                            <a class="btn btn--sm type--uppercase" href='/home'>
                               {{Auth::user()['user_name']}}
+                            </a>
+                            <a class="btn btn--sm type--uppercase" href='/logout'>
+                              logout
                             </a>
                           @endguest
                         </div>

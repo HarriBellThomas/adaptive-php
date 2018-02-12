@@ -85,6 +85,16 @@ class StyleController extends Controller
     return redirect('/home');
   }
 
+  public function make_default_style($id) {
+    $new_default = Style::findOrFail($id);
+    if(sizeof(Auth::user()->default_style) > 0) {
+      Auth::user()->default_style()->detach(Auth::user()->default_style[0]->id);
+    }
+    Auth::user()->default_style()->save($new_default);
+
+
+    return back();
+  }
 
   public function style($id)
   {
