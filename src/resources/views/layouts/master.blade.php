@@ -7,15 +7,15 @@
 
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="description" content="Site Description Here">
-      <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-      <link href="css/stack-interface.css" rel="stylesheet" type="text/css" media="all" />
-      <link href="css/socicon.css" rel="stylesheet" type="text/css" media="all" />
-      <link href="css/lightbox.min.css" rel="stylesheet" type="text/css" media="all" />
-      <link href="css/flickity.css" rel="stylesheet" type="text/css" media="all" />
-      <link href="css/iconsmind.css" rel="stylesheet" type="text/css" media="all" />
-      <link href="css/jquery.steps.css" rel="stylesheet" type="text/css" media="all" />
-      <link href="css/theme.css" rel="stylesheet" type="text/css" media="all" />
-      <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
+      <link href="{{url('css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
+      <link href="{{url('css/stack-interface.css')}}" rel="stylesheet" type="text/css" media="all" />
+      <link href="{{url('css/socicon.css')}}" rel="stylesheet" type="text/css" media="all" />
+      <link href="{{url('css/lightbox.min.css')}}" rel="stylesheet" type="text/css" media="all" />
+      <link href="{{url('css/flickity.css')}}" rel="stylesheet" type="text/css" media="all" />
+      <link href="{{url('css/iconsmind.css')}}" rel="stylesheet" type="text/css" media="all" />
+      <link href="{{url('css/jquery.steps.css')}}" rel="stylesheet" type="text/css" media="all" />
+      <link href="{{url('css/theme.css')}}" rel="stylesheet" type="text/css" media="all" />
+      <link href="{{url('css/custom.css')}}" rel="stylesheet" type="text/css" media="all" />
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i" rel="stylesheet">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <title>@yield('title')</title>
@@ -30,8 +30,8 @@
                 <div class="row">
                     <div class="col-xs-3 col-sm-2">
                         <a href="index.html">
-                            <img class="logo logo-dark" alt="logo" src="images/logo-colourful.png" />
-                            <img class="logo logo-light" alt="logo" src="images/logo-colourful.png" />
+                            <img class="logo logo-dark" alt="logo" src="{{url('images/logo-colourful.png')}}" />
+                            <img class="logo logo-light" alt="logo" src="{{url('images/logo-colourful.png')}}" />
                         </a>
                     </div>
                     <div class="col-xs-9 col-sm-10 text-right">
@@ -51,8 +51,8 @@
                     <div class="col-md-2 text-center text-left-sm hidden-xs col-md-push-5">
                         <div class="bar__module">
                             <a href="index.html">
-                                <img class="logo logo-dark" alt="logo" src="images/logo-colourful.png" />
-                                <img class="logo logo-light" alt="logo" src="images/logo-colourful.png" />
+                                <img class="logo logo-dark" alt="logo" src="{{url('images/logo-colourful.png')}}" />
+                                <img class="logo logo-light" alt="logo" src="{{url('images/logo-colourful.png')}}" />
                             </a>
                         </div>
                         <!--end module-->
@@ -91,7 +91,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
-                        <img alt="Image" class="logo" src="images/logo-light.png" />
+                        <img alt="Image" class="logo" src="{{url('images/logo-light.png')}}" />
                         <ul class="list-inline list--hover">
                             <li>
                                 <a href="index.html#">
@@ -150,20 +150,20 @@
         </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="js/flickity.min.js"></script>
-    <script src="js/easypiechart.min.js"></script>
-    <script src="js/parallax.js"></script>
-    <script src="js/typed.min.js"></script>
-    <script src="js/datepicker.js"></script>
-    <script src="js/isotope.min.js"></script>
-    <script src="js/ytplayer.min.js"></script>
-    <script src="js/lightbox.min.js"></script>
-    <script src="js/granim.min.js"></script>
-    <script src="js/jquery.steps.min.js"></script>
-    <script src="js/countdown.min.js"></script>
-    <script src="js/twitterfetcher.min.js"></script>
-    <script src="js/spectragram.min.js"></script>
-    <script src="js/smooth-scroll.min.js"></script>
-    <script src="js/scripts.js"></script>
+    <script src="{{url('js/flickity.min.js')}}"></script>
+    <script src="{{url('js/easypiechart.min.js')}}"></script>
+    <script src="{{url('js/parallax.js')}}"></script>
+    <script src="{{url('js/typed.min.js')}}"></script>
+    <script src="{{url('js/datepicker.js')}}"></script>
+    <script src="{{url('js/isotope.min.js')}}"></script>
+    <script src="{{url('js/ytplayer.min.js')}}"></script>
+    <script src="{{url('js/lightbox.min.js')}}"></script>
+    <script src="{{url('js/granim.min.js')}}"></script>
+    <script src="{{url('js/jquery.steps.min.js')}}"></script>
+    <script src="{{url('js/countdown.min.js')}}"></script>
+    <script src="{{url('js/twitterfetcher.min.js')}}"></script>
+    <script src="{{url('js/spectragram.min.js')}}"></script>
+    <script src="{{url('js/smooth-scroll.min.js')}}"></script>
+    <script src="{{url('js/scripts.js')}}"></script>
   </body>
   </html>
