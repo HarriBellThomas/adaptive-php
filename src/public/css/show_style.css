@@ -1,0 +1,21 @@
+.review-container {
+  border-color: black;
+  border: solid;
+  margin: 10px;
+}
+
+.reviewer {
+  font-size: 15pt;
+  padding:5px;
+  margin:5px;
+}
+
+.review {
+  padding:5px;
+  margin:10px 30px;
+  font-size: 13pt;
+}
+
+#all-reviews {
+  text-align: center;
+}
