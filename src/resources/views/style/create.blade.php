@@ -1,14 +1,19 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.master')
+@section('title', 'Create a style')
 
-        <title>User Index</title>
-    </head>
+@section('header')
+  @parent
+  <link href="{{url('css/style_create.css')}}" rel="stylesheet" type="text/css" media="all" />
 
-    <body>
+  <style>
+    label {
+      font-size: 20pt;
+      margin: 10px;
+    }
+  </style>
+@endsection
+
+@section('content')
 
       @if ($errors->any())
         <div class="alert alert-danger">
@@ -40,14 +45,13 @@
       {!! Form::label('clickDelay_delay', 'Click delay time') !!}<br />
       {!! Form::text('clickDelay_delay') !!}<br />
       {!! Form::label('clickDelay_doubleClick', 'Remove double clicks?') !!}<br />
-      {!! Form::checkbox('clickDelay_doubleClick') !!}<br />
-      {!! Form::label('imageColourShifter_name') !!}<br />
+      {!! Form::checkbox('clickDelay_doubleClick', '0', false, array('class' => 'checkbox')) !!}<br />
+      {!! Form::label('imageColourShifter_name', 'Image Colour shifter name') !!}<br />
       {!! Form::text('imageColourShifter_name') !!}<br />
       {!! Form::label('colourManipulations_changeSaturation_factor', 'Saturation factor') !!}<br />
       {!! Form::text('colourManipulations_changeSaturation_factor') !!} </br>
       {!! Form::label('default_style', 'Make default style?') !!}<br />
-      {!! Form::checkbox('default_style', '1', true) !!}<br />
+      {!! Form::checkbox('default_style', '1', true, array('class' => 'checkbox')) !!}<br />
       {!! Form::submit('Create the style!') !!}<br />
       {!! Form::close() !!}
-    </body>
-</html>
+@endsection
