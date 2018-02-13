@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Create a style')
+@section('title', 'Edit a style')
 
 @section('header')
   @parent
@@ -31,7 +31,8 @@
         </div><br />
        @endif
 
-      {!! Form::open(['url' => url('style')]) !!}
+
+      {{ Form::model($style, array('route' => array('style.update', $style->id), 'method' => 'PUT')) }}
 
       {{ csrf_field() }}
       {!! Form::label('name', 'Title for your style') !!}<br />

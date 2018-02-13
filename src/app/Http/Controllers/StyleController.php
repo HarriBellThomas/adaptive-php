@@ -102,4 +102,29 @@ class StyleController extends Controller
     return response()->json($style['style'], 200);
   }
 
+  public function edit($id)
+  {
+    $style = Style::findOrFail($id);
+    $data = ['style' => $style];
+    return view('style.edit', $data);
+  }
+
+  public function update(Request $request, $id)
+  {
+    $this->validate(request(), [
+
+     'name' => 'required',
+
+     /* Stuff for the JSON configuration */
+     'linkHighlighter_bgColor' => 'required',
+     'linkHighlighter_textColor' => 'required',
+     'linkHighlighter_size' => 'required',
+     'clickDelay_delay' => 'required',
+     'colourManipulations_changeSaturation_factor' => 'required',
+     'imageColourShifter_name' => 'required',
+    ]);
+    Style::find($id)->update($request->all());
+    return redirect('/home');
+
+  }
 }

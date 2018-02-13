@@ -54,7 +54,7 @@
             @endif
             <br />
           </div>
-          <a> Edit this style </a>
+          <a href="style/{{$style['id']}}/edit"> Edit this style </a>
         </div>
       @endforeach
     </div>
