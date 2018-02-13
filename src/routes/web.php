@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 Route::resource('/user', 'UserController', ['only' => ['index', 'show']]);
 Route::resource('/style', 'StyleController')->middleware('auth');
-Route::resource('/style', 'ReviewController', ['only' => ['store']])->middleware('auth');
+Route::resource('/review', 'ReviewController', ['only' => ['store']])->middleware('auth');
 
 
 Route::get('/redirect/{provider}/{data?}', 'SocialAuthController@redirect');
