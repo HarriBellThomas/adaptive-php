@@ -29,7 +29,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-3 col-sm-2">
-                        <a href="index.html">
+                        <a href="{{url('index.html')}}">
                             <img class="logo logo-dark" alt="logo" src="{{url('images/logo-colourful.png')}}" />
                             <img class="logo logo-light" alt="logo" src="{{url('images/logo-colourful.png')}}" />
                         </a>
