@@ -20,12 +20,9 @@ class UserController extends Controller
         }
         $default_style = $user->default_style[0]['style'];
         if ($default_style) {
-            header("Access-Control-Allow-Origin: *");
-            $response = new Response();
-            $response->setContent($default_style);
-            $response->headers->set('Content-Type', 'text/plain');
-            return $response;
-            // return response()->json($default_style, 200);
+            // header("Access-Control-Allow-Origin: *");
+            $headers = ['Content-type'=>'text/plain', 'Access-Control-Allow-Origin'=>'*'];
+            return response()->make($default_style, 200, $headers);
         } else {
             return response(500);
         }
