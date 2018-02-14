@@ -1,16 +1,15 @@
 <style>
-body {
+/* body {
     width:100%;
     height:100%;
-}
+} */
 
-div {
+div#adaptive-bar {
     /* Structure */
     position: fixed;
     z-index: 999999;
 
     bottom: 0px;
-    left: 0;
     right: 0;
 
     height: 40px;
@@ -19,25 +18,74 @@ div {
 
 
     /* Colours */
-    background-color: greenyellow;
+    background-color: white;
 
     /* Fonts */
     font-family: Helvetica, system;
     font-weight: 400;
-    font-size: 1em;
+    font-size: 13px;
     line-height: 40px;
     vertical-align: middle;
+
+    /* Border */
+    border-color: black;
+    border-width: 1px 0 0 1px;
+    border-style: solid;
+
+
+    /* No Select */
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
 }
 
-img {
-    max-height: 20px;
-    padding: 10px;
-    float:right;
+div#adaptive-bar img {
+    max-height: 16px;
+    padding: 12px;
+    float: right;
+    box-sizing: content-box;
+}
+
+div#adaptive-bar #status {
+    padding: 12px;
+    float: right;
+    max-height: 16px;
+    font-family: monospace;
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 1000;
+    background-color: white;
+    box-sizing: content-box;
+}
+
+div#adaptive-bar #status:hover {
+    opacity: 0.7;
+}
+
+div#adaptive-bar #status.enabled {
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+
+div#adaptive-bar #status.disabled {
+    background-color: #e20000;
+    color: white;
+    cursor: pointer;
+}
+
+div#adaptive-bar #status.login {
+    background-color: #e20000;
+    color: white;
+    cursor: pointer;
 }
 </style>
 
-<div style="">
-    <span>
-        <img src="https://adaptive.org.uk/images/logo-colourful.png" />
-    </span>
+<div id="adaptive-bar">
+    <a href="https://adaptive.org.uk"><img src="https://adaptive.org.uk/images/logo-colourful.png" /></a>
+    <span id="status" class="enabled">Enabled</span>
 </div>

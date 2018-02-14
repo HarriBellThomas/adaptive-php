@@ -11,4 +11,6 @@ RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www\. [NC]
 RewriteRule ^ https://adaptive.org.uk%{REQUEST_URI} [L,NE,R=301]
 
+Header set Access-Control-Allow-Origin "*"
+
 #ErrorDocument 404 /404/index.html
