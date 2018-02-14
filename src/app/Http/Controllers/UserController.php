@@ -14,16 +14,18 @@ class UserController extends Controller
 
     public function default_style($id)
     {
-      $user = User::findOrFail($id);
-      if (count($user->default_style) == 0) {
-        return response()->json("{'err': 'no default'}");
-      }
-      $default_style = $user->default_style[0]['style'];
-      if ($default_style) {
-        return response()->json($default_style, 200);
-      } else {
-        return response(500);
-      }
+
+        $user = User::findOrFail($id);
+        if (count($user->default_style) == 0) {
+            return response()->json("{'err': 'no default'}");
+        }
+        $default_style = $user->default_style[0]['style'];
+        if ($default_style) {
+            header("Access-Control-Allow-Origin: *");
+            return response()->json($default_style, 200);
+        } else {
+            return response(500);
+        }
     }
 
     public function index()
