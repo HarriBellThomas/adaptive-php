@@ -29,7 +29,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-3 col-sm-2">
-                        <a href="{{url('index.html')}}">
+                        <a href="{{url('/')}}">
                             <img class="logo logo-dark" alt="logo" src="{{url('images/logo-colourful.png')}}" />
                             <img class="logo logo-light" alt="logo" src="{{url('images/logo-colourful.png')}}" />
                         </a>
@@ -50,7 +50,7 @@
                 <div class="row">
                     <div class="col-md-2 text-center text-left-sm hidden-xs col-md-push-5">
                         <div class="bar__module">
-                            <a href="index.html">
+                            <a href="{{url('/')}}">
                                 <img class="logo logo-dark" alt="logo" src="{{url('images/logo-colourful.png')}}" />
                                 <img class="logo logo-light" alt="logo" src="{{url('images/logo-colourful.png')}}" />
                             </a>
