@@ -14,7 +14,6 @@ class UserController extends Controller
 
     public function default_style($id)
     {
-
         $user = User::findOrFail($id);
         if (count($user->default_style) == 0) {
             return response()->json("{'err': 'no default'}");
@@ -22,7 +21,11 @@ class UserController extends Controller
         $default_style = $user->default_style[0]['style'];
         if ($default_style) {
             header("Access-Control-Allow-Origin: *");
-            return response()->json($default_style, 200);
+            $response = new Response();
+            $response->setContent($default_style);
+            $response->headers->set('Content-Type', 'text/plain');
+            return $response;
+            // return response()->json($default_style, 200);
         } else {
             return response(500);
         }
