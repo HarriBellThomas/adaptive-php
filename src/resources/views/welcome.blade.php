@@ -34,6 +34,9 @@
     </div>
     <!--end of container-->
 </section>
+@if (session()->has('permissions'))
+  <h3 class='text-center'> {{session('permissions')}} </h3>
+@endif
 <a id="demos"></a>
 <section class="text-center cta cta-4 space--xxs border--bottom imagebg" data-gradient-bg='#4876BD,#5448BD,#8F48BD,#BD48B1'>
     <div class="container">
@@ -56,4 +59,5 @@
     </div>
     <!--end of container-->
 </section>
+
 @endsection
