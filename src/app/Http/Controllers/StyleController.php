@@ -33,11 +33,11 @@ class StyleController extends Controller
 
     $arr = array('modules' => array(array(
                   array('module' => 'linkHighlighter', 'properties' =>
-                                            array('bgColor' => $request->linkHighlighter_bgColor,
+                                            array('backgroundColor' => $request->linkHighlighter_bgColor,
                                                   'textColor' => $request->linkHighlighter_textColor,
                                                   'size' => $request->linkHighlighter_size)),
 
-                 array('module' => 'clickDelay', 'properties' =>
+                 array('module' => 'motorFeatures', 'properties' =>
                                             array('delay' => $request->clickDelay_delay,
                                                   'doubleClick' => $request->clickDelay_doubleClick)),
 
