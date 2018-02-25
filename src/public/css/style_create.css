@@ -6,3 +6,22 @@ input[type=checkbox]
 {
   -webkit-appearance:checkbox;
 }
+
+#root {
+  width: 100%;
+  height: 100%;
+  all: initial;
+}
+
+.app-wrapper {
+  margin: 10px;
+}
+
+.main-container {
+  margin: 10px;
+}
+
+.clearfix::after {
+  display: block;
+  clear: both;
+}

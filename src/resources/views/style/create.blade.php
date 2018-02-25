@@ -31,27 +31,33 @@
         </div><br />
        @endif
 
-      {!! Form::open(['url' => url('style')]) !!}
+       <div id='app-wrapper'>
+         <div id='root'></div>
+         <script src="{{mix('js/app.js')}}" ></script>
+       </div>
+       {{-- <div id='form-wrapper' class='clearfix'>
+        {!! Form::open(['url' => url('style')]) !!}
 
-      {{ csrf_field() }}
-      {!! Form::label('name', 'Title for your style') !!}<br />
-      {!! Form::text('name') !!} <br />
-      {!! Form::label('linkHighlighter_bgColor', 'Link highlighter background colour') !!}<br />
-      {!! Form::text('linkHighlighter_bgColor') !!} <br />
-      {!! Form::label('linkHighlighter_textColor', 'Link highlighter text colour') !!}<br />
-      {!! Form::text('linkHighlighter_textColor') !!}<br />
-      {!! Form::label('linkHighlighter_size', 'Link highlighter size') !!}<br />
-      {!! Form::text('linkHighlighter_size') !!}<br />
-      {!! Form::label('clickDelay_delay', 'Click delay time') !!}<br />
-      {!! Form::text('clickDelay_delay') !!}<br />
-      {!! Form::label('clickDelay_doubleClick', 'Remove double clicks?') !!}<br />
-      {!! Form::checkbox('clickDelay_doubleClick', '0', false, array('class' => 'checkbox')) !!}<br />
-      {!! Form::label('imageColourShifter_name', 'Image Colour shifter name') !!}<br />
-      {!! Form::text('imageColourShifter_name') !!}<br />
-      {!! Form::label('colourManipulations_changeSaturation_factor', 'Saturation factor') !!}<br />
-      {!! Form::text('colourManipulations_changeSaturation_factor') !!} </br>
-      {!! Form::label('default_style', 'Make default style?') !!}<br />
-      {!! Form::checkbox('default_style', '1', true, array('class' => 'checkbox')) !!}<br /><br/>
-      {!! Form::submit('Create the style!') !!}<br />
-      {!! Form::close() !!}
+        {{ csrf_field() }}
+        {!! Form::label('name', 'Title for your style') !!}<br />
+        {!! Form::text('name') !!} <br />
+        {!! Form::label('linkHighlighter_bgColor', 'Link highlighter background colour') !!}<br />
+        {!! Form::text('linkHighlighter_bgColor') !!} <br />
+        {!! Form::label('linkHighlighter_textColor', 'Link highlighter text colour') !!}<br />
+        {!! Form::text('linkHighlighter_textColor') !!}<br />
+        {!! Form::label('linkHighlighter_size', 'Link highlighter size') !!}<br />
+        {!! Form::text('linkHighlighter_size') !!}<br />
+        {!! Form::label('clickDelay_delay', 'Click delay time') !!}<br />
+        {!! Form::text('clickDelay_delay') !!}<br />
+        {!! Form::label('clickDelay_doubleClick', 'Remove double clicks?') !!}<br />
+        {!! Form::checkbox('clickDelay_doubleClick', '0', false, array('class' => 'checkbox')) !!}<br />
+        {!! Form::label('imageColourShifter_name', 'Image Colour shifter name') !!}<br />
+        {!! Form::text('imageColourShifter_name') !!}<br />
+        {!! Form::label('colourManipulations_changeSaturation_factor', 'Saturation factor') !!}<br />
+        {!! Form::text('colourManipulations_changeSaturation_factor') !!} </br>
+        {!! Form::label('default_style', 'Make default style?') !!}<br />
+        {!! Form::checkbox('default_style', '1', true, array('class' => 'checkbox')) !!}<br /><br/>
+        {!! Form::submit('Create the style!') !!}<br />
+        {!! Form::close() !!}
+      </div> --}}
 @endsection

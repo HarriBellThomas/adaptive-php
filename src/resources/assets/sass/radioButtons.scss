@@ -1,0 +1,60 @@
+/* Inspired by https://codepen.io/gabrielferreira/pen/oYxNVy */
+
+$blue: #4a90e2;
+$grey: #252525;
+
+input[type="radio"] {
+    display: none;
+    &:checked {
+      + div .box {
+        background-color: $blue;
+        span {
+          color: white;
+          &:before {
+            opacity: 1;
+          }
+        }
+      }
+
+      + .box {
+        background-color: $blue;
+        span {
+          color: white;
+          &:before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+.box {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  padding: 5px;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 20pt;
+  position: relative;
+  color: white;
+  background-color: $grey;
+
+  transition: all 0.2s ease;
+  will-change: transition;
+
+  &:active {
+    transform: translateY(10px);
+  }
+
+  &:hover {
+    background-color: #0c0c0c;
+  }
+
+  span {
+    display: inline-block;
+    text-align: center;
+  }
+}

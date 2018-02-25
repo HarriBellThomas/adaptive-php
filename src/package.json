@@ -11,14 +11,26 @@
     },
     "devDependencies": {
         "axios": "^0.17",
+        "babel-preset-react": "^6.23.0",
         "bootstrap-sass": "^3.3.7",
         "cross-env": "^5.1",
         "jquery": "^3.2",
         "laravel-mix": "^1.0",
         "lodash": "^4.17.4",
-        "vue": "^2.5.7"
+        "react": "^15.4.2",
+        "react-dom": "^15.4.2"
     },
     "dependencies": {
-        "html2canvas": "^1.0.0-alpha.9"
+        "ajv": "^6.1.1",
+        "assert-plus": "^1.0.0",
+        "bootstrap": "^4.0.0",
+        "html2canvas": "^1.0.0-alpha.9",
+        "react-color": "^2.13.8",
+        "react-radio": "^2.1.2",
+        "react-radio-group": "^3.0.2",
+        "react-tabs": "^2.2.1",
+        "react-tagsinput": "^3.19.0",
+        "react-tippy": "^1.2.2",
+        "react-toggle-button": "^2.2.0"
     }
 }

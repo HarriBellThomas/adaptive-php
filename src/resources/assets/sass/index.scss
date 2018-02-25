@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.size-btn {
+    background-color: #252525;
+    color: white;
+    height: 40px;
+    width: 40px;
+    font-size: 20pt;
+    margin: 5px;
+    margin-bottom: 0px;
+    border: none;
+}
+
+.size-btn:focus {
+  outline: none;
+}
+
+.size-btn:hover {
+  background-color: #0c0c0c;
+}
+
+.increase {
+  border-width: 2px 2px 2px 2px;
+}
+
+.decrease {
+  border-width: 2px 2px 2px 2px;
+}
+
+.value-input input {
+  text-align: center;
+  border-width: 0px 0px 3px 0px;
+  width: 40px;
+  height: 25px;
+  padding: 0px;
+  margin: 0px;
+  border-color: #4a90e2;
+
+  font-size: 18pt;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.value-input input:focus {
+  outline: none;
+  text-emphasis: bold;
+}
+
+.text-size-changer {
+    align-items: center;
+}
+
+.center-wrapper {
+  text-align:center;
+}
+
+.toggle-wrapper {
+  display: inline-block;
+}
+
+.button-bar {
+  display: inline-block;
+}
+
+.text-container {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  align: right;
+}
+
+.text-container p {
+  display: inline-block;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18pt;
+}
+
+.control-panel {
+  float:left;
+  display:inline;
+  margin: 5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: #252525;
+  border-style: solid;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  text-align: center;
+
+}
+
+.control-panel p {
+  display: 'inline';
+  font-size: 18pt;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.image-sandbox {
+  padding: 10px;
+}
+
+.text-container a {
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.value-input {
+  all:default;
+  font-size: 18pt;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.my-btn {
+  white-space: nowrap;
+  color: #252525;
+  font-family: 'Open Sans', sans-serif;
+  background-color: white;
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 4px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin: auto !important;
+  font-size: 22pt;
+  padding: 15px 15px !important;
+  vertical-align: middle;
+  border-color: #252525 !important;
+  outline: none;
+  box-shadow: none !important;
+  cursor: pointer;
+}
+
+@-webkit-keyframes fill {
+  to {
+    background-size:100% 0;
+  }
+}
+
+@keyframes fill {
+  to {
+    background-size:100% 0;
+  }
+}
+
+.cnh_holding button {
+  background: -webkit-linear-gradient( white , white) #4a90e2 no-repeat 0 0;
+  background: linear-gradient( white , white) #4a90e2 no-repeat 0 0;
+  mix-blend-mode: multiply;
+  background-size:  100% 100%;
+  -webkit-animation: fill 2s forwards;
+  animation: fill 2s forwards;
+}
+
+.style-information-control {
+  border-style: solid;
+  border-width: 3px;
+  border-color: #252525;
+  padding: 10px;
+
+
+  p {
+    margin-bottom: 5px;
+    display: inline;
+  }
+
+  div {
+    margin-top: 5px;
+  }
+
+}
+
+.title-input {
+  display: inline;
+  text-align: center;
+  border-width: 0px 0px 3px 0px;
+  width: 400px !important;
+  height: 25px;
+  padding: 0px;
+  margin: 0px;
+  border-color: #4a90e2;
+
+  font-size: 18pt;
+  font-family: 'Open Sans', sans-serif;
+}
