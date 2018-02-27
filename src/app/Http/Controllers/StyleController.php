@@ -34,11 +34,22 @@ class StyleController extends Controller
 
     $json_string = $request->getContent();
     $json = json_decode($json_string, true);
-    $style_object = new Style;
-    $style_object->style = $json_string;
-    $style_object->user()->associate(Auth::user()->id);
-    $style_object->name = $json['title'];
-    $style_object->save();
+    $style_object;
+    if ($json['hasSaved']) {
+      $style_object = Style::findOrFail($json['id']);
+      if($style_object->user->id != Auth::user()->id) { // Stop users editing other's styles
+        return response()->json(['status' => 'failure']);
+      }
+      $style_object->style = json_encode(['modules' => $json['modules']]);
+      $style_object->name = $json['title'];
+    } else {
+      $style_object = new Style;
+      $style_object->user()->associate(Auth::user()->id);
+      $style_object->style = json_encode(['modules' => $json['modules']]);
+      $style_object->name = $json['title'];
+      $style_object->save();
+    }
+
 
     foreach(array_unique($json['tags']) as $tag) {
       $tag_object = Tag::where('tag_name', $tag)->first();
@@ -59,7 +70,7 @@ class StyleController extends Controller
       Auth::user()->default_style()->save($style_object);
     }
 
-    return response()->json(['status' => 'success']);
+    return response()->json(['status' => 'success', 'id' => $style_object->id]);
   }
 
   public function make_default_style($id) {

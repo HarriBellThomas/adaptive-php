@@ -22,9 +22,11 @@ export default class App extends React.Component {
                         'paragaphHighlighting': 4};
 
     this.state = {
+      id: '',
       title: '',
       tags: [],
       saved: false,
+      hasSaved: false,
       modules: [
         {
           module: 'linkHighlighter',
@@ -77,12 +79,16 @@ export default class App extends React.Component {
 
   }
 
+  componentDidMount() {
+
+  }
+
   updateNthModule(n, values, callback) {
     // Should have used Redux....
     this.setState(prevState =>  {
       var newModuleProperties = Object.assign({...prevState.modules[n].properties}, values);
-      var newModules = {modules: Object.assign([...prevState.modules], {[n]: {module: this.moduleOrder[n], properties:newModuleProperties}, saved:false})};
-      return newModules;
+      var newModules = {modules: Object.assign([...prevState.modules], {[n]: {module: this.moduleOrder[n], properties:newModuleProperties}})};
+      return {...newModules, saved: false};
     }, callback);
 
   }
@@ -97,7 +103,12 @@ export default class App extends React.Component {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
       },
       credentials: 'same-origin'})
-      .then((response) => this.setState({saved: true}), (error) => alert(JSON.stringify(error.message)));
+      .then((response) => (response.json()))
+      .then((json) => {
+         console.log(JSON.stringify(json));
+         this.setState({saved: true, hasSaved: true, id: json.id});
+      })
+      .catch((error) => alert(JSON.stringify(error.message)));
   }
 
   styleInformationControlOnChange(action, value) {

@@ -44,7 +44,8 @@ export default class ParagraphControl extends React.Component {
                           inc={5}
                           unit='%'
                           description='Transparency'
-                          tip='Change the transparency of unfocused paragraphs.'/>
+                          tip='Change the transparency of unfocused paragraphs.'
+                          onBlur={this.props.onBlur}/>
 
               </div></div>
 

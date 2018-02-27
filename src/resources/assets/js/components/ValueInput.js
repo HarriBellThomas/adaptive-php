@@ -45,7 +45,7 @@ export default class ValueInput extends React.Component {
           {this.props.description}
           <input value={this.state.valueString}
                  onChange={(evt) => this.updateValue(evt.target.value)}
-                 className=''/>
+                 onBlur = {this.props.onBlur}/>
                {' ' + this.props.unit}
           <IncreaseButton onClick={this.increaseHandler} />
         </div>

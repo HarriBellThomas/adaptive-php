@@ -32,7 +32,8 @@ export default class MouseControl extends React.Component {
                             inc={0.1}
                             unit='s'
                             description='Time '
-                            tip='Change the amount of time you have to hold down the mouse to click on a link.'/>
+                            tip='Change the amount of time you have to hold down the mouse to click on a link.'
+                            onBlur = {this.props.onBlur}/>
                 </div></div>
 
             <p> Remove double clicks?</p>

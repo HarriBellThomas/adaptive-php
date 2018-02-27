@@ -80,19 +80,21 @@ export default class ImageContainer extends React.Component {
                           inc={0.1}
                           unit=''
                           description='Saturation '
-                          tip='Change the colorfulness of webpages.'/>
+                          tip='Change the colorfulness of webpages.'
+                          onBlur={this.props.onBlur}/>
               <ValueInput defaultValue={this.props.values.brightnessFactor / 10}
-                updateFunction={this.handleBrightnessFactorChange}
-                inc={0.3}
-                unit=''
-                description='Brightness '
-                tip='Change the brightness of webpages.'/>
+                          updateFunction={this.handleBrightnessFactorChange}
+                          inc={0.3}
+                          unit=''
+                          description='Brightness '
+                          tip='Change the brightness of webpages.'/>
               <ValueInput defaultValue={this.props.values.contrastFactor}
                           updateFunction={this.handleContrastFactorChange}
                           inc={0.1}
                           unit=''
                           description='Contrast '
-                          tip='Change the contrast of webpages.'/>
+                          tip='Change the contrast of webpages.'
+                          onBlur={this.props.onBlur}/>
             </div>
           </div>
           <div className='col-md-8'>

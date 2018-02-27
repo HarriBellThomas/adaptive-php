@@ -43,7 +43,8 @@ export default class TextSizeChanger extends React.Component {
                           inc={1}
                           unit='pt'
                           description='Size '
-                          tip='Change the text size of links.'/>
+                          tip='Change the text size of links.'
+                          onBlur={this.props.onBlur}/>
             </div>
 
             <p> Text color: </p>

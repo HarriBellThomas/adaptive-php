@@ -28,7 +28,8 @@ export default class StyleInformationControl extends React.Component {
         <p>Title for your style: </p>
         <input value={this.props.values.title}
                onChange={(evt) => this.updateValue(evt.target.value)}
-               className='title-input'/><br/><br/>
+               className='title-input'
+               onBlur={this.props.onBlur} /><br/><br/>
         <p>Tags for your style:</p>
         <TagsInput value={this.props.values.tags} onChange={this.handleTagChange} />
         <div className='center-wrapper'>
