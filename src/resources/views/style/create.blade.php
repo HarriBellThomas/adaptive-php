@@ -4,6 +4,7 @@
 @section('header')
   @parent
   <link href="{{url('css/style_create.css')}}" rel="stylesheet" type="text/css" media="all" />
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <style>
     label {

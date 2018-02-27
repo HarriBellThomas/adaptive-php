@@ -20,7 +20,7 @@ export default class ParagraphControl extends React.Component {
   }
 
   handleToggle(value) {
-    this.props.onChange({focusMode: !value});
+    this.props.onChange({enabled: !value});
   };
 
   render() {
@@ -32,12 +32,12 @@ export default class ParagraphControl extends React.Component {
 
             <p>Turn on paragraph focus mode?</p>
             <div className='center-wrapper'><div className='toggle-wrapper'>
-            <ToggleButton value={this.state.focusMode}
+            <ToggleButton value={this.props.values.enabled}
                           onToggle={this.handleToggle} />
 
             </div></div>
 
-          <div className='button-bar' style={{display: this.state.focusMode? 'inline' : 'none',}}>
+          <div className='button-bar' style={{display: this.props.values.enabled ? 'inline' : 'none',}}>
               <div className='center-wrapper'>
               <ValueInput defaultValue={this.props.values.opacity * 100}
                           updateFunction={this.handleOpacityChange}

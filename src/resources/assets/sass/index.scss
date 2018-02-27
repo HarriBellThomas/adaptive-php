@@ -180,11 +180,20 @@ p {
   text-align: center;
   border-width: 0px 0px 3px 0px;
   width: 400px !important;
-  height: 25px;
+  height: 40px !important;
   padding: 0px;
   margin: 0px;
   border-color: #4a90e2;
 
   font-size: 18pt;
   font-family: 'Open Sans', sans-serif;
+}
+
+
+.save-btn {
+  font-family: 'Open Sans', sans-serif;
+  box-shadow: none !important;
+  font-size: 22pt;
+  padding: 15px;
+
 }

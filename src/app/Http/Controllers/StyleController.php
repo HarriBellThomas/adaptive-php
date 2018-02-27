@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Style;
 use App\User;
+use App\Tag;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -28,52 +29,28 @@ class StyleController extends Controller
   }
 
 
-  private function create_json(Request $request)
-  {
-
-    $arr = array('modules' => array(array(
-                  array('module' => 'linkHighlighter', 'properties' =>
-                                            array('backgroundColor' => $request->linkHighlighter_bgColor,
-                                                  'textColor' => $request->linkHighlighter_textColor,
-                                                  'size' => $request->linkHighlighter_size)),
-
-                 array('module' => 'motorFeatures', 'properties' =>
-                                            array('delay' => $request->clickDelay_delay,
-                                                  'doubleClick' => $request->clickDelay_doubleClick)),
-
-                 array('module' => 'colourManipulations', 'properties' =>
-                                            array('changeSaturation' => array('factor' => $request->colourManipulations_changeSaturation_factor))),
-
-                 array('module' => 'imageColourShifter', 'propeties' =>
-                                            array('identifier' =>  $request->imageColourShifter_name)))));
-
-    return json_encode($arr);
-  }
-
   public function store(Request $request)
   {
-    $style = $this->validate(request(), [
 
-      'name' => 'required',
-
-      /* Stuff for the JSON configuration */
-      'linkHighlighter_bgColor' => 'required',
-      'linkHighlighter_textColor' => 'required',
-      'linkHighlighter_size' => 'required',
-      'clickDelay_delay' => 'required',
-      'colourManipulations_changeSaturation_factor' => 'required',
-      'imageColourShifter_name' => 'required',
-    ]);
-
-    $json = $this->create_json($request);
-
+    $json_string = $request->getContent();
+    $json = json_decode($json_string, true);
     $style_object = new Style;
-    $style_object->style = $json;
+    $style_object->style = $json_string;
     $style_object->user()->associate(Auth::user()->id);
-    $style_object->name = $request->name;
-    // TODO: Add tags to style
-
+    $style_object->name = $json['title'];
     $style_object->save();
+
+    foreach(array_unique($json['tags']) as $tag) {
+      $tag_object = Tag::where('tag_name', $tag)->first();
+      if(!$tag_object) {
+        $tag_object = new Tag;
+        $tag_object->tag_name = $tag;
+        $tag_object->description = '';
+        $tag_object->save();
+      }
+      $style_object->tags()->attach($tag_object->id);
+    }
+
 
     if ($request->default_style) {
       if(sizeof(Auth::user()->default_style) > 0) {
@@ -82,7 +59,7 @@ class StyleController extends Controller
       Auth::user()->default_style()->save($style_object);
     }
 
-    return redirect('/home');
+    return response()->json(['status' => 'success']);
   }
 
   public function make_default_style($id) {
@@ -91,7 +68,6 @@ class StyleController extends Controller
       Auth::user()->default_style()->detach(Auth::user()->default_style[0]->id);
     }
     Auth::user()->default_style()->save($new_default);
-
 
     return back();
   }

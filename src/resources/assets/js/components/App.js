@@ -21,7 +21,6 @@ export default class App extends React.Component {
                         'colorManipulations': 2, 'imageColorShifter': 3,
                         'paragaphHighlighting': 4};
 
-
     this.state = {
       title: '',
       tags: [],
@@ -70,6 +69,11 @@ export default class App extends React.Component {
         }
       ]
     }
+
+    this.saveStyle = this.saveStyle.bind(this);
+    this.updateNthModule = this.updateNthModule.bind(this);
+    this.styleInformationControlOnChange = this.styleInformationControlOnChange.bind(this);
+
   }
 
   updateNthModule(n, values, callback) {
@@ -80,6 +84,36 @@ export default class App extends React.Component {
       return newModules;
     }, callback);
 
+  }
+
+  saveStyle() {
+    console.log(JSON.stringify(this.state));
+    return fetch('/style', {
+      method: 'POST',
+      body: JSON.stringify(this.state),
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+      },
+      credentials: 'same-origin'})
+      .then((response) => alert(JSON.stringify(response.text())), (error) => alert(JSON.stringify(error.message)));
+  }
+
+  styleInformationControlOnChange(action, value) {
+    // Basically redux reducer manually implemented
+    switch(action) {
+      case 'UPDATE_TITLE':
+        this.setState({title: value});
+        break;
+      case 'UPDATE_TAGS':
+        this.setState({tags: value});
+        break;
+      case 'SAVE':
+        this.saveStyle();
+        break;
+      default:
+        console.log('Unknown action');
+    }
   }
 
   render() {
@@ -94,7 +128,8 @@ export default class App extends React.Component {
      </TabList>
 
     <TabPanel>
-      <StyleInformationControl />
+      <StyleInformationControl values = {{title: this.state.title, tags: this.state.tags}}
+                               onChange = {this.styleInformationControlOnChange}/>
     </TabPanel>
    <TabPanel>
      <TextSizeChanger text='An example link'
@@ -128,7 +163,7 @@ export default class App extends React.Component {
       </Tabs>
    </TabPanel>
    <TabPanel>
-     <ParagraphControl values={this.state.modules[this.moduleIndex['paragraphHighlighting']].properties}
+     <ParagraphControl values={this.state.modules[this.moduleIndex['paragaphHighlighting']].properties}
                        onChange={(values) => this.updateNthModule(this.moduleIndex['paragaphHighlighting'], values)}/>
    </TabPanel>
   </Tabs>
