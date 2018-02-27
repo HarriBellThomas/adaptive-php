@@ -41,13 +41,13 @@ export default class ValueInput extends React.Component {
     return (
       <Tooltip title={this.props.tip}>
         <div className='value-input'>
-          <DecreaseButton onClick={this.decreaseHandler} />
+          <DecreaseButton onClick={this.decreaseHandler} onBlur={this.props.onBlur}/>
           {this.props.description}
           <input value={this.state.valueString}
                  onChange={(evt) => this.updateValue(evt.target.value)}
                  onBlur = {this.props.onBlur}/>
                {' ' + this.props.unit}
-          <IncreaseButton onClick={this.increaseHandler} />
+          <IncreaseButton onClick={this.increaseHandler} onBlur={this.props.onBlur} />
         </div>
     </Tooltip>
     );

@@ -20,7 +20,7 @@ export default class ParagraphControl extends React.Component {
   }
 
   handleToggle(value) {
-    this.props.onChange({enabled: !value});
+    this.props.onChange({enabled: !value}, this.props.onBlur);
   };
 
   render() {
@@ -56,7 +56,8 @@ export default class ParagraphControl extends React.Component {
                             inc={1}
                             unit='pt'
                             description='Focused paragraph size'
-                            tip='Change the text size of focused paragraphs'/>
+                            tip='Change the text size of focused paragraphs'
+                            onBlur={this.props.onBlur}/>
 
                 </div></div>
             </div>

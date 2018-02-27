@@ -87,7 +87,8 @@ export default class ImageContainer extends React.Component {
                           inc={0.3}
                           unit=''
                           description='Brightness '
-                          tip='Change the brightness of webpages.'/>
+                          tip='Change the brightness of webpages.'
+                          onBlur={this.props.onBlur}/>
               <ValueInput defaultValue={this.props.values.contrastFactor}
                           updateFunction={this.handleContrastFactorChange}
                           inc={0.1}

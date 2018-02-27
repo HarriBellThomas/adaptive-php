@@ -147,7 +147,7 @@ export default class App extends React.Component {
    <TabPanel>
      <TextSizeChanger text='An example link'
                       values={this.state.modules[this.moduleIndex['linkHighlighter']].properties}
-                      onChange={(values) => this.updateNthModule(this.moduleIndex['linkHighlighter'], values)}
+                      onChange={(values, callback) => this.updateNthModule(this.moduleIndex['linkHighlighter'], values, callback)}
                       onBlur={this.saveStyle}/>
    </TabPanel>
    <TabPanel>
@@ -181,7 +181,8 @@ export default class App extends React.Component {
    </TabPanel>
    <TabPanel>
      <ParagraphControl values={this.state.modules[this.moduleIndex['paragaphHighlighting']].properties}
-                       onChange={(values) => this.updateNthModule(this.moduleIndex['paragaphHighlighting'], values)}/>
+                       onChange={(values, callback) => this.updateNthModule(this.moduleIndex['paragaphHighlighting'], values, callback)}
+                       onBlur={this.saveStyle}/>
    </TabPanel>
   </Tabs>
   );

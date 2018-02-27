@@ -19,15 +19,15 @@ export default class TextSizeChanger extends React.Component {
   }
 
   handleChangeCompleteText({hex}) {
-    this.props.onChange({textColor: hex});
+    this.props.onChange({textColor: hex}, this.props.onBlur);
   };
 
   handleChangeCompleteHighlight({hex}) {
-    this.props.onChange({bgColor: hex})
+    this.props.onChange({bgColor: hex}, this.props.onBlur);
   };
 
   handleToggle (value) {
-    this.props.onChange({highlightOn: !value});
+    this.props.onChange({highlightOn: !value}, this.props.onBlur);
   };
 
   render() {
@@ -54,11 +54,11 @@ export default class TextSizeChanger extends React.Component {
             <div className='center-wrapper'>
               <div className='toggle-wrapper'>
               <ToggleButton
-                value={ this.props.values.highlight }
+                value={ this.props.values.highlightOn }
                 onToggle={this.handleToggle} />
             </div></div>
 
-          <div style={{display: this.props.values.highlight ? 'inline' : 'none',}}>
+          <div style={{display: this.props.values.highlightOn ? 'inline' : 'none',}}>
               <p>Background color: </p>
               <CompactPicker color={this.props.values.bgColor} onChangeComplete={ this.handleChangeCompleteHighlight }  />
             </div>
@@ -68,7 +68,7 @@ export default class TextSizeChanger extends React.Component {
           <div className='text-container'>
             <a style={{fontSize: this.props.values.size,
                        color: this.props.values.textColor,
-                       backgroundColor: this.props.values.highlight ? this.props.values.bgColor : '',
+                       backgroundColor: this.props.values.highlightOn ? this.props.values.bgColor : '',
                      }}>
             {this.props.text}
           </a>
