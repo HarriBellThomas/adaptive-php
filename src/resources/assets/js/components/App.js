@@ -24,6 +24,7 @@ export default class App extends React.Component {
     this.state = {
       title: '',
       tags: [],
+      saved: false,
       modules: [
         {
           module: 'linkHighlighter',
@@ -80,7 +81,7 @@ export default class App extends React.Component {
     // Should have used Redux....
     this.setState(prevState =>  {
       var newModuleProperties = Object.assign({...prevState.modules[n].properties}, values);
-      var newModules = {modules: Object.assign([...prevState.modules], {[n]: {module: this.moduleOrder[n], properties:newModuleProperties}})};
+      var newModules = {modules: Object.assign([...prevState.modules], {[n]: {module: this.moduleOrder[n], properties:newModuleProperties}, saved:false})};
       return newModules;
     }, callback);
 
@@ -96,17 +97,17 @@ export default class App extends React.Component {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
       },
       credentials: 'same-origin'})
-      .then((response) => alert(JSON.stringify(response.text())), (error) => alert(JSON.stringify(error.message)));
+      .then((response) => this.setState({saved: true}), (error) => alert(JSON.stringify(error.message)));
   }
 
   styleInformationControlOnChange(action, value) {
     // Basically redux reducer manually implemented
     switch(action) {
       case 'UPDATE_TITLE':
-        this.setState({title: value});
+        this.setState({title: value, saved: false});
         break;
       case 'UPDATE_TAGS':
-        this.setState({tags: value});
+        this.setState({tags: value, saved:false});
         break;
       case 'SAVE':
         this.saveStyle();
@@ -128,7 +129,7 @@ export default class App extends React.Component {
      </TabList>
 
     <TabPanel>
-      <StyleInformationControl values = {{title: this.state.title, tags: this.state.tags}}
+      <StyleInformationControl values = {{title: this.state.title, tags: this.state.tags, saved: this.state.saved}}
                                onChange = {this.styleInformationControlOnChange}/>
     </TabPanel>
    <TabPanel>

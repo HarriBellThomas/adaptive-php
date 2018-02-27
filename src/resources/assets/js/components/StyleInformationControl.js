@@ -20,6 +20,9 @@ export default class StyleInformationControl extends React.Component {
 
 
   render() {
+    const saveMessage = this.props.values.saved ? <p>Everything saved!</p>
+                      : <button type='button' className='btn btn-success save-btn' onClick={() => this.props.onChange('SAVE')}>Save</button>
+
     return (
       <div className='style-information-control'>
         <p>Title for your style: </p>
@@ -30,7 +33,7 @@ export default class StyleInformationControl extends React.Component {
         <TagsInput value={this.props.values.tags} onChange={this.handleTagChange} />
         <div className='center-wrapper'>
           <div className='toggle-wrapper'>
-          <button className='btn btn-success save-btn' onClick={() => this.props.onChange('SAVE')}>Save</button>
+            {saveMessage}
           </div></div>
       </div>
     )
