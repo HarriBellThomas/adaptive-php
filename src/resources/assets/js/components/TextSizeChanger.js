@@ -7,12 +7,7 @@ import ValueInput from './ValueInput';
 export default class TextSizeChanger extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      size: 18,
-      textColor: '0x00000',
-      highlightColor: '0xFFFFFF',
-      highlight: false,
-    };
+
     this.sizeChangeHandler = this.sizeChangeHandler.bind(this);
     this.handleChangeCompleteText = this.handleChangeCompleteText.bind(this);
     this.handleChangeCompleteHighlight = this.handleChangeCompleteHighlight.bind(this);
@@ -20,22 +15,23 @@ export default class TextSizeChanger extends React.Component {
   }
 
   sizeChangeHandler(value) {
-    this.setState(() => ({size: value}));
+    this.props.onChange({size: value});
   }
 
   handleChangeCompleteText({hex}) {
-    this.setState({textColor: hex});
+    this.props.onChange({textColor: hex});
   };
 
   handleChangeCompleteHighlight({hex}) {
-    this.setState({highlightColor: hex})
+    this.props.onChange({bgColor: hex})
   };
 
   handleToggle (value) {
-    this.setState({highlight: !value});
+    this.props.onChange({highlightOn: !value});
   };
 
   render() {
+    alert(JSON.stringify(this.props.values));
     return (
       <div className='text-size-changer'>
         <div className='row'>
@@ -43,7 +39,7 @@ export default class TextSizeChanger extends React.Component {
             <div className='control-panel'>
             <div className='center-wrapper'>
             <div className='button-bar'>
-              <ValueInput defaultValue={this.state.size}
+              <ValueInput defaultValue={this.props.values.size}
                           updateFunction={this.sizeChangeHandler}
                           inc={1}
                           unit='pt'
@@ -52,27 +48,27 @@ export default class TextSizeChanger extends React.Component {
             </div>
 
             <p> Text color: </p>
-            <CompactPicker color={this.state.textColor} onChangeComplete={ this.handleChangeCompleteText }  />
+            <CompactPicker color={this.props.values.textColor} onChangeComplete={ this.handleChangeCompleteText }  />
 
             <p>Change background?</p>
             <div className='center-wrapper'>
               <div className='toggle-wrapper'>
               <ToggleButton
-                value={ this.state.highlight }
+                value={ this.props.values.highlight }
                 onToggle={this.handleToggle} />
             </div></div>
 
-            <div style={{display: this.state.highlight ? 'inline' : 'none',}}>
+          <div style={{display: this.props.values.highlight ? 'inline' : 'none',}}>
               <p>Background color: </p>
-              <CompactPicker color={this.state.highlightColor} onChangeComplete={ this.handleChangeCompleteHighlight }  />
+              <CompactPicker color={this.props.values.bgColor} onChangeComplete={ this.handleChangeCompleteHighlight }  />
             </div>
           </div></div></div>
 
         <div className='col-md-8'>
           <div className='text-container'>
-            <a style={{fontSize: this.state.size,
-                     color: this.state.textColor,
-                     backgroundColor: this.state.highlight ? this.state.highlightColor : '',
+            <a style={{fontSize: this.props.values.size,
+                       color: this.props.values.textColor,
+                       backgroundColor: this.props.values.highlight ? this.props.values.bgColor : '',
                      }}>
             {this.props.text}
           </a>

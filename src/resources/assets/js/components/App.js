@@ -14,6 +14,63 @@ import '../../sass/tabs.scss';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
+
+    this.moduleOrder = ['linkHighlighter', 'clickDelay',
+                        'colorManipulations', 'imageColorShifter'];
+    this.moduleIndex = {'linkHighlighter': 0, 'clickDelay': 1,
+                        'colorManipulations': 2, 'imageColorShifter': 3};
+
+
+    this.state = {
+      title: '',
+      tags: [],
+      modules: [
+        {
+          module: 'linkHighlighter',
+          properties: {
+            size: 18,
+            bgColor: '0xFFFFFF',
+            textColor: '0x000000',
+            highlightOn: false,
+          }
+        },
+
+        {
+          module: 'clickDelay',
+          properties: {
+            delay: '',
+            doubleClick: false,
+          }
+        },
+
+        {
+          module: 'colorManipulations',
+          properties: {
+            saturationFactor: '',
+            brightnessFactor: '',
+            contrastFactor: '',
+          }
+        },
+
+        {
+          module: 'imageColorShifter',
+          properties: {
+            identifier: ''
+          }
+        }
+      ]
+    }
+  }
+
+  updateNthModule(n, values) {
+    // Should have used Redux....
+    this.setState(prevState =>  {
+      var newModuleProperties = Object.assign({...prevState.modules[n].properties}, values);
+      var newModules = {modules: Object.assign([...prevState.modules], {[n]: {module: this.moduleOrder[n], properties:newModuleProperties}})};
+      alert(JSON.stringify(newModules));
+      return newModules;
+    });
+
   }
 
   render() {
@@ -31,7 +88,9 @@ export default class App extends React.Component {
       <StyleInformationControl />
     </TabPanel>
    <TabPanel>
-     <TextSizeChanger text='An example link' />
+     <TextSizeChanger text='An example link'
+                      values={this.state.modules[this.moduleIndex['linkHighlighter']].properties}
+                      onChange={(values) => this.updateNthModule(this.moduleIndex['linkHighlighter'], values)}/>
    </TabPanel>
    <TabPanel>
      <MouseControl />
