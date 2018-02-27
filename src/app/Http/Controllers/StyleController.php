@@ -47,9 +47,9 @@ class StyleController extends Controller
       $style_object->user()->associate(Auth::user()->id);
       $style_object->style = json_encode(['modules' => $json['modules']]);
       $style_object->name = $json['title'];
-      $style_object->save();
     }
 
+    $style_object->save();
 
     foreach(array_unique($json['tags']) as $tag) {
       $tag_object = Tag::where('tag_name', $tag)->first();

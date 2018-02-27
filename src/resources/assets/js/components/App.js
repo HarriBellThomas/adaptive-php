@@ -140,17 +140,20 @@ export default class App extends React.Component {
      </TabList>
 
     <TabPanel>
-      <StyleInformationControl values = {{title: this.state.title, tags: this.state.tags, saved: this.state.saved}}
-                               onChange = {this.styleInformationControlOnChange}/>
+      <StyleInformationControl values={{title: this.state.title, tags: this.state.tags, saved: this.state.saved}}
+                               onChange={this.styleInformationControlOnChange}
+                               onBlur={this.saveStyle}/>
     </TabPanel>
    <TabPanel>
      <TextSizeChanger text='An example link'
                       values={this.state.modules[this.moduleIndex['linkHighlighter']].properties}
-                      onChange={(values) => this.updateNthModule(this.moduleIndex['linkHighlighter'], values)}/>
+                      onChange={(values) => this.updateNthModule(this.moduleIndex['linkHighlighter'], values)}
+                      onBlur={this.saveStyle}/>
    </TabPanel>
    <TabPanel>
      <MouseControl values={this.state.modules[this.moduleIndex['clickDelay']].properties}
-                   onChange={(values) => this.updateNthModule(this.moduleIndex['clickDelay'], values)}/>
+                   onChange={(values) => this.updateNthModule(this.moduleIndex['clickDelay'], values)}
+                   onBlur={this.saveStyle}/>
    </TabPanel>
    <TabPanel>
      <Tabs forceRenderTabPanel>
@@ -163,14 +166,16 @@ export default class App extends React.Component {
                          width={500}
                          height={500}
                          values={this.state.modules[this.moduleIndex['colorManipulations']].properties}
-                         onChange={(values, callback) => this.updateNthModule(this.moduleIndex['colorManipulations'], values, callback)}/>
+                         onChange={(values, callback) => this.updateNthModule(this.moduleIndex['colorManipulations'], values, callback)}
+                         onBlur={this.saveStyle}/>
        </TabPanel>
        <TabPanel>
          <ColorBlindnessControl imageurl='/images/flowers.jpg'
                                 width={500}
                                 height={500}
                                 values={this.state.modules[this.moduleIndex['imageColorShifter']].properties}
-                                onChange={(values, callback) => this.updateNthModule(this.moduleIndex['imageColorShifter'], values, callback)}/>
+                                onChange={(values, callback) => this.updateNthModule(this.moduleIndex['imageColorShifter'], values, callback)}
+                                onBlur={this.saveStyle}/>
        </TabPanel>
       </Tabs>
    </TabPanel>
