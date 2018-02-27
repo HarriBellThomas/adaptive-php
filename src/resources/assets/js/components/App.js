@@ -77,7 +77,6 @@ export default class App extends React.Component {
     this.setState(prevState =>  {
       var newModuleProperties = Object.assign({...prevState.modules[n].properties}, values);
       var newModules = {modules: Object.assign([...prevState.modules], {[n]: {module: this.moduleOrder[n], properties:newModuleProperties}})};
-      alert(JSON.stringify(newModules));
       return newModules;
     }, callback);
 
