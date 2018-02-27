@@ -6,27 +6,21 @@ export default class ParagraphControl extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      opacity: 0.5,
-      size: 20,
-      focusMode: false,
-    }
-
     this.handleOpacityChange = this.handleOpacityChange.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
     this.handleSizeChange = this.handleSizeChange.bind(this);
   }
 
   handleOpacityChange(value) {
-    this.setState({opacity: value / 100});
+    this.props.onChange({opacity: value / 100});
   }
 
   handleSizeChange(value) {
-    this.setState({size: value});
+    this.props.onChange({size: value});
   }
 
   handleToggle(value) {
-    this.setState({focusMode: !value});
+    this.props.onChange({focusMode: !value});
   };
 
   render() {
@@ -45,7 +39,7 @@ export default class ParagraphControl extends React.Component {
 
           <div className='button-bar' style={{display: this.state.focusMode? 'inline' : 'none',}}>
               <div className='center-wrapper'>
-              <ValueInput defaultValue={this.state.opacity * 100}
+              <ValueInput defaultValue={this.props.values.opacity * 100}
                           updateFunction={this.handleOpacityChange}
                           inc={5}
                           unit='%'
@@ -54,9 +48,9 @@ export default class ParagraphControl extends React.Component {
 
               </div></div>
 
-            <div className='button-bar' style={{display: this.state.focusMode ? 'inline' : 'none',}}>
+            <div className='button-bar' style={{display: this.props.values.enabled ? 'inline' : 'none',}}>
                 <div className='center-wrapper'>
-                <ValueInput defaultValue={this.state.size}
+                <ValueInput defaultValue={this.props.values.size}
                             updateFunction={this.handleSizeChange}
                             inc={1}
                             unit='pt'
@@ -69,20 +63,20 @@ export default class ParagraphControl extends React.Component {
 
           <div className='col-md-8'>
           <div className='text-container'>
-            <p style={this.state.focusMode ?
-                      {opacity: this.state.opacity, fontSize:18} : {fontSize:18}}>
+            <p style={this.props.values.enabled ?
+                      {opacity: this.props.values.opacity, fontSize:18} : {fontSize:18}}>
               This is an example paragraph. By enabling paragraph highlighting, you can focus on specific paragraphs. This could help you stop from
                 becoming distracted by other content on the page and make reading easier. When focused on a paragraph, it will become bigger and
                 make other paragraphs more transparent.
             </p>
-            <p style={this.state.focusMode ?
-                      {fontSize: this.state.size} : {fontSize:18}}>
+            <p style={this.props.values.enabled ?
+                      {fontSize: this.props.values.size} : {fontSize:18}}>
                 This is an another example paragraph. By enabling paragraph highlighting, you can focus on specific paragraphs. This could help you stop from
                   becoming distracted by other content on the page and make reading easier. When focused on a paragraph, it will become bigger and
                   make other paragraphs more transparent.
             </p>
-            <p style={this.state.focusMode ?
-                      {opacity: this.state.opacity, fontSize: 18} : {fontSize:18}}>
+            <p style={this.props.values.enabled ?
+                      {opacity: this.props.values.opacity, fontSize: 18} : {fontSize:18}}>
                   This is third example paragraph. By enabling paragraph highlighting, you can focus on specific paragraphs. This could help you stop from
                     becoming distracted by other content on the page and make reading easier. When focused on a paragraph, it will become bigger and
                     make other paragraphs more transparent.

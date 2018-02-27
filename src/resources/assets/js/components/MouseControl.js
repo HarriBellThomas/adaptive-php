@@ -7,20 +7,16 @@ export default class MouseControl extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      disableDoubleClicks: false,
-      time: 0.4
-    }
     this.timeOnChange = this.timeOnChange.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
   }
 
   timeOnChange(value) {
-    this.setState({time: value});
+    this.props.onChange({delay: value});
   }
 
   handleToggle(value) {
-    this.setState({disableDoubleClicks: !value});
+    this.props.onChange({doubleClick: !value});
   };
 
   render() {
@@ -31,7 +27,7 @@ export default class MouseControl extends React.Component {
             <div className='control-panel'>
               <div className='center-wrapper'>
                 <div className = 'button-bar'>
-                <ValueInput defaultValue={this.state.time}
+                <ValueInput defaultValue={this.props.values.delay}
                             updateFunction={this.timeOnChange}
                             inc={0.1}
                             unit='s'
@@ -42,7 +38,7 @@ export default class MouseControl extends React.Component {
             <p> Remove double clicks?</p>
             <div className='center-wrapper'>
             <div className='toggle-wrapper'>
-            <ToggleButton value={this.state.disableDoubleClicks}
+            <ToggleButton value={this.props.values.doubleClick}
                           onToggle={this.handleToggle} />
             </div>
             </div>
@@ -52,7 +48,7 @@ export default class MouseControl extends React.Component {
           <div className='col-md-8'>
             <div className='center-wrapper'>
               <div className='toggle-wrapper'>
-                <TimerChecker time={this.state.time} />
+                <TimerChecker time={this.props.values.delay} />
                 </div></div>
           </div>
 

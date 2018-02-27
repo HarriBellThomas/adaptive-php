@@ -16,9 +16,10 @@ export default class App extends React.Component {
     super(props);
 
     this.moduleOrder = ['linkHighlighter', 'clickDelay',
-                        'colorManipulations', 'imageColorShifter'];
+                        'colorManipulations', 'imageColorShifter', 'paragaphHighlighting'];
     this.moduleIndex = {'linkHighlighter': 0, 'clickDelay': 1,
-                        'colorManipulations': 2, 'imageColorShifter': 3};
+                        'colorManipulations': 2, 'imageColorShifter': 3,
+                        'paragaphHighlighting': 4};
 
 
     this.state = {
@@ -38,7 +39,7 @@ export default class App extends React.Component {
         {
           module: 'clickDelay',
           properties: {
-            delay: '',
+            delay: 0.4,
             doubleClick: false,
           }
         },
@@ -46,30 +47,39 @@ export default class App extends React.Component {
         {
           module: 'colorManipulations',
           properties: {
-            saturationFactor: '',
-            brightnessFactor: '',
-            contrastFactor: '',
+            saturationFactor: 1,
+            brightnessFactor: 0,
+            contrastFactor: 1,
           }
         },
 
         {
           module: 'imageColorShifter',
           properties: {
-            identifier: ''
+            identifier: 'None'
+          }
+        },
+
+        {
+          module: 'paragaphHighlighting',
+          properties: {
+            enabled: false,
+            opacity: 0.5,
+            size: 20,
           }
         }
       ]
     }
   }
 
-  updateNthModule(n, values) {
+  updateNthModule(n, values, callback) {
     // Should have used Redux....
     this.setState(prevState =>  {
       var newModuleProperties = Object.assign({...prevState.modules[n].properties}, values);
       var newModules = {modules: Object.assign([...prevState.modules], {[n]: {module: this.moduleOrder[n], properties:newModuleProperties}})};
       alert(JSON.stringify(newModules));
       return newModules;
-    });
+    }, callback);
 
   }
 
@@ -93,7 +103,8 @@ export default class App extends React.Component {
                       onChange={(values) => this.updateNthModule(this.moduleIndex['linkHighlighter'], values)}/>
    </TabPanel>
    <TabPanel>
-     <MouseControl />
+     <MouseControl values={this.state.modules[this.moduleIndex['clickDelay']].properties}
+                   onChange={(values) => this.updateNthModule(this.moduleIndex['clickDelay'], values)}/>
    </TabPanel>
    <TabPanel>
      <Tabs forceRenderTabPanel>
@@ -104,17 +115,22 @@ export default class App extends React.Component {
        <TabPanel>
          <ImageContainer imageurl='/images/froggy.jpg'
                          width={500}
-                         height={500}/>
+                         height={500}
+                         values={this.state.modules[this.moduleIndex['colorManipulations']].properties}
+                         onChange={(values, callback) => this.updateNthModule(this.moduleIndex['colorManipulations'], values, callback)}/>
        </TabPanel>
        <TabPanel>
          <ColorBlindnessControl imageurl='/images/flowers.jpg'
                                 width={500}
-                                height={500}/>
+                                height={500}
+                                values={this.state.modules[this.moduleIndex['imageColorShifter']].properties}
+                                onChange={(values, callback) => this.updateNthModule(this.moduleIndex['imageColorShifter'], values, callback)}/>
        </TabPanel>
       </Tabs>
    </TabPanel>
    <TabPanel>
-     <ParagraphControl />
+     <ParagraphControl values={this.state.modules[this.moduleIndex['paragraphHighlighting']].properties}
+                       onChange={(values) => this.updateNthModule(this.moduleIndex['paragaphHighlighting'], values)}/>
    </TabPanel>
   </Tabs>
   );

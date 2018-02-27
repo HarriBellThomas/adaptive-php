@@ -31,7 +31,6 @@ export default class TextSizeChanger extends React.Component {
   };
 
   render() {
-    alert(JSON.stringify(this.props.values));
     return (
       <div className='text-size-changer'>
         <div className='row'>

@@ -12,16 +12,12 @@ export default class ColorBlindnessControl extends React.Component {
 
     this.blindnessTypes = ['None', 'Deuteranopia', 'Protanopia', 'Tritanopia'];
 
-    this.state = {
-      colorBlindnessType: 'None',
-    }
-
     this.handleRadioButton = this.handleRadioButton.bind(this);
     this.filter = this.filter.bind(this);
   }
 
   handleRadioButton(value) {
-    this.setState({colorBlindnessType: value}, this.filterableImage.applyFilter);
+    this.props.onChange({identifier: value}, this.filterableImage.applyFilter);
 
   }
 
@@ -44,7 +40,7 @@ export default class ColorBlindnessControl extends React.Component {
 
 
     const LMSMatrix = ColorTools.multiply(rgb2lms, [[rgba.r], [rgba.g], [rgba.b]]);
-    const colourBlindChangeMatrix = ColorTools.multiply(cb_matrices[this.state.colorBlindnessType], LMSMatrix);
+    const colourBlindChangeMatrix = ColorTools.multiply(cb_matrices[this.props.values.identifier], LMSMatrix);
     const simulatedMatrix = ColorTools.multiply(lms2rgb, colourBlindChangeMatrix);
     const errorMatrix = [[Math.abs(rgba.r - simulatedMatrix[0][0])], [Math.abs(rgba.g - simulatedMatrix[1][0])], [Math.abs(rgba.b - simulatedMatrix[2][0])]];
     const modMatrix = [[0, 0, 0], [0.7, 1, 0], [0.7, 0, 1]];
@@ -100,7 +96,7 @@ export default class ColorBlindnessControl extends React.Component {
           <div className='col-md-4'>
             <div className='control-panel'>
               <RadioGroup name='color-blindness-type'
-                          selectedValue={this.state.colorBlindnessType}
+                          selectedValue={this.props.values.identifier}
                           onChange={this.handleRadioButton}>
                 <div className='row'>
                   <div className='col-md-12'>

@@ -7,11 +7,7 @@ import ValueInput from './ValueInput';
 export default class ImageContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      saturationFactor: 1,
-      brightnessFactor: 0,
-      contrastFactor: 1,
-    }
+
     this.saturate = this.saturate.bind(this);
     this.changeBrightness = this.changeBrightness.bind(this);
     this.changeContrast = this.changeContrast.bind(this);
@@ -25,7 +21,7 @@ export default class ImageContainer extends React.Component {
 
   saturate(xy, rgba) {
     var hsl = ColorTools.rgbToHsl(rgba.r,rgba.g,rgba.b);
-    hsl[1] = ColorTools.limit(hsl[1] * this.state.saturationFactor);
+    hsl[1] = ColorTools.limit(hsl[1] * this.props.values.saturationFactor);
     var rgb = ColorTools.hslToRgb(hsl[0],hsl[1],hsl[2]);
     return {
       r: Math.round(rgb[0]),
@@ -37,16 +33,16 @@ export default class ImageContainer extends React.Component {
 
   changeBrightness(xy,rgba) {
     return {
-      r: rgba.r + Math.round(this.state.brightnessFactor),
-      g: rgba.g + Math.round(this.state.brightnessFactor),
-      b: rgba.b + Math.round(this.state.brightnessFactor),
+      r: rgba.r + Math.round(this.props.values.brightnessFactor),
+      g: rgba.g + Math.round(this.props.values.brightnessFactor),
+      b: rgba.b + Math.round(this.props.values.brightnessFactor),
       a: rgba.a
     }
   }
 
   changeContrast(xy, rgba) {
     var hsl = ColorTools.rgbToHsl(rgba.r,rgba.g,rgba.b);
-    hsl[2] = ColorTools.limit(hsl[2]*this.state.contrastFactor);
+    hsl[2] = ColorTools.limit(hsl[2]*this.props.values.contrastFactor);
     var rgb = ColorTools.hslToRgb(hsl[0],hsl[1],hsl[2]);
     return {
       r: Math.round(rgb[0]),
@@ -61,15 +57,15 @@ export default class ImageContainer extends React.Component {
   }
 
   handleContrastFactorChange(value) {
-    this.setState({contrastFactor: value}, this.filterableImage.applyFilter);
+    this.props.onChange({contrastFactor: value}, this.filterableImage.applyFilter);
   }
 
   handleSaturationFactorChange(value) {
-    this.setState({saturationFactor: value}, this.filterableImage.applyFilter);
+    this.props.onChange({saturationFactor: value}, this.filterableImage.applyFilter);
   }
 
   handleBrightnessFactorChange(value) {
-    this.setState({brightnessFactor: value * 10}, this.filterableImage.applyFilter);
+    this.props.onChange({brightnessFactor: value * 10}, this.filterableImage.applyFilter);
   }
 
   render() {
@@ -79,19 +75,19 @@ export default class ImageContainer extends React.Component {
           <div className='col-md-4'>
             <div className='control-panel'>
 
-              <ValueInput defaultValue={this.state.saturationFactor}
+              <ValueInput defaultValue={this.props.values.saturationFactor}
                           updateFunction={this.handleSaturationFactorChange}
                           inc={0.1}
                           unit=''
                           description='Saturation '
                           tip='Change the colorfulness of webpages.'/>
-              <ValueInput defaultValue={this.state.brightnessFactor / 10}
+              <ValueInput defaultValue={this.props.values.brightnessFactor / 10}
                 updateFunction={this.handleBrightnessFactorChange}
                 inc={0.3}
                 unit=''
                 description='Brightness '
                 tip='Change the brightness of webpages.'/>
-              <ValueInput defaultValue={this.state.contrastFactor}
+              <ValueInput defaultValue={this.props.values.contrastFactor}
                           updateFunction={this.handleContrastFactorChange}
                           inc={0.1}
                           unit=''
