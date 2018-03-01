@@ -32,7 +32,7 @@
                                 <div class="card card-1 boxed boxed--sm boxed--border">
 
                                     <div class="card__body">
-                                        <h3 class="type--bold" style="margin: 5px 0;">Style Title</h3>
+                                        <h3 class="type--bold" style="margin: 5px 0;">{{$style['name']}}</h3>
                                         <p>
                                             Keeping productive in the morning
                                         </p>
