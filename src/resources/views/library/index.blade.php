@@ -37,7 +37,7 @@
                                             Keeping productive in the morning
                                         </p>
                                     </div>
-                                    <div class="card__body" style="margin-bottom: 0;">
+                                    <div class="card__body" style="padding-bottom: 0;">
                                         <div class="card__avatar">
                                             <span>
                                                 <strong>Alyssa Miller</strong>
