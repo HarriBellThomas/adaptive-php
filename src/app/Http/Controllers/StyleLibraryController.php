@@ -15,7 +15,19 @@ class StyleLibraryController extends Controller {
     public function index() {
         $userMap = [];
         foreach (User::all() as $user) $userMap[$user["id"]] = $user;
-        return view('library.index', ['styles' => Style::all(), 'users' => $userMap, 'tags' => Tag::all()]);
+
+        $styleMap = [];
+        $tagsMap = [];
+        foreach (Style::all() as $style) {
+            if("" == $styleMap['name']) {
+                $styleMap[$style['id']] = $style;
+                $tagsMap[$style['id']] = $style->tags();
+            }
+        }
+
+        // foreach (Tag::all() as $tag) $tagsMap[$tag['id']] = $tag;
+
+        return view('library.index', ['styles' => $styleMap, 'users' => $userMap, 'tags' => Tag::all()]);
     }
 
 
