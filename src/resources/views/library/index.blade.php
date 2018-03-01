@@ -5,28 +5,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>User Index</title>
+        <title>Library</title>
     </head>
     <body>
-      <table>
-        <thead><tr>
-          <th> Style Id </th>
-          <th> Style Name </th>
-          <th> Style JSON </th>
-          <th> Style Tags </th>
-          <th> Style owen </th>
-        </tr></thead>
-        <tbdoy>
+
         @foreach($styles as $style)
-          <tr>
-            <td>{{$style['id']}}</td>
-            <td>{{$style['name']}}</td>
-            <td>{{$style['style']}}</td>
-            <td>{{$style->tags}}</td>
-            <td>{{$style->user['user_name']}}</td>
-          </tr>
+        <pre>{{$style}}</pre><hr>
         @endforeach
-      </tbody>
-    </table>
   </body>
 </html>
