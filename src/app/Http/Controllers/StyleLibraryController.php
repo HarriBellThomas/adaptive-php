@@ -10,13 +10,13 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 
-class StyleLibraryController extends Controller
-{
+class StyleLibraryController extends Controller {
 
-  public function index()
-  {
-    return view('library.index', ['styles' => Style::all(), 'users' => User::all(), 'tags' => Tag::all()]);
-  }
+    public function index() {
+        $userMap = [];
+        foreach (User::all() as $user) $userMap[$user["id"]] = $user;
+        return view('library.index', ['styles' => Style::all(), 'users' => $userMap, 'tags' => Tag::all()]);
+    }
 
 
 }
