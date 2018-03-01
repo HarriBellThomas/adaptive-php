@@ -15,7 +15,7 @@ class StyleLibraryController extends Controller
 
   public function index()
   {
-    return view('library.index', ['styles' => Style::all()]);
+    return view('library.index', ['styles' => Style::all(), 'users' => User::all(), 'tags' => Tag::all()]);
   }
 
 

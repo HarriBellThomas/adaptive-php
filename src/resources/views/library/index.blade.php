@@ -17,9 +17,10 @@
 @endsection
 @section('content')
 
-        @foreach($styles as $style)
-        <pre>{{$style}}</pre><hr>
-        @endforeach
+        <pre>{{dump($styles)}}</pre><hr>
+        <pre>{{dump($users)}}</pre><hr>
+        <pre>{{dump($tags)}}</pre><hr>
+
         <section class=" ">
             <div class="container">
                 <div class="row">
@@ -33,9 +34,6 @@
 
                                     <div class="card__body">
                                         <h3 class="type--bold" style="margin: 5px 0;">{{$style['name']}}</h3>
-                                        <p>
-                                            Keeping productive in the morning
-                                        </p>
                                     </div>
                                     <div class="card__body" style="padding-bottom: 0;">
                                         <div class="card__avatar">
