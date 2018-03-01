@@ -18,7 +18,6 @@
 @section('content')
 
         <pre>{{dump($styles)}}</pre><hr>
-        <pre>{{dump($users)}}</pre><hr>
         <pre>{{dump($tags)}}</pre><hr>
 
         <section class=" ">
@@ -38,7 +37,7 @@
                                     <div class="card__body" style="padding-bottom: 0;">
                                         <div class="card__avatar">
                                             <span>
-                                                <strong>Alyssa Miller</strong>
+                                                <strong>{{ $users[ $style['user_id'] ]['user_name'] }}</strong>
                                             </span>
                                         </div>
                                         <div class="card__meta">
@@ -47,8 +46,9 @@
                                     </div>
                                     <div class="card__bottom">
                                         <ul class="list-inline">
-                                            <li class="adaptive-style-tag">Tag1</li>
-                                            <li class="adaptive-style-tag">Tag2</li>
+                                            @foreach($tags as $tag)
+                                            <li class="adaptive-style-tag">{{ $tag['tag_name'] }}</li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </div>
