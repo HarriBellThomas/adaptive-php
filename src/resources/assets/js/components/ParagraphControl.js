@@ -12,23 +12,24 @@ export default class ParagraphControl extends React.Component {
     }
 
     this.handleSpeedChange = this.handleSpeedChange.bind(this);
-    this.handleToggle = this.handleToggle.bind(this);
     this.handleSizeChange = this.handleSizeChange.bind(this);
+    this.handleTransparancyChange = this.handleTransparancyChange.bind(this);
     this.onClick = this.onClick.bind(this);
   }
 
   handleSpeedChange(value) {
     this.setState({talking: [false, false, false]}, () => this.props.onChange({defaultRate: value}));
-    
+
   }
 
   handleSizeChange(value) {
     this.props.onChange({size: value});
   }
 
-  handleToggle(value) {
-    this.props.onChange({enabled: !value}, this.props.onBlur);
-  };
+  handleTransparancyChange(value) {
+    this.props.onChange({reduceTransparency: value});
+  }
+
 
   onClick(i) {
     alert('clicked on ' + i);
@@ -60,9 +61,10 @@ export default class ParagraphControl extends React.Component {
                           description='Reader Speed '
                           tip='Change the speed of the screen reader.'/>
 
-              </div></div>
+              </div>
+          </div>
 
-            <div className='button-bar' style={{display: this.props.values.enabled ? 'inline' : 'none',}}>
+            <div className='button-bar'>
                 <div className='center-wrapper'>
                 <ValueInput defaultValue={this.props.values.size}
                             updateFunction={this.handleSizeChange}
@@ -72,29 +74,46 @@ export default class ParagraphControl extends React.Component {
                             tip='Change the text size of focused paragraphs'
                             onBlur={this.props.onBlur}/>
 
-                </div></div>
+                </div>
             </div>
+
+            <div className='button-bar'>
+                <div className='center-wrapper'>
+                  <ValueInput defaultValue={this.props.values.reduceTransparency}
+                            updateFunction={this.handleTransparancyChange}
+                            inc={0.1}
+                            unit='%'
+                            description='Transparency'
+                            tip='Change how transparent the background paragraphs are.'
+                            onBlur={this.props.onBlur}/>
+                </div>
+            </div>
+
+          </div>
           </div>
 
           <div className='col-md-8'>
           <div className='text-container'>
             <ParagraphReader speed={this.props.values.defaultRate}
                              talking={this.state.talking[0]}
-                             onClick={() => this.onClick(0)}>
+                             onClick={() => this.onClick(0)}
+                             opacity={this.props.values.reduceTransparency}>
               This is an example paragraph. By enabling paragraph highlighting, you can focus on specific paragraphs. This could help you not
                 become distracted by other content on the page and make reading easier. When focused on a paragraph, it will become bigger and
                 make other paragraphs more transparent.
             </ParagraphReader>
             <ParagraphReader speed={this.props.values.defaultRate}
                              talking={this.state.talking[1]}
-                             onClick={() => this.onClick(1)}>
+                             onClick={() => this.onClick(1)}
+                             opacity={this.props.values.reduceTransparency}>
                 This is an another example paragraph. By enabling paragraph highlighting, you can focus on specific paragraphs. This could help you not
                   become distracted by other content on the page and make reading easier. When focused on a paragraph, it will become bigger and
                   make other paragraphs more transparent.
             </ParagraphReader>
             <ParagraphReader speed={this.props.values.defaultRate}
                              talking={this.state.talking[2]}
-                             onClick={() => this.onClick(2)}>
+                             onClick={() => this.onClick(2)}
+                             opacity={this.props.values.reduceTransparency}>
                   This is a third example paragraph. By enabling paragraph highlighting, you can focus on specific paragraphs. This could help you not
                     become distracted by other content on the page and make reading easier. When focused on a paragraph, it will become bigger and
                     make other paragraphs more transparent.
@@ -102,8 +121,6 @@ export default class ParagraphControl extends React.Component {
           </div>
       </div></div>
   </div>
-
-
     )
   }
 

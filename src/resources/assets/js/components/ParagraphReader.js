@@ -1,4 +1,6 @@
 import React from 'react';
+import '../../sass/paragraphReaderStyles.scss';
+
 
 export default class ParagraphReader extends React.Component {
   constructor(props) {
@@ -41,11 +43,11 @@ export default class ParagraphReader extends React.Component {
     this.utterance.rate = speed;
     // BUG: onboundary not supported by Linux
     this.utterance.onboundary = this.highlightNthWord;
-
   }
 
   render() {
     const panelOutput = [...this.words];
+    // TODO: Not very efficent.
     for (var i = 0; i < panelOutput.length; i++) {
       panelOutput[i] = <span style =
                           {(i == this.state.currentWord) ?
@@ -55,10 +57,13 @@ export default class ParagraphReader extends React.Component {
                         </span>
     }
 
+    const bgColor =  'rgba(255, 255, 255,' +  this.props.opacity + ')';
+
     return (
-      <div style={this.foregroundCoverStyle}
-           onClick={this.props.onClick}>
-        <div style={this.state.style}>
+      <div onClick={this.props.onClick}
+           className={this.props.talking ? 'paragraph-background-cover' : ''}
+           style={this.props.talking ? {backgroundColor: bgColor} : {}}>
+        <div className={this.props.talking ? 'paragraph-cover' : ''}>
           {panelOutput}
         </div>
       </div>
