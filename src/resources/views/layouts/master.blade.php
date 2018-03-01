@@ -83,11 +83,11 @@
             <!--end of container-->
         </nav>
         <!--end bar-->
-        <div class="main-container">
+        <div class="main-container container">
           @yield('content')
         </div>
 
-      
+
 
         <footer class="custom-footer footer-3 text-center-xs space--xs bg--dark ">
             <div class="container">
