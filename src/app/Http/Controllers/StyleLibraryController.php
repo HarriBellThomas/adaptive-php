@@ -19,7 +19,7 @@ class StyleLibraryController extends Controller {
         $styleMap = [];
         $tagsMap = [];
         foreach (Style::all() as $style) {
-            if("" == $styleMap['name']) {
+            if("" == $style['name']) {
                 $styleMap[$style['id']] = $style;
                 $tagsMap[$style['id']] = $style->tags();
             }
@@ -27,7 +27,7 @@ class StyleLibraryController extends Controller {
 
         // foreach (Tag::all() as $tag) $tagsMap[$tag['id']] = $tag;
 
-        return view('library.index', ['styles' => $styleMap, 'users' => $userMap, 'tags' => Tag::all()]);
+        return view('library.index', ['styles' => $styleMap, 'users' => $userMap, 'tags' => $tagsMap]);
     }
 
 
