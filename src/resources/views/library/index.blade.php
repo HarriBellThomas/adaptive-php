@@ -27,10 +27,11 @@
 
                             <div class="col-sm-4 masonry__item">
                                 <div class="card card-1 boxed boxed--sm boxed--border">
-
-                                    <div class="card__body">
-                                        <h3 class="type--bold" style="margin: 5px 0;">{{$style['name']}}</h3>
-                                    </div>
+                                    <a href="/style/{{$style['id']}}">
+                                        <div class="card__body">
+                                            <h3 class="type--bold" style="margin: 5px 0;">{{$style['name']}}</h3>
+                                        </div>
+                                    </a>
                                     <div class="card__body" style="padding-bottom: 0;">
                                         <div class="card__avatar">
                                             <span>
