@@ -19,9 +19,9 @@ class StyleLibraryController extends Controller {
         $styleMap = [];
         $tagsMap = [];
         foreach (Style::all() as $style) {
-            if("" == $style['name']) {
+            if("" !== trim($style['name'])) {
                 $styleMap[$style['id']] = $style;
-                $tagsMap[$style['id']] = $style->tags();
+                $tagsMap[$style['id']] = $style->tags()->get();
             }
         }
 

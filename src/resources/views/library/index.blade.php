@@ -43,8 +43,9 @@
                                     </div>
                                     <div class="card__bottom">
                                         <ul class="list-inline">
-                                            {{$tags[$style['id']]}}
-                                            <li class="adaptive-style-tag"></li>
+                                            @foreach($tags[$style['id']] as $tag)
+                                            <li class="adaptive-style-tag">{{ $tag['tag_name'] }}</li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </div>
