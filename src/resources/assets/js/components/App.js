@@ -16,10 +16,10 @@ export default class App extends React.Component {
     super(props);
 
     this.moduleOrder = ['linkHighlighter', 'clickDelay',
-                        'colorManipulations', 'imageColorShifter', 'paragaphHighlighting'];
+                        'colorManipulations', 'imageColorShifter', 'paragraphReader'];
     this.moduleIndex = {'linkHighlighter': 0, 'clickDelay': 1,
                         'colorManipulations': 2, 'imageColorShifter': 3,
-                        'paragaphHighlighting': 4};
+                        'paragraphReader': 4};
 
     this.state = {
       id: '',
@@ -64,11 +64,12 @@ export default class App extends React.Component {
         },
 
         {
-          module: 'paragaphHighlighting',
+          module: 'paragraphReader',
           properties: {
-            enabled: false,
-            opacity: 0.5,
+            chosenKey: 'SHIFT',
+            reduceTransparency: 0.5,
             size: 20,
+            defaultRate: 1,
           }
         }
       ]
@@ -188,9 +189,10 @@ export default class App extends React.Component {
       </Tabs>
    </TabPanel>
    <TabPanel>
-     <ParagraphControl values={this.state.modules[this.moduleIndex['paragaphHighlighting']].properties}
-                       onChange={(values, callback) => this.updateNthModule(this.moduleIndex['paragaphHighlighting'], values, callback)}
-                       onBlur={this.saveStyle}/>
+     <ParagraphControl values={this.state.modules[this.moduleIndex['paragraphReader']].properties}
+                       onChange={(values, callback) => this.updateNthModule(this.moduleIndex['paragraphReader'], values, callback)}
+                       onBlur={this.saveStyle}
+                       speed={1}/>
    </TabPanel>
   </Tabs>
   );
