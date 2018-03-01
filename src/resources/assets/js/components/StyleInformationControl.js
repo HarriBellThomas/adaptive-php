@@ -1,5 +1,6 @@
 import React from 'react';
 import TagsInput from 'react-tagsinput';
+import ToggleButton from 'react-toggle-button';
 import 'react-tagsinput/react-tagsinput.css';
 
 export default class StyleInformationControl extends React.Component {
@@ -8,6 +9,7 @@ export default class StyleInformationControl extends React.Component {
 
     this.updateValue = this.updateValue.bind(this);
     this.handleTagChange = this.handleTagChange.bind(this);
+    this.handleDefaultToggle = this.handleDefaultToggle.bind(this);
   }
 
   updateValue(value) {
@@ -16,6 +18,10 @@ export default class StyleInformationControl extends React.Component {
 
   handleTagChange(tags) {
     this.props.onChange('UPDATE_TAGS', tags);
+  }
+
+  handleDefaultToggle(event) {
+    this.props.onChange('TOGGLE_DEFAULT', !this.props.values.defaultStyle);
   }
 
 
@@ -32,6 +38,12 @@ export default class StyleInformationControl extends React.Component {
                onBlur={this.props.onBlur} /><br/><br/>
         <p>Tags for your style:</p>
         <TagsInput value={this.props.values.tags} onChange={this.handleTagChange} />
+        <p>Default style?</p>
+        <div className='clear-styles'>
+          <input type='checkbox'
+                 checked={this.props.values.defaultStyle}
+                 onChange={this.handleDefaultToggle} />
+          </div>
         <div className='center-wrapper'>
           <div className='toggle-wrapper'>
             {saveMessage}

@@ -47,7 +47,7 @@
         <div id="style-{{$style['id']}}" class='indivdual-style' style='border: solid; margin: 10px; padding: 10px;'>
           <h3> {{$style['name']}} </h3>
           <div class='default-style-container'>
-            @if(Auth::user()->default_style[0]['id'] == $style['id'])
+            @if(count(Auth::user()->default_style) && Auth::user()->default_style[0]['id'] == $style['id'])
               This is your default style.
             @else
               <a class="btn btn--sm change-default" onclick="changeDefault({{$style->id}})"> Make default style </a>

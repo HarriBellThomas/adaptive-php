@@ -27,6 +27,7 @@ export default class App extends React.Component {
       tags: [],
       saved: false,
       hasSaved: false,
+      defaultStyle: true,
       modules: [
         {
           module: 'linkHighlighter',
@@ -123,6 +124,10 @@ export default class App extends React.Component {
       case 'SAVE':
         this.saveStyle();
         break;
+      case 'TOGGLE_DEFAULT':
+        console.log(value);
+        this.setState({defaultStyle: value, saved:false}, this.saveStyle);
+        break;
       default:
         console.log('Unknown action');
     }
@@ -140,7 +145,10 @@ export default class App extends React.Component {
      </TabList>
 
     <TabPanel>
-      <StyleInformationControl values={{title: this.state.title, tags: this.state.tags, saved: this.state.saved}}
+      <StyleInformationControl values={{title: this.state.title,
+                                        tags: this.state.tags,
+                                        saved: this.state.saved,
+                                        defaultStyle: this.state.defaultStyle}}
                                onChange={this.styleInformationControlOnChange}
                                onBlur={this.saveStyle}/>
     </TabPanel>

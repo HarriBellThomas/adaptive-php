@@ -97,7 +97,8 @@ export default class ColorBlindnessControl extends React.Component {
             <div className='control-panel'>
               <RadioGroup name='color-blindness-type'
                           selectedValue={this.props.values.identifier}
-                          onChange={this.handleRadioButton}>
+                          onChange={this.handleRadioButton}
+                          onBlur={this.props.onBlur}>
                 <div className='row'>
                   <div className='col-md-12'>
                     {row1}

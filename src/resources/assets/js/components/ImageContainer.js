@@ -19,6 +19,10 @@ export default class ImageContainer extends React.Component {
   }
 
 
+  onComponentDidMount() {
+    this.filterableImage.applyFilter();
+  }
+
   saturate(xy, rgba) {
     var hsl = ColorTools.rgbToHsl(rgba.r,rgba.g,rgba.b);
     hsl[1] = ColorTools.limit(hsl[1] * this.props.values.saturationFactor);
