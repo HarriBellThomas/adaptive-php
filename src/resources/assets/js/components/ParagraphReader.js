@@ -59,15 +59,25 @@ export default class ParagraphReader extends React.Component {
 
     const bgColor =  'rgba(255, 255, 255,' +  this.props.opacity + ')';
 
-    return (
-      <div onClick={this.props.onClick}
-           className={this.props.talking ? 'paragraph-background-cover' : ''}
-           style={this.props.talking ? {backgroundColor: bgColor} : {}}>
-        <div className={this.props.talking ? 'paragraph-cover' : ''}>
-          {panelOutput}
+    if (this.props.talking) {
+      return (
+        <div className={'paragraph-background-cover'}
+             style={{backgroundColor: bgColor}}>
+            <div className='paragraph-cover'
+                 style={{left: ((window.innerWidth - 600) / 2) + "px",
+                         fontSize: this.props.size + "px"}}>
+              {panelOutput}
+            </div>
+
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div onClick={this.props.onClick}>
+          <p>{this.props.children} </p> <br />
+        </div>
+      );
+    }
   }
 
 }
