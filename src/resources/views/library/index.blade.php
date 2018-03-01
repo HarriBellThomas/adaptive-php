@@ -9,8 +9,8 @@
         color: white;
         font-weight: 700;
         font-size: 0.8em;
-        padding: 1px 7px;
-        margin: 2px;
+        padding: 1px 7px !important;
+        margin: 2px !important;
         border-radius: 4px;
     }
     </style>
@@ -37,14 +37,14 @@
                                             Keeping productive in the morning
                                         </p>
                                     </div>
-                                    <div class="card__top">
+                                    <div class="card__body" style="margin-bottom: 0;">
                                         <div class="card__avatar">
                                             <span>
                                                 <strong>Alyssa Miller</strong>
                                             </span>
                                         </div>
                                         <div class="card__meta">
-                                            <span>14 mins</span>
+                                            <span>Rating: 4.3</span>
                                         </div>
                                     </div>
                                     <div class="card__bottom">
