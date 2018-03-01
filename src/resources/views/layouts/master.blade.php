@@ -89,7 +89,7 @@
 
 
 
-        <footer class="custom-footer footer-3 text-center-xs space--xs bg--dark ">
+        <footer class="footer-3 text-center-xs space--xs bg--dark ">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
