@@ -17,9 +17,6 @@
 @endsection
 @section('content')
 
-        <pre>{{dump($styles)}}</pre><hr>
-        <pre>{{dump($tags)}}</pre><hr>
-
         <section class=" ">
             <div class="container">
                 <div class="row">
