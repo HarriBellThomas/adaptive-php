@@ -48,6 +48,10 @@
                                     <i class="stack-interface stack-cog"></i> Manage Styles
                                 </a>
                             </li>
+                            <li>
+                                <a href="{{url('styles')}}">
+                                    <i class="stack-interface stack-users"></i> Public Styles
+                                </a>
                             </li>
                             <li>
                                 <a href="{{url('home')}}">
