@@ -16,7 +16,7 @@ label {
 
 @section('content')
 
-<section class="text-center cta cta-4 space--xxs border--bottom imagebg" data-gradient-bg='#4876BD,#5448BD,#8F48BD,#BD48B1'>
+<section id="page-title" class="text-center cta cta-4 space--xxs border--bottom imagebg" data-gradient-bg='#FF512F,#F09819,#ff9966,#ff5e62'>
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
