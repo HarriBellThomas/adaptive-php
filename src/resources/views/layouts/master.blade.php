@@ -64,7 +64,7 @@
                 <!--end columns-->
                 <div class="col-lg-6 text-right text-left-xs">
                     <div class="bar__module">
-                        <ul class="menu-horizontal">
+                        <ul class="menu-horizontal" style="top:0px;">
                             @guest
                             @else
                               <!-- <a class="btn btn--sm type--uppercase" href='/logout'>
