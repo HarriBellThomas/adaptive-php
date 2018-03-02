@@ -26,7 +26,7 @@ Route::get('/redirect/{provider}/{data?}', 'SocialAuthController@redirect');
 Route::get('/callback/{provider}', 'SocialAuthController@callback');
 
 Route::get('/make_default/{id}', 'StyleController@make_default_style')->middleware('auth');
-Route::get('/preview/{context}/{id?}', 'StyleController@index');
+Route::get('/preview/{context}/{id?}', 'PreviewController@index');
 
 Route::get('/api/login', function() {
   return view('api.login');
