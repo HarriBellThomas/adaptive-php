@@ -20,13 +20,13 @@ Route::resource('/user', 'UserController', ['only' => ['index', 'show']]);
 Route::resource('/style', 'StyleController')->middleware('auth');
 Route::resource('/styles', 'StyleLibraryController', ['only' => ['index']])->middleware('auth');
 Route::resource('/review', 'ReviewController', ['only' => ['store']])->middleware('auth');
-Route::resource('/preview/{context}/{id?}', 'PreviewController', ['only' => ['show']])->middleware('auth');
 
 
 Route::get('/redirect/{provider}/{data?}', 'SocialAuthController@redirect');
 Route::get('/callback/{provider}', 'SocialAuthController@callback');
 
 Route::get('/make_default/{id}', 'StyleController@make_default_style')->middleware('auth');
+Route::get('/preview/{context}/{id?}', 'StyleController@index');
 
 Route::get('/api/login', function() {
   return view('api.login');

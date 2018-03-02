@@ -7,7 +7,7 @@ use App\Review;
 use Illuminate\Support\Facades\Auth;
 
 class PreviewController extends Controller {
-    public function show($context, $id = null) {
+    public function index($context, $id = null) {
         switch ($context) {
             case 'embedded':
                 return view('preview.embedded');
