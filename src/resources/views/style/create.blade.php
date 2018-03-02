@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Create a style')
+@section('title', 'New Style — Adaptive')
 
 @section('header')
 @parent
