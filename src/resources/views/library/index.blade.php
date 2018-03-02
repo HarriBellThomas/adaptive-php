@@ -39,7 +39,7 @@
                                             </span>
                                         </div>
                                         <div class="card__meta">
-                                            <span>Rating: 4.3</span>
+                                            <span>Rating: {{ $ratings[ $style['user_id'] ] }}</span>
                                         </div>
                                     </div>
                                     <div class="card__bottom">

@@ -49,7 +49,7 @@ class StyleLibraryController extends Controller {
             $total++;
         }
 
-        if(total > 0) return $score / $total;
+        if($total > 0) return $score / $total;
         else return -1;
     }
 

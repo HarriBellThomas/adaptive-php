@@ -13,13 +13,14 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name("root");
 
 
 Route::resource('/user', 'UserController', ['only' => ['index', 'show']]);
 Route::resource('/style', 'StyleController')->middleware('auth');
-Route::resource('/styles', 'StyleLibraryController')->middleware('auth');
+Route::resource('/styles', 'StyleLibraryController', ['only' => ['index']])->middleware('auth');
 Route::resource('/review', 'ReviewController', ['only' => ['store']])->middleware('auth');
+Route::resource('/preview/{context}/{id?}', 'PreviewController', ['only' => ['show']])->middleware('auth');
 
 
 Route::get('/redirect/{provider}/{data?}', 'SocialAuthController@redirect');
