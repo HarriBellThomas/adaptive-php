@@ -30,8 +30,7 @@
                 <div class="col-lg-1 hidden-xs hidden-sm">
                     <div class="bar__module">
                         <a href="index.html">
-                            <img class="logo logo-dark" alt="logo" src="img/logo-dark.png">
-                            <img class="logo logo-light" alt="logo" src="img/logo-light.png">
+                            <img class="logo" alt="Adaptive" src="{{url('images/logo-colourful.png')}}">
                         </a>
                     </div>
                     <!--end module-->
@@ -41,12 +40,12 @@
                         <ul class="menu-horizontal">
                             <li>
                                 <a href="#">
-                                    <i class="stack-interface stack-plus-circled"></i> Create
+                                    <i class="stack-interface stack-plus-circled"></i> Create Style
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <i class="stack-interface stack-cog"></i> Manage
+                                    <i class="stack-interface stack-cog"></i> Manage Styles
                                 </a>
                             </li>
                         </ul>
@@ -57,21 +56,14 @@
                     <div class="bar__module">
                         <ul class="menu-horizontal">
                             <li class="dropdown">
-                                <span class="dropdown__trigger">
-                                    <img alt="avatar" class="avatar image--xxs" src="img/avatar-round-1.png"> Abby King
-                                </span>
-                            </li>
-                            <li class="dropdown dropdown--active">
-                                <span class="dropdown__trigger">
-                                    <i class="stack-interface stack-bell"></i> Alerts
-                                </span>
+                                <span class="dropdown__trigger">Abby King</span>
                             </li>
                         </ul>
                     </div>
                     <div class="bar__module">
                         <a class="btn btn--primary btn--sm type--uppercase" href="#">
                             <span class="btn__text">
-                                Upgrade
+                                Plugins
                             </span>
                         </a>
                     </div>
@@ -86,6 +78,6 @@
     <div class="main-container container">
       @yield('content')
     </div>
-    
+
 </body>
 </html>
