@@ -51,7 +51,8 @@ class StyleController extends Controller
 
     $style_object->save();
 
-    foreach(array_unique($json['tags']) as $tag) {
+    $tag_list = array_unique($json['tags']);
+    foreach($tag_list as $tag) {
       $tag_object = Tag::where('tag_name', $tag)->first();
       if(!$tag_object) {
         $tag_object = new Tag;

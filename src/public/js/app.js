@@ -64186,7 +64186,8 @@ var App = function (_React$Component) {
 
       var validated = this.validator.validate(this.state);
       if (!validated.valid) {
-        alert(validated.errors);
+        // TODO: Improve error messages
+        alert('Cannot save: ' + validated.errors);
         return;
       }
       console.log(JSON.stringify(this.state));
@@ -64221,7 +64222,6 @@ var App = function (_React$Component) {
           this.saveStyle();
           break;
         case 'TOGGLE_DEFAULT':
-          console.log(value);
           this.setState({ defaultStyle: value, saved: false }, this.saveStyle);
           break;
         default:
@@ -77454,7 +77454,7 @@ var Validation = function () {
       'type': 'object',
       'properties': {
         'title': { 'type': 'string', 'minLength': 1 },
-        'id': { 'type': 'string' },
+        'id': {},
         'saved': { 'type': 'boolean' },
         'hasSaved': { 'type': 'boolean' },
         'defaultStyle': { 'type': 'boolean' },

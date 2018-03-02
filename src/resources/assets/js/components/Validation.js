@@ -7,7 +7,7 @@ export default class Validation {
       'type': 'object',
       'properties': {
         'title': {'type': 'string', 'minLength': 1},
-        'id': {'type': 'string'},
+        'id': {},
         'saved': {'type': 'boolean'},
         'hasSaved': {'type': 'boolean'},
         'defaultStyle': {'type': 'boolean'},

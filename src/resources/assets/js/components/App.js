@@ -135,7 +135,6 @@ export default class App extends React.Component {
         this.saveStyle();
         break;
       case 'TOGGLE_DEFAULT':
-        console.log(value);
         this.setState({defaultStyle: value, saved:false}, this.saveStyle);
         break;
       default:
