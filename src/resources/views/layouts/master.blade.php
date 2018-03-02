@@ -30,14 +30,14 @@
                 <div class="col-lg-1 hidden-xs hidden-sm">
                     <div class="bar__module">
                         <a href="/home">
-                            <img class="logo" alt="Adaptive" src="{{url('images/logo-light.png')}}" style="max-width: -webkit-fill-available;">
+                            <img class="logo" alt="Adaptive" src="{{url('images/logo-light.png')}}" style="max-width: -webkit-fill-available; top:0px;">
                         </a>
                     </div>
                     <!--end module-->
                 </div>
                 <div class="col-lg-5">
                     <div class="bar__module">
-                        <ul class="menu-horizontal">
+                        <ul class="menu-horizontal" style="top:0px;">
                             <li>
                                 <a href="{{url('style/create')}}">
                                     <i class="stack-interface stack-plus-circled"></i> Create Style
