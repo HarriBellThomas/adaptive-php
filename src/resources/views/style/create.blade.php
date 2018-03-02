@@ -2,41 +2,41 @@
 @section('title', 'Create a style')
 
 @section('header')
-  @parent
-  <link href="{{url('css/style_create.css')}}" rel="stylesheet" type="text/css" media="all" />
-  <meta name="csrf-token" content="{{ csrf_token() }}">
+@parent
+<link href="{{url('css/style_create.css')}}" rel="stylesheet" type="text/css" media="all" />
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <style>
-    label {
-      font-size: 20pt;
-      margin: 10px;
-    }
-  </style>
+<style>
+label {
+    font-size: 20pt;
+    margin: 10px;
+}
+</style>
 @endsection
 
 @section('content')
-
-      @if ($errors->any())
-        <div class="alert alert-danger">
-          <ul>
+<div class="container">
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
             @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+            <li>{{ $error }}</li>
             @endforeach
-          </ul>
-        </div>
-      @endif
+        </ul>
+    </div>
+    @endif
 
-      @if (\Session::has('success'))
-        <div class="alert alert-success">
-          <p>{{ \Session::get('success') }}</p>
-        </div><br />
-       @endif
+    @if (\Session::has('success'))
+    <div class="alert alert-success">
+        <p>{{ \Session::get('success') }}</p>
+    </div><br />
+    @endif
 
-       <div id='app-wrapper'>
-         <div id='root'></div>
-         <script src="{{mix('js/app.js')}}" ></script>
-       </div>
-       {{-- <div id='form-wrapper' class='clearfix'>
+    <div id='app-wrapper'>
+        <div id='root'></div>
+        <script src="{{mix('js/app.js')}}" ></script>
+    </div>
+    {{-- <div id='form-wrapper' class='clearfix'>
         {!! Form::open(['url' => url('style')]) !!}
 
         {{ csrf_field() }}
@@ -60,5 +60,6 @@
         {!! Form::checkbox('default_style', '1', true, array('class' => 'checkbox')) !!}<br /><br/>
         {!! Form::submit('Create the style!') !!}<br />
         {!! Form::close() !!}
-      </div> --}}
+    </div> --}}
+</div>
 @endsection

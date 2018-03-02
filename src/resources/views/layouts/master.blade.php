@@ -53,11 +53,11 @@
                                     <i class="stack-interface stack-users"></i> Public Styles
                                 </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="{{url('home')}}">
                                     <i class="stack-interface stack-publish"></i> Plugins
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -84,9 +84,9 @@
         <!--end of container-->
     </nav>
 
-    <div class="main-container container">
-      @yield('content')
-    </div>
+
+@yield('content')
+
 
 </body>
 </html>

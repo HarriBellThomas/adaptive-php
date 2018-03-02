@@ -5,6 +5,7 @@
   <link href="{{url('css/show_style.css')}}" rel="stylesheet" type="text/css" media="all" />
 @endsection
 @section('content')
+<div class="container">
       <h1 class='text-center'> {{$style['name']}} (id: {{$style['id']}}) <br />
         by {{$style->user['user_name']}}</h1>
       <div id='tag-container' class='text-center'><h3>
@@ -42,5 +43,5 @@
 
         {!! Form::close() !!}
       </div>
-
+</div>
 @endsection
