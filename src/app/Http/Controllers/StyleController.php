@@ -87,7 +87,8 @@ class StyleController extends Controller
   public function style($id)
   {
     $style = Style::findOrFail($id);
-    return response()->json($style['style'], 200);
+    $headers = ['Content-type'=>'text/plain', 'Access-Control-Allow-Origin'=>'*'];
+    return response()->make($style['style'], 200, $headers);
   }
 
   public function edit($id)
