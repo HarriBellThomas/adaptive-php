@@ -2,7 +2,7 @@
 @section('title', 'Public Style Library — Adaptive')
 @section('header')
 @parent
-<link href="{{url('css/show_style.css')}}" rel="stylesheet" type="text/css" media="all" />
+<link href="{{url('css/style_create.css')}}" rel="stylesheet" type="text/css" media="all" />
 <style>
 li.adaptive-style-tag {
     background-color: green;
@@ -17,7 +17,7 @@ li.adaptive-style-tag {
 @endsection
 @section('content')
 
-<section id="page-title" class="text-center cta cta-4 space--xxs border--bottom imagebg" data-gradient-bg='#a8c0ff,#3f2b96,#0f0c29,#302b63'>
+<section id="page-title" class="text-center cta cta-4 space--xxs border--bottom imagebg" data-gradient-bg='#a8c0ff,#3f2b96,#302b63'>
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
