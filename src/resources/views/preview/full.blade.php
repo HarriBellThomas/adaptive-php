@@ -11,7 +11,7 @@
     <title>Adaptive Demo</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="{{url('css/preview.bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <!-- <link href="css/blog-home.css" rel="stylesheet"> -->
@@ -73,7 +73,7 @@
 
           <!-- Blog Post -->
           <div class="card mb-4">
-            <img class="card-img-top" src="images/1.jpg" alt="Card image cap">
+            <img class="card-img-top" src="{{url('images/preview/1.jpg')}}" alt="Card image cap">
             <div class="card-body">
               <h2 class="card-title">Post Title</h2>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
@@ -87,7 +87,7 @@
 
           <!-- Blog Post -->
           <div class="card mb-4">
-            <img class="card-img-top" src="images/2.jpg" alt="Card image cap">
+            <img class="card-img-top" src="{{url('images/preview/2.jpg')}}" alt="Card image cap">
             <div class="card-body">
               <h2 class="card-title">Post Title</h2>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
@@ -101,7 +101,7 @@
 
           <!-- Blog Post -->
           <div class="card mb-4">
-            <img class="card-img-top" src="images/3.jpg" alt="Card image cap">
+            <img class="card-img-top" src="{{url('images/preview/3.jpg')}}" alt="Card image cap">
             <div class="card-body">
               <h2 class="card-title">Post Title</h2>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
