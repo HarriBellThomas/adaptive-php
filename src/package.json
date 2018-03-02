@@ -25,6 +25,7 @@
         "assert-plus": "^1.0.0",
         "bootstrap": "^4.0.0",
         "html2canvas": "^1.0.0-alpha.9",
+        "jsonschema": "^1.2.2",
         "react-color": "^2.13.8",
         "react-radio": "^2.1.2",
         "react-radio-group": "^3.0.2",

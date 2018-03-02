@@ -7,6 +7,7 @@ import ParagraphControl from './ParagraphControl';
 import ColorBlindnessControl from './ColorBlindnessControl';
 import StyleInformationControl from './StyleInformationControl';
 import {Tooltip} from 'react-tippy';
+import Validation from './Validation'
 
 import 'react-tippy/dist/tippy.css';
 import '../../sass/tabs.scss';
@@ -20,6 +21,7 @@ export default class App extends React.Component {
     this.moduleIndex = {'linkHighlighter': 0, 'clickDelay': 1,
                         'colorManipulations': 2, 'imageColorShifter': 3,
                         'paragraphReader': 4};
+    this.validator = new Validation();
 
     this.state = {
       id: '',
@@ -75,6 +77,7 @@ export default class App extends React.Component {
       ]
     }
 
+
     this.saveStyle = this.saveStyle.bind(this);
     this.updateNthModule = this.updateNthModule.bind(this);
     this.styleInformationControlOnChange = this.styleInformationControlOnChange.bind(this);
@@ -96,6 +99,12 @@ export default class App extends React.Component {
   }
 
   saveStyle() {
+    const validated = this.validator.validate(this.state);
+    if(!validated.valid) {
+      // TODO: Improve error messages
+      alert('Cannot save: ' + validated.errors);
+      return;
+    }
     console.log(JSON.stringify(this.state));
     return fetch('/style', {
       method: 'POST',
