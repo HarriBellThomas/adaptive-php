@@ -18,17 +18,39 @@ class StyleLibraryController extends Controller {
 
         $styleMap = [];
         $tagsMap = [];
+        $ratingsMap = [];
         foreach (Style::all() as $style) {
             if("" !== trim($style['name'])) {
                 $styleMap[$style['id']] = $style;
                 $tagsMap[$style['id']] = $style->tags()->get();
+                $ratingsMap[$style['id']] = $this->ratingForStyle($style);
             }
         }
 
         // foreach (Tag::all() as $tag) $tagsMap[$tag['id']] = $tag;
 
-        return view('library.index', ['styles' => $styleMap, 'users' => $userMap, 'tags' => $tagsMap]);
+        return view(
+            'library.index',
+            [
+                'styles' => $styleMap,
+                'users' => $userMap,
+                'tags' => $tagsMap,
+                'ratings' => $ratingsMap
+            ]
+        );
     }
 
+    private function ratingForStyle($style) {
+        $reviews = $style->reviews()->get();
+        $score = 0;
+        $total = 0;
+        foreach ($reviews as $review) {
+            $score += $review->stars;
+            $total++;
+        }
+
+        if(total > 0) return $score / $total;
+        else return -1;
+    }
 
 }
