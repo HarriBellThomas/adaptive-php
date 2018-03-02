@@ -29,8 +29,8 @@
             <div class="row">
                 <div class="col-lg-1 hidden-xs hidden-sm">
                     <div class="bar__module">
-                        <a href="index.html">
-                            <img class="logo" alt="Adaptive" src="{{url('images/logo-colourful.png')}}">
+                        <a href="/home">
+                            <img class="logo" alt="Adaptive" src="{{url('images/logo-light.png')}}" style="max-width: -webkit-fill-available;">
                         </a>
                     </div>
                     <!--end module-->
@@ -39,13 +39,19 @@
                     <div class="bar__module">
                         <ul class="menu-horizontal">
                             <li>
-                                <a href="#">
+                                <a href="{{url('style/create')}}">
                                     <i class="stack-interface stack-plus-circled"></i> Create Style
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{url('home')}}">
                                     <i class="stack-interface stack-cog"></i> Manage Styles
+                                </a>
+                            </li>
+                            </li>
+                            <li>
+                                <a href="{{url('home')}}">
+                                    <i class="stack-interface stack-publish"></i> Plugins
                                 </a>
                             </li>
                         </ul>
@@ -55,17 +61,16 @@
                 <div class="col-lg-6 text-right text-left-xs">
                     <div class="bar__module">
                         <ul class="menu-horizontal">
+                            @guest
+                            @else
+                              <!-- <a class="btn btn--sm type--uppercase" href='/logout'>
+                                logout
+                              </a> -->
                             <li class="dropdown">
-                                <span class="dropdown__trigger">Abby King</span>
+                                <span class="dropdown__trigger">{{Auth::user()['user_name']}}</span>
                             </li>
+                            @endguest
                         </ul>
-                    </div>
-                    <div class="bar__module">
-                        <a class="btn btn--primary btn--sm type--uppercase" href="#">
-                            <span class="btn__text">
-                                Plugins
-                            </span>
-                        </a>
                     </div>
                 </div>
                 <!--end columns-->
