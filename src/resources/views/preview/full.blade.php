@@ -76,7 +76,8 @@
             <img class="card-img-top" src="{{url('images/preview/1.jpg')}}" alt="Card image cap">
             <div class="card-body">
               <h2 class="card-title">Post Title</h2>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam.</p>
+              <p>Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
               <a href="#" class="btn btn-primary" onclick="return clicked(this);">Read More &rarr;</a>
             </div>
             <div class="card-footer text-muted">
@@ -90,7 +91,8 @@
             <img class="card-img-top" src="{{url('images/preview/2.jpg')}}" alt="Card image cap">
             <div class="card-body">
               <h2 class="card-title">Post Title</h2>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam.</p>
+              <p>Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
               <a href="#" class="btn btn-primary" onclick="return clicked(this);">Read More &rarr;</a>
             </div>
             <div class="card-footer text-muted">
@@ -104,7 +106,8 @@
             <img class="card-img-top" src="{{url('images/preview/3.jpg')}}" alt="Card image cap">
             <div class="card-body">
               <h2 class="card-title">Post Title</h2>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam.</p>
+              <p>Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
               <a href="#" onclick="return clicked(this);" class="btn btn-primary">Read More &rarr;</a>
             </div>
             <div class="card-footer text-muted">
