@@ -1,8 +1,11 @@
 @extends('layouts.master')
 @section('title', 'Public Style Library — Adaptive')
+
 @section('header')
 @parent
 <link href="{{url('css/style_create.css')}}" rel="stylesheet" type="text/css" media="all" />
+
+
 <style>
 li.adaptive-style-tag {
     background-color: green;
@@ -15,6 +18,7 @@ li.adaptive-style-tag {
 }
 </style>
 @endsection
+
 @section('content')
 
 <section id="page-title" class="text-center cta cta-4 space--xxs border--bottom imagebg" data-gradient-bg='#a8c0ff,#3f2b96,#302b63'>

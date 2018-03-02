@@ -7,7 +7,6 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Site Description Here">
-    <link href="{{url('css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
     <link href="{{url('css/stack-interface.css')}}" rel="stylesheet" type="text/css" media="all" />
     <link href="{{url('css/socicon.css')}}" rel="stylesheet" type="text/css" media="all" />
     <link href="{{url('css/lightbox.min.css')}}" rel="stylesheet" type="text/css" media="all" />
@@ -18,6 +17,8 @@
     <link href="{{url('css/custom.css?3')}}" rel="stylesheet" type="text/css" media="all" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{{url('css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
+
     <title>@yield('title')</title>
 
     @show
