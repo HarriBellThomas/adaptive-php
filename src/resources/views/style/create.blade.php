@@ -15,18 +15,22 @@ label {
 @endsection
 
 @section('content')
-<div class="container">
-    <section class="text-center cta cta-4 space--xxs border--bottom imagebg" data-gradient-bg='#4876BD,#5448BD,#8F48BD,#BD48B1'>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h1>New Style</h1>
-                </div>
+
+<section class="text-center cta cta-4 space--xxs border--bottom imagebg" data-gradient-bg='#4876BD,#5448BD,#8F48BD,#BD48B1'>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>New Style</h1>
             </div>
-            <!--end of row-->
         </div>
-        <!--end of container-->
-    </section>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+
+
+<div class="container">
+
 
     @if ($errors->any())
     <div class="alert alert-danger">
