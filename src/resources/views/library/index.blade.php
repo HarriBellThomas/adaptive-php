@@ -42,33 +42,35 @@ li.adaptive-style-tag {
         <div class="col-sm-7">
 
             @foreach($styles as $style)
-            <div class="col-sm-12 row">
-                <div class="card card-1 boxed boxed--sm boxed--border">
-                    <a href="/style/{{$style['id']}}">
-                        <div class="card__footer">
-                            <h3 class="type--bold" style="margin: 5px 0;">{{$style['name']}}</h3>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card card-1 boxed boxed--sm boxed--border">
+                        <a href="/style/{{$style['id']}}">
+                            <div class="card__footer">
+                                <h3 class="type--bold" style="margin: 5px 0;">{{$style['name']}}</h3>
+                            </div>
+                        </a>
+                        <div class="card__body" style="padding-bottom: 0;">
+                            <div class="card__avatar">
+                                <span>
+                                    <strong>{{ $users[ $style['user_id'] ]['user_name'] }}</strong>
+                                </span>
+                            </div>
+                            <div class="card__meta">
+                                @if($ratings[$style['id']] > 0)
+                                <span>Rating: {{ $ratings[ $style['id'] ] }}</span>
+                                @else
+                                <span>Not enough ratings</span>
+                                @endif
+                            </div>
                         </div>
-                    </a>
-                    <div class="card__body" style="padding-bottom: 0;">
-                        <div class="card__avatar">
-                            <span>
-                                <strong>{{ $users[ $style['user_id'] ]['user_name'] }}</strong>
-                            </span>
+                        <div class="card__bottom">
+                            <ul class="list-inline">
+                                @foreach($tags[$style['id']] as $tag)
+                                <li class="adaptive-style-tag">{{ $tag['tag_name'] }}</li>
+                                @endforeach
+                            </ul>
                         </div>
-                        <div class="card__meta">
-                            @if($ratings[$style['id']] > 0)
-                            <span>Rating: {{ $ratings[ $style['id'] ] }}</span>
-                            @else
-                            <span>Not enough ratings</span>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="card__bottom">
-                        <ul class="list-inline">
-                            @foreach($tags[$style['id']] as $tag)
-                            <li class="adaptive-style-tag">{{ $tag['tag_name'] }}</li>
-                            @endforeach
-                        </ul>
                     </div>
                 </div>
             </div>
