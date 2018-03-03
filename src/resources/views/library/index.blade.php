@@ -81,7 +81,7 @@ li.adaptive-style-tag {
         </div>
         <!--end masonry-->
 
-        {!! $pages->render() !!}
+        {!! $stylesPaginationHook->render() !!}
 
         @endif
     </div>

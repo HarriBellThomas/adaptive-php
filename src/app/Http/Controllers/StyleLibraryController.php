@@ -32,6 +32,7 @@ class StyleLibraryController extends Controller {
         return view(
             'library.index',
             [
+                'stylesPaginationHook' => $styles,
                 'styles' => $styleMap,
                 'users' => $userMap,
                 'tags' => $tagsMap,
