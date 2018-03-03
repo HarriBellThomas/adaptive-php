@@ -89,22 +89,25 @@ export default class ImageContainer extends React.Component {
                           description='Saturation '
                           tip='Change the colorfulness of webpages.'
                           onBlur={this.props.onBlur}/>
-                        <ValueInput defaultValue={this.props.values.changeBrightness.factor / 10}
-                          updateFunction={this.handleBrightnessFactorChange}
-                          inc={0.3}
-                          unit=''
-                          description='Brightness '
-                          tip='Change the brightness of webpages.'
-                          onBlur={this.props.onBlur}/>
-                        <ValueInput defaultValue={this.props.values.changeContrast.factor}
-                          updateFunction={this.handleContrastFactorChange}
-                          inc={0.1}
-                          unit=''
-                          description='Contrast '
-                          tip='Change the contrast of webpages.'
-                          onBlur={this.props.onBlur}/>
+
+             <ValueInput defaultValue={this.props.values.changeBrightness.factor / 10}
+                updateFunction={this.handleBrightnessFactorChange}
+                inc={0.3}
+                unit=''
+                description='Brightness '
+                tip='Change the brightness of webpages.'
+                onBlur={this.props.onBlur}/>
+
+             <ValueInput defaultValue={this.props.values.changeContrast.factor}
+                updateFunction={this.handleContrastFactorChange}
+                inc={0.1}
+                unit=''
+                description='Contrast '
+                tip='Change the contrast of webpages.'
+                onBlur={this.props.onBlur}/>
             </ControlPanel>
           </div>
+
           <div className='col-md-8'>
             <div className='center-wrapper'>
               <div className='toggle-wrapper'>

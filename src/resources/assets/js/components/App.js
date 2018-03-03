@@ -7,8 +7,8 @@ import ParagraphControl from './ParagraphControl';
 import ColorBlindnessControl from './ColorBlindnessControl';
 import StyleInformationControl from './StyleInformationControl';
 import {Tooltip} from 'react-tippy';
-import Validation from './Validation'
-
+import Validation from './Validation';
+import ExtraTools from './ExtraTools';
 import 'react-tippy/dist/tippy.css';
 import '../../sass/tabs.scss';
 
@@ -92,6 +92,47 @@ export default class App extends React.Component {
           properties: {
             enabled: false,
           }
+        },
+
+        {
+          module: 'speedBar',
+          properties: {
+            enabled: false,
+            speed: 1,
+          }
+        },
+
+        {
+          module: 'showMouse',
+          properties: {
+            enabled: false,
+            speed: 'fast',
+          }
+        },
+
+        {
+          module: 'typeWarning',
+          properties: {
+            enabled: false,
+            type: 'flash',
+          }
+        },
+
+        {
+          module: 'magnifier',
+          properties: {
+            enabled: false,
+            zoom: 2,
+            size: 350,
+          }
+        },
+
+        {
+          module: 'passwordReveal',
+          properties: {
+            enabled: false,
+            timeDelay: 3,
+          }
         }
       ]
     }
@@ -159,7 +200,6 @@ export default class App extends React.Component {
       else console.log(validated.errors);
       return;
     }
-    console.log(JSON.stringify(this.state));
     return fetch('/style', {
       method: 'POST',
       body: JSON.stringify(this.state),
@@ -208,6 +248,7 @@ export default class App extends React.Component {
        <Tab><Tooltip title='Make the mouse easier to use by adding delays and removing double clicks.'>Mouse Control</Tooltip></Tab>
        <Tab><Tooltip title='Change the colours on webpages.'>Color Manipulations</Tooltip></Tab>
        <Tab><Tooltip title='Make the webpage focus on a single paragraph.'>Paragraph Reader</Tooltip></Tab>
+       <Tab><Tooltip title='Some extra tools to adapt your browsing experience.'>Extra Tools</Tooltip></Tab>
      </TabList>
 
     <TabPanel>
@@ -260,6 +301,15 @@ export default class App extends React.Component {
                        onChange={(values, callback, action) => this.updateModule('paragraphReader', values, callback, action)}
                        onBlur={this.autoSave}
                        speed={1}/>
+   </TabPanel>
+
+   <TabPanel>
+     <ExtraTools values={{speedBar: this._findModule('speedBar', this.state.modules).properties,
+                          showMouse: this._findModule('showMouse', this.state.modules).properties,
+                          typeWarning: this._findModule('typeWarning', this.state.modules).properties,
+                          magnifier: this._findModule('magnifier', this.state.modules).properties,
+                          passwordReveal: this._findModule('passwordReveal', this.state.modules).properties}}
+                 onChange={this.updateModule} />
    </TabPanel>
   </Tabs>
   );
