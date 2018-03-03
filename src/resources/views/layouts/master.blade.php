@@ -54,39 +54,83 @@
                                 </a>
                             </li>
                             <!-- <li>
-                                <a href="{{url('home')}}">
-                                    <i class="stack-interface stack-publish"></i> Plugins
-                                </a>
-                            </li> -->
-                        </ul>
-                    </div>
-                </div>
-                <!--end columns-->
-                <div class="col-lg-6 text-right text-left-xs">
-                    <div class="bar__module">
-                        <ul class="menu-horizontal" style="top:0px;">
-                            @guest
-                            @else
-                              <!-- <a class="btn btn--sm type--uppercase" href='/logout'>
-                                logout
-                              </a> -->
-                            <li class="dropdown">
-                                <span class="dropdown__trigger">{{Auth::user()['user_name']}}</span>
-                            </li>
-                            @endguest
-                        </ul>
-                    </div>
-                </div>
-                <!--end columns-->
+                            <a href="{{url('home')}}">
+                            <i class="stack-interface stack-publish"></i> Plugins
+                        </a>
+                    </li> -->
+                </ul>
             </div>
-            <!--end of row-->
         </div>
-        <!--end of container-->
-    </nav>
+        <!--end columns-->
+        <div class="col-lg-6 text-right text-left-xs">
+            <div class="bar__module">
+                <ul class="menu-horizontal" style="top:0px;">
+                    @guest
+                    @else
+                    <!-- <a class="btn btn--sm type--uppercase" href='/logout'>
+                    logout
+                </a> -->
+                <li class="dropdown">
+                    <span class="dropdown__trigger">{{Auth::user()['user_name']}}</span>
+                </li>
+                @endguest
+            </ul>
+        </div>
+    </div>
+    <!--end columns-->
+</div>
+<!--end of row-->
+</div>
+<!--end of container-->
+</nav>
 
 
 @yield('content')
 
+
+<footer class="text-center space--sm footer-5  ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- <div>
+                    <ul class="social-list list-inline list--hover">
+                        <li>
+                            <a href="#">
+                                <i class="socicon socicon-google icon icon--xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="socicon socicon-twitter icon icon--xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="socicon socicon-facebook icon icon--xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="socicon socicon-instagram icon icon--xs"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div> -->
+                <div>
+                    <span class="type--fine-print">Made in Cambridge</span>
+                    <!-- <img alt="Image" class="flag" src="img/flag-2.png"> -->
+                </div>
+                <div>
+                    <span class="type--fine-print">©<span class="update-year">2018</span> Adaptive.</span>
+                        <!-- <a class="type--fine-print" href="#">Privacy Policy</a>
+                        <a class="type--fine-print" href="#">Legal</a> -->
+                </div>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</footer>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="{{url('js/flickity.min.js')}}"></script>
