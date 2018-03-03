@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { CompactPicker } from 'react-color';
 import ToggleButton from 'react-toggle-button';
 import ValueInput from './ValueInput';
+import ControlPanel from './ControlPanel';
 
 export default class TextSizeChanger extends React.Component {
   constructor(props) {
@@ -23,7 +24,7 @@ export default class TextSizeChanger extends React.Component {
   };
 
   handleChangeCompleteHighlight({hex}) {
-    this.props.onChange({bgColor: hex}, this.props.onBlur);
+    this.props.onChange({backgroundColor: hex}, this.props.onBlur);
   };
 
   handleToggle (value) {
@@ -35,7 +36,9 @@ export default class TextSizeChanger extends React.Component {
       <div className='text-size-changer'>
         <div className='row'>
           <div className='col-md-4'>
-            <div className='control-panel'>
+            <ControlPanel controlPanelName='Link highlighting'
+                          value={this.props.values.enabled}
+                          onChange={(value) => this.props.onChange(value, null, 'TOGGLE_ENABLE')}>
             <div className='center-wrapper'>
             <div className='button-bar'>
               <ValueInput defaultValue={this.props.values.size}
@@ -60,15 +63,15 @@ export default class TextSizeChanger extends React.Component {
 
           <div style={{display: this.props.values.highlightOn ? 'inline' : 'none',}}>
               <p>Background color: </p>
-              <CompactPicker color={this.props.values.bgColor} onChangeComplete={ this.handleChangeCompleteHighlight }  />
+              <CompactPicker color={this.props.values.backgroundColor} onChangeComplete={ this.handleChangeCompleteHighlight }  />
             </div>
-          </div></div></div>
+          </div></ControlPanel></div>
 
         <div className='col-md-8'>
           <div className='text-container'>
             <a style={{fontSize: this.props.values.size,
                        color: this.props.values.textColor,
-                       backgroundColor: this.props.values.highlightOn ? this.props.values.bgColor : '',
+                       backgroundColor: this.props.values.highlightOn ? this.props.values.backgroundColor : '',
                      }}>
             {this.props.text}
           </a>

@@ -2,6 +2,7 @@ import React from 'react';
 import {RadioGroup, Radio} from 'react-radio-group';
 import ColorTools from './ColorTools';
 import FilterableImage from './FilterableImage';
+import ControlPanel from './ControlPanel';
 import '../../sass/radioButtons.scss';
 import {Tooltip} from 'react-tippy';
 
@@ -74,7 +75,7 @@ export default class ColorBlindnessControl extends React.Component {
           <Radio value={this.blindnessTypes[1]}/>
             <Tooltip title={'Adjust webpages to make them more accesible for people with ' + this.blindnessTypes[1] + '.'}>
               <div className='box'>
-                <span>{this.blindnessTypes[1]}</span>
+                {this.blindnessTypes[1]}
               </div>
             </ Tooltip>
         </label>
@@ -99,7 +100,9 @@ export default class ColorBlindnessControl extends React.Component {
       <div className='color-blindness-control'>
         <div className='row'>
           <div className='col-md-4'>
-            <div className='control-panel'>
+            <ControlPanel controlPanelName='color blindness filters'
+                          value={this.props.values.enabled}
+                          onChange={(value) => this.props.onChange(value, null, 'TOGGLE_ENABLE')}>
               <RadioGroup name='color-blindness-type'
                           selectedValue={this.props.values.identifier}
                           onChange={this.handleRadioButton}
@@ -111,7 +114,7 @@ export default class ColorBlindnessControl extends React.Component {
                     {row2}
                 </div>
               </RadioGroup>
-            </div>
+            </ControlPanel>
           </div>
 
           <div className='col-md-8'>

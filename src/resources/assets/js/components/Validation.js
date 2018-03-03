@@ -25,6 +25,7 @@ export default class Validation {
     const moduleSchema = {
       'id': '/Module',
       'type': 'object',
+      'enabled': 'boolean',
       'properties': {
         'module': {'type': 'string'},
         'properties': {'type': 'object'},
