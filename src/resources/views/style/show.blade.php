@@ -10,8 +10,8 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1>{{$style['name']}}</h1>
                 <span style="float: right;line-height: 46px;color: antiquewhite;">#{{$style['id']}}</span>
+                <h1>{{$style['name']}}</h1>
             </div>
         </div>
         <!--end of row-->
