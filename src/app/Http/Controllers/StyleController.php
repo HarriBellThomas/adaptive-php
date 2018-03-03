@@ -29,6 +29,15 @@ class StyleController extends Controller
   }
 
 
+  private function stripUnusedModules($module_list) {
+    $used_modules = [];
+    foreach($module_list as $module) {
+      if($module['properties']['enabled']) array_push($used_modules, $module);
+    }
+
+    return $used_modules;
+  }
+
   public function store(Request $request)
   {
 
@@ -40,12 +49,12 @@ class StyleController extends Controller
       if($style_object->user->id != Auth::user()->id) { // Stop users editing other's styles
         return response()->json(['status' => 'failure']);
       }
-      $style_object->style = json_encode(['modules' => $json['modules']]);
+      $style_object->style = json_encode(['modules' => $this->stripUnusedModules($json['modules'])]);
       $style_object->name = $json['title'];
     } else {
       $style_object = new Style;
       $style_object->user()->associate(Auth::user()->id);
-      $style_object->style = json_encode(['modules' => $json['modules']]);
+      $style_object->style = json_encode(['modules' => $this->stripUnusedModules($json['modules'])]);
       $style_object->name = $json['title'];
     }
 
