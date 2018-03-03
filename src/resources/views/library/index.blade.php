@@ -84,10 +84,9 @@ li.adaptive-style-tag {
             ?>
 
             @if ($paginator->lastPage() > 1)
-                <ul class="pagination">
-                    <li class="{{ ($paginator->currentPage() == 1) ? ' disabled' : '' }}">
-                        <a href="{{ $paginator->url(1) }}">First</a>
-                     </li>
+                <div class="pagination">
+                    <a class="pagination__prev" href="#" title="Previous Page">«</a>
+                    <ol>
                     @for ($i = 1; $i <= $paginator->lastPage(); $i++)
                         <?php
                         $half_total_links = floor($link_limit / 2);
@@ -100,16 +99,16 @@ li.adaptive-style-tag {
                             $from -= $half_total_links - ($paginator->lastPage() - $paginator->currentPage()) - 1;
                         }
                         ?>
+
                         @if ($from < $i && $i < $to)
-                            <li class="{{ ($paginator->currentPage() == $i) ? ' active' : '' }}">
+                            <li class="{{ ($paginator->currentPage() == $i) ? ' pagination__current' : '' }}">
                                 <a href="{{ $paginator->url($i) }}">{{ $i }}</a>
                             </li>
                         @endif
                     @endfor
-                    <li class="{{ ($paginator->currentPage() == $paginator->lastPage()) ? ' disabled' : '' }}">
-                        <a href="{{ $paginator->url($paginator->lastPage()) }}">Last</a>
-                    </li>
-                </ul>
+                    </ol>
+                    <a class="pagination__next" href="#" title="Next Page">»</a>
+                </div>
             @endif
         </div>
         <div class="col-sm-5">
