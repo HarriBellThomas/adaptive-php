@@ -51,28 +51,92 @@ function changeDefault(str) {
 
 
 <div class="container">
+    <div class="row">
 
-    @if(count(Auth::user()->styles) > 0)
-    <div class='style-container text-center'>
-        @foreach(Auth::user()->styles as $style)
-        <div id="style-{{$style['id']}}" class='indivdual-style' style='border: solid; margin: 10px; padding: 10px;'>
-            <h3> {{$style['name']}} </h3>
-            <div class='default-style-container'>
-                @if(count(Auth::user()->default_style) && Auth::user()->default_style[0]['id'] == $style['id'])
-                This is your default style.
-                @else
-                <a class="btn btn--sm change-default" onclick="changeDefault({{$style->id}})"> Make default style </a>
-                @endif
-                <br />
+        @if(count($styles) == 0)
+        <h2 style="text-align: center;">Nothing here (yet)!</h2>
+        @else
+        <div class="col-sm-12">
+
+            @foreach($styles as $style)
+            <!-- <a class="btn btn--sm change-default" onclick="changeDefault({{$style->id}})"> Make default style </a> -->
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card card-1 boxed boxed--sm boxed--border">
+                        <a href="/style/{{$style['id']}}">
+                            <div class="card__footer">
+                                <h3 class="type--bold" style="margin: 5px 0;">{{$style['name']}}</h3>
+                            </div>
+                        </a>
+                        <div class="card__body" style="padding-bottom: 0;">
+                            <div class="card__avatar">
+                                @if($ratings[$style['id']] > 0)
+                                <span>Rating: {{ $ratings[ $style['id'] ] }}</span>
+                                @else
+                                <span>Not enough ratings</span>
+                                @endif
+                            </div>
+                            <!-- <div class="card__meta">
+
+                            </div> -->
+                        </div>
+                        <div class="card__bottom">
+                            <ul class="list-inline">
+                                @foreach($tags[$style['id']] as $tag)
+                                <li class="adaptive-style-tag">{{ $tag['tag_name'] }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <a href="style/{{$style['id']}}/edit"> Edit this style </a> |
-            <a href="style/{{$style['id']}}"> View this style </a>
-        </div>
-        @endforeach
-    </div>
+            @endforeach
 
-    @else
-    <h2 class='text-center'>You don't have any styles yet. Make a new one <a href="{{url('style/create')}}">here</a>. </h2>
-    @endif
+            <!-- {!! $paginator->render() !!} -->
+
+            <?php
+            // config
+            $link_limit = 7; // maximum number of links (a little bit inaccurate, but will be ok for now)
+            ?>
+
+            @if ($paginator->lastPage() > 1)
+                <div class="pagination">
+                    <a class="pagination__prev" href="{{$paginator->previousPageUrl()}}" title="Previous Page">«</a>
+                    <ol>
+                    @for ($i = 1; $i <= $paginator->lastPage(); $i++)
+                        <?php
+                        $half_total_links = floor($link_limit / 2);
+                        $from = $paginator->currentPage() - $half_total_links;
+                        $to = $paginator->currentPage() + $half_total_links;
+                        if ($paginator->currentPage() < $half_total_links) {
+                           $to += $half_total_links - $paginator->currentPage();
+                        }
+                        if ($paginator->lastPage() - $paginator->currentPage() < $half_total_links) {
+                            $from -= $half_total_links - ($paginator->lastPage() - $paginator->currentPage()) - 1;
+                        }
+                        ?>
+
+                        @if ($from < $i && $i < $to)
+                            <li class="{{ ($paginator->currentPage() == $i) ? ' pagination__current' : '' }}">
+                                <a href="{{ $paginator->url($i) }}">{{ $i }}</a>
+                            </li>
+                        @endif
+                    @endfor
+                    </ol>
+                    <!-- {{$results->hasMorePages()}} -->
+                    <a class="pagination__next" href="{{$paginator->nextPageUrl()}}" title="Next Page">»</a>
+                </div>
+            @endif
+        </div>
+        <div class="col-sm-5">
+            <iframe src="/preview/embedded?adaptive_demo=1" style="min-height:500px;border-radius: 5px;border-color: rgba(162, 162, 162, 0.2);border-style: solid;border-width: 2px;"></iframe>
+        </div>
+        
+        @endif
+    </div>
+    <!--end of row-->
 </div>
+<!--end of container-->
+
 @endsection

@@ -21,8 +21,29 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('home');
+    public function index() {
+
+        $styleMap = [];
+        $tagsMap = [];
+        $ratingsMap = [];
+
+        $styles = Style::where('name', '<>', '')->paginate(2);
+
+        foreach ($styles as $style) {
+            $styleMap[$style['id']] = $style;
+            $tagsMap[$style['id']] = $style->tags()->get();
+            $ratingsMap[$style['id']] = number_format((float)($style->reviews()->avg('stars')), 1, '.', '');
+        }
+
+        return view(
+            'home',
+            [
+                'paginator' => $styles,
+                'styles' => $styleMap,
+                'tags' => $tagsMap,
+                'ratings' => $ratingsMap
+            ]
+        );
     }
+
 }

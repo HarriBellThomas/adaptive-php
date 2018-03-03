@@ -107,6 +107,7 @@ li.adaptive-style-tag {
                         @endif
                     @endfor
                     </ol>
+                    <!-- {{$results->hasMorePages()}} -->
                     <a class="pagination__next" href="{{$paginator->nextPageUrl()}}" title="Next Page">»</a>
                 </div>
             @endif
@@ -114,23 +115,6 @@ li.adaptive-style-tag {
         <div class="col-sm-5">
             <iframe src="/preview/embedded?adaptive_demo=1" style="min-height:500px;border-radius: 5px;border-color: rgba(162, 162, 162, 0.2);border-style: solid;border-width: 2px;"></iframe>
         </div>
-
-        <!-- <div class="pagination">
-            <a class="pagination__prev" href="#" title="Previous Page">«</a>
-            <ol>
-                <li>
-                    <a href="#">1</a>
-                </li>
-                <li>
-                    <a href="#">2</a>
-                </li>
-                <li class="pagination__current">3</li>
-                <li>
-                    <a href="#">4</a>
-                </li>
-            </ol>
-            <a class="pagination__next" href="#" title="Next Page">»</a>
-        </div> -->
 
         @endif
     </div>
