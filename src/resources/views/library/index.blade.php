@@ -85,7 +85,7 @@ li.adaptive-style-tag {
 
             @if ($paginator->lastPage() > 1)
                 <div class="pagination">
-                    <a class="pagination__prev" href="#" title="Previous Page">«</a>
+                    <a class="pagination__prev" href="{{$paginator->previousPageUrl()}}" title="Previous Page">«</a>
                     <ol>
                     @for ($i = 1; $i <= $paginator->lastPage(); $i++)
                         <?php
@@ -107,7 +107,7 @@ li.adaptive-style-tag {
                         @endif
                     @endfor
                     </ol>
-                    <a class="pagination__next" href="#" title="Next Page">»</a>
+                    <a class="pagination__next" href="{{$paginator->nextPageUrl()}}" title="Next Page">»</a>
                 </div>
             @endif
         </div>
