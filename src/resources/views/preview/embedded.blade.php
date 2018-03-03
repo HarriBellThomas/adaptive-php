@@ -16,15 +16,7 @@
     <!-- Custom styles for this template -->
     <!-- <link href="css/blog-home.css" rel="stylesheet"> -->
     <style>
-    body {
-        padding-top: 54px;
-    }
-
-    @media (min-width: 992px) {
-        body {
-            padding-top: 56px;
-        }
-    }
+    body { padding-top: 0 !important; }
     </style>
 </head>
 <body>

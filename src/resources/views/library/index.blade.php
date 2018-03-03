@@ -80,7 +80,7 @@ li.adaptive-style-tag {
             <iframe src="/preview/embedded?adaptive_demo=1"></iframe>
         </div>
 
-        <div class="pagination">
+        <!-- <div class="pagination">
             <a class="pagination__prev" href="#" title="Previous Page">«</a>
             <ol>
                 <li>
@@ -95,7 +95,7 @@ li.adaptive-style-tag {
                 </li>
             </ol>
             <a class="pagination__next" href="#" title="Next Page">»</a>
-        </div>
+        </div> -->
 
         @endif
     </div>
