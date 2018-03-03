@@ -74,10 +74,10 @@ li.adaptive-style-tag {
             </div>
             @endforeach
 
-        {!! $stylesPaginationHook->render() !!}
+            {!! $stylesPaginationHook->render() !!}
         </div>
         <div class="col-sm-5">
-            <iframe src="/preview/embedded?adaptive_demo=1"></iframe>
+            <iframe src="/preview/embedded?adaptive_demo=1" style="min-height:500px;"></iframe>
         </div>
 
         <!-- <div class="pagination">

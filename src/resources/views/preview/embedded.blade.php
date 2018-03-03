@@ -26,8 +26,8 @@
             <!-- Blog Entries Column -->
             <div class="col-md-12">
 
-                <h1 class="my-4">Page Heading
-                    <small>Secondary Text</small>
+                <h1 class="my-4">Preview<br>
+                    <small>Subtitle</small>
                 </h1>
 
                 <!-- Blog Post -->
