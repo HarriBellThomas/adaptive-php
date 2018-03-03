@@ -78,6 +78,20 @@ export default class App extends React.Component {
             size: 48,
             defaultRate: 1,
           }
+        },
+
+        {
+          module: 'visionTools',
+          properties: {
+            enabled: true,
+          }
+        },
+
+        {
+          module: 'darkMode',
+          properties: {
+            enabled: false,
+          }
         }
       ]
     }
@@ -96,6 +110,7 @@ export default class App extends React.Component {
 
   _findModule(moduleName, moduleList) {
     for (var i = 0; i < moduleList.length; i++) {
+      console.log(moduleList[i].module);
       if (moduleList[i].module === moduleName) return moduleList[i];
     }
   }
@@ -164,6 +179,9 @@ export default class App extends React.Component {
   styleInformationControlOnChange(action, value) {
     // Basically redux reducer manually implemented
     switch(action) {
+      case 'TOGGLE':
+        this.updateModule(value.name, {'enabled': value.value}, null, 'TOGGLE_ENABLE');
+        break;
       case 'UPDATE_TITLE':
         this.setState({title: value, saved: false});
         break;
@@ -196,7 +214,9 @@ export default class App extends React.Component {
       <StyleInformationControl values={{title: this.state.title,
                                         tags: this.state.tags,
                                         saved: this.state.saved,
-                                        defaultStyle: this.state.defaultStyle}}
+                                        defaultStyle: this.state.defaultStyle,
+                                        visionToolsEnabled: this._findModule('visionTools', this.state.modules).properties.enabled,
+                                        darkModeEnabled: this._findModule('darkMode', this.state.modules).properties.enabled,}}
                                onChange={this.styleInformationControlOnChange}
                                onBlur={this.autoSave}/>
     </TabPanel>

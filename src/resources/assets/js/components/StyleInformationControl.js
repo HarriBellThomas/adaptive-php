@@ -20,6 +20,10 @@ export default class StyleInformationControl extends React.Component {
     this.props.onChange('UPDATE_TAGS', tags);
   }
 
+  handleToggle(name, value) {
+    this.props.onChange('TOGGLE', {name: name, value: !value});
+  }
+
   handleDefaultToggle(event) {
     this.props.onChange('TOGGLE_DEFAULT', !this.props.values.defaultStyle);
   }
@@ -39,12 +43,29 @@ export default class StyleInformationControl extends React.Component {
         <p>Tags for your style:</p>
         <TagsInput value={this.props.values.tags} onChange={this.handleTagChange} />
         <p>Default style?</p>
-        <div className='clear-styles'>
-          <input type='checkbox'
-                 checked={this.props.values.defaultStyle}
-                 onChange={this.handleDefaultToggle} />
-          </div>
+
+        <input type='checkbox'
+               checked={this.props.values.defaultStyle}
+               onChange={this.handleDefaultToggle} />
+
+
+        <p>Enable auto captioning of images?</p>
         <div className='center-wrapper'>
+          <div className='toggle-wrapper'>
+            <ToggleButton value={this.props.values.visionToolsEnabled}
+                          onToggle={(value) => this.handleToggle('visionTools', value)} />
+          </div>
+        </div>
+        <p>Enable dark mode?</p>
+        <div className='center-wrapper'>
+          <div className='toggle-wrapper'>
+          <ToggleButton value={this.props.values.darkModeEnabled}
+                        onToggle={(value) => this.handleToggle('darkMode', value)} />
+          </div>
+        </div>
+
+      <br />
+      <div className='center-wrapper'>
           <div className='toggle-wrapper'>
             {saveMessage}
           </div></div>
