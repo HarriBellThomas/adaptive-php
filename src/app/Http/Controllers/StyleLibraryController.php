@@ -21,15 +21,13 @@ class StyleLibraryController extends Controller {
         $tagsMap = [];
         $ratingsMap = [];
 
-        $styles = Model::where('name' '<>', '')->simplePaginate(2);
+        $styles = Style::where('name' '<>', '')->simplePaginate(2);
 
         foreach ($styles as $style) {
             $styleMap[$style['id']] = $style;
             $tagsMap[$style['id']] = $style->tags()->get();
             $ratingsMap[$style['id']] = number_format((float)($style->reviews()->avg('stars')), 1, '.', '');
         }
-
-        // foreach (Tag::all() as $tag) $tagsMap[$tag['id']] = $tag;
 
         return view(
             'library.index',
