@@ -55,7 +55,7 @@ li.adaptive-style-tag {
                                     </span>
                                 </div>
                                 <div class="card__meta">
-                                    <span>Rating: {{ $ratings[ $style['user_id'] ] }}</span>
+                                    <span>Rating: {{ $ratings[ $style['id'] ] }}</span>
                                 </div>
                             </div>
                             <div class="card__bottom">
