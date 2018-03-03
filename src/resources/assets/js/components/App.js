@@ -15,12 +15,6 @@ import '../../sass/tabs.scss';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-
-    this.moduleOrder = ['linkHighlighter', 'clickDelay',
-                        'colorManipulations', 'imageColorShifter', 'paragraphReader'];
-    this.moduleIndex = {'linkHighlighter': 0, 'clickDelay': 1,
-                        'colorManipulations': 2, 'imageColorShifter': 3,
-                        'paragraphReader': 4};
     this.validator = new Validation();
 
     this.state = {
@@ -34,8 +28,9 @@ export default class App extends React.Component {
         {
           module: 'linkHighlighter',
           properties: {
+            enabled: false,
             size: 18,
-            bgColor: '0xFFFFFF',
+            backgroundColor: '0xFFFFFF',
             textColor: '0x000000',
             highlightOn: false,
           }
@@ -44,6 +39,7 @@ export default class App extends React.Component {
         {
           module: 'clickDelay',
           properties: {
+            enabled: false,
             delay: 0.4,
             doubleClick: false,
           }
@@ -52,6 +48,7 @@ export default class App extends React.Component {
         {
           module: 'colorManipulations',
           properties: {
+            enabled: false,
             saturationFactor: 1,
             brightnessFactor: 0,
             contrastFactor: 1,
@@ -61,6 +58,7 @@ export default class App extends React.Component {
         {
           module: 'imageColorShifter',
           properties: {
+            enabled: false,
             identifier: 'None'
           }
         },
@@ -68,6 +66,7 @@ export default class App extends React.Component {
         {
           module: 'paragraphReader',
           properties: {
+            enabled: false,
             chosenKey: 'SHIFT',
             reduceTransparency: 0.5,
             size: 48,
@@ -79,30 +78,64 @@ export default class App extends React.Component {
 
 
     this.saveStyle = this.saveStyle.bind(this);
-    this.updateNthModule = this.updateNthModule.bind(this);
+    this.updateModule = this.updateModule.bind(this);
     this.styleInformationControlOnChange = this.styleInformationControlOnChange.bind(this);
-
+    this._changeModule = this._changeModule.bind(this);
+    this.autoSave = this.autoSave.bind(this);
   }
 
   componentDidMount() {
 
   }
 
-  updateNthModule(n, values, callback) {
-    // Should have used Redux....
-    this.setState(prevState =>  {
-      var newModuleProperties = Object.assign({...prevState.modules[n].properties}, values);
-      var newModules = {modules: Object.assign([...prevState.modules], {[n]: {module: this.moduleOrder[n], properties:newModuleProperties}})};
-      return {...newModules, saved: false};
-    }, callback);
-
+  _findModule(moduleName, moduleList) {
+    for (var i = 0; i < moduleList.length; i++) {
+      if (moduleList[i].module === moduleName) return moduleList[i];
+    }
   }
 
-  saveStyle() {
+  _changeModule(moduleName, moduleList, propName, propValue) {
+    const module = this._findModule(moduleName, moduleList);
+    module.properties[propName] = propValue;
+
+    console.log('updated module:');
+    console.log(JSON.stringify(module));
+  }
+
+  updateModule(moduleName, values, callback, action) {
+    // Should have used Redux...
+
+    if (action === 'TOGGLE_ENABLE') {
+      this.setState(prevState => {
+        const prevStateCopy = JSON.parse(JSON.stringify(prevState));
+        prevStateCopy.saved = false;
+        const module = this._findModule(moduleName, prevStateCopy.modules);
+        module.properties.enabled = values.enabled;
+        console.log(prevStateCopy);
+        return prevStateCopy;
+      }, callback);
+    } else {
+      this.setState(prevState =>  {
+        const prevStateCopy = JSON.parse(JSON.stringify(prevState));
+        prevStateCopy.saved = false;
+        for (var key in values) {
+          this._changeModule(moduleName, prevStateCopy.modules, key, values[key]);
+        }
+        return prevStateCopy;
+      }, callback);
+    }
+  }
+
+  autoSave() {
+    this.saveStyle(true);
+  }
+
+  saveStyle(autoSave) {
     const validated = this.validator.validate(this.state);
     if(!validated.valid) {
       // TODO: Improve error messages
-      alert('Cannot save: ' + validated.errors);
+      if (!autoSave) alert('Cannot save: ' + validated.errors);
+      else console.log(validated.errors);
       return;
     }
     console.log(JSON.stringify(this.state));
@@ -159,18 +192,18 @@ export default class App extends React.Component {
                                         saved: this.state.saved,
                                         defaultStyle: this.state.defaultStyle}}
                                onChange={this.styleInformationControlOnChange}
-                               onBlur={this.saveStyle}/>
+                               onBlur={this.autoSave}/>
     </TabPanel>
    <TabPanel>
      <TextSizeChanger text='An example link'
-                      values={this.state.modules[this.moduleIndex['linkHighlighter']].properties}
-                      onChange={(values, callback) => this.updateNthModule(this.moduleIndex['linkHighlighter'], values, callback)}
-                      onBlur={this.saveStyle}/>
+                      values={this._findModule('linkHighlighter', this.state.modules).properties}
+                      onChange={(values, callback, action) => this.updateModule('linkHighlighter', values, callback, action)}
+                      onBlur={this.autoSave}/>
    </TabPanel>
    <TabPanel>
-     <MouseControl values={this.state.modules[this.moduleIndex['clickDelay']].properties}
-                   onChange={(values) => this.updateNthModule(this.moduleIndex['clickDelay'], values)}
-                   onBlur={this.saveStyle}/>
+     <MouseControl values={this._findModule('clickDelay', this.state.modules).properties}
+                   onChange={(values, callback) => this.updateModule('clickDelay', values)}
+                   onBlur={this.autoSave}/>
    </TabPanel>
    <TabPanel>
      <Tabs forceRenderTabPanel>
@@ -182,24 +215,24 @@ export default class App extends React.Component {
          <ImageContainer imageurl='/images/froggy.jpg'
                          width={500}
                          height={500}
-                         values={this.state.modules[this.moduleIndex['colorManipulations']].properties}
-                         onChange={(values, callback) => this.updateNthModule(this.moduleIndex['colorManipulations'], values, callback)}
-                         onBlur={this.saveStyle}/>
+                         values={this._findModule('colorManipulations', this.state.modules).properties}
+                         onChange={(values, callback, action) => this.updateModule('colorManipulations', values, callback, action)}
+                         onBlur={this.autoSave}/>
        </TabPanel>
        <TabPanel>
          <ColorBlindnessControl imageurl='/images/flowers.jpg'
                                 width={500}
                                 height={500}
-                                values={this.state.modules[this.moduleIndex['imageColorShifter']].properties}
-                                onChange={(values, callback) => this.updateNthModule(this.moduleIndex['imageColorShifter'], values, callback)}
-                                onBlur={this.saveStyle}/>
+                                values={this._findModule('imageColorShifter', this.state.modules).properties}
+                                onChange={(values, callback, action) => this.updateModule('imageColorShifter', values, callback, action)}
+                                onBlur={this.autoSave}/>
        </TabPanel>
       </Tabs>
    </TabPanel>
    <TabPanel>
-     <ParagraphControl values={this.state.modules[this.moduleIndex['paragraphReader']].properties}
-                       onChange={(values, callback) => this.updateNthModule(this.moduleIndex['paragraphReader'], values, callback)}
-                       onBlur={this.saveStyle}
+     <ParagraphControl values={this._findModule('paragraphReader', this.state.modules).properties}
+                       onChange={(values, callback, action) => this.updateModule('paragraphReader', values, callback, action)}
+                       onBlur={this.autoSave}
                        speed={1}/>
    </TabPanel>
   </Tabs>

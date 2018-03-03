@@ -2,6 +2,7 @@ import React from 'react';
 import TimerChecker from './TimerChecker';
 import ToggleButton from 'react-toggle-button';
 import ValueInput from './ValueInput';
+import ControlPanel from './ControlPanel';
 
 export default class MouseControl extends React.Component {
   constructor(props) {
@@ -24,7 +25,9 @@ export default class MouseControl extends React.Component {
       <div className='mouse-control'>
         <div className='row'>
           <div className='col-md-4'>
-            <div className='control-panel'>
+            <ControlPanel controlPanelName='Click delay'
+                          value={this.props.values.enabled}
+                          onChange={(value) => this.props.onChange(value, null, 'TOGGLE_ENABLE')}>
               <div className='center-wrapper'>
                 <div className = 'button-bar'>
                 <ValueInput defaultValue={this.props.values.delay}
@@ -38,12 +41,12 @@ export default class MouseControl extends React.Component {
 
             <p> Remove double clicks?</p>
             <div className='center-wrapper'>
-            <div className='toggle-wrapper'>
-            <ToggleButton value={this.props.values.doubleClick}
+              <div className='toggle-wrapper'>
+                  <ToggleButton value={this.props.values.doubleClick}
                           onToggle={this.handleToggle} />
+              </div>
             </div>
-            </div>
-            </div>
+          </ControlPanel>
           </div>
 
           <div className='col-md-8'>

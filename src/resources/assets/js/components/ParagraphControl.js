@@ -2,6 +2,7 @@ import React from 'react';
 import ValueInput from './ValueInput';
 import ToggleButton from 'react-toggle-button';
 import ParagraphReader from './ParagraphReader';
+import ControlPanel from './ControlPanel';
 import {RadioGroup, Radio} from 'react-radio-group';
 import {Tooltip} from 'react-tippy';
 
@@ -41,12 +42,16 @@ export default class ParagraphControl extends React.Component {
     this.setState(() => ({talking: new_talking}));
   }
 
+
   render() {
+    console.log('value passed in ' + this.props.values.enabled);
     return (
       <div className='paragraph-control'>
         <div className='row'>
           <div className ='col-md-4'>
-          <div className='control-panel'>
+          <ControlPanel controlPanelName='Paragraph reader'
+                        value={this.props.values.enabled}
+                        onChange={(value) => this.props.onChange(value, null, 'TOGGLE_ENABLE')}>
           <div className='button-bar'>
               <div className='center-wrapper'>
               <ValueInput defaultValue={this.props.values.defaultRate}
@@ -65,7 +70,7 @@ export default class ParagraphControl extends React.Component {
                             updateFunction={this.handleSizeChange}
                             inc={1}
                             unit='px'
-                            description='Focused text size'
+                            description='Focus text size'
                             tip='Change the text size of focused paragraphs'
                             onBlur={this.props.onBlur}/>
 
@@ -83,9 +88,9 @@ export default class ParagraphControl extends React.Component {
                             onBlur={this.props.onBlur}/>
                 </div>
             </div>
+          </ControlPanel>
+          </div>
 
-          </div>
-          </div>
 
           <div className='col-md-8'>
           <div className='text-container'>

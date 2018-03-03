@@ -5073,7 +5073,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "/* Inspired by https://codepen.io/gabrielferreira/pen/oYxNVy */\n#root input[type=\"radio\"] {\n  display: none; }\n  #root input[type=\"radio\"]:checked + div .box {\n    background-color: #4a90e2; }\n    #root input[type=\"radio\"]:checked + div .box span {\n      color: white; }\n      #root input[type=\"radio\"]:checked + div .box span:before {\n        opacity: 1; }\n  #root input[type=\"radio\"]:checked + .box {\n    background-color: #4a90e2; }\n    #root input[type=\"radio\"]:checked + .box span {\n      color: white; }\n      #root input[type=\"radio\"]:checked + .box span:before {\n        opacity: 1; }\n\n#root .box {\n  display: flex;\n  align-items: center;\n  margin: 5px;\n  padding: 5px;\n  width: 200px;\n  height: 200px;\n  text-align: center;\n  cursor: pointer;\n  font-size: 20pt;\n  position: relative;\n  color: white;\n  background-color: #252525;\n  transition: all 0.2s ease;\n  will-change: transition; }\n  #root .box:active {\n    transform: translateY(10px); }\n  #root .box:hover {\n    background-color: #0c0c0c; }\n  #root .box span {\n    display: inline-block;\n    text-align: center; }\n", ""]);
+exports.push([module.i, "/* Inspired by https://codepen.io/gabrielferreira/pen/oYxNVy */\n#root input[type=\"radio\"] {\n  display: none; }\n  #root input[type=\"radio\"]:checked + div .box {\n    background-color: #4a90e2; }\n    #root input[type=\"radio\"]:checked + div .box span {\n      color: white; }\n      #root input[type=\"radio\"]:checked + div .box span:before {\n        opacity: 1; }\n  #root input[type=\"radio\"]:checked + .box {\n    background-color: #4a90e2; }\n    #root input[type=\"radio\"]:checked + .box span {\n      color: white; }\n      #root input[type=\"radio\"]:checked + .box span:before {\n        opacity: 1; }\n\n#root .box {\n  display: flex;\n  align-items: center;\n  margin: 5px;\n  padding: 5px;\n  width: 130px;\n  height: 130px;\n  text-align: center;\n  overflow-wrap: break-word;\n  font-family: 'Open Sans', sans-serif;\n  cursor: pointer;\n  font-size: 18pt;\n  position: relative;\n  color: white;\n  background-color: #252525;\n  transition: all 0.2s ease;\n  will-change: transition; }\n  #root .box:active {\n    transform: translateY(10px); }\n  #root .box:hover {\n    background-color: #0c0c0c; }\n  #root .box span {\n    display: inline-block;\n    text-align: center; }\n", ""]);
 
 // exports
 
@@ -77791,13 +77791,7 @@ if (token) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_react_tippy_dist_tippy_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_react_tippy_dist_tippy_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__sass_tabs_scss__ = __webpack_require__("./resources/assets/sass/tabs.scss");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__sass_tabs_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__sass_tabs_scss__);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -77827,10 +77821,6 @@ var App = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
-    _this.moduleOrder = ['linkHighlighter', 'clickDelay', 'colorManipulations', 'imageColorShifter', 'paragraphReader'];
-    _this.moduleIndex = { 'linkHighlighter': 0, 'clickDelay': 1,
-      'colorManipulations': 2, 'imageColorShifter': 3,
-      'paragraphReader': 4 };
     _this.validator = new __WEBPACK_IMPORTED_MODULE_9__Validation__["a" /* default */]();
 
     _this.state = {
@@ -77843,20 +77833,23 @@ var App = function (_React$Component) {
       modules: [{
         module: 'linkHighlighter',
         properties: {
+          enabled: false,
           size: 18,
-          bgColor: '0xFFFFFF',
+          backgroundColor: '0xFFFFFF',
           textColor: '0x000000',
           highlightOn: false
         }
       }, {
         module: 'clickDelay',
         properties: {
+          enabled: false,
           delay: 0.4,
           doubleClick: false
         }
       }, {
         module: 'colorManipulations',
         properties: {
+          enabled: false,
           saturationFactor: 1,
           brightnessFactor: 0,
           contrastFactor: 1
@@ -77864,11 +77857,13 @@ var App = function (_React$Component) {
       }, {
         module: 'imageColorShifter',
         properties: {
+          enabled: false,
           identifier: 'None'
         }
       }, {
         module: 'paragraphReader',
         properties: {
+          enabled: false,
           chosenKey: 'SHIFT',
           reduceTransparency: 0.5,
           size: 48,
@@ -77878,9 +77873,10 @@ var App = function (_React$Component) {
     };
 
     _this.saveStyle = _this.saveStyle.bind(_this);
-    _this.updateNthModule = _this.updateNthModule.bind(_this);
+    _this.updateModule = _this.updateModule.bind(_this);
     _this.styleInformationControlOnChange = _this.styleInformationControlOnChange.bind(_this);
-
+    _this._changeModule = _this._changeModule.bind(_this);
+    _this.autoSave = _this.autoSave.bind(_this);
     return _this;
   }
 
@@ -77888,26 +77884,62 @@ var App = function (_React$Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {}
   }, {
-    key: 'updateNthModule',
-    value: function updateNthModule(n, values, callback) {
+    key: '_findModule',
+    value: function _findModule(moduleName, moduleList) {
+      for (var i = 0; i < moduleList.length; i++) {
+        if (moduleList[i].module === moduleName) return moduleList[i];
+      }
+    }
+  }, {
+    key: '_changeModule',
+    value: function _changeModule(moduleName, moduleList, propName, propValue) {
+      var module = this._findModule(moduleName, moduleList);
+      module.properties[propName] = propValue;
+
+      console.log('updated module:');
+      console.log(JSON.stringify(module));
+    }
+  }, {
+    key: 'updateModule',
+    value: function updateModule(moduleName, values, callback, action) {
       var _this2 = this;
 
-      // Should have used Redux....
-      this.setState(function (prevState) {
-        var newModuleProperties = Object.assign(_extends({}, prevState.modules[n].properties), values);
-        var newModules = { modules: Object.assign([].concat(_toConsumableArray(prevState.modules)), _defineProperty({}, n, { module: _this2.moduleOrder[n], properties: newModuleProperties })) };
-        return _extends({}, newModules, { saved: false });
-      }, callback);
+      // Should have used Redux...
+
+      if (action === 'TOGGLE_ENABLE') {
+        this.setState(function (prevState) {
+          var prevStateCopy = JSON.parse(JSON.stringify(prevState));
+          prevStateCopy.saved = false;
+          var module = _this2._findModule(moduleName, prevStateCopy.modules);
+          module.properties.enabled = values.enabled;
+          console.log(prevStateCopy);
+          return prevStateCopy;
+        }, callback);
+      } else {
+        this.setState(function (prevState) {
+          var prevStateCopy = JSON.parse(JSON.stringify(prevState));
+          prevStateCopy.saved = false;
+          for (var key in values) {
+            _this2._changeModule(moduleName, prevStateCopy.modules, key, values[key]);
+          }
+          return prevStateCopy;
+        }, callback);
+      }
+    }
+  }, {
+    key: 'autoSave',
+    value: function autoSave() {
+      this.saveStyle(true);
     }
   }, {
     key: 'saveStyle',
-    value: function saveStyle() {
+    value: function saveStyle(autoSave) {
       var _this3 = this;
 
       var validated = this.validator.validate(this.state);
       if (!validated.valid) {
         // TODO: Improve error messages
-        alert('Cannot save: ' + validated.errors);
+        if (!autoSave) alert('Cannot save: ' + validated.errors);else console.log(validated.errors);
         return;
       }
       console.log(JSON.stringify(this.state));
@@ -78013,26 +78045,26 @@ var App = function (_React$Component) {
               saved: this.state.saved,
               defaultStyle: this.state.defaultStyle },
             onChange: this.styleInformationControlOnChange,
-            onBlur: this.saveStyle })
+            onBlur: this.autoSave })
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
           null,
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__TextSizeChanger__["a" /* default */], { text: 'An example link',
-            values: this.state.modules[this.moduleIndex['linkHighlighter']].properties,
-            onChange: function onChange(values, callback) {
-              return _this4.updateNthModule(_this4.moduleIndex['linkHighlighter'], values, callback);
+            values: this._findModule('linkHighlighter', this.state.modules).properties,
+            onChange: function onChange(values, callback, action) {
+              return _this4.updateModule('linkHighlighter', values, callback, action);
             },
-            onBlur: this.saveStyle })
+            onBlur: this.autoSave })
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
           null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__MouseControl__["a" /* default */], { values: this.state.modules[this.moduleIndex['clickDelay']].properties,
-            onChange: function onChange(values) {
-              return _this4.updateNthModule(_this4.moduleIndex['clickDelay'], values);
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__MouseControl__["a" /* default */], { values: this._findModule('clickDelay', this.state.modules).properties,
+            onChange: function onChange(values, callback) {
+              return _this4.updateModule('clickDelay', values);
             },
-            onBlur: this.saveStyle })
+            onBlur: this.autoSave })
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
@@ -78060,11 +78092,11 @@ var App = function (_React$Component) {
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__ImageContainer__["a" /* default */], { imageurl: '/images/froggy.jpg',
                 width: 500,
                 height: 500,
-                values: this.state.modules[this.moduleIndex['colorManipulations']].properties,
-                onChange: function onChange(values, callback) {
-                  return _this4.updateNthModule(_this4.moduleIndex['colorManipulations'], values, callback);
+                values: this._findModule('colorManipulations', this.state.modules).properties,
+                onChange: function onChange(values, callback, action) {
+                  return _this4.updateModule('colorManipulations', values, callback, action);
                 },
-                onBlur: this.saveStyle })
+                onBlur: this.autoSave })
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
@@ -78072,22 +78104,22 @@ var App = function (_React$Component) {
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__ColorBlindnessControl__["a" /* default */], { imageurl: '/images/flowers.jpg',
                 width: 500,
                 height: 500,
-                values: this.state.modules[this.moduleIndex['imageColorShifter']].properties,
-                onChange: function onChange(values, callback) {
-                  return _this4.updateNthModule(_this4.moduleIndex['imageColorShifter'], values, callback);
+                values: this._findModule('imageColorShifter', this.state.modules).properties,
+                onChange: function onChange(values, callback, action) {
+                  return _this4.updateModule('imageColorShifter', values, callback, action);
                 },
-                onBlur: this.saveStyle })
+                onBlur: this.autoSave })
             )
           )
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
           null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__ParagraphControl__["a" /* default */], { values: this.state.modules[this.moduleIndex['paragraphReader']].properties,
-            onChange: function onChange(values, callback) {
-              return _this4.updateNthModule(_this4.moduleIndex['paragraphReader'], values, callback);
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__ParagraphControl__["a" /* default */], { values: this._findModule('paragraphReader', this.state.modules).properties,
+            onChange: function onChange(values, callback, action) {
+              return _this4.updateModule('paragraphReader', values, callback, action);
             },
-            onBlur: this.saveStyle,
+            onBlur: this.autoSave,
             speed: 1 })
         )
       );
@@ -78260,10 +78292,11 @@ var ClickNHold = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_radio_group___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_radio_group__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ColorTools__ = __webpack_require__("./resources/assets/js/components/ColorTools.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__FilterableImage__ = __webpack_require__("./resources/assets/js/components/FilterableImage.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sass_radioButtons_scss__ = __webpack_require__("./resources/assets/sass/radioButtons.scss");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sass_radioButtons_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__sass_radioButtons_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_tippy__ = __webpack_require__("./node_modules/react-tippy/dist/react-tippy.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_tippy___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_react_tippy__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ControlPanel__ = __webpack_require__("./resources/assets/js/components/ControlPanel.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__sass_radioButtons_scss__ = __webpack_require__("./resources/assets/sass/radioButtons.scss");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__sass_radioButtons_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__sass_radioButtons_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_tippy__ = __webpack_require__("./node_modules/react-tippy/dist/react-tippy.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_tippy___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react_tippy__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -78271,6 +78304,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -78361,16 +78395,12 @@ var ColorBlindnessControl = function (_React$Component) {
           { key: this.blindnessTypes[1] },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_radio_group__["Radio"], { value: this.blindnessTypes[1] }),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_5_react_tippy__["Tooltip"],
+            __WEBPACK_IMPORTED_MODULE_6_react_tippy__["Tooltip"],
             { title: 'Adjust webpages to make them more accesible for people with ' + this.blindnessTypes[1] + '.' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
               { className: 'box' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'span',
-                null,
-                this.blindnessTypes[1]
-              )
+              this.blindnessTypes[1]
             )
           )
         )
@@ -78385,7 +78415,7 @@ var ColorBlindnessControl = function (_React$Component) {
             null,
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_radio_group__["Radio"], { value: type }),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              __WEBPACK_IMPORTED_MODULE_5_react_tippy__["Tooltip"],
+              __WEBPACK_IMPORTED_MODULE_6_react_tippy__["Tooltip"],
               { title: 'Adjust webpages to make them more accesible for people with ' + type + '.' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
@@ -78411,8 +78441,12 @@ var ColorBlindnessControl = function (_React$Component) {
             'div',
             { className: 'col-md-4' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              { className: 'control-panel' },
+              __WEBPACK_IMPORTED_MODULE_4__ControlPanel__["a" /* default */],
+              { controlPanelName: 'color blindness filters',
+                value: this.props.values.enabled,
+                onChange: function onChange(value) {
+                  return _this2.props.onChange(value, null, 'TOGGLE_ENABLE');
+                } },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1_react_radio_group__["RadioGroup"],
                 { name: 'color-blindness-type',
@@ -78602,6 +78636,79 @@ var ColorTools = function () {
 
 /***/ }),
 
+/***/ "./resources/assets/js/components/ControlPanel.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/react.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_toggle_button__ = __webpack_require__("./node_modules/react-toggle-button/lib/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_toggle_button___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_toggle_button__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var ControlPanel = function (_React$Component) {
+  _inherits(ControlPanel, _React$Component);
+
+  function ControlPanel(props) {
+    _classCallCheck(this, ControlPanel);
+
+    var _this = _possibleConstructorReturn(this, (ControlPanel.__proto__ || Object.getPrototypeOf(ControlPanel)).call(this, props));
+
+    _this.handleToggle = _this.handleToggle.bind(_this);
+    return _this;
+  }
+
+  _createClass(ControlPanel, [{
+    key: 'handleToggle',
+    value: function handleToggle(value) {
+      this.props.onChange({ enabled: !value });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'control-panel' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'p',
+          null,
+          'Enable ' + this.props.controlPanelName + '?'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'center-wrapper' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'toggle-wrapper' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_toggle_button___default.a, { value: this.props.value,
+              onToggle: this.handleToggle })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { style: this.props.value ? {} : { display: 'none' } },
+          this.props.children
+        )
+      );
+    }
+  }]);
+
+  return ControlPanel;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["a"] = (ControlPanel);
+
+/***/ }),
+
 /***/ "./resources/assets/js/components/DecreaseButton.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -78765,6 +78872,7 @@ var FilterableImage = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ColorTools__ = __webpack_require__("./resources/assets/js/components/ColorTools.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__FilterableImage__ = __webpack_require__("./resources/assets/js/components/FilterableImage.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ValueInput__ = __webpack_require__("./resources/assets/js/components/ValueInput.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ControlPanel__ = __webpack_require__("./resources/assets/js/components/ControlPanel.js");
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -78772,6 +78880,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -78874,8 +78983,12 @@ var ImageContainer = function (_React$Component) {
             'div',
             { className: 'col-md-4' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              { className: 'control-panel' },
+              __WEBPACK_IMPORTED_MODULE_5__ControlPanel__["a" /* default */],
+              { controlPanelName: 'color filters',
+                value: this.props.values.enabled,
+                onChange: function onChange(value) {
+                  return _this2.props.onChange(value, null, 'TOGGLE_ENABLE');
+                } },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__ValueInput__["a" /* default */], { defaultValue: this.props.values.saturationFactor,
                 updateFunction: this.handleSaturationFactorChange,
                 inc: 0.1,
@@ -79013,6 +79126,7 @@ __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODU
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_toggle_button__ = __webpack_require__("./node_modules/react-toggle-button/lib/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_toggle_button___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_toggle_button__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ValueInput__ = __webpack_require__("./resources/assets/js/components/ValueInput.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ControlPanel__ = __webpack_require__("./resources/assets/js/components/ControlPanel.js");
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -79020,6 +79134,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -79052,6 +79167,8 @@ var MouseControl = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: 'mouse-control' },
@@ -79062,8 +79179,12 @@ var MouseControl = function (_React$Component) {
             'div',
             { className: 'col-md-4' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              { className: 'control-panel' },
+              __WEBPACK_IMPORTED_MODULE_4__ControlPanel__["a" /* default */],
+              { controlPanelName: 'Click delay',
+                value: this.props.values.enabled,
+                onChange: function onChange(value) {
+                  return _this2.props.onChange(value, null, 'TOGGLE_ENABLE');
+                } },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'center-wrapper' },
@@ -79131,10 +79252,11 @@ var MouseControl = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_toggle_button__ = __webpack_require__("./node_modules/react-toggle-button/lib/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_toggle_button___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_toggle_button__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ParagraphReader__ = __webpack_require__("./resources/assets/js/components/ParagraphReader.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_radio_group__ = __webpack_require__("./node_modules/react-radio-group/lib/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_radio_group___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_react_radio_group__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_tippy__ = __webpack_require__("./node_modules/react-tippy/dist/react-tippy.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_tippy___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_react_tippy__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ControlPanel__ = __webpack_require__("./resources/assets/js/components/ControlPanel.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_radio_group__ = __webpack_require__("./node_modules/react-radio-group/lib/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_radio_group___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_react_radio_group__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_tippy__ = __webpack_require__("./node_modules/react-tippy/dist/react-tippy.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_tippy___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react_tippy__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -79142,6 +79264,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -79203,6 +79326,7 @@ var ParagraphControl = function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
+      console.log('value passed in ' + this.props.values.enabled);
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: 'paragraph-control' },
@@ -79213,8 +79337,12 @@ var ParagraphControl = function (_React$Component) {
             'div',
             { className: 'col-md-4' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              { className: 'control-panel' },
+              __WEBPACK_IMPORTED_MODULE_4__ControlPanel__["a" /* default */],
+              { controlPanelName: 'Paragraph reader',
+                value: this.props.values.enabled,
+                onChange: function onChange(value) {
+                  return _this3.props.onChange(value, null, 'TOGGLE_ENABLE');
+                } },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'button-bar' },
@@ -79239,7 +79367,7 @@ var ParagraphControl = function (_React$Component) {
                     updateFunction: this.handleSizeChange,
                     inc: 1,
                     unit: 'px',
-                    description: 'Focused text size',
+                    description: 'Focus text size',
                     tip: 'Change the text size of focused paragraphs',
                     onBlur: this.props.onBlur })
                 )
@@ -79581,6 +79709,7 @@ var StyleInformationControl = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_toggle_button__ = __webpack_require__("./node_modules/react-toggle-button/lib/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_toggle_button___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react_toggle_button__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ValueInput__ = __webpack_require__("./resources/assets/js/components/ValueInput.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ControlPanel__ = __webpack_require__("./resources/assets/js/components/ControlPanel.js");
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -79588,6 +79717,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -79627,7 +79757,7 @@ var TextSizeChanger = function (_React$Component) {
     value: function handleChangeCompleteHighlight(_ref2) {
       var hex = _ref2.hex;
 
-      this.props.onChange({ bgColor: hex }, this.props.onBlur);
+      this.props.onChange({ backgroundColor: hex }, this.props.onBlur);
     }
   }, {
     key: 'handleToggle',
@@ -79637,6 +79767,8 @@ var TextSizeChanger = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: 'text-size-changer' },
@@ -79647,8 +79779,12 @@ var TextSizeChanger = function (_React$Component) {
             'div',
             { className: 'col-md-4' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              { className: 'control-panel' },
+              __WEBPACK_IMPORTED_MODULE_5__ControlPanel__["a" /* default */],
+              { controlPanelName: 'Link highlighting',
+                value: this.props.values.enabled,
+                onChange: function onChange(value) {
+                  return _this2.props.onChange(value, null, 'TOGGLE_ENABLE');
+                } },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'center-wrapper' },
@@ -79693,7 +79829,7 @@ var TextSizeChanger = function (_React$Component) {
                     null,
                     'Background color: '
                   ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_color__["CompactPicker"], { color: this.props.values.bgColor, onChangeComplete: this.handleChangeCompleteHighlight })
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_color__["CompactPicker"], { color: this.props.values.backgroundColor, onChangeComplete: this.handleChangeCompleteHighlight })
                 )
               )
             )
@@ -79708,7 +79844,7 @@ var TextSizeChanger = function (_React$Component) {
                 'a',
                 { style: { fontSize: this.props.values.size,
                     color: this.props.values.textColor,
-                    backgroundColor: this.props.values.highlightOn ? this.props.values.bgColor : ''
+                    backgroundColor: this.props.values.highlightOn ? this.props.values.backgroundColor : ''
                   } },
                 this.props.text
               )
@@ -79819,6 +79955,7 @@ var Validation = function () {
     var moduleSchema = {
       'id': '/Module',
       'type': 'object',
+      'enabled': 'boolean',
       'properties': {
         'module': { 'type': 'string' },
         'properties': { 'type': 'object' }

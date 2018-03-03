@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import ColorTools from './ColorTools';
 import FilterableImage from './FilterableImage';
 import ValueInput from './ValueInput';
+import ControlPanel from './ControlPanel';
 
 export default class ImageContainer extends React.Component {
   constructor(props) {
@@ -77,7 +78,9 @@ export default class ImageContainer extends React.Component {
       <div className='image-sandbox'>
         <div className='row'>
           <div className='col-md-4'>
-            <div className='control-panel'>
+              <ControlPanel controlPanelName='color filters'
+                            value={this.props.values.enabled}
+                            onChange={(value) => this.props.onChange(value, null, 'TOGGLE_ENABLE')}>
 
               <ValueInput defaultValue={this.props.values.saturationFactor}
                           updateFunction={this.handleSaturationFactorChange}
@@ -100,7 +103,7 @@ export default class ImageContainer extends React.Component {
                           description='Contrast '
                           tip='Change the contrast of webpages.'
                           onBlur={this.props.onBlur}/>
-            </div>
+            </ControlPanel>
           </div>
           <div className='col-md-8'>
             <div className='center-wrapper'>
