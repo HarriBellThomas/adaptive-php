@@ -150,7 +150,7 @@ export default class App extends React.Component {
        <Tab><Tooltip title='Change the apperance of links.'>Link Highlighting</Tooltip></Tab>
        <Tab><Tooltip title='Make the mouse easier to use by adding delays and removing double clicks.'>Mouse Control</Tooltip></Tab>
        <Tab><Tooltip title='Change the colours on webpages.'>Color Manipulations</Tooltip></Tab>
-       <Tab><Tooltip title='Make the webpage focus on a single paragraph.'>Paragraph Highlighting</Tooltip></Tab>
+       <Tab><Tooltip title='Make the webpage focus on a single paragraph.'>Paragraph Reader</Tooltip></Tab>
      </TabList>
 
     <TabPanel>
