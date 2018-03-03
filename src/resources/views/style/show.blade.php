@@ -6,16 +6,20 @@
 @endsection
 @section('content')
 
-<section id="page-title" class="text-center cta cta-4 space--xxs border--bottom imagebg" data-gradient-bg='#F00000,#cb2d3e,#ef473a,#DC281E'>
+<section id="page-title" class="text-center cta cta-4 space--xxs border--bottom imagebg" data-gradient-bg='#F00000,#cb2d3e,#ef473a,#DC281E' style="margin-bottom:0;">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
                 <h1>{{$style['name']}}</h1>
+                <span style="float: right;line-height: 46px;color: antiquewhite;">#{{$style['id']}}</span>
             </div>
         </div>
         <!--end of row-->
     </div>
     <!--end of container-->
+</section>
+<section id="page-title" class="text-center cta cta-4 space--xxs border--bottom imagebg" style="background-color: #ececec;padding: 0.5em;">
+    <h4 style="margin: 0;font-size: 1em;color: grey;">by <strong style="font-weight:700;">{{$style->user['user_name']}}</strong></h4>
 </section>
 
 <div class="container">
