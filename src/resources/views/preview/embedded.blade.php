@@ -16,7 +16,7 @@
     <!-- Custom styles for this template -->
     <!-- <link href="css/blog-home.css" rel="stylesheet"> -->
     <style>
-    body { padding-top: 0 !important; }
+    body { padding-top: 0 !important; background-color: #f9f9f9; }
     </style>
 </head>
 <body>
