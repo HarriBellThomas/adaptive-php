@@ -133,20 +133,20 @@
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="{{url('js/flickity.min.js')}}"></script>
-<script src="{{url('js/easypiechart.min.js')}}"></script>
-<script src="{{url('js/parallax.js')}}"></script>
-<script src="{{url('js/typed.min.js')}}"></script>
-<script src="{{url('js/datepicker.js')}}"></script>
-<script src="{{url('js/isotope.min.js')}}"></script>
-<script src="{{url('js/ytplayer.min.js')}}"></script>
-<script src="{{url('js/lightbox.min.js')}}"></script>
+<!-- <script src="{{url('js/flickity.min.js')}}"></script> -->
+<!-- <script src="{{url('js/easypiechart.min.js')}}"></script> -->
+<!-- <script src="{{url('js/parallax.js')}}"></script> -->
+<!-- <script src="{{url('js/typed.min.js')}}"></script> -->
+<!-- <script src="{{url('js/datepicker.js')}}"></script> -->
+<!-- <script src="{{url('js/isotope.min.js')}}"></script> -->
+<!-- <script src="{{url('js/ytplayer.min.js')}}"></script> -->
+<!-- <script src="{{url('js/lightbox.min.js')}}"></script> -->
 <script src="{{url('js/granim.min.js')}}"></script>
-<script src="{{url('js/jquery.steps.min.js')}}"></script>
-<script src="{{url('js/countdown.min.js')}}"></script>
-<script src="{{url('js/twitterfetcher.min.js')}}"></script>
-<script src="{{url('js/spectragram.min.js')}}"></script>
-<script src="{{url('js/smooth-scroll.min.js')}}"></script>
+<!-- <script src="{{url('js/jquery.steps.min.js')}}"></script> -->
+<!-- <script src="{{url('js/countdown.min.js')}}"></script> -->
+<!-- <script src="{{url('js/twitterfetcher.min.js')}}"></script> -->
+<!-- <script src="{{url('js/spectragram.min.js')}}"></script> -->
+<!-- <script src="{{url('js/smooth-scroll.min.js')}}"></script> -->
 <script src="{{url('js/scripts.js')}}"></script>
 </body>
 </html>

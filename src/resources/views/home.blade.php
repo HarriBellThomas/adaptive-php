@@ -89,6 +89,20 @@ li.adaptive-style-tag {
                                 <span>Not enough ratings</span>
                                 @endif
                             </div>
+
+                            <div class="modal-instance">
+                                <a class="btn btn--sm modal-trigger" href="#" data-modal-index="0" style="padding: 0 0.7em;line-height: 1.3em;margin-left: 1em;background-color: #376ed6;border-color: #376ed6;">
+                                    <div style="color: white;font-size: 0.8em;font-weight: 800;">
+                                        Preview
+                                    </div>
+                                </a>
+                                <div class="modal-container">
+                                    <div class="modal-content">
+                                        <iframe src="/preview/full?adaptive_demo={{$style['id']}}" style="height:80vh;width:80vw;"></iframe>
+                                        <div class="modal-close modal-close-cross"></div>
+                                    </div>
+                                </div>
+                            </div><!--end of modal instance-->
                             <!-- <div class="card__meta">
 
                             </div> -->

@@ -33,7 +33,7 @@ class HomeController extends Controller
         $tagsMap = [];
         $ratingsMap = [];
 
-        $styles = Style::where('name', '<>', '')->paginate(8);
+        $styles = Style::where([['name', '<>', ''], ['user_id', '=', Auth::user()->id]])->paginate(8);
 
         foreach ($styles as $style) {
             $styleMap[$style['id']] = $style;

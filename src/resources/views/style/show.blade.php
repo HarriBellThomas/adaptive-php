@@ -3,6 +3,18 @@
 @section('header')
   @parent
   <link href="{{url('css/show_style.css')}}" rel="stylesheet" type="text/css" media="all" />
+
+  <style>
+  li.adaptive-style-tag {
+      background-color: green;
+      color: white;
+      font-weight: 700;
+      font-size: 0.8em;
+      padding: 1px 7px !important;
+      margin: 2px !important;
+      border-radius: 4px;
+  }
+  </style>
 @endsection
 @section('content')
 
@@ -18,20 +30,22 @@
     </div>
     <!--end of container-->
 </section>
-<section id="page-title" class="text-center cta cta-4 space--xxs border--bottom imagebg" style="background-color: #ececec;padding: 0.5em;">
+
+<section class="text-center cta cta-4 space--xxs border--bottom imagebg" style="background-color: #ececec;padding: 0.5em;">
     <h4 style="margin: 0;font-size: 1em;color: grey;">by <strong style="font-weight:700;">{{$style->user['user_name']}}</strong></h4>
 </section>
 
+<section id="page-title" class="text-center cta cta-4 space--xxs border--bottom imagebg" style="border-bottom:none;padding: 0.5em;">
+    <div class="container">
+        <ul class="list-inline">
+            @for($i = 0; $i < count($style->tags); $i++)
+                <li class="adaptive-style-tag">{{$style->tags[$i]['tag_name']}}</li>
+            @endfor
+        </ul>
+    </div>
+</section>
+
 <div class="container">
-      <h1 class='text-center'> {{$style['name']}} (id: {{$style['id']}}) <br />
-        by {{$style->user['user_name']}}</h1>
-      <div id='tag-container' class='text-center'><h3>
-        @for($i = 0; $i < count($style->tags); $i++)
-          {{$style->tags[$i]['tag_name']}}
-          @if($i != count($style->tags) - 1) |
-          @endif
-        @endfor
-      </h3></div>
       <h2> JSON Description: </h2> <p> {{$style['style']}} </p>
 
       <h2> Reviews: </h2>
