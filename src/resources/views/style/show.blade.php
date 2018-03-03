@@ -5,6 +5,19 @@
   <link href="{{url('css/show_style.css')}}" rel="stylesheet" type="text/css" media="all" />
 @endsection
 @section('content')
+
+<section id="page-title" class="text-center cta cta-4 space--xxs border--bottom imagebg" data-gradient-bg='#F00000,#cb2d3e,#ef473a,#DC281E'>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>{{$style['name']}}</h1>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+
 <div class="container">
       <h1 class='text-center'> {{$style['name']}} (id: {{$style['id']}}) <br />
         by {{$style->user['user_name']}}</h1>
