@@ -42,7 +42,7 @@ li.adaptive-style-tag {
         <div class="col-sm-7">
 
             @foreach($styles as $style)
-            <div class="col-sm-12">
+            <div class="col-sm-12 row">
                 <div class="card card-1 boxed boxed--sm boxed--border">
                     <a href="/style/{{$style['id']}}">
                         <div class="card__footer">
