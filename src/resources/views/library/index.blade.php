@@ -81,6 +81,8 @@ li.adaptive-style-tag {
         </div>
         <!--end masonry-->
 
+        {!! $pages->render() !!}
+
         @endif
     </div>
     <!--end of row-->
