@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Style;
 use App\User;
 use App\Tag;
+use App\Review;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
