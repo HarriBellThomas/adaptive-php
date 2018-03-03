@@ -76,7 +76,7 @@ li.adaptive-style-tag {
             </div>
             @endforeach
 
-            <!-- {!! $stylesPaginationHook->render() !!} -->
+            <!-- {!! $paginator->render() !!} -->
 
             <?php
             // config
