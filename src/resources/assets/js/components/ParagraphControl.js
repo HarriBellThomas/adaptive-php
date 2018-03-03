@@ -2,6 +2,9 @@ import React from 'react';
 import ValueInput from './ValueInput';
 import ToggleButton from 'react-toggle-button';
 import ParagraphReader from './ParagraphReader';
+import {RadioGroup, Radio} from 'react-radio-group';
+import {Tooltip} from 'react-tippy';
+
 
 export default class ParagraphControl extends React.Component {
   constructor(props) {

@@ -61,13 +61,15 @@ export default class ColorBlindnessControl extends React.Component {
 
   render() {
     const row1 = [
-        <label key={this.blindnessTypes[0]}>
+      <div className='col-md-6' key={this.blindnessTypes[0]}>
+        <label>
           <Radio value={this.blindnessTypes[0]}/>
               <div className='box'>
                 <span>{this.blindnessTypes[0]}</span>
               </div>
-        </label>,
+        </label></div>,
 
+      <div className='col-md-6' key={this.blindnessTypes[1]}>
         <label key={this.blindnessTypes[1]}>
           <Radio value={this.blindnessTypes[1]}/>
             <Tooltip title={'Adjust webpages to make them more accesible for people with ' + this.blindnessTypes[1] + '.'}>
@@ -76,17 +78,20 @@ export default class ColorBlindnessControl extends React.Component {
               </div>
             </ Tooltip>
         </label>
+        </div>
       ];
 
     const row2 = this.blindnessTypes.slice(2, 4).map((type) =>
-        <label key={type}>
+    <div className='col-md-6' key={type}>
+      <label>
           <Radio value={type}/>
             <Tooltip title={'Adjust webpages to make them more accesible for people with ' + type + '.'}>
               <div className='box'>
                 <span>{type}</span>
               </div>
-            </ Tooltip>
+            </Tooltip>
         </label>
+      </div>
       );
 
 
@@ -100,14 +105,10 @@ export default class ColorBlindnessControl extends React.Component {
                           onChange={this.handleRadioButton}
                           onBlur={this.props.onBlur}>
                 <div className='row'>
-                  <div className='col-md-12'>
                     {row1}
-                  </div>
                 </div>
                 <div className='row'>
-                  <div className='col-md-12'>
                     {row2}
-                  </div>
                 </div>
               </RadioGroup>
             </div>
