@@ -107,7 +107,7 @@ li.adaptive-style-tag {
                         @endif
                     @endfor
                     </ol>
-                    <!-- {{$results->hasMorePages()}} -->
+                    <!-- {{$paginator->hasMorePages()}} -->
                     <a class="pagination__next" href="{{$paginator->nextPageUrl()}}" title="Next Page">»</a>
                 </div>
             @endif
