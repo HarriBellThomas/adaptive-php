@@ -23,7 +23,7 @@ class StyleLibraryController extends Controller {
             if("" !== trim($style['name'])) {
                 $styleMap[$style['id']] = $style;
                 $tagsMap[$style['id']] = $style->tags()->get();
-                $ratingsMap[$style['id']] = $this->ratingForStyle($style);
+                $ratingsMap[$style['id']] = $this->ratingForStyle($style['id']);
             }
         }
 
@@ -40,8 +40,8 @@ class StyleLibraryController extends Controller {
         );
     }
 
-    private function ratingForStyle($style) {
-        $reviews = $style->reviews()->get();
+    private function ratingForStyle($style_id) {
+        $reviews = Review::where("style_id", $style_id)->get();
         $score = 0;
         $total = 0;
         foreach ($reviews as $review) {
