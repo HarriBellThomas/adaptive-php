@@ -55,7 +55,11 @@ li.adaptive-style-tag {
                                     </span>
                                 </div>
                                 <div class="card__meta">
+                                    @if($ratings[$style['id']] > 0)
                                     <span>Rating: {{ $ratings[ $style['id'] ] }}</span>
+                                    @else
+                                    <span>Not enough ratings</span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="card__bottom">

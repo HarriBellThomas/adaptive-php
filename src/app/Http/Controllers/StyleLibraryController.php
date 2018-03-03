@@ -24,7 +24,7 @@ class StyleLibraryController extends Controller {
             if("" !== trim($style['name'])) {
                 $styleMap[$style['id']] = $style;
                 $tagsMap[$style['id']] = $style->tags()->get();
-                $ratingsMap[$style['id']] = $style->reviews()->avg('stars');
+                $ratingsMap[$style['id']] = number_format((float)($style->reviews()->avg('stars')), 2, '.', '');
             }
         }
 
