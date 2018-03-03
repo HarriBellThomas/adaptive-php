@@ -73,7 +73,7 @@ li.adaptive-style-tag {
             <div class="row">
                 @foreach($styles as $style)
                 <!-- <a class="btn btn--sm change-default" onclick="changeDefault({{$style->id}})"> Make default style </a> -->
-                <?php if(i > 0 && i % 3 == 0) echo '</div><div class="row">'; ?>
+                <?php if($i > 0 && $i % 3 == 0) echo '</div><div class="row">'; ?>
                 <div class="col-sm-4">
                     <div class="card card-1 boxed boxed--sm boxed--border">
                         <a href="/style/{{$style['id']}}">
