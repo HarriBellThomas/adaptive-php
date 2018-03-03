@@ -95,7 +95,8 @@
     <script src="https://js.adaptive.org.uk"></script>
     <script type="text/javascript">
     function clicked(node) {
-        return confirm("Link clicked.");
+        confirm("Link clicked.");
+        return false;
     }
     </script>
 
