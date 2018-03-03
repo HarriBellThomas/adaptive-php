@@ -20,12 +20,13 @@ class StyleLibraryController extends Controller {
         $styleMap = [];
         $tagsMap = [];
         $ratingsMap = [];
-        foreach (Style::all() as $style) {
-            if("" !== trim($style['name'])) {
-                $styleMap[$style['id']] = $style;
-                $tagsMap[$style['id']] = $style->tags()->get();
-                $ratingsMap[$style['id']] = number_format((float)($style->reviews()->avg('stars')), 2, '.', '');
-            }
+
+        $styles = Model::where('name' '<>', '')->simplePaginate(2);
+
+        foreach ($styles as $style) {
+            $styleMap[$style['id']] = $style;
+            $tagsMap[$style['id']] = $style->tags()->get();
+            $ratingsMap[$style['id']] = number_format((float)($style->reviews()->avg('stars')), 1, '.', '');
         }
 
         // foreach (Tag::all() as $tag) $tagsMap[$tag['id']] = $tag;
@@ -41,17 +42,5 @@ class StyleLibraryController extends Controller {
         );
     }
 
-    private function ratingForStyle($style_id) {
-        $reviews = Review::where("style_id", $style_id)->get();
-        $score = 0;
-        $total = 0;
-        foreach ($reviews as $review) {
-            $score += $review->stars;
-            $total++;
-        }
-
-        if($total > 0) return $score / $total;
-        else return -1;
-    }
 
 }
