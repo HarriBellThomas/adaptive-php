@@ -33,6 +33,18 @@ function changeDefault(str) {
         }
     }
 </script>
+
+<style>
+li.adaptive-style-tag {
+    background-color: green;
+    color: white;
+    font-weight: 700;
+    font-size: 0.8em;
+    padding: 1px 7px !important;
+    margin: 2px !important;
+    border-radius: 4px;
+}
+</style>
 @endsection
 
 @section('content')
@@ -57,12 +69,12 @@ function changeDefault(str) {
         <h2 style="text-align: center;">Nothing here (yet)!</h2>
         @else
         <div class="col-sm-12">
-
-            @foreach($styles as $style)
-            <!-- <a class="btn btn--sm change-default" onclick="changeDefault({{$style->id}})"> Make default style </a> -->
-
+            <?php $i = 0; ?>
             <div class="row">
-                <div class="col-sm-6">
+                @foreach($styles as $style)
+                <!-- <a class="btn btn--sm change-default" onclick="changeDefault({{$style->id}})"> Make default style </a> -->
+                <?php if(i > 0 && i % 3 == 0) echo '</div><div class="row">'; ?>
+                <div class="col-sm-4">
                     <div class="card card-1 boxed boxed--sm boxed--border">
                         <a href="/style/{{$style['id']}}">
                             <div class="card__footer">
@@ -90,9 +102,9 @@ function changeDefault(str) {
                         </div>
                     </div>
                 </div>
+                <?php $i++; ?>
+                @endforeach
             </div>
-            @endforeach
-
             <!-- {!! $paginator->render() !!} -->
 
             <?php
