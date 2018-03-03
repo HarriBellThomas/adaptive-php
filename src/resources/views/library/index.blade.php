@@ -35,6 +35,10 @@ li.adaptive-style-tag {
 
 <div class="container">
     <div class="row">
+
+        @if(count($styles) > 0)
+        <h2>Nothing here (yet)!</h2>
+        @else
         <div class="masonry">
             <div class="masonry__container">
 
@@ -76,6 +80,8 @@ li.adaptive-style-tag {
             <!--end masonry__container-->
         </div>
         <!--end masonry-->
+
+        @endif
     </div>
     <!--end of row-->
 </div>
