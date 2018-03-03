@@ -21,7 +21,7 @@ class StyleLibraryController extends Controller {
         $tagsMap = [];
         $ratingsMap = [];
 
-        $styles = Style::where('name', '<>', '')->paginate(2);
+        $styles = Style::where('name', '<>', '')->paginate(6);
 
         foreach ($styles as $style) {
             $styleMap[$style['id']] = $style;
