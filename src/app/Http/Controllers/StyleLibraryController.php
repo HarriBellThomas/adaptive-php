@@ -24,7 +24,7 @@ class StyleLibraryController extends Controller {
             if("" !== trim($style['name'])) {
                 $styleMap[$style['id']] = $style;
                 $tagsMap[$style['id']] = $style->tags()->get();
-                $ratingsMap[$style['id']] = $this->ratingForStyle($style['id']);
+                $ratingsMap[$style['id']] = $style->reviews()->avg('stars');
             }
         }
 
