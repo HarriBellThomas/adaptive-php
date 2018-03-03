@@ -100,6 +100,20 @@ li.adaptive-style-tag {
                                 @endforeach
                             </ul>
                         </div>
+
+                        <div class="modal-instance">
+                        	<a class="btn modal-trigger" href="#">
+                        		<span class="btn__text">
+                        			TRIGGER MODAL
+                        		</span>
+                        	</a>
+                        	<div class="modal-container">
+                        		<div class="modal-content">
+                                    <iframe src="/preview/full?adaptive_demo=1" style="height:100%;width:100%;"></iframe>
+                                    <div class="modal-close modal-close-cross"></div>
+                        		</div>
+                        	</div>
+                        </div><!--end of modal instance-->
                     </div>
                 </div>
                 <?php $i++; ?>
