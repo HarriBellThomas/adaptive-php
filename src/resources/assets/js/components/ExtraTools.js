@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from 'react-rangeslider';
 import ToggleButton from 'react-toggle-button';
 import OnOff from './OnOff';
+import Picker from './Picker';
 import 'react-rangeslider/lib/index.css';
 
 export default class ExtraTools extends React.Component {
@@ -52,13 +53,17 @@ export default class ExtraTools extends React.Component {
             <OnOff onToggle={this.toggle('showMouse')}
                    value={this.props.values.showMouse.enabled}
                    name='show mouse'>
-
-
+                <Picker values={['fast', 'slow']}
+                        name='speed'
+                        onChange={this.speedBarChange('showMouse', 'speed')}/>
             </OnOff>
 
             <OnOff onToggle={this.toggle('typeWarning')}
                    value={this.props.values.typeWarning.enabled}
                    name='type warning'>
+                   <Picker values={['flash', 'sound']}
+                           name='type'
+                           onChange={this.speedBarChange('typeWarning', 'type')}/>
 
             </OnOff>
 
