@@ -49,9 +49,15 @@ export default class App extends React.Component {
           module: 'colorManipulations',
           properties: {
             enabled: false,
-            saturationFactor: 1,
-            brightnessFactor: 0,
-            contrastFactor: 1,
+            changeSaturation : {
+              factor: 1,
+            },
+            changeBrightness: {
+              factor: 0,
+            },
+            changeContrast: {
+              factor: 1,
+            }
           }
         },
 
