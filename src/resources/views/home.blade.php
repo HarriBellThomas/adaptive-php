@@ -89,6 +89,20 @@ li.adaptive-style-tag {
                                 <span>Not enough ratings</span>
                                 @endif
                             </div>
+
+                            <div class="modal-instance">
+                                <a class="btn btn--sm modal-trigger" href="#" data-modal-index="0" style="padding: 0 0.7em;line-height: 1.3em;margin-left: 1em;background-color: #376ed6;border-color: #376ed6;">
+                                    <div style="color: white;font-size: 0.8em;font-weight: 800;">
+                                        Preview
+                                    </div>
+                                </a>
+                                <div class="modal-container">
+                                    <div class="modal-content">
+                                        <iframe src="/preview/full?adaptive_demo=1" style="height:80vh;width:80vw;"></iframe>
+                                        <div class="modal-close modal-close-cross"></div>
+                                    </div>
+                                </div>
+                            </div><!--end of modal instance-->
                             <!-- <div class="card__meta">
 
                             </div> -->
@@ -100,20 +114,6 @@ li.adaptive-style-tag {
                                 @endforeach
                             </ul>
                         </div>
-
-                        <div class="modal-instance">
-                        	<a class="btn modal-trigger" href="#">
-                        		<span class="btn__text">
-                        			TRIGGER MODAL
-                        		</span>
-                        	</a>
-                        	<div class="modal-container">
-                        		<div class="modal-content">
-                                    <iframe src="/preview/full?adaptive_demo=1" style="height:800px%;width:500px;"></iframe>
-                                    <div class="modal-close modal-close-cross"></div>
-                        		</div>
-                        	</div>
-                        </div><!--end of modal instance-->
                     </div>
                 </div>
                 <?php $i++; ?>
