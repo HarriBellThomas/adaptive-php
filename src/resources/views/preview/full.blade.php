@@ -206,7 +206,7 @@
     <!-- Bootstrap core JavaScript -->
     <!-- <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
-    <script src="https://js.adaptive.org.uk/adaptive.js"></script>
+    <script src="https://js.adaptive.org.uk/adaptive.js?"></script>
     <script type="text/javascript">
     function clicked(node) {
         return confirm("Link clicked.");
