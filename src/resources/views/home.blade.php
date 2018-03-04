@@ -103,6 +103,12 @@ li.adaptive-style-tag {
                                     </div>
                                 </div>
                             </div><!--end of modal instance-->
+
+                            <a class="btn btn--sm" href="#" onclick="changeDefault({{$style->id}})" style="padding: 0 0.7em;line-height: 1.3em;margin-left: 1em;background-color: #376ed6;border-color: #376ed6;">
+                                <div style="color: white;font-size: 0.8em;font-weight: 800;">
+                                    Make Default
+                                </div>
+                            </a>
                             <!-- <div class="card__meta">
 
                             </div> -->
