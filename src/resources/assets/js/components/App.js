@@ -23,8 +23,8 @@ export default class App extends React.Component {
         properties: {
           enabled: false,
           size: 18,
-          backgroundColor: '0xFFFFFF',
-          textColor: '0x000000',
+          backgroundColour: '0xFFFFFF',
+          textColour: '0x000000',
           highlightOn: false,
         }
       },
@@ -39,7 +39,7 @@ export default class App extends React.Component {
       },
 
       {
-        module: 'colorManipulations',
+        module: 'colourManipulations',
         properties: {
           enabled: false,
           changeSaturation : {
@@ -55,7 +55,7 @@ export default class App extends React.Component {
       },
 
       {
-        module: 'imageColorShifter',
+        module: 'imageColourShifter',
         properties: {
           enabled: false,
           identifier: 'None'
@@ -303,16 +303,16 @@ export default class App extends React.Component {
          <ImageContainer imageurl='/images/froggy.jpg'
                          width={500}
                          height={500}
-                         values={this._findModule('colorManipulations', this.state.modules).properties}
-                         onChange={(values, callback, action) => this.updateModule('colorManipulations', values, callback, action)}
+                         values={this._findModule('colourManipulations', this.state.modules).properties}
+                         onChange={(values, callback, action) => this.updateModule('colourManipulations', values, callback, action)}
                          onBlur={this.autoSave}/>
        </TabPanel>
        <TabPanel>
          <ColorBlindnessControl imageurl='/images/flowers.jpg'
                                 width={500}
                                 height={500}
-                                values={this._findModule('imageColorShifter', this.state.modules).properties}
-                                onChange={(values, callback, action) => this.updateModule('imageColorShifter', values, callback, action)}
+                                values={this._findModule('imageColourShifter', this.state.modules).properties}
+                                onChange={(values, callback, action) => this.updateModule('imageColourShifter', values, callback, action)}
                                 onBlur={this.autoSave}/>
        </TabPanel>
       </Tabs>

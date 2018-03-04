@@ -20,11 +20,11 @@ export default class TextSizeChanger extends React.Component {
   }
 
   handleChangeCompleteText({hex}) {
-    this.props.onChange({textColor: hex}, this.props.onBlur);
+    this.props.onChange({textColour: hex}, this.props.onBlur);
   };
 
   handleChangeCompleteHighlight({hex}) {
-    this.props.onChange({backgroundColor: hex}, this.props.onBlur);
+    this.props.onChange({backgroundColour: hex}, this.props.onBlur);
   };
 
   handleToggle (value) {
@@ -51,7 +51,7 @@ export default class TextSizeChanger extends React.Component {
             </div>
 
             <p> Text color: </p>
-            <CompactPicker color={this.props.values.textColor} onChangeComplete={ this.handleChangeCompleteText }  />
+            <CompactPicker color={this.props.values.textColour} onChangeComplete={ this.handleChangeCompleteText }  />
 
             <p>Change background?</p>
             <div className='center-wrapper'>
@@ -63,15 +63,15 @@ export default class TextSizeChanger extends React.Component {
 
           <div style={{display: this.props.values.highlightOn ? 'inline' : 'none',}}>
               <p>Background color: </p>
-              <CompactPicker color={this.props.values.backgroundColor} onChangeComplete={ this.handleChangeCompleteHighlight }  />
+              <CompactPicker color={this.props.values.backgroundColour} onChangeComplete={ this.handleChangeCompleteHighlight }  />
             </div>
           </div></ControlPanel></div>
 
         <div className='col-md-8'>
           <div className='text-container'>
             <a style={{fontSize: this.props.values.size,
-                       color: this.props.values.textColor,
-                       backgroundColor: this.props.values.highlightOn ? this.props.values.backgroundColor : '',
+                       color: this.props.values.textColour,
+                       backgroundColor: this.props.values.highlightOn ? this.props.values.backgroundColour : '',
                      }}>
             {this.props.text}
           </a>
