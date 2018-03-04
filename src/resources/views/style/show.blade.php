@@ -94,10 +94,9 @@
     </div>
 
 
-<div class="container" style="margin-top:30px;">
-  <div class="row">
-      <h2>Reviews</h2>
+  <div class="row" style="margin-top:30px;">
       <div class="col-sm-6 offset-sm-3">
+          <h2>Reviews</h2>
           <ul class="comments__list">
               @foreach($style->reviews as $review)
               <li>
@@ -132,7 +131,6 @@
         </div>
       </div>
     </div>
-</div>
 
       <h2> Reviews: </h2>
       <div class='text-center' id='all-reviews'>
