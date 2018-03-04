@@ -50,18 +50,15 @@
         <div class="col-sm-6">
 
             <ul class="accordion accordion-1" style="min-height: 0px;">
-                @foreach($details->modules as $key => $prop)
+                @foreach($details->modules as $detail)
                 <li class="">
                     <div class="accordion__title">
-                        <span class="h5">{{$key}}</span>
+                        <span class="h5">{{$detail->module}}</span>
                     </div>
                     <div class="accordion__content">
-                        <p class="lead">
-                            Stack follows the BEM naming convention that focusses on logical code readability that is reflected in both the HTML and CSS. Interactive elements such as accordions and tabs follow the same markup patterns making rapid development easier for developers and beginners alike.
-                        </p>
-                        <p class="lead">
-                            Add to this the thoughtfully presented documentation, featuring code highlighting, snippets, class customizer explanation and you've got yourself one powerful value package.
-                        </p>
+                        @foreach($details->properties as $key => $prop)
+                        <p class="lead">{{$key}} - {{$prop}}</p>
+                        @endforeach
                     </div>
                 </li>
                 @endforeach
