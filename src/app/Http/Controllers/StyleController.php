@@ -21,16 +21,16 @@ class StyleController extends Controller
         $details = [];
         foreach ($styleDetails->modules as $detail) {
             if($detail->module == "colourManipulations") {
-                // foreach ($styleDetails->properties as $key => $detail) {
-                //     if($key == "nightShifter") {
-                //         $r = [];
-                //         $r["enabled"] = $detail;
-                //         $details[$key] = $r;
-                //     }
-                //     else {
-                //         $details[$key] = $detail;
-                //     }
-                // }
+                foreach ($styleDetails->properties as $key => $detail) {
+                    if($key == "nightShifter") {
+                        $r = [];
+                        $r["enabled"] = $detail;
+                        $details[$key] = $r;
+                    }
+                    else {
+                        $details[$key] = $detail;
+                    }
+                }
             }
             else {
                 $details[$detail->module] = $detail->properties;

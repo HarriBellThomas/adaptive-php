@@ -51,25 +51,6 @@
 
             <ul class="accordion accordion-2" style="min-height: 0px;">
                 @foreach($details->modules as $detail)
-                <li class="">
-                    <div class="accordion__title">
-                        <span class="h5">{{$detail->module}}</span>
-                    </div>
-                    <div class="accordion__content">
-                        <table class="border--round">
-                            <tbody>
-                                @foreach($detail->properties as $key => $prop)
-                                    @if($prop != "")
-                                    <tr>
-                                        <td>{{$key}}</td>
-                                        <td>{{$prop}}</td>
-                                    </tr>
-                                    @endif
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </li>
                 @endforeach
             </ul>
 
@@ -93,7 +74,7 @@
         </div>
     </div>
 
-
+<pre><?php print_r($details); ?></pre>
   <div class="row" style="margin-top:100px;">
       <div class="col-sm-6 col-sm-offset-3">
           <h2>Reviews</h2>
@@ -116,18 +97,18 @@
           </ul>
 
           <div class="comments-form" style="margin-top:100px;">
-                <h2> Submit a review </h2>
-                {!! Form::open(['action' => array('ReviewController@store', 'style_id' => $style->id)]) !!}
-                {{ csrf_field() }}
+            <h2> Submit a review </h2>
+            {!! Form::open(['action' => array('ReviewController@store', 'style_id' => $style->id)]) !!}
+            {{ csrf_field() }}
 
-                {!! Form::label('rating', 'Rating:') !!}
-                {!! Form::select('rating', [1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5]) !!}
-                {!! Form::label('review', 'Review:') !!}
-                {!! Form::text('review') !!}
-                {!! Form::submit('Submit the review') !!}<br />
+            {!! Form::label('rating', 'Rating:') !!}
+            {!! Form::select('rating', [1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5]) !!}
+            {!! Form::label('review', 'Review:') !!}
+            {!! Form::text('review') !!}
+            {!! Form::submit('Submit the review') !!}<br />
 
 
-                {!! Form::close() !!}
+            {!! Form::close() !!}
         </div>
       </div>
     </div>
