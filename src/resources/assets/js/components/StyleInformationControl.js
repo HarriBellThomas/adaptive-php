@@ -31,7 +31,12 @@ export default class StyleInformationControl extends React.Component {
 
   render() {
     const saveMessage = this.props.values.saved ? <p>Everything saved!</p>
-                      : <button type='button' className='btn btn-success save-btn' onClick={() => this.props.onChange('SAVE')}>Save</button>
+                      : <button type='button'
+                                className='btn btn-success'
+                                onClick={() => this.props.onChange('SAVE')}
+                                style={{padding: '10px'}}>
+                                <p>Save</p>
+                        </button>
 
     return (
       <div className='style-information-control'>
@@ -47,7 +52,6 @@ export default class StyleInformationControl extends React.Component {
         <input type='checkbox'
                checked={this.props.values.defaultStyle}
                onChange={this.handleDefaultToggle} />
-
 
         <p>Enable auto captioning of images?</p>
         <div className='center-wrapper'>

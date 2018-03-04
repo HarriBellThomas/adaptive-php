@@ -79629,13 +79629,14 @@ var App = function (_React$Component) {
       var _this3 = this;
 
       if (window.fetchActive > 0) return;
-      window.fetchActive++;
       var validated = this.validator.validate(this.state);
       if (!validated.valid) {
         // TODO: Improve error messages
         if (!autoSave) alert('Cannot save: ' + validated.errors);else console.log(validated.errors);
         return;
       }
+      window.fetchActive++;
+
       return fetch('/style', {
         method: 'POST',
         body: JSON.stringify(this.state),
@@ -80560,84 +80561,92 @@ var ExtraTools = function (_React$Component) {
               'div',
               { className: 'control-panel' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
-                { onToggle: this.toggle('speedBar'),
-                  value: this.props.values.speedBar.enabled,
-                  name: 'speed bar' },
+                'div',
+                { className: 'center-wrapper' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'p',
-                  null,
-                  'Speed: ',
-                  this.props.values.speedBar.speed.toFixed(2).slice(0, -1)
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 0.2,
-                  max: 2,
-                  value: this.props.values.speedBar.speed,
-                  step: 0.1,
-                  onChange: this.speedBarChange('speedBar', 'speed') })
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
-                { onToggle: this.toggle('showMouse'),
-                  value: this.props.values.showMouse.enabled,
-                  name: 'show mouse' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Picker__["a" /* default */], { values: ['fast', 'slow'],
-                  name: 'speed',
-                  onChange: this.speedBarChange('showMouse', 'speed') })
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
-                { onToggle: this.toggle('typeWarning'),
-                  value: this.props.values.typeWarning.enabled,
-                  name: 'type warning' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Picker__["a" /* default */], { values: ['flash', 'sound'],
-                  name: 'type',
-                  onChange: this.speedBarChange('typeWarning', 'type') })
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
-                { onToggle: this.toggle('magnifier'),
-                  value: this.props.values.magnifier.enabled,
-                  name: 'magnifier' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'p',
-                  null,
-                  'Zoom level: ',
-                  this.props.values.magnifier.zoom.toFixed(2).slice(0, -1)
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 1.5,
-                  max: 2.5,
-                  value: this.props.values.magnifier.zoom,
-                  step: 0.1,
-                  onChange: this.speedBarChange('magnifier', 'zoom') }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'p',
-                  null,
-                  'Magnifier size: ',
-                  this.props.values.magnifier.size
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 200,
-                  max: 500,
-                  value: this.props.values.magnifier.size,
-                  step: 15,
-                  onChange: this.speedBarChange('magnifier', 'size') })
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
-                { onToggle: this.toggle('passwordReveal'),
-                  value: this.props.values.passwordReveal.enabled,
-                  name: 'password reveal' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'p',
-                  null,
-                  'Time delay: ',
-                  this.props.values.passwordReveal.timeDelay
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 0,
-                  max: 5,
-                  value: this.props.values.passwordReveal.timeDelay,
-                  step: 1,
-                  onChange: this.speedBarChange('passwordReveal', 'timeDelay') })
+                  'div',
+                  { className: 'toggle-wrapper' },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
+                    { onToggle: this.toggle('speedBar'),
+                      value: this.props.values.speedBar.enabled,
+                      name: 'speed bar' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'p',
+                      null,
+                      'Speed: ',
+                      this.props.values.speedBar.speed.toFixed(2).slice(0, -1)
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 0.2,
+                      max: 2,
+                      value: this.props.values.speedBar.speed,
+                      step: 0.1,
+                      onChange: this.speedBarChange('speedBar', 'speed') })
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
+                    { onToggle: this.toggle('showMouse'),
+                      value: this.props.values.showMouse.enabled,
+                      name: 'show mouse' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Picker__["a" /* default */], { values: ['fast', 'slow'],
+                      name: 'speed',
+                      onChange: this.speedBarChange('showMouse', 'speed') })
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
+                    { onToggle: this.toggle('typeWarning'),
+                      value: this.props.values.typeWarning.enabled,
+                      name: 'type warning' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Picker__["a" /* default */], { values: ['flash', 'sound'],
+                      name: 'type',
+                      onChange: this.speedBarChange('typeWarning', 'type') })
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
+                    { onToggle: this.toggle('magnifier'),
+                      value: this.props.values.magnifier.enabled,
+                      name: 'magnifier' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'p',
+                      null,
+                      'Zoom level: ',
+                      this.props.values.magnifier.zoom.toFixed(2).slice(0, -1)
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 1.5,
+                      max: 2.5,
+                      value: this.props.values.magnifier.zoom,
+                      step: 0.1,
+                      onChange: this.speedBarChange('magnifier', 'zoom') }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'p',
+                      null,
+                      'Magnifier size: ',
+                      this.props.values.magnifier.size
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 200,
+                      max: 500,
+                      value: this.props.values.magnifier.size,
+                      step: 15,
+                      onChange: this.speedBarChange('magnifier', 'size') })
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
+                    { onToggle: this.toggle('passwordReveal'),
+                      value: this.props.values.passwordReveal.enabled,
+                      name: 'password reveal' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'p',
+                      null,
+                      'Time delay: ',
+                      this.props.values.passwordReveal.timeDelay
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 0,
+                      max: 5,
+                      value: this.props.values.passwordReveal.timeDelay,
+                      step: 1,
+                      onChange: this.speedBarChange('passwordReveal', 'timeDelay') })
+                  )
+                )
               )
             )
           )
@@ -81185,7 +81194,7 @@ var OnOff = function (_React$Component) {
     value: function render() {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        { className: 'control-panel' },
+        { className: 'control-panel', style: { width: '80%' } },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'p',
           null,
@@ -81688,10 +81697,17 @@ var StyleInformationControl = function (_React$Component) {
         'Everything saved!'
       ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'button',
-        { type: 'button', className: 'btn btn-success save-btn', onClick: function onClick() {
+        { type: 'button',
+          className: 'btn btn-success',
+          onClick: function onClick() {
             return _this2.props.onChange('SAVE');
-          } },
-        'Save'
+          },
+          style: { padding: '10px' } },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'p',
+          null,
+          'Save'
+        )
       );
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
