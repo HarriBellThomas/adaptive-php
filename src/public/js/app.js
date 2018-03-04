@@ -79489,7 +79489,7 @@ var App = function (_React$Component) {
       properties: {
         enabled: false,
         chosenKey: 'SHIFT',
-        reduceTransparency: 0.5,
+        reduceTransparency: true,
         size: 48,
         defaultRate: 1
       }
@@ -81316,7 +81316,7 @@ var ParagraphControl = function (_React$Component) {
   }, {
     key: 'handleTransparancyChange',
     value: function handleTransparancyChange(value) {
-      this.props.onChange({ reduceTransparency: value });
+      this.props.onChange({ reduceTransparency: !value });
     }
   }, {
     key: 'onClick',
@@ -81385,13 +81385,21 @@ var ParagraphControl = function (_React$Component) {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'div',
                   { className: 'center-wrapper' },
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__ValueInput__["a" /* default */], { defaultValue: this.props.values.reduceTransparency,
-                    updateFunction: this.handleTransparancyChange,
-                    inc: 0.1,
-                    unit: '%',
-                    description: 'Transparency',
-                    tip: 'Change how transparent the background paragraphs are.',
-                    onBlur: this.props.onBlur })
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'p',
+                    null,
+                    'Fade background?'
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'center-wrapper' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'div',
+                      { className: 'toggle-wrapper' },
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_toggle_button___default.a, { value: this.props.values.reduceTransparency,
+                        onToggle: this.handleTransparancyChange })
+                    )
+                  )
                 )
               )
             )
