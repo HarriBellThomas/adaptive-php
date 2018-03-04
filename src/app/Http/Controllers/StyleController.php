@@ -19,7 +19,7 @@ class StyleController extends Controller
         $style = Style::findOrFail($id);
         $styleDetails = json_decode($style['style']);
         $details = [];
-        foreach ($styleDetails["modules"] as $detail) {
+        foreach ($styleDetails->modules as $detail) {
             $details[$detail["module"]] = $detail["properties"];
         }
         return view('style.show', ['style' => $style, 'details' => $styleDetails]);
