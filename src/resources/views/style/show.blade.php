@@ -95,7 +95,27 @@
 
       <!-- <h2> JSON Description: </h2> <p> {{$style['style']}} </p> -->
 
-      <pre><?php print_r($details->modules); ?></pre>
+<div class="container">
+  <div class="row">
+      <ul class="comments__list">
+          @foreach($style->reviews as $review)
+          <li>
+              <div class="comment">
+                  <div class="comment__body">
+                      <h5 class="type--fine-print">{{$review['user']['user_name']}}</h5>
+                      <div class="comment__meta">
+                          <span>{{$review['created_at']}}</span><br>
+                          <span>Rating: {{$review['stars']}} / 5</span>
+                      </div>
+                      <p>{{$review['review']}}</p>
+                  </div>
+              </div>
+              <!--end comment-->
+          </li>
+          @endforeach
+      </ul>
+    </div>
+</div>
 
       <h2> Reviews: </h2>
       <div class='text-center' id='all-reviews'>
