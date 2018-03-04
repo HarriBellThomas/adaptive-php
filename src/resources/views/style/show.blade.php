@@ -93,10 +93,10 @@
         </div>
     </div>
 
-      <!-- <h2> JSON Description: </h2> <p> {{$style['style']}} </p> -->
 
-<div class="container">
+<div class="container" style="margin-top:30px;">
   <div class="row">
+      <h2>Reviews</h2>
       <div class="col-sm-6 offset-sm-3">
           <ul class="comments__list">
               @foreach($style->reviews as $review)
