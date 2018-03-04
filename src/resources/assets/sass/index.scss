@@ -61,6 +61,7 @@
 
   .button-bar {
     display: inline-block;
+    margin: 10px 0;
   }
 
   .text-container {
@@ -93,12 +94,16 @@
     height: 100%;
     align-items: center;
     text-align: center;
+  }
 
+  .extra-tools .control-panel {
+      width: 32%;
   }
 
   .control-panel p {
-    display: 'inline';
-    font-size: 18pt;
+    // display: 'inline';
+    font-size: 1.2em;
+    margin-bottom: 0.4em;
     // font-family: 'Open Sans', sans-serif;
   }
 
@@ -200,5 +205,12 @@
 
   .clear-styles {
     all: initial;
+  }
+
+  .tab-pane {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #92003a;
+    padding: 10px;
   }
 }
