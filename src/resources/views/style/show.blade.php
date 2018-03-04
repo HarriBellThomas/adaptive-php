@@ -95,7 +95,7 @@
 
 
   <div class="row" style="margin-top:30px;">
-      <div class="col-sm-6 offset-sm-3">
+      <div class="col-sm-6 col-sm-offset-3">
           <h2>Reviews</h2>
           <ul class="comments__list">
               @foreach($style->reviews as $review)
