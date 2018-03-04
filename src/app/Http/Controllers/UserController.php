@@ -16,7 +16,9 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         if (count($user->default_style) == 0) {
-            return response()->json("{'err': 'no default'}");
+            $resp = json_encode("{'err': 'no default'}");
+            $headers = ['Content-type'=>'text/plain', 'Access-Control-Allow-Origin'=>'*'];
+            return response()->make($resp, 404, $headers);
         }
         $default_style = $user->default_style[0]['style'];
         if ($default_style) {
