@@ -94,7 +94,7 @@
     </div>
 
 
-  <div class="row" style="margin-top:30px;">
+  <div class="row" style="margin-top:100px;">
       <div class="col-sm-6 col-sm-offset-3">
           <h2>Reviews</h2>
           <ul class="comments__list">
@@ -115,7 +115,7 @@
               @endforeach
           </ul>
 
-          <div class="comments-form">
+          <div class="comments-form" style="margin-top:100px;">
                 <h2> Submit a review </h2>
                 {!! Form::open(['action' => array('ReviewController@store', 'style_id' => $style->id)]) !!}
                 {{ csrf_field() }}
@@ -131,19 +131,6 @@
         </div>
       </div>
     </div>
-
-      <h2> Reviews: </h2>
-      <div class='text-center' id='all-reviews'>
-        @foreach($style->reviews as $review)
-          <div class='review-container text-left'>
-              <p class='reviewer'>{{$review['user']['user_name']}}</p>
-              <p class='review'> {{$review['created_at']}} </p>
-              <p class='review'> Rating: {{$review['stars']}} / 5 <br />
-              {{$review['review']}} </p>
-          </div>
-        @endforeach
-      </div>
-
 
 </div>
 @endsection
