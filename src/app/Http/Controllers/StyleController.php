@@ -20,7 +20,21 @@ class StyleController extends Controller
         $styleDetails = json_decode($style['style']);
         $details = [];
         foreach ($styleDetails->modules as $detail) {
-            $details[$detail->module] = $detail->properties;
+            if($detail->module == "colourManipulations") {
+                foreach ($styleDetails->properties as $key => $detail) {
+                    if($key == "nightShifter") {
+                        $r = [];
+                        $r["enabled"] = $detail;
+                        $details[$key] = $r;
+                    }
+                    else {
+                        $details[$key] = $detail;
+                    }
+                }
+            }
+            else {
+                $details[$detail->module] = $detail->properties;
+            }
         }
         return view('style.show', ['style' => $style, 'details' => $styleDetails]);
     }
