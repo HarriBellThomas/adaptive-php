@@ -61,7 +61,8 @@ export default class ParagraphReader extends React.Component {
     if (this.props.talking) {
       return (
         <div className={'paragraph-background-cover'}
-             style={{backgroundColor: bgColor}}>
+             style={{backgroundColor: bgColor,
+                     zIndex: 999}}>
             <div className='paragraph-cover'
                  style={{left: ((window.innerWidth - 600) / 2) + "px",
                          fontSize: this.props.size + "px"}}>

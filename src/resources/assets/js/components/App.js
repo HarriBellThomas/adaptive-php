@@ -263,9 +263,8 @@ export default class App extends React.Component {
   render() {
     const saveMessage = this.state.saved ? <p>Everything saved!</p>
                       : <button type='button'
-                                className='btn btn-success'
-                                onClick={() => this.styleInformationControlOnChange('SAVE')}
-                                style={{padding: '10px'}}>
+                                className='save-button'
+                                onClick={() => this.styleInformationControlOnChange('SAVE')}>
                                 <p>Save</p>
                         </button>
 
