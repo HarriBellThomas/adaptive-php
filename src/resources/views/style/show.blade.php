@@ -70,7 +70,7 @@
 
       <h2> JSON Description: </h2> <p> {{$style['style']}} </p>
 
-      <pre>{{dump($details)}}</pre>
+      <pre><?php print_r($details); ?></pre>
 
       <h2> Reviews: </h2>
       <div class='text-center' id='all-reviews'>
