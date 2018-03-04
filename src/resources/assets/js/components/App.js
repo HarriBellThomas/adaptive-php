@@ -30,7 +30,7 @@ export default class App extends React.Component {
       },
 
       {
-        module: 'motorControl',
+        module: 'motorFeatures',
         properties: {
           enabled: false,
           delay: 0.4,
@@ -334,8 +334,8 @@ export default class App extends React.Component {
 
    <TabPanel>
      <div className='tab-pane'>
-     <MouseControl values={this._findModule('motorControl', this.state.modules).properties}
-                   onChange={(values, callback) => this.updateModule('motorControl', values)}
+     <MouseControl values={this._findModule('motorFeatures', this.state.modules).properties}
+                   onChange={(values, callback) => this.updateModule('motorFeatures', values)}
                    onBlur={this.autoSave}/>
                </div>
    </TabPanel>
