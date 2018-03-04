@@ -21,14 +21,14 @@ class StyleController extends Controller
         $details = [];
         foreach ($styleDetails->modules as $detail) {
             if($detail->module == "colourManipulations") {
-                foreach ($styleDetails->properties as $key => $detail) {
+                foreach ($detail->properties as $key => $det) {
                     if($key == "nightShifter") {
                         $r = [];
-                        $r["enabled"] = $detail;
+                        $r["enabled"] = $det;
                         $details[$key] = $r;
                     }
                     else {
-                        $details[$key] = $detail;
+                        $details[$key] = $det;
                     }
                 }
             }
