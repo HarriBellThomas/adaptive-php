@@ -79684,7 +79684,7 @@ var App = function (_React$Component) {
 
       var saveMessage = this.state.saved ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'p',
-        null,
+        { className: 'notice-saved' },
         'Everything saved!'
       ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'button',
@@ -80456,18 +80456,22 @@ var ControlPanel = function (_React$Component) {
         'div',
         { className: 'control-panel' },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'p',
-          null,
-          'Enable ' + this.props.controlPanelName + '?'
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { className: 'center-wrapper' },
+          { className: 'logic-block' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            null,
+            'Enable ' + this.props.controlPanelName + '?'
+          ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: 'toggle-wrapper' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_toggle_button___default.a, { value: this.props.value,
-              onToggle: this.handleToggle })
+            { className: 'center-wrapper' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'toggle-wrapper' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_toggle_button___default.a, { value: this.props.value,
+                onToggle: this.handleToggle })
+            )
           )
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -81176,18 +81180,22 @@ var MouseControl = function (_React$Component) {
                 )
               ),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'p',
-                null,
-                ' Remove double clicks?'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'center-wrapper' },
+                { className: 'logic-block' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'p',
+                  null,
+                  ' Remove double clicks?'
+                ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'div',
-                  { className: 'toggle-wrapper' },
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_toggle_button___default.a, { value: this.props.values.doubleClick,
-                    onToggle: this.handleToggle })
+                  { className: 'center-wrapper' },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'toggle-wrapper' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_toggle_button___default.a, { value: this.props.values.doubleClick,
+                      onToggle: this.handleToggle })
+                  )
                 )
               )
             )
@@ -81418,18 +81426,22 @@ var ParagraphControl = function (_React$Component) {
                   'div',
                   { className: 'center-wrapper' },
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'p',
-                    null,
-                    'Fade background?'
-                  ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'center-wrapper' },
+                    { className: 'logic-block' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'p',
+                      null,
+                      'Fade background?'
+                    ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'div',
-                      { className: 'toggle-wrapper' },
-                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_toggle_button___default.a, { value: this.props.values.reduceTransparency,
-                        onToggle: this.handleTransparancyChange })
+                      { className: 'center-wrapper' },
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'toggle-wrapper' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_toggle_button___default.a, { value: this.props.values.reduceTransparency,
+                          onToggle: this.handleTransparancyChange })
+                      )
                     )
                   )
                 )
@@ -81892,36 +81904,48 @@ var TextSizeChanger = function (_React$Component) {
                     onBlur: this.props.onBlur })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'p',
-                  null,
-                  ' Text color: '
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_color__["CompactPicker"], { color: this.props.values.textColour, onChangeComplete: this.handleChangeCompleteText }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'p',
-                  null,
-                  'Change background?'
+                  'div',
+                  { className: 'logic-block' },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'p',
+                    null,
+                    ' Text color: '
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_color__["CompactPicker"], { color: this.props.values.textColour, onChangeComplete: this.handleChangeCompleteText })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'div',
-                  { className: 'center-wrapper' },
+                  { className: 'logic-block' },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'p',
+                    null,
+                    'Change background?'
+                  ),
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'toggle-wrapper' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_toggle_button___default.a, {
-                      value: this.props.values.highlightOn,
-                      onToggle: this.handleToggle })
+                    { className: 'center-wrapper' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'div',
+                      { className: 'toggle-wrapper' },
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_toggle_button___default.a, {
+                        value: this.props.values.highlightOn,
+                        onToggle: this.handleToggle })
+                    )
                   )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'div',
                   { style: { display: this.props.values.highlightOn ? 'inline' : 'none' } },
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'p',
-                    null,
-                    'Background color: '
-                  ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_color__["CompactPicker"], { color: this.props.values.backgroundColour, onChangeComplete: this.handleChangeCompleteHighlight })
+                    'div',
+                    { className: 'logic-block' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'p',
+                      null,
+                      'Background color: '
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_color__["CompactPicker"], { color: this.props.values.backgroundColour, onChangeComplete: this.handleChangeCompleteHighlight })
+                  )
                 )
               )
             )

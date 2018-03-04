@@ -50,21 +50,27 @@ export default class TextSizeChanger extends React.Component {
                           onBlur={this.props.onBlur}/>
             </div>
 
-            <p> Text color: </p>
-            <CompactPicker color={this.props.values.textColour} onChangeComplete={ this.handleChangeCompleteText }  />
+            <div className='logic-block'>
+              <p> Text color: </p>
+              <CompactPicker color={this.props.values.textColour} onChangeComplete={ this.handleChangeCompleteText }  />
+            </div>
 
-            <p>Change background?</p>
-            <div className='center-wrapper'>
-              <div className='toggle-wrapper'>
-              <ToggleButton
-                value={ this.props.values.highlightOn }
-                onToggle={this.handleToggle} />
-            </div></div>
+            <div className='logic-block'>
+              <p>Change background?</p>
+              <div className='center-wrapper'>
+                <div className='toggle-wrapper'>
+                <ToggleButton
+                  value={ this.props.values.highlightOn }
+                  onToggle={this.handleToggle} />
+              </div></div>
+            </div>
 
           <div style={{display: this.props.values.highlightOn ? 'inline' : 'none',}}>
+            <div className='logic-block'>
               <p>Background color: </p>
               <CompactPicker color={this.props.values.backgroundColour} onChangeComplete={ this.handleChangeCompleteHighlight }  />
             </div>
+          </div>
           </div></ControlPanel></div>
 
         <div className='col-md-8'>

@@ -78,11 +78,13 @@ export default class ParagraphControl extends React.Component {
 
             <div className='button-bar'>
                 <div className='center-wrapper'>
-                  <p>Fade background?</p>
-                  <div className='center-wrapper'><div className='toggle-wrapper'>
-                  <ToggleButton value={this.props.values.reduceTransparency}
-                                onToggle={this.handleTransparancyChange}/>
-                            </div></div>
+                  <div className='logic-block'>
+                    <p>Fade background?</p>
+                    <div className='center-wrapper'><div className='toggle-wrapper'>
+                      <ToggleButton value={this.props.values.reduceTransparency}
+                                    onToggle={this.handleTransparancyChange}/>
+                    </div></div>
+                  </div>
                 </div>
             </div>
           </ControlPanel>

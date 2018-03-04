@@ -16,11 +16,13 @@ export default class ControlPanel extends React.Component {
   render() {
     return(
       <div className='control-panel'>
-        <p>{'Enable ' + this.props.controlPanelName + '?'}</p>
-        <div className='center-wrapper'>
-          <div className='toggle-wrapper'>
-            <ToggleButton value={this.props.value}
-                          onToggle={this.handleToggle} />
+        <div className='logic-block'>
+          <p>{'Enable ' + this.props.controlPanelName + '?'}</p>
+          <div className='center-wrapper'>
+            <div className='toggle-wrapper'>
+              <ToggleButton value={this.props.value}
+                            onToggle={this.handleToggle} />
+            </div>
           </div>
         </div>
         <div style={this.props.value ? {} : {display: 'none'}}>

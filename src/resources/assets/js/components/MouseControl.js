@@ -39,12 +39,14 @@ export default class MouseControl extends React.Component {
                             onBlur = {this.props.onBlur}/>
                 </div></div>
 
-            <p> Remove double clicks?</p>
-            <div className='center-wrapper'>
-              <div className='toggle-wrapper'>
-                  <ToggleButton value={this.props.values.doubleClick}
-                          onToggle={this.handleToggle} />
-              </div>
+              <div className='logic-block'>
+                <p> Remove double clicks?</p>
+                <div className='center-wrapper'>
+                  <div className='toggle-wrapper'>
+                      <ToggleButton value={this.props.values.doubleClick}
+                              onToggle={this.handleToggle} />
+                  </div>
+                </div>
             </div>
           </ControlPanel>
           </div>
