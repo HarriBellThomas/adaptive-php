@@ -36,9 +36,12 @@ export default class ParagraphControl extends React.Component {
 
 
   onClick(i) {
-    const new_talking = [false, false, false];
-    new_talking[i] = true;
-    this.setState(() => ({talking: new_talking}));
+    return (value) => {
+      window.speechSynthesis.cancel();
+      const new_talking = [false, false, false];
+      new_talking[i] = value;
+      this.setState(() => ({talking: new_talking}));
+    }
   }
 
 
@@ -95,30 +98,30 @@ export default class ParagraphControl extends React.Component {
           <div className='text-container'>
             <ParagraphReader speed={this.props.values.defaultRate}
                              talking={this.state.talking[0]}
-                             onClick={() => this.onClick(0)}
+                             onClick={this.onClick(0)}
                              opacity={this.props.values.reduceTransparency}
                              size={this.props.values.size}>
-              This is an example paragraph. By enabling paragraph highlighting, you can focus on specific paragraphs. This could help you not
-                become distracted by other content on the page and make reading easier. When focused on a paragraph, it will become bigger and
-                make other paragraphs more transparent.
+              This is an example paragraph. By enabling paragraph highlighting, you can click on the paragraph
+              and it will read it out to you, highlighting words as you go along. This can help you focus
+              on a paragraph and not become distracted.
             </ParagraphReader>
             <ParagraphReader speed={this.props.values.defaultRate}
                              talking={this.state.talking[1]}
-                             onClick={() => this.onClick(1)}
+                             onClick={this.onClick(1)}
                              opacity={this.props.values.reduceTransparency}
                              size={this.props.values.size}>
-                This is an another example paragraph. By enabling paragraph highlighting, you can focus on specific paragraphs. This could help you not
-                  become distracted by other content on the page and make reading easier. When focused on a paragraph, it will become bigger and
-                  make other paragraphs more transparent.
+               This is an another example paragraph. By enabling paragraph highlighting, you can click on the paragraph
+               and it will read it out to you, highlighting words as you go along. This can help you focus
+               on a paragraph and not become distracted.
             </ParagraphReader>
             <ParagraphReader speed={this.props.values.defaultRate}
                              talking={this.state.talking[2]}
-                             onClick={() => this.onClick(2)}
+                             onClick={this.onClick(2)}
                              opacity={this.props.values.reduceTransparency}
                              size={this.props.values.size}>
-                  This is a third example paragraph. By enabling paragraph highlighting, you can focus on specific paragraphs. This could help you not
-                    become distracted by other content on the page and make reading easier. When focused on a paragraph, it will become bigger and
-                    make other paragraphs more transparent.
+               This is a third example paragraph. By enabling paragraph highlighting, you can click on the paragraph
+               and it will read it out to you, highlighting words as you go along. This can help you focus
+               on a paragraph and not become distracted.
             </ParagraphReader>
           </div>
       </div></div>

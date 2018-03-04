@@ -62,7 +62,8 @@ export default class ParagraphReader extends React.Component {
       return (
         <div className={'paragraph-background-cover'}
              style={{backgroundColor: bgColor,
-                     zIndex: 999}}>
+                     zIndex: 999}}
+              onClick={() => this.props.onClick(false)}>
             <div className='paragraph-cover'
                  style={{left: ((window.innerWidth - 600) / 2) + "px",
                          fontSize: this.props.size + "px"}}>
@@ -73,7 +74,7 @@ export default class ParagraphReader extends React.Component {
       );
     } else {
       return (
-        <div onClick={this.props.onClick}>
+        <div onClick={() => this.props.onClick(true)}>
           <p>{this.props.children} </p> <br />
         </div>
       );

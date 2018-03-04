@@ -81362,16 +81362,21 @@ var ParagraphControl = function (_React$Component) {
   }, {
     key: 'onClick',
     value: function onClick(i) {
-      var new_talking = [false, false, false];
-      new_talking[i] = true;
-      this.setState(function () {
-        return { talking: new_talking };
-      });
+      var _this3 = this;
+
+      return function (value) {
+        window.speechSynthesis.cancel();
+        var new_talking = [false, false, false];
+        new_talking[i] = value;
+        _this3.setState(function () {
+          return { talking: new_talking };
+        });
+      };
     }
   }, {
     key: 'render',
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
       console.log('value passed in ' + this.props.values.enabled);
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -81388,7 +81393,7 @@ var ParagraphControl = function (_React$Component) {
               { controlPanelName: 'Paragraph reader',
                 value: this.props.values.enabled,
                 onChange: function onChange(value) {
-                  return _this3.props.onChange(value, null, 'TOGGLE_ENABLE');
+                  return _this4.props.onChange(value, null, 'TOGGLE_ENABLE');
                 } },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
@@ -81458,34 +81463,28 @@ var ParagraphControl = function (_React$Component) {
                 __WEBPACK_IMPORTED_MODULE_3__ParagraphReader__["a" /* default */],
                 { speed: this.props.values.defaultRate,
                   talking: this.state.talking[0],
-                  onClick: function onClick() {
-                    return _this3.onClick(0);
-                  },
+                  onClick: this.onClick(0),
                   opacity: this.props.values.reduceTransparency,
                   size: this.props.values.size },
-                'This is an example paragraph. By enabling paragraph highlighting, you can focus on specific paragraphs. This could help you not become distracted by other content on the page and make reading easier. When focused on a paragraph, it will become bigger and make other paragraphs more transparent.'
+                'This is an example paragraph. By enabling paragraph highlighting, you can click on the paragraph and it will read it out to you, highlighting words as you go along. This can help you focus on a paragraph and not become distracted.'
               ),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_3__ParagraphReader__["a" /* default */],
                 { speed: this.props.values.defaultRate,
                   talking: this.state.talking[1],
-                  onClick: function onClick() {
-                    return _this3.onClick(1);
-                  },
+                  onClick: this.onClick(1),
                   opacity: this.props.values.reduceTransparency,
                   size: this.props.values.size },
-                'This is an another example paragraph. By enabling paragraph highlighting, you can focus on specific paragraphs. This could help you not become distracted by other content on the page and make reading easier. When focused on a paragraph, it will become bigger and make other paragraphs more transparent.'
+                'This is an another example paragraph. By enabling paragraph highlighting, you can click on the paragraph and it will read it out to you, highlighting words as you go along. This can help you focus on a paragraph and not become distracted.'
               ),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_3__ParagraphReader__["a" /* default */],
                 { speed: this.props.values.defaultRate,
                   talking: this.state.talking[2],
-                  onClick: function onClick() {
-                    return _this3.onClick(2);
-                  },
+                  onClick: this.onClick(2),
                   opacity: this.props.values.reduceTransparency,
                   size: this.props.values.size },
-                'This is a third example paragraph. By enabling paragraph highlighting, you can focus on specific paragraphs. This could help you not become distracted by other content on the page and make reading easier. When focused on a paragraph, it will become bigger and make other paragraphs more transparent.'
+                'This is a third example paragraph. By enabling paragraph highlighting, you can click on the paragraph and it will read it out to you, highlighting words as you go along. This can help you focus on a paragraph and not become distracted.'
               )
             )
           )
@@ -81579,6 +81578,8 @@ var ParagraphReader = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var panelOutput = [].concat(_toConsumableArray(this.words));
       // TODO: Not very efficent.
       for (var i = 0; i < panelOutput.length; i++) {
@@ -81597,7 +81598,10 @@ var ParagraphReader = function (_React$Component) {
           'div',
           { className: 'paragraph-background-cover',
             style: { backgroundColor: bgColor,
-              zIndex: 999 } },
+              zIndex: 999 },
+            onClick: function onClick() {
+              return _this2.props.onClick(false);
+            } },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'paragraph-cover',
@@ -81609,7 +81613,9 @@ var ParagraphReader = function (_React$Component) {
       } else {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { onClick: this.props.onClick },
+          { onClick: function onClick() {
+              return _this2.props.onClick(true);
+            } },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'p',
             null,
