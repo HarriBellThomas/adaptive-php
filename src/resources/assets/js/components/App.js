@@ -273,10 +273,10 @@ export default class App extends React.Component {
       <Tabs>
      <TabList>
        <Tab><Tooltip title='Set the name and tags on your style.'>Style Information</Tooltip></Tab>
-       <Tab><Tooltip title='Change the apperance of links.'>Link Highlighting</Tooltip></Tab>
-       <Tab><Tooltip title='Make the mouse easier to use by adding delays and removing double clicks.'>Mouse Control</Tooltip></Tab>
        <Tab><Tooltip title='Change the colours on webpages.'>Color Manipulations</Tooltip></Tab>
        <Tab><Tooltip title='Make the webpage focus on a single paragraph.'>Paragraph Reader</Tooltip></Tab>
+       <Tab><Tooltip title='Make the mouse easier to use by adding delays and removing double clicks.'>Mouse Control</Tooltip></Tab>
+       <Tab><Tooltip title='Change the apperance of links.'>Link Highlighting</Tooltip></Tab>
        <Tab><Tooltip title='Some extra tools to adapt your browsing experience.'>Extra Tools</Tooltip></Tab>
      </TabList>
 
@@ -290,27 +290,15 @@ export default class App extends React.Component {
                                onBlur={this.autoSave}/>
                            </div>
     </TabPanel>
-   <TabPanel>
-     <div className='tab-pane'>
-     <TextSizeChanger text='An example link'
-                      values={this._findModule('linkHighlighter', this.state.modules).properties}
-                      onChange={(values, callback, action) => this.updateModule('linkHighlighter', values, callback, action)}
-                      onBlur={this.autoSave}/>
-                  </div>
-   </TabPanel>
-   <TabPanel>
-     <div className='tab-pane'>
-     <MouseControl values={this._findModule('clickDelay', this.state.modules).properties}
-                   onChange={(values, callback) => this.updateModule('clickDelay', values)}
-                   onBlur={this.autoSave}/>
-               </div>
-   </TabPanel>
+
+
    <TabPanel>
      <Tabs forceRenderTabPanel>
        <TabList>
          <Tab>Color Filters</Tab>
          <Tab>Color Blindness Corrections</Tab>
        </TabList>
+
        <TabPanel>
          <div className='tab-pane'>
          <ImageContainer imageurl='/images/froggy.jpg'
@@ -321,6 +309,7 @@ export default class App extends React.Component {
                          onBlur={this.autoSave}/>
                      </div>
        </TabPanel>
+
        <TabPanel>
          <div className='tab-pane'>
          <ColorBlindnessControl imageurl='/images/flowers.jpg'
@@ -333,6 +322,7 @@ export default class App extends React.Component {
        </TabPanel>
       </Tabs>
    </TabPanel>
+
    <TabPanel>
      <div className='tab-pane'>
      <ParagraphControl values={this._findModule('paragraphReader', this.state.modules).properties}
@@ -340,6 +330,23 @@ export default class App extends React.Component {
                        onBlur={this.autoSave}
                        speed={1}/>
                    </div>
+   </TabPanel>
+
+   <TabPanel>
+     <div className='tab-pane'>
+     <MouseControl values={this._findModule('clickDelay', this.state.modules).properties}
+                   onChange={(values, callback) => this.updateModule('clickDelay', values)}
+                   onBlur={this.autoSave}/>
+               </div>
+   </TabPanel>
+
+   <TabPanel>
+     <div className='tab-pane'>
+     <TextSizeChanger text='An example link'
+                      values={this._findModule('linkHighlighter', this.state.modules).properties}
+                      onChange={(values, callback, action) => this.updateModule('linkHighlighter', values, callback, action)}
+                      onBlur={this.autoSave}/>
+                  </div>
    </TabPanel>
 
    <TabPanel>

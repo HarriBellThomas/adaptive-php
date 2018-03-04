@@ -79723,8 +79723,17 @@ var App = function (_React$Component) {
               null,
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_8_react_tippy__["Tooltip"],
-                { title: 'Change the apperance of links.' },
-                'Link Highlighting'
+                { title: 'Change the colours on webpages.' },
+                'Color Manipulations'
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_1_react_tabs__["a" /* Tab */],
+              null,
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_8_react_tippy__["Tooltip"],
+                { title: 'Make the webpage focus on a single paragraph.' },
+                'Paragraph Reader'
               )
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -79741,17 +79750,8 @@ var App = function (_React$Component) {
               null,
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_8_react_tippy__["Tooltip"],
-                { title: 'Change the colours on webpages.' },
-                'Color Manipulations'
-              )
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              __WEBPACK_IMPORTED_MODULE_1_react_tabs__["a" /* Tab */],
-              null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_8_react_tippy__["Tooltip"],
-                { title: 'Make the webpage focus on a single paragraph.' },
-                'Paragraph Reader'
+                { title: 'Change the apperance of links.' },
+                'Link Highlighting'
               )
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -79775,33 +79775,6 @@ var App = function (_React$Component) {
                   saved: this.state.saved,
                   defaultStyle: this.state.defaultStyle },
                 onChange: this.styleInformationControlOnChange,
-                onBlur: this.autoSave })
-            )
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
-            null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              { className: 'tab-pane' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__TextSizeChanger__["a" /* default */], { text: 'An example link',
-                values: this._findModule('linkHighlighter', this.state.modules).properties,
-                onChange: function onChange(values, callback, action) {
-                  return _this4.updateModule('linkHighlighter', values, callback, action);
-                },
-                onBlur: this.autoSave })
-            )
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
-            null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              { className: 'tab-pane' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__MouseControl__["a" /* default */], { values: this._findModule('clickDelay', this.state.modules).properties,
-                onChange: function onChange(values, callback) {
-                  return _this4.updateModule('clickDelay', values);
-                },
                 onBlur: this.autoSave })
             )
           ),
@@ -79871,6 +79844,33 @@ var App = function (_React$Component) {
                 },
                 onBlur: this.autoSave,
                 speed: 1 })
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
+            null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'tab-pane' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__MouseControl__["a" /* default */], { values: this._findModule('clickDelay', this.state.modules).properties,
+                onChange: function onChange(values, callback) {
+                  return _this4.updateModule('clickDelay', values);
+                },
+                onBlur: this.autoSave })
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
+            null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'tab-pane' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__TextSizeChanger__["a" /* default */], { text: 'An example link',
+                values: this._findModule('linkHighlighter', this.state.modules).properties,
+                onChange: function onChange(values, callback, action) {
+                  return _this4.updateModule('linkHighlighter', values, callback, action);
+                },
+                onBlur: this.autoSave })
             )
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -80708,7 +80708,7 @@ var ExtraTools = function (_React$Component) {
                 name: 'dark mode' }),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */], { onToggle: this.toggle('visionTools'),
                 value: this.props.values.visionTools.enabled,
-                name: 'image auto captioning?' })
+                name: 'image auto captioning' })
             )
           )
         )
