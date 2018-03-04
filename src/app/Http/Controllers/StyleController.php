@@ -69,7 +69,13 @@ class StyleController extends Controller
         $tag_object->description = '';
         $tag_object->save();
       }
-      $style_object->tags()->attach($tag_object->id);
+      $related_tags_ids = [];
+      foreach($style_object->tags->all() as $tag) {
+        array_push($related_tags_ids, $tag->id);
+      }
+      if(!in_array($tag_object->id, $related_tags_ids)) {
+        $style_object->tags()->attach($tag_object->id);
+      }
     }
 
 

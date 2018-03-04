@@ -212,7 +212,6 @@ export default class App extends React.Component {
 
   saveStyle(autoSave) {
     if(window.fetchActive > 0) return;
-    window.fetchActive++;
     const validated = this.validator.validate(this.state);
     if(!validated.valid) {
       // TODO: Improve error messages
@@ -220,6 +219,8 @@ export default class App extends React.Component {
       else console.log(validated.errors);
       return;
     }
+    window.fetchActive++;
+
     return fetch('/style', {
       method: 'POST',
       body: JSON.stringify(this.state),
