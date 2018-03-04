@@ -79458,7 +79458,7 @@ var App = function (_React$Component) {
         highlightOn: false
       }
     }, {
-      module: 'clickDelay',
+      module: 'motorControl',
       properties: {
         enabled: false,
         delay: 0.4,
@@ -79852,9 +79852,9 @@ var App = function (_React$Component) {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
               { className: 'tab-pane' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__MouseControl__["a" /* default */], { values: this._findModule('clickDelay', this.state.modules).properties,
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__MouseControl__["a" /* default */], { values: this._findModule('motorControl', this.state.modules).properties,
                 onChange: function onChange(values, callback) {
-                  return _this4.updateModule('clickDelay', values);
+                  return _this4.updateModule('motorControl', values);
                 },
                 onBlur: this.autoSave })
             )
