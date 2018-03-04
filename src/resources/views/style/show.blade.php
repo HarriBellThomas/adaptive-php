@@ -49,16 +49,25 @@
     <div class="row">
         <div class="col-sm-6">
 
-            <ul class="accordion accordion-1" style="min-height: 0px;">
+            <ul class="accordion accordion-2" style="min-height: 0px;">
                 @foreach($details->modules as $detail)
                 <li class="">
                     <div class="accordion__title">
                         <span class="h5">{{$detail->module}}</span>
                     </div>
                     <div class="accordion__content">
-                        @foreach($detail->properties as $key => $prop)
-                        <p class="lead">{{$key}} - {{$prop}}</p>
-                        @endforeach
+                        <table class="border--round">
+                            <tbody>
+                                @foreach($detail->properties as $key => $prop)
+                                    @if($prop != "")
+                                    <tr>
+                                        <td>{{$key}}</td>
+                                        <td>{{$prop}}</td>
+                                    </tr>
+                                    @endif
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </li>
                 @endforeach
