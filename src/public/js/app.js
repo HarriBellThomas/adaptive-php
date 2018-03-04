@@ -79689,11 +79689,10 @@ var App = function (_React$Component) {
       ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'button',
         { type: 'button',
-          className: 'btn btn-success',
+          className: 'save-button',
           onClick: function onClick() {
             return _this4.styleInformationControlOnChange('SAVE');
-          },
-          style: { padding: '10px' } },
+          } },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'p',
           null,
@@ -81349,7 +81348,6 @@ var ParagraphControl = function (_React$Component) {
   }, {
     key: 'onClick',
     value: function onClick(i) {
-      alert('clicked on ' + i);
       var new_talking = [false, false, false];
       new_talking[i] = true;
       this.setState(function () {
@@ -81534,7 +81532,6 @@ var ParagraphReader = function (_React$Component) {
     key: 'componentWillUpdate',
     value: function componentWillUpdate(nextProps, nextState) {
       if (!this.props.talking && nextProps.talking) {
-        alert(this.utterance.text);
         window.speechSynthesis.cancel();
         window.speechSynthesis.speak(this.utterance);
       } else if (this.props.speed != nextProps.speed) {
@@ -81581,7 +81578,8 @@ var ParagraphReader = function (_React$Component) {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'paragraph-background-cover',
-            style: { backgroundColor: bgColor } },
+            style: { backgroundColor: bgColor,
+              zIndex: 999 } },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'paragraph-cover',
