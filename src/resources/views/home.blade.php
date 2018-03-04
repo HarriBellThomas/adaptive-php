@@ -104,7 +104,7 @@ li.adaptive-style-tag {
                                 </div>
                             </div><!--end of modal instance-->
 
-                            <a class="btn btn--sm" href="#" onclick="changeDefault({{$style->id}})" style="padding: 0 0.7em;line-height: 1.3em;margin-left: 1em;background-color: #376ed6;border-color: #376ed6;">
+                            <a class="btn btn--sm" href="#" onclick="changeDefault({{$style->id}})" style="padding: 0 0.7em;line-height: 1.3em;margin-left: 1em;background-color: #37a9d6;border-color: #37a9d6;">
                                 <div style="color: white;font-size: 0.8em;font-weight: 800;">
                                     Make Default
                                 </div>
