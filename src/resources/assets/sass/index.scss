@@ -172,21 +172,22 @@
 
 
     p {
-      display: inline;
+      padding: 10px;
+      margin: 0;
     }
   }
 
   .title-input {
-    display: inline;
-    // text-align: center;
-    border-width: 0px 0px 3px 0px;
-    width: 400px !important;
-    height: 40px !important;
-    padding: 0px;
-    margin: 0px 10px;
-    border-color: #92003a;
-    outline: none;
-    font-size: 18pt;
+      display: inline;
+      border-width: 2px;
+      border-style: solid;
+      width: 400px !important;
+      height: 40px !important;
+      padding: 0px;
+      margin: 0px 10px;
+      border-color: #92003a;
+      outline: none;
+      font-size: 18pt;
     // font-family: 'Open Sans', sans-serif;
   }
 
@@ -212,5 +213,25 @@
     border-width: 2px;
     border-color: #92003a;
     padding: 10px;
+  }
+
+  .react-tagsinput {
+      border: 2px solid #92013a !important;
+      margin: 10px !important;
+
+      .react-tagsinput-input {
+          background: none !important;
+          border: none !important;
+      }
+  }
+
+  .save-button {
+    padding: 0.4em 2em;
+    margin-top: 2em;
+    color: white;
+    border-radius: 4px;
+    background-color: #92013a;
+    border-color: #92013a;
+    font-weight: 800;
   }
 }
