@@ -20,7 +20,7 @@ class StyleController extends Controller
         $styleDetails = json_decode($style['style']);
         $details = [];
         foreach ($styleDetails->modules as $detail) {
-            $details[$detail["module"]] = $detail["properties"];
+            $details[$detail->module] = $detail->properties;
         }
         return view('style.show', ['style' => $style, 'details' => $styleDetails]);
     }
