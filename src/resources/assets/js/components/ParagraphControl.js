@@ -36,7 +36,6 @@ export default class ParagraphControl extends React.Component {
 
 
   onClick(i) {
-    alert('clicked on ' + i);
     const new_talking = [false, false, false];
     new_talking[i] = true;
     this.setState(() => ({talking: new_talking}));
