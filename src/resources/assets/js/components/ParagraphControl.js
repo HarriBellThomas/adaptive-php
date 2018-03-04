@@ -31,7 +31,7 @@ export default class ParagraphControl extends React.Component {
   }
 
   handleTransparancyChange(value) {
-    this.props.onChange({reduceTransparency: value});
+    this.props.onChange({reduceTransparency: !value});
   }
 
 
@@ -79,13 +79,11 @@ export default class ParagraphControl extends React.Component {
 
             <div className='button-bar'>
                 <div className='center-wrapper'>
-                  <ValueInput defaultValue={this.props.values.reduceTransparency}
-                            updateFunction={this.handleTransparancyChange}
-                            inc={0.1}
-                            unit='%'
-                            description='Transparency'
-                            tip='Change how transparent the background paragraphs are.'
-                            onBlur={this.props.onBlur}/>
+                  <p>Fade background?</p>
+                  <div className='center-wrapper'><div className='toggle-wrapper'>
+                  <ToggleButton value={this.props.values.reduceTransparency}
+                                onToggle={this.handleTransparancyChange}/>
+                            </div></div>
                 </div>
             </div>
           </ControlPanel>

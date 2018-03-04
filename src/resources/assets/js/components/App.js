@@ -67,7 +67,7 @@ export default class App extends React.Component {
         properties: {
           enabled: false,
           chosenKey: 'SHIFT',
-          reduceTransparency: 0.5,
+          reduceTransparency: true,
           size: 48,
           defaultRate: 1,
         }
