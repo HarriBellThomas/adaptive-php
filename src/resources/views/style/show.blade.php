@@ -46,6 +46,28 @@
 </section>
 
 <div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <table class="border--round">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Settings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-6">
+            <iframe src="/preview/embedded?adaptive_demo={{$style['id']}}" style="min-height:800px;border-radius: 5px;border-color: rgba(162, 162, 162, 0.2);border-style: solid;border-width: 2px;"></iframe>
+        </div>
+    </div>
+
       <h2> JSON Description: </h2> <p> {{$style['style']}} </p>
 
       <h2> Reviews: </h2>
