@@ -4,8 +4,8 @@
   }
 
   .react-tabs__tab-list {
-    border-bottom: 3px solid #4a90e2;
-    margin: 0 0 10px;
+    border-bottom: 3px solid #92003a;
+    margin: 10px 0 0 0;
     padding: 0;
   }
 
@@ -19,15 +19,19 @@
     padding: 6px 12px;
     cursor: pointer;
     font-size: 15pt;
-    font-family: 'Open Sans', sans-serif;
+    // font-family: 'Open Sans', sans-serif;
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 800;
+    font-size: 1em;
+    color: #6f042f;
   }
 
   .react-tabs__tab--selected {
-    background: #4a90e2;
-    border-color: #252525;
+    background: #92003a;
+    // border-color: #252525;
     border-width: 3px;
-    color: black;
-    border-radius: 5px 5px 0 0;
+    color: white;
+    border-radius: 2px 2px 0 0;
   }
 
   .react-tabs__tab--disabled {

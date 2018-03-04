@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+// @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 #root {
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
   .size-btn {
       background-color: #252525;
       color: white;
@@ -37,7 +39,7 @@
     border-color: #4a90e2;
 
     font-size: 18pt;
-    font-family: 'Open Sans', sans-serif;
+    // font-family: 'Open Sans', sans-serif;
   }
 
   .value-input input:focus {
@@ -73,7 +75,7 @@
   }
 
   p {
-    font-family: 'Open Sans', sans-serif;
+    // font-family: 'Open Sans', sans-serif;
     font-size: 18pt;
   }
 
@@ -97,7 +99,7 @@
   .control-panel p {
     display: 'inline';
     font-size: 18pt;
-    font-family: 'Open Sans', sans-serif;
+    // font-family: 'Open Sans', sans-serif;
   }
 
   .image-sandbox {
@@ -105,7 +107,7 @@
   }
 
   .text-container a {
-    font-family: 'Open Sans', sans-serif;
+    // font-family: 'Open Sans', sans-serif;
     cursor: pointer;
     text-decoration: underline;
   }
@@ -113,13 +115,13 @@
   .value-input {
     all:default;
     font-size: 18pt;
-    font-family: 'Open Sans', sans-serif;
+    // font-family: 'Open Sans', sans-serif;
   }
 
   .my-btn {
     white-space: nowrap;
     color: #252525;
-    font-family: 'Open Sans', sans-serif;
+    // font-family: 'Open Sans', sans-serif;
     background-color: white;
     border-style: solid;
     border-radius: 3px;
@@ -159,8 +161,8 @@
 
   .style-information-control {
     border-style: solid;
-    border-width: 3px;
-    border-color: #252525;
+    border-width: 2px;
+    border-color: #92003a;
     padding: 10px;
 
 
@@ -171,21 +173,21 @@
 
   .title-input {
     display: inline;
-    text-align: center;
+    // text-align: center;
     border-width: 0px 0px 3px 0px;
     width: 400px !important;
     height: 40px !important;
     padding: 0px;
-    margin: 0px;
-    border-color: #4a90e2;
-
+    margin: 0px 10px;
+    border-color: #92003a;
+    outline: none;
     font-size: 18pt;
-    font-family: 'Open Sans', sans-serif;
+    // font-family: 'Open Sans', sans-serif;
   }
 
 
   .save-btn {
-    font-family: 'Open Sans', sans-serif;
+    // font-family: 'Open Sans', sans-serif;
     box-shadow: none !important;
     font-size: 22pt;
     padding: 15px;
