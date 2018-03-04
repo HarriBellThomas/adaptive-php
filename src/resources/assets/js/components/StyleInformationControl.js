@@ -41,11 +41,6 @@ export default class StyleInformationControl extends React.Component {
                onBlur={this.props.onBlur} /><br/><br/>
         <p>Tags for your style:</p>
         <TagsInput value={this.props.values.tags} onChange={this.handleTagChange} />
-        <p>Default style?</p>
-
-        <input type='checkbox'
-               checked={this.props.values.defaultStyle}
-               onChange={this.handleDefaultToggle} />
 
       <br />
     </div>

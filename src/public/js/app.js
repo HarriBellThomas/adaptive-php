@@ -80704,7 +80704,7 @@ var ExtraTools = function (_React$Component) {
                 name: 'dark mode' }),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */], { onToggle: this.toggle('visionTools'),
                 value: this.props.values.visionTools.enabled,
-                name: 'vision tools' })
+                name: 'image auto captioning?' })
             )
           )
         )
@@ -81776,14 +81776,6 @@ var StyleInformationControl = function (_React$Component) {
           'Tags for your style:'
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_tagsinput___default.a, { value: this.props.values.tags, onChange: this.handleTagChange }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'p',
-          null,
-          'Default style?'
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'checkbox',
-          checked: this.props.values.defaultStyle,
-          onChange: this.handleDefaultToggle }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null)
       );
     }

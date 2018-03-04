@@ -103,7 +103,7 @@ export default class ExtraTools extends React.Component {
             </OnOff>
             <OnOff onToggle={this.toggle('visionTools')}
                    value={this.props.values.visionTools.enabled}
-                   name='vision tools'>
+                   name='image auto captioning?'>
 
             </OnOff>
           </div>
