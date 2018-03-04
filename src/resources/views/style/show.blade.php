@@ -70,6 +70,8 @@
 
       <h2> JSON Description: </h2> <p> {{$style['style']}} </p>
 
+      <pre>{{dump($details)}}</pre>
+
       <h2> Reviews: </h2>
       <div class='text-center' id='all-reviews'>
         @foreach($style->reviews as $review)
