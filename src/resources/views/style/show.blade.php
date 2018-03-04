@@ -22,7 +22,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <span style="float: right;line-height: 46px;color: antiquewhite;">#{{$style['id']}}</span>
+                <span style="display: block;opacity: 0.6;color: antiquewhite;">#{{$style['id']}}</span>
                 <h1>{{$style['name']}}</h1>
             </div>
         </div>
