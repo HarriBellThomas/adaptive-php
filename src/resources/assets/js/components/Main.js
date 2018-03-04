@@ -14,7 +14,6 @@ if (document.getElementById('root')) {
   const props = Object.assign({},element.dataset);
 
   if (Object.keys(props).length != 0) {
-    alert(JSON.stringify(props));
     props.modules = JSON.parse(props.modules);
     props.tags = JSON.parse(props.tags);
     props.hasSaved = props.hasSaved === "1" ? true : false;
