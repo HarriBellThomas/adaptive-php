@@ -56,7 +56,7 @@
                         <span class="h5">{{$detail->module}}</span>
                     </div>
                     <div class="accordion__content">
-                        @foreach($details->properties as $key => $prop)
+                        @foreach($detail->properties as $key => $prop)
                         <p class="lead">{{$key}} - {{$prop}}</p>
                         @endforeach
                     </div>
