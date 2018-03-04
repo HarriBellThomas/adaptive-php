@@ -16,125 +16,147 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.validator = new Validation();
+    alert(Object.keys(this.props).length);
 
-    this.state = {
-      id: '',
-      title: '',
-      tags: [],
-      saved: false,
-      hasSaved: false,
-      defaultStyle: true,
-      modules: [
-        {
-          module: 'linkHighlighter',
-          properties: {
-            enabled: false,
-            size: 18,
-            backgroundColor: '0xFFFFFF',
-            textColor: '0x000000',
-            highlightOn: false,
-          }
-        },
+    const defaultState = [
+      {
+        module: 'linkHighlighter',
+        properties: {
+          enabled: false,
+          size: 18,
+          backgroundColor: '0xFFFFFF',
+          textColor: '0x000000',
+          highlightOn: false,
+        }
+      },
 
-        {
-          module: 'clickDelay',
-          properties: {
-            enabled: false,
-            delay: 0.4,
-            doubleClick: false,
-          }
-        },
+      {
+        module: 'clickDelay',
+        properties: {
+          enabled: false,
+          delay: 0.4,
+          doubleClick: false,
+        }
+      },
 
-        {
-          module: 'colorManipulations',
-          properties: {
-            enabled: false,
-            changeSaturation : {
-              factor: 1,
-            },
-            changeBrightness: {
-              factor: 0,
-            },
-            changeContrast: {
-              factor: 1,
-            }
-          }
-        },
-
-        {
-          module: 'imageColorShifter',
-          properties: {
-            enabled: false,
-            identifier: 'None'
-          }
-        },
-
-        {
-          module: 'paragraphReader',
-          properties: {
-            enabled: false,
-            chosenKey: 'SHIFT',
-            reduceTransparency: 0.5,
-            size: 48,
-            defaultRate: 1,
-          }
-        },
-
-        {
-          module: 'visionTools',
-          properties: {
-            enabled: true,
-          }
-        },
-
-        {
-          module: 'darkMode',
-          properties: {
-            enabled: false,
-          }
-        },
-
-        {
-          module: 'speedBar',
-          properties: {
-            enabled: false,
-            speed: 1,
-          }
-        },
-
-        {
-          module: 'showMouse',
-          properties: {
-            enabled: false,
-            speed: 'fast',
-          }
-        },
-
-        {
-          module: 'typeWarning',
-          properties: {
-            enabled: false,
-            type: 'flash',
-          }
-        },
-
-        {
-          module: 'magnifier',
-          properties: {
-            enabled: false,
-            zoom: 2,
-            size: 350,
-          }
-        },
-
-        {
-          module: 'passwordReveal',
-          properties: {
-            enabled: false,
-            timeDelay: 3,
+      {
+        module: 'colorManipulations',
+        properties: {
+          enabled: false,
+          changeSaturation : {
+            factor: 1,
+          },
+          changeBrightness: {
+            factor: 0,
+          },
+          changeContrast: {
+            factor: 1,
           }
         }
-      ]
+      },
+
+      {
+        module: 'imageColorShifter',
+        properties: {
+          enabled: false,
+          identifier: 'None'
+        }
+      },
+
+      {
+        module: 'paragraphReader',
+        properties: {
+          enabled: false,
+          chosenKey: 'SHIFT',
+          reduceTransparency: 0.5,
+          size: 48,
+          defaultRate: 1,
+        }
+      },
+
+      {
+        module: 'visionTools',
+        properties: {
+          enabled: true,
+        }
+      },
+
+      {
+        module: 'darkMode',
+        properties: {
+          enabled: false,
+        }
+      },
+
+      {
+        module: 'speedBar',
+        properties: {
+          enabled: false,
+          speed: 1,
+        }
+      },
+
+      {
+        module: 'showMouse',
+        properties: {
+          enabled: false,
+          speed: 'fast',
+        }
+      },
+
+      {
+        module: 'typeWarning',
+        properties: {
+          enabled: false,
+          type: 'flash',
+        }
+      },
+
+      {
+        module: 'magnifier',
+        properties: {
+          enabled: false,
+          zoom: 2,
+          size: 350,
+        }
+      },
+
+      {
+        module: 'passwordReveal',
+        properties: {
+          enabled: false,
+          timeDelay: 3,
+        }
+      }
+    ];
+
+
+
+    if (Object.keys(this.props).length === 0) {  // On create page
+      this.state = {
+        id: '',
+        title: '',
+        tags: [],
+        saved: false,
+        hasSaved: false,
+        defaultStyle: true,
+        modules: [...defaultState]
+      };
+    } else { // On edit page
+
+      // We have to re-add the disabled modules
+      const moduleNames = defaultState.map(module => module.module);
+
+      const propsCopy = {...this.props.props};
+      alert(typeof propsCopy.defaultStyle);
+      moduleNames.forEach(name => {
+          if(!this._findModule(name, propsCopy.modules)) {
+            propsCopy.modules.push(this._findModule(name, defaultState));
+          }
+        }
+      )
+      alert(JSON.stringify(propsCopy));
+      this.state = propsCopy;
     }
 
 
@@ -151,7 +173,6 @@ export default class App extends React.Component {
 
   _findModule(moduleName, moduleList) {
     for (var i = 0; i < moduleList.length; i++) {
-      console.log(moduleList[i].module);
       if (moduleList[i].module === moduleName) return moduleList[i];
     }
   }

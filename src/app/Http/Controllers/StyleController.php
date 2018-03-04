@@ -73,7 +73,7 @@ class StyleController extends Controller
     }
 
 
-    if ($request->default_style) {
+    if ($json['defaultStyle']) {
       if(sizeof(Auth::user()->default_style) > 0) {
         Auth::user()->default_style()->detach(Auth::user()->default_style[0]->id);
       }
@@ -103,26 +103,26 @@ class StyleController extends Controller
   public function edit($id)
   {
     $style = Style::findOrFail($id);
-    $data = ['style' => $style];
+    $defaultStyle = 0;
+    if (count(Auth::user()->default_style) > 0 &&  Auth::user()->default_style[0]->id == $style->id) {
+      $defaultStyle = 1;
+    }
+
+
+
+    $data = ['title' => $style->name,
+             'id' => $style->id,
+             'saved' => true,
+             'hasSaved' => true,
+             'defaultStyle' => $defaultStyle,
+             'tags' => $style->tags,
+             'modules' => json_decode($style->style)->modules];
     return view('style.edit', $data);
   }
 
   public function update(Request $request, $id)
   {
-    $this->validate(request(), [
-
-     'name' => 'required',
-
-     /* Stuff for the JSON configuration */
-     'linkHighlighter_bgColor' => 'required',
-     'linkHighlighter_textColor' => 'required',
-     'linkHighlighter_size' => 'required',
-     'clickDelay_delay' => 'required',
-     'colourManipulations_changeSaturation_factor' => 'required',
-     'imageColourShifter_name' => 'required',
-    ]);
-    Style::find($id)->update($request->all());
-    return redirect('/home');
+    store($this->$request);
 
   }
 }
