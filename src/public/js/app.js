@@ -5055,10 +5055,10 @@ exports.push([module.i, ".tippy-touch{cursor:pointer!important}.tippy-notransiti
 
 exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
 // imports
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
+
 
 // module
-exports.push([module.i, "#root .size-btn {\n  background-color: #252525;\n  color: white;\n  height: 40px;\n  width: 40px;\n  font-size: 20pt;\n  margin: 5px;\n  margin-bottom: 0px;\n  border: none; }\n\n#root .size-btn:focus {\n  outline: none; }\n\n#root .size-btn:hover {\n  background-color: #0c0c0c; }\n\n#root .increase {\n  border-width: 2px 2px 2px 2px; }\n\n#root .decrease {\n  border-width: 2px 2px 2px 2px; }\n\n#root .value-input input {\n  text-align: center;\n  border-width: 0px 0px 3px 0px;\n  width: 40px;\n  height: 25px;\n  padding: 0px;\n  margin: 0px;\n  border-color: #4a90e2;\n  font-size: 18pt;\n  font-family: 'Open Sans', sans-serif; }\n\n#root .value-input input:focus {\n  outline: none;\n  text-emphasis: bold; }\n\n#root .text-size-changer {\n  align-items: center; }\n\n#root .center-wrapper {\n  text-align: center; }\n\n#root .toggle-wrapper {\n  display: inline-block; }\n\n#root .button-bar {\n  display: inline-block; }\n\n#root .text-container {\n  display: inline-block;\n  margin: 5px;\n  padding: 5px;\n  align: right; }\n\n#root .text-container p {\n  display: inline-block; }\n\n#root p {\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18pt; }\n\n#root .control-panel {\n  float: left;\n  display: inline;\n  margin: 5px;\n  padding-top: 15px;\n  padding-bottom: 15px;\n  padding-left: 5px;\n  padding-right: 5px;\n  border: #252525;\n  border-style: solid;\n  width: 100%;\n  height: 100%;\n  align-items: center;\n  text-align: center; }\n\n#root .control-panel p {\n  display: 'inline';\n  font-size: 18pt;\n  font-family: 'Open Sans', sans-serif; }\n\n#root .image-sandbox {\n  padding: 10px; }\n\n#root .text-container a {\n  font-family: 'Open Sans', sans-serif;\n  cursor: pointer;\n  text-decoration: underline; }\n\n#root .value-input {\n  all: default;\n  font-size: 18pt;\n  font-family: 'Open Sans', sans-serif; }\n\n#root .my-btn {\n  white-space: nowrap;\n  color: #252525;\n  font-family: 'Open Sans', sans-serif;\n  background-color: white;\n  border-style: solid;\n  border-radius: 3px;\n  border-width: 4px;\n  text-transform: uppercase;\n  font-weight: bolder;\n  margin: auto !important;\n  font-size: 22pt;\n  padding: 15px 15px !important;\n  vertical-align: middle;\n  border-color: #252525 !important;\n  outline: none;\n  box-shadow: none !important;\n  cursor: pointer; }\n\n@-webkit-keyframes fill {\n  to {\n    background-size: 100% 0; } }\n\n@keyframes fill {\n  to {\n    background-size: 100% 0; } }\n\n#root .cnh_holding button {\n  background: -webkit-linear-gradient(white, white) #4a90e2 no-repeat 0 0;\n  background: linear-gradient(white, white) #4a90e2 no-repeat 0 0;\n  mix-blend-mode: multiply;\n  background-size: 100% 100%;\n  -webkit-animation: fill 2s forwards;\n  animation: fill 2s forwards; }\n\n#root .style-information-control {\n  border-style: solid;\n  border-width: 3px;\n  border-color: #252525;\n  padding: 10px; }\n  #root .style-information-control p {\n    display: inline; }\n\n#root .title-input {\n  display: inline;\n  text-align: center;\n  border-width: 0px 0px 3px 0px;\n  width: 400px !important;\n  height: 40px !important;\n  padding: 0px;\n  margin: 0px;\n  border-color: #4a90e2;\n  font-size: 18pt;\n  font-family: 'Open Sans', sans-serif; }\n\n#root .save-btn {\n  font-family: 'Open Sans', sans-serif;\n  box-shadow: none !important;\n  font-size: 22pt;\n  padding: 15px;\n  padding-bottom: 15px;\n  width: 100px;\n  height: 50px; }\n\n#root .clear-styles {\n  all: initial; }\n", ""]);
+exports.push([module.i, "#root {\n  font-family: -apple-system, system-ui, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"; }\n  #root .size-btn {\n    background-color: #252525;\n    color: white;\n    height: 40px;\n    width: 40px;\n    font-size: 20pt;\n    margin: 5px;\n    margin-bottom: 0px;\n    border: none; }\n  #root .size-btn:focus {\n    outline: none; }\n  #root .size-btn:hover {\n    background-color: #0c0c0c; }\n  #root .increase {\n    border-width: 2px 2px 2px 2px; }\n  #root .decrease {\n    border-width: 2px 2px 2px 2px; }\n  #root .value-input input {\n    text-align: center;\n    border-width: 0px 0px 3px 0px;\n    width: 40px;\n    height: 25px;\n    padding: 0px;\n    margin: 0px;\n    border-color: #4a90e2;\n    font-size: 18pt; }\n  #root .value-input input:focus {\n    outline: none;\n    text-emphasis: bold; }\n  #root .text-size-changer {\n    align-items: center; }\n  #root .center-wrapper {\n    text-align: center; }\n  #root .toggle-wrapper {\n    display: inline-block; }\n  #root .button-bar {\n    display: inline-block; }\n  #root .text-container {\n    display: inline-block;\n    margin: 5px;\n    padding: 5px;\n    align: right; }\n  #root .text-container p {\n    display: inline-block; }\n  #root p {\n    font-size: 18pt; }\n  #root .control-panel {\n    float: left;\n    display: inline;\n    margin: 5px;\n    padding-top: 15px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n    padding-right: 5px;\n    border: #252525;\n    border-style: solid;\n    width: 100%;\n    height: 100%;\n    align-items: center;\n    text-align: center; }\n  #root .control-panel p {\n    display: 'inline';\n    font-size: 18pt; }\n  #root .image-sandbox {\n    padding: 10px; }\n  #root .text-container a {\n    cursor: pointer;\n    text-decoration: underline; }\n  #root .value-input {\n    all: default;\n    font-size: 18pt; }\n  #root .my-btn {\n    white-space: nowrap;\n    color: #252525;\n    background-color: white;\n    border-style: solid;\n    border-radius: 3px;\n    border-width: 4px;\n    text-transform: uppercase;\n    font-weight: bolder;\n    margin: auto !important;\n    font-size: 22pt;\n    padding: 15px 15px !important;\n    vertical-align: middle;\n    border-color: #252525 !important;\n    outline: none;\n    box-shadow: none !important;\n    cursor: pointer; }\n\n@-webkit-keyframes fill {\n  to {\n    background-size: 100% 0; } }\n\n@keyframes fill {\n  to {\n    background-size: 100% 0; } }\n  #root .cnh_holding button {\n    background: -webkit-linear-gradient(white, white) #4a90e2 no-repeat 0 0;\n    background: linear-gradient(white, white) #4a90e2 no-repeat 0 0;\n    mix-blend-mode: multiply;\n    background-size: 100% 100%;\n    -webkit-animation: fill 2s forwards;\n    animation: fill 2s forwards; }\n  #root .style-information-control {\n    border-style: solid;\n    border-width: 2px;\n    border-color: #92003a;\n    padding: 10px; }\n    #root .style-information-control p {\n      display: inline; }\n  #root .title-input {\n    display: inline;\n    border-width: 0px 0px 3px 0px;\n    width: 400px !important;\n    height: 40px !important;\n    padding: 0px;\n    margin: 0px 10px;\n    border-color: #92003a;\n    outline: none;\n    font-size: 18pt; }\n  #root .save-btn {\n    box-shadow: none !important;\n    font-size: 22pt;\n    padding: 15px;\n    padding-bottom: 15px;\n    width: 100px;\n    height: 50px; }\n  #root .clear-styles {\n    all: initial; }\n", ""]);
 
 // exports
 
@@ -5103,7 +5103,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "#root .react-tabs {\n  margin-left: 3px; }\n\n#root .react-tabs__tab-list {\n  border-bottom: 3px solid #4a90e2;\n  margin: 0 0 10px;\n  padding: 0; }\n\n#root .react-tabs__tab {\n  display: inline-block;\n  border: 1px solid transparent;\n  border-bottom: none;\n  bottom: -1px;\n  position: relative;\n  list-style: none;\n  padding: 6px 12px;\n  cursor: pointer;\n  font-size: 15pt;\n  font-family: 'Open Sans', sans-serif; }\n\n#root .react-tabs__tab--selected {\n  background: #4a90e2;\n  border-color: #252525;\n  border-width: 3px;\n  color: black;\n  border-radius: 5px 5px 0 0; }\n\n#root .react-tabs__tab--disabled {\n  color: GrayText;\n  cursor: default; }\n\n#root .react-tabs__tab:focus {\n  box-shadow: 0 0 5px #0188fe;\n  border-color: #0188fe;\n  outline: none; }\n\n#root .react-tabs__tab:focus:after {\n  content: \"\";\n  position: absolute;\n  height: 5px;\n  left: -4px;\n  right: -4px;\n  bottom: -5px;\n  background: #fff; }\n\n#root .react-tabs__tab-panel {\n  display: none; }\n\n#root .react-tabs__tab-panel--selected {\n  display: block; }\n", ""]);
+exports.push([module.i, "#root .react-tabs {\n  margin-left: 3px; }\n\n#root .react-tabs__tab-list {\n  border-bottom: 3px solid #92003a;\n  margin: 10px 0 0 0;\n  padding: 0; }\n\n#root .react-tabs__tab {\n  display: inline-block;\n  border: 1px solid transparent;\n  border-bottom: none;\n  bottom: -1px;\n  position: relative;\n  list-style: none;\n  padding: 6px 12px;\n  cursor: pointer;\n  font-size: 15pt;\n  font-family: -apple-system, system-ui, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n  font-weight: 800;\n  font-size: 1em;\n  color: #6f042f; }\n\n#root .react-tabs__tab--selected {\n  background: #92003a;\n  border-width: 3px;\n  color: white;\n  border-radius: 2px 2px 0 0; }\n\n#root .react-tabs__tab--disabled {\n  color: GrayText;\n  cursor: default; }\n\n#root .react-tabs__tab:focus {\n  box-shadow: 0 0 5px #0188fe;\n  border-color: #0188fe;\n  outline: none; }\n\n#root .react-tabs__tab:focus:after {\n  content: \"\";\n  position: absolute;\n  height: 5px;\n  left: -4px;\n  right: -4px;\n  bottom: -5px;\n  background: #fff; }\n\n#root .react-tabs__tab-panel {\n  display: none; }\n\n#root .react-tabs__tab-panel--selected {\n  display: block; }\n", ""]);
 
 // exports
 
@@ -79768,33 +79768,45 @@ var App = function (_React$Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
             null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__StyleInformationControl__["a" /* default */], { values: { title: this.state.title,
-                tags: this.state.tags,
-                saved: this.state.saved,
-                defaultStyle: this.state.defaultStyle,
-                visionToolsEnabled: this._findModule('visionTools', this.state.modules).properties.enabled,
-                darkModeEnabled: this._findModule('darkMode', this.state.modules).properties.enabled },
-              onChange: this.styleInformationControlOnChange,
-              onBlur: this.autoSave })
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'tab-pane' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__StyleInformationControl__["a" /* default */], { values: { title: this.state.title,
+                  tags: this.state.tags,
+                  saved: this.state.saved,
+                  defaultStyle: this.state.defaultStyle,
+                  visionToolsEnabled: this._findModule('visionTools', this.state.modules).properties.enabled,
+                  darkModeEnabled: this._findModule('darkMode', this.state.modules).properties.enabled },
+                onChange: this.styleInformationControlOnChange,
+                onBlur: this.autoSave })
+            )
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
             null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__TextSizeChanger__["a" /* default */], { text: 'An example link',
-              values: this._findModule('linkHighlighter', this.state.modules).properties,
-              onChange: function onChange(values, callback, action) {
-                return _this4.updateModule('linkHighlighter', values, callback, action);
-              },
-              onBlur: this.autoSave })
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'tab-pane' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__TextSizeChanger__["a" /* default */], { text: 'An example link',
+                values: this._findModule('linkHighlighter', this.state.modules).properties,
+                onChange: function onChange(values, callback, action) {
+                  return _this4.updateModule('linkHighlighter', values, callback, action);
+                },
+                onBlur: this.autoSave })
+            )
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
             null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__MouseControl__["a" /* default */], { values: this._findModule('clickDelay', this.state.modules).properties,
-              onChange: function onChange(values, callback) {
-                return _this4.updateModule('clickDelay', values);
-              },
-              onBlur: this.autoSave })
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'tab-pane' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__MouseControl__["a" /* default */], { values: this._findModule('clickDelay', this.state.modules).properties,
+                onChange: function onChange(values, callback) {
+                  return _this4.updateModule('clickDelay', values);
+                },
+                onBlur: this.autoSave })
+            )
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
@@ -79819,48 +79831,64 @@ var App = function (_React$Component) {
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
                 null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__ImageContainer__["a" /* default */], { imageurl: '/images/froggy.jpg',
-                  width: 500,
-                  height: 500,
-                  values: this._findModule('colourManipulations', this.state.modules).properties,
-                  onChange: function onChange(values, callback, action) {
-                    return _this4.updateModule('colourManipulations', values, callback, action);
-                  },
-                  onBlur: this.autoSave })
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'div',
+                  { className: 'tab-pane' },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__ImageContainer__["a" /* default */], { imageurl: '/images/froggy.jpg',
+                    width: 500,
+                    height: 500,
+                    values: this._findModule('colourManipulations', this.state.modules).properties,
+                    onChange: function onChange(values, callback, action) {
+                      return _this4.updateModule('colourManipulations', values, callback, action);
+                    },
+                    onBlur: this.autoSave })
+                )
               ),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
                 null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__ColorBlindnessControl__["a" /* default */], { imageurl: '/images/flowers.jpg',
-                  width: 500,
-                  height: 500,
-                  values: this._findModule('imageColourShifter', this.state.modules).properties,
-                  onChange: function onChange(values, callback, action) {
-                    return _this4.updateModule('imageColourShifter', values, callback, action);
-                  },
-                  onBlur: this.autoSave })
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'div',
+                  { className: 'tab-pane' },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__ColorBlindnessControl__["a" /* default */], { imageurl: '/images/flowers.jpg',
+                    width: 500,
+                    height: 500,
+                    values: this._findModule('imageColourShifter', this.state.modules).properties,
+                    onChange: function onChange(values, callback, action) {
+                      return _this4.updateModule('imageColourShifter', values, callback, action);
+                    },
+                    onBlur: this.autoSave })
+                )
               )
             )
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
             null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__ParagraphControl__["a" /* default */], { values: this._findModule('paragraphReader', this.state.modules).properties,
-              onChange: function onChange(values, callback, action) {
-                return _this4.updateModule('paragraphReader', values, callback, action);
-              },
-              onBlur: this.autoSave,
-              speed: 1 })
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'tab-pane' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__ParagraphControl__["a" /* default */], { values: this._findModule('paragraphReader', this.state.modules).properties,
+                onChange: function onChange(values, callback, action) {
+                  return _this4.updateModule('paragraphReader', values, callback, action);
+                },
+                onBlur: this.autoSave,
+                speed: 1 })
+            )
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
             null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_10__ExtraTools__["a" /* default */], { values: { speedBar: this._findModule('speedBar', this.state.modules).properties,
-                showMouse: this._findModule('showMouse', this.state.modules).properties,
-                typeWarning: this._findModule('typeWarning', this.state.modules).properties,
-                magnifier: this._findModule('magnifier', this.state.modules).properties,
-                passwordReveal: this._findModule('passwordReveal', this.state.modules).properties },
-              onChange: this.updateModule })
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'tab-pane' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_10__ExtraTools__["a" /* default */], { values: { speedBar: this._findModule('speedBar', this.state.modules).properties,
+                  showMouse: this._findModule('showMouse', this.state.modules).properties,
+                  typeWarning: this._findModule('typeWarning', this.state.modules).properties,
+                  magnifier: this._findModule('magnifier', this.state.modules).properties,
+                  passwordReveal: this._findModule('passwordReveal', this.state.modules).properties },
+                onChange: this.updateModule })
+            )
           )
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -80591,7 +80619,7 @@ var ExtraTools = function (_React$Component) {
             { className: 'col-md-12' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
-              { className: 'control-panel' },
+              { className: '' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
                 { onToggle: this.toggle('speedBar'),

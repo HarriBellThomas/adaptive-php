@@ -22,7 +22,6 @@ export default class ParagraphReader extends React.Component {
 
   componentWillUpdate(nextProps, nextState) {
     if (!this.props.talking && nextProps.talking) {
-      alert(this.utterance.text);
       window.speechSynthesis.cancel();
       window.speechSynthesis.speak(this.utterance);
     } else if (this.props.speed != nextProps.speed) {
