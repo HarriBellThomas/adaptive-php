@@ -50,7 +50,7 @@
         <div class="col-sm-6">
 
             <ul class="accordion accordion-1" style="min-height: 0px;">
-                @foreach($details as $key => $prop)
+                @foreach($details['modules'] as $key => $prop)
                 <li class="">
                     <div class="accordion__title">
                         <span class="h5">{{$key}}</span>
@@ -87,9 +87,9 @@
         </div>
     </div>
 
-      <h2> JSON Description: </h2> <p> {{$style['style']}} </p>
+      <!-- <h2> JSON Description: </h2> <p> {{$style['style']}} </p> -->
 
-      <pre><?php print_r($details); ?></pre>
+      <pre><?php print_r($details["modules"]); ?></pre>
 
       <h2> Reviews: </h2>
       <div class='text-center' id='all-reviews'>
