@@ -79453,8 +79453,8 @@ var App = function (_React$Component) {
       properties: {
         enabled: false,
         size: 18,
-        backgroundColor: '0xFFFFFF',
-        textColor: '0x000000',
+        backgroundColour: '0xFFFFFF',
+        textColour: '0x000000',
         highlightOn: false
       }
     }, {
@@ -79465,7 +79465,7 @@ var App = function (_React$Component) {
         doubleClick: false
       }
     }, {
-      module: 'colorManipulations',
+      module: 'colourManipulations',
       properties: {
         enabled: false,
         changeSaturation: {
@@ -79479,7 +79479,7 @@ var App = function (_React$Component) {
         }
       }
     }, {
-      module: 'imageColorShifter',
+      module: 'imageColourShifter',
       properties: {
         enabled: false,
         identifier: 'None'
@@ -79682,163 +79682,195 @@ var App = function (_React$Component) {
     value: function render() {
       var _this4 = this;
 
+      var saveMessage = this.state.saved ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'p',
+        null,
+        'Everything saved!'
+      ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'button',
+        { type: 'button',
+          className: 'btn btn-success',
+          onClick: function onClick() {
+            return _this4.styleInformationControlOnChange('SAVE');
+          },
+          style: { padding: '10px' } },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'p',
+          null,
+          'Save'
+        )
+      );
+
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_1_react_tabs__["d" /* Tabs */],
+        'div',
         null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          __WEBPACK_IMPORTED_MODULE_1_react_tabs__["b" /* TabList */],
+          __WEBPACK_IMPORTED_MODULE_1_react_tabs__["d" /* Tabs */],
           null,
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_1_react_tabs__["a" /* Tab */],
+            __WEBPACK_IMPORTED_MODULE_1_react_tabs__["b" /* TabList */],
             null,
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              __WEBPACK_IMPORTED_MODULE_8_react_tippy__["Tooltip"],
-              { title: 'Set the name and tags on your style.' },
-              'Style Information'
-            )
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_1_react_tabs__["a" /* Tab */],
-            null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              __WEBPACK_IMPORTED_MODULE_8_react_tippy__["Tooltip"],
-              { title: 'Change the apperance of links.' },
-              'Link Highlighting'
-            )
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_1_react_tabs__["a" /* Tab */],
-            null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              __WEBPACK_IMPORTED_MODULE_8_react_tippy__["Tooltip"],
-              { title: 'Make the mouse easier to use by adding delays and removing double clicks.' },
-              'Mouse Control'
-            )
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_1_react_tabs__["a" /* Tab */],
-            null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              __WEBPACK_IMPORTED_MODULE_8_react_tippy__["Tooltip"],
-              { title: 'Change the colours on webpages.' },
-              'Color Manipulations'
-            )
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_1_react_tabs__["a" /* Tab */],
-            null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              __WEBPACK_IMPORTED_MODULE_8_react_tippy__["Tooltip"],
-              { title: 'Make the webpage focus on a single paragraph.' },
-              'Paragraph Reader'
-            )
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_1_react_tabs__["a" /* Tab */],
-            null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              __WEBPACK_IMPORTED_MODULE_8_react_tippy__["Tooltip"],
-              { title: 'Some extra tools to adapt your browsing experience.' },
-              'Extra Tools'
-            )
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
-          null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__StyleInformationControl__["a" /* default */], { values: { title: this.state.title,
-              tags: this.state.tags,
-              saved: this.state.saved,
-              defaultStyle: this.state.defaultStyle,
-              visionToolsEnabled: this._findModule('visionTools', this.state.modules).properties.enabled,
-              darkModeEnabled: this._findModule('darkMode', this.state.modules).properties.enabled },
-            onChange: this.styleInformationControlOnChange,
-            onBlur: this.autoSave })
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
-          null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__TextSizeChanger__["a" /* default */], { text: 'An example link',
-            values: this._findModule('linkHighlighter', this.state.modules).properties,
-            onChange: function onChange(values, callback, action) {
-              return _this4.updateModule('linkHighlighter', values, callback, action);
-            },
-            onBlur: this.autoSave })
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
-          null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__MouseControl__["a" /* default */], { values: this._findModule('clickDelay', this.state.modules).properties,
-            onChange: function onChange(values, callback) {
-              return _this4.updateModule('clickDelay', values);
-            },
-            onBlur: this.autoSave })
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
-          null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_1_react_tabs__["d" /* Tabs */],
-            { forceRenderTabPanel: true },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              __WEBPACK_IMPORTED_MODULE_1_react_tabs__["b" /* TabList */],
+              __WEBPACK_IMPORTED_MODULE_1_react_tabs__["a" /* Tab */],
               null,
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_1_react_tabs__["a" /* Tab */],
-                null,
-                'Color Filters'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_1_react_tabs__["a" /* Tab */],
-                null,
-                'Color Blindness Corrections'
+                __WEBPACK_IMPORTED_MODULE_8_react_tippy__["Tooltip"],
+                { title: 'Set the name and tags on your style.' },
+                'Style Information'
               )
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
+              __WEBPACK_IMPORTED_MODULE_1_react_tabs__["a" /* Tab */],
               null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__ImageContainer__["a" /* default */], { imageurl: '/images/froggy.jpg',
-                width: 500,
-                height: 500,
-                values: this._findModule('colorManipulations', this.state.modules).properties,
-                onChange: function onChange(values, callback, action) {
-                  return _this4.updateModule('colorManipulations', values, callback, action);
-                },
-                onBlur: this.autoSave })
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_8_react_tippy__["Tooltip"],
+                { title: 'Change the apperance of links.' },
+                'Link Highlighting'
+              )
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
+              __WEBPACK_IMPORTED_MODULE_1_react_tabs__["a" /* Tab */],
               null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__ColorBlindnessControl__["a" /* default */], { imageurl: '/images/flowers.jpg',
-                width: 500,
-                height: 500,
-                values: this._findModule('imageColorShifter', this.state.modules).properties,
-                onChange: function onChange(values, callback, action) {
-                  return _this4.updateModule('imageColorShifter', values, callback, action);
-                },
-                onBlur: this.autoSave })
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_8_react_tippy__["Tooltip"],
+                { title: 'Make the mouse easier to use by adding delays and removing double clicks.' },
+                'Mouse Control'
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_1_react_tabs__["a" /* Tab */],
+              null,
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_8_react_tippy__["Tooltip"],
+                { title: 'Change the colours on webpages.' },
+                'Color Manipulations'
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_1_react_tabs__["a" /* Tab */],
+              null,
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_8_react_tippy__["Tooltip"],
+                { title: 'Make the webpage focus on a single paragraph.' },
+                'Paragraph Reader'
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_1_react_tabs__["a" /* Tab */],
+              null,
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_8_react_tippy__["Tooltip"],
+                { title: 'Some extra tools to adapt your browsing experience.' },
+                'Extra Tools'
+              )
             )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
+            null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__StyleInformationControl__["a" /* default */], { values: { title: this.state.title,
+                tags: this.state.tags,
+                saved: this.state.saved,
+                defaultStyle: this.state.defaultStyle,
+                visionToolsEnabled: this._findModule('visionTools', this.state.modules).properties.enabled,
+                darkModeEnabled: this._findModule('darkMode', this.state.modules).properties.enabled },
+              onChange: this.styleInformationControlOnChange,
+              onBlur: this.autoSave })
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
+            null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__TextSizeChanger__["a" /* default */], { text: 'An example link',
+              values: this._findModule('linkHighlighter', this.state.modules).properties,
+              onChange: function onChange(values, callback, action) {
+                return _this4.updateModule('linkHighlighter', values, callback, action);
+              },
+              onBlur: this.autoSave })
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
+            null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__MouseControl__["a" /* default */], { values: this._findModule('clickDelay', this.state.modules).properties,
+              onChange: function onChange(values, callback) {
+                return _this4.updateModule('clickDelay', values);
+              },
+              onBlur: this.autoSave })
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
+            null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_1_react_tabs__["d" /* Tabs */],
+              { forceRenderTabPanel: true },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_1_react_tabs__["b" /* TabList */],
+                null,
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  __WEBPACK_IMPORTED_MODULE_1_react_tabs__["a" /* Tab */],
+                  null,
+                  'Color Filters'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  __WEBPACK_IMPORTED_MODULE_1_react_tabs__["a" /* Tab */],
+                  null,
+                  'Color Blindness Corrections'
+                )
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
+                null,
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__ImageContainer__["a" /* default */], { imageurl: '/images/froggy.jpg',
+                  width: 500,
+                  height: 500,
+                  values: this._findModule('colourManipulations', this.state.modules).properties,
+                  onChange: function onChange(values, callback, action) {
+                    return _this4.updateModule('colourManipulations', values, callback, action);
+                  },
+                  onBlur: this.autoSave })
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
+                null,
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__ColorBlindnessControl__["a" /* default */], { imageurl: '/images/flowers.jpg',
+                  width: 500,
+                  height: 500,
+                  values: this._findModule('imageColourShifter', this.state.modules).properties,
+                  onChange: function onChange(values, callback, action) {
+                    return _this4.updateModule('imageColourShifter', values, callback, action);
+                  },
+                  onBlur: this.autoSave })
+              )
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
+            null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__ParagraphControl__["a" /* default */], { values: this._findModule('paragraphReader', this.state.modules).properties,
+              onChange: function onChange(values, callback, action) {
+                return _this4.updateModule('paragraphReader', values, callback, action);
+              },
+              onBlur: this.autoSave,
+              speed: 1 })
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
+            null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_10__ExtraTools__["a" /* default */], { values: { speedBar: this._findModule('speedBar', this.state.modules).properties,
+                showMouse: this._findModule('showMouse', this.state.modules).properties,
+                typeWarning: this._findModule('typeWarning', this.state.modules).properties,
+                magnifier: this._findModule('magnifier', this.state.modules).properties,
+                passwordReveal: this._findModule('passwordReveal', this.state.modules).properties },
+              onChange: this.updateModule })
           )
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
-          null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__ParagraphControl__["a" /* default */], { values: this._findModule('paragraphReader', this.state.modules).properties,
-            onChange: function onChange(values, callback, action) {
-              return _this4.updateModule('paragraphReader', values, callback, action);
-            },
-            onBlur: this.autoSave,
-            speed: 1 })
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          __WEBPACK_IMPORTED_MODULE_1_react_tabs__["c" /* TabPanel */],
-          null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_10__ExtraTools__["a" /* default */], { values: { speedBar: this._findModule('speedBar', this.state.modules).properties,
-              showMouse: this._findModule('showMouse', this.state.modules).properties,
-              typeWarning: this._findModule('typeWarning', this.state.modules).properties,
-              magnifier: this._findModule('magnifier', this.state.modules).properties,
-              passwordReveal: this._findModule('passwordReveal', this.state.modules).properties },
-            onChange: this.updateModule })
+          'div',
+          { className: 'center-wrapper' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'toggle-wrapper' },
+            saveMessage
+          )
         )
       );
     }
@@ -80561,92 +80593,84 @@ var ExtraTools = function (_React$Component) {
               'div',
               { className: 'control-panel' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                { className: 'center-wrapper' },
+                __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
+                { onToggle: this.toggle('speedBar'),
+                  value: this.props.values.speedBar.enabled,
+                  name: 'speed bar' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'div',
-                  { className: 'toggle-wrapper' },
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
-                    { onToggle: this.toggle('speedBar'),
-                      value: this.props.values.speedBar.enabled,
-                      name: 'speed bar' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'p',
-                      null,
-                      'Speed: ',
-                      this.props.values.speedBar.speed.toFixed(2).slice(0, -1)
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 0.2,
-                      max: 2,
-                      value: this.props.values.speedBar.speed,
-                      step: 0.1,
-                      onChange: this.speedBarChange('speedBar', 'speed') })
-                  ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
-                    { onToggle: this.toggle('showMouse'),
-                      value: this.props.values.showMouse.enabled,
-                      name: 'show mouse' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Picker__["a" /* default */], { values: ['fast', 'slow'],
-                      name: 'speed',
-                      onChange: this.speedBarChange('showMouse', 'speed') })
-                  ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
-                    { onToggle: this.toggle('typeWarning'),
-                      value: this.props.values.typeWarning.enabled,
-                      name: 'type warning' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Picker__["a" /* default */], { values: ['flash', 'sound'],
-                      name: 'type',
-                      onChange: this.speedBarChange('typeWarning', 'type') })
-                  ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
-                    { onToggle: this.toggle('magnifier'),
-                      value: this.props.values.magnifier.enabled,
-                      name: 'magnifier' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'p',
-                      null,
-                      'Zoom level: ',
-                      this.props.values.magnifier.zoom.toFixed(2).slice(0, -1)
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 1.5,
-                      max: 2.5,
-                      value: this.props.values.magnifier.zoom,
-                      step: 0.1,
-                      onChange: this.speedBarChange('magnifier', 'zoom') }),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'p',
-                      null,
-                      'Magnifier size: ',
-                      this.props.values.magnifier.size
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 200,
-                      max: 500,
-                      value: this.props.values.magnifier.size,
-                      step: 15,
-                      onChange: this.speedBarChange('magnifier', 'size') })
-                  ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
-                    { onToggle: this.toggle('passwordReveal'),
-                      value: this.props.values.passwordReveal.enabled,
-                      name: 'password reveal' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'p',
-                      null,
-                      'Time delay: ',
-                      this.props.values.passwordReveal.timeDelay
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 0,
-                      max: 5,
-                      value: this.props.values.passwordReveal.timeDelay,
-                      step: 1,
-                      onChange: this.speedBarChange('passwordReveal', 'timeDelay') })
-                  )
-                )
+                  'p',
+                  null,
+                  'Speed: ',
+                  this.props.values.speedBar.speed.toFixed(2).slice(0, -1)
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 0.2,
+                  max: 2,
+                  value: this.props.values.speedBar.speed,
+                  step: 0.1,
+                  onChange: this.speedBarChange('speedBar', 'speed') })
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
+                { onToggle: this.toggle('showMouse'),
+                  value: this.props.values.showMouse.enabled,
+                  name: 'show mouse' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Picker__["a" /* default */], { values: ['fast', 'slow'],
+                  name: 'speed',
+                  onChange: this.speedBarChange('showMouse', 'speed') })
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
+                { onToggle: this.toggle('typeWarning'),
+                  value: this.props.values.typeWarning.enabled,
+                  name: 'type warning' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Picker__["a" /* default */], { values: ['flash', 'sound'],
+                  name: 'type',
+                  onChange: this.speedBarChange('typeWarning', 'type') })
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
+                { onToggle: this.toggle('magnifier'),
+                  value: this.props.values.magnifier.enabled,
+                  name: 'magnifier' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'p',
+                  null,
+                  'Zoom level: ',
+                  this.props.values.magnifier.zoom.toFixed(2).slice(0, -1)
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 1.5,
+                  max: 2.5,
+                  value: this.props.values.magnifier.zoom,
+                  step: 0.1,
+                  onChange: this.speedBarChange('magnifier', 'zoom') }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'p',
+                  null,
+                  'Magnifier size: ',
+                  this.props.values.magnifier.size
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 200,
+                  max: 500,
+                  value: this.props.values.magnifier.size,
+                  step: 15,
+                  onChange: this.speedBarChange('magnifier', 'size') })
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
+                { onToggle: this.toggle('passwordReveal'),
+                  value: this.props.values.passwordReveal.enabled,
+                  name: 'password reveal' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'p',
+                  null,
+                  'Time delay: ',
+                  this.props.values.passwordReveal.timeDelay
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 0,
+                  max: 5,
+                  value: this.props.values.passwordReveal.timeDelay,
+                  step: 1,
+                  onChange: this.speedBarChange('passwordReveal', 'timeDelay') })
               )
             )
           )
@@ -81022,7 +81046,6 @@ if (document.getElementById('root')) {
   var props = Object.assign({}, element.dataset);
 
   if (Object.keys(props).length != 0) {
-    alert(JSON.stringify(props));
     props.modules = JSON.parse(props.modules);
     props.tags = JSON.parse(props.tags);
     props.hasSaved = props.hasSaved === "1" ? true : false;
@@ -81194,7 +81217,7 @@ var OnOff = function (_React$Component) {
     value: function render() {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        { className: 'control-panel', style: { width: '80%' } },
+        { className: 'control-panel' },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'p',
           null,
@@ -81691,25 +81714,6 @@ var StyleInformationControl = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var saveMessage = this.props.values.saved ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'p',
-        null,
-        'Everything saved!'
-      ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'button',
-        { type: 'button',
-          className: 'btn btn-success',
-          onClick: function onClick() {
-            return _this2.props.onChange('SAVE');
-          },
-          style: { padding: '10px' } },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'p',
-          null,
-          'Save'
-        )
-      );
-
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: 'style-information-control' },
@@ -81774,16 +81778,7 @@ var StyleInformationControl = function (_React$Component) {
               } })
           )
         ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'center-wrapper' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'toggle-wrapper' },
-            saveMessage
-          )
-        )
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null)
       );
     }
   }]);
@@ -81849,14 +81844,14 @@ var TextSizeChanger = function (_React$Component) {
     value: function handleChangeCompleteText(_ref) {
       var hex = _ref.hex;
 
-      this.props.onChange({ textColor: hex }, this.props.onBlur);
+      this.props.onChange({ textColour: hex }, this.props.onBlur);
     }
   }, {
     key: 'handleChangeCompleteHighlight',
     value: function handleChangeCompleteHighlight(_ref2) {
       var hex = _ref2.hex;
 
-      this.props.onChange({ backgroundColor: hex }, this.props.onBlur);
+      this.props.onChange({ backgroundColour: hex }, this.props.onBlur);
     }
   }, {
     key: 'handleToggle',
@@ -81903,7 +81898,7 @@ var TextSizeChanger = function (_React$Component) {
                   null,
                   ' Text color: '
                 ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_color__["CompactPicker"], { color: this.props.values.textColor, onChangeComplete: this.handleChangeCompleteText }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_color__["CompactPicker"], { color: this.props.values.textColour, onChangeComplete: this.handleChangeCompleteText }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'p',
                   null,
@@ -81928,7 +81923,7 @@ var TextSizeChanger = function (_React$Component) {
                     null,
                     'Background color: '
                   ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_color__["CompactPicker"], { color: this.props.values.backgroundColor, onChangeComplete: this.handleChangeCompleteHighlight })
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_color__["CompactPicker"], { color: this.props.values.backgroundColour, onChangeComplete: this.handleChangeCompleteHighlight })
                 )
               )
             )
@@ -81942,8 +81937,8 @@ var TextSizeChanger = function (_React$Component) {
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'a',
                 { style: { fontSize: this.props.values.size,
-                    color: this.props.values.textColor,
-                    backgroundColor: this.props.values.highlightOn ? this.props.values.backgroundColor : ''
+                    color: this.props.values.textColour,
+                    backgroundColor: this.props.values.highlightOn ? this.props.values.backgroundColour : ''
                   } },
                 this.props.text
               )

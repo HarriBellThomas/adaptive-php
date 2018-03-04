@@ -30,13 +30,7 @@ export default class StyleInformationControl extends React.Component {
 
 
   render() {
-    const saveMessage = this.props.values.saved ? <p>Everything saved!</p>
-                      : <button type='button'
-                                className='btn btn-success'
-                                onClick={() => this.props.onChange('SAVE')}
-                                style={{padding: '10px'}}>
-                                <p>Save</p>
-                        </button>
+  
 
     return (
       <div className='style-information-control'>
@@ -69,11 +63,7 @@ export default class StyleInformationControl extends React.Component {
         </div>
 
       <br />
-      <div className='center-wrapper'>
-          <div className='toggle-wrapper'>
-            {saveMessage}
-          </div></div>
-      </div>
+    </div>
     )
   }
 }

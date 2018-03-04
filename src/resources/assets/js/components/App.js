@@ -261,7 +261,16 @@ export default class App extends React.Component {
   }
 
   render() {
+    const saveMessage = this.state.saved ? <p>Everything saved!</p>
+                      : <button type='button'
+                                className='btn btn-success'
+                                onClick={() => this.styleInformationControlOnChange('SAVE')}
+                                style={{padding: '10px'}}>
+                                <p>Save</p>
+                        </button>
+
     return (
+      <div>
       <Tabs>
      <TabList>
        <Tab><Tooltip title='Set the name and tags on your style.'>Style Information</Tooltip></Tab>
@@ -333,6 +342,13 @@ export default class App extends React.Component {
                  onChange={this.updateModule} />
    </TabPanel>
   </Tabs>
+
+  <div className='center-wrapper'>
+      <div className='toggle-wrapper'>
+        {saveMessage}
+      </div>
+  </div>
+</div>
   );
   }
 }
