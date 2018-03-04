@@ -97,23 +97,40 @@
 
 <div class="container">
   <div class="row">
-      <ul class="comments__list">
-          @foreach($style->reviews as $review)
-          <li>
-              <div class="comment">
-                  <div class="comment__body">
-                      <h5 class="type--fine-print">{{$review['user']['user_name']}}</h5>
-                      <div class="comment__meta">
-                          <span>{{$review['created_at']}}</span><br>
-                          <span>Rating: {{$review['stars']}} / 5</span>
+      <div class="col-sm-6 offset-sm-3">
+          <ul class="comments__list">
+              @foreach($style->reviews as $review)
+              <li>
+                  <div class="comment">
+                      <div class="comment__body" style="width:100%;">
+                          <h5 class="type--fine-print">{{$review['user']['user_name']}}</h5>
+                          <div class="comment__meta">
+                              <span>{{$review['created_at']}}</span><br>
+                              <span>Rating: {{$review['stars']}} / 5</span>
+                          </div>
+                          <p>{{$review['review']}}</p>
                       </div>
-                      <p>{{$review['review']}}</p>
                   </div>
-              </div>
-              <!--end comment-->
-          </li>
-          @endforeach
-      </ul>
+                  <!--end comment-->
+              </li>
+              @endforeach
+          </ul>
+
+          <div class="comments-form">
+                <h2> Submit a review </h2>
+                {!! Form::open(['action' => array('ReviewController@store', 'style_id' => $style->id)]) !!}
+                {{ csrf_field() }}
+
+                {!! Form::label('rating', 'Rating:') !!}
+                {!! Form::select('rating', [1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5]) !!}
+                {!! Form::label('review', 'Review:') !!}
+                {!! Form::text('review') !!}
+                {!! Form::submit('Submit the review') !!}<br />
+
+
+                {!! Form::close() !!}
+        </div>
+      </div>
     </div>
 </div>
 
@@ -129,19 +146,6 @@
         @endforeach
       </div>
 
-      <div id='submit-a-review'>
-        <h2> Submit a review </h2>
-        {!! Form::open(['action' => array('ReviewController@store', 'style_id' => $style->id)]) !!}
-        {{ csrf_field() }}
 
-        {!! Form::label('rating', 'Rating:') !!}
-        {!! Form::select('rating', [1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5]) !!}
-        {!! Form::label('review', 'Review:') !!}
-        {!! Form::text('review') !!}
-        {!! Form::submit('Submit the review') !!}<br />
-
-
-        {!! Form::close() !!}
-      </div>
 </div>
 @endsection
