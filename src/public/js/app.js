@@ -79414,8 +79414,6 @@ if (token) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_react_tippy_dist_tippy_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_react_tippy_dist_tippy_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__sass_tabs_scss__ = __webpack_require__("./resources/assets/sass/tabs.scss");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__sass_tabs_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__sass_tabs_scss__);
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -79449,8 +79447,7 @@ var App = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
     _this.validator = new __WEBPACK_IMPORTED_MODULE_9__Validation__["a" /* default */]();
-    alert(Object.keys(_this.props).length);
-
+    window.fetchActive = 0;
     var defaultState = [{
       module: 'linkHighlighter',
       properties: {
@@ -79559,13 +79556,11 @@ var App = function (_React$Component) {
       });
 
       var propsCopy = _extends({}, _this.props.props);
-      alert(_typeof(propsCopy.defaultStyle));
       moduleNames.forEach(function (name) {
         if (!_this._findModule(name, propsCopy.modules)) {
           propsCopy.modules.push(_this._findModule(name, defaultState));
         }
       });
-      alert(JSON.stringify(propsCopy));
       _this.state = propsCopy;
     }
 
@@ -79584,7 +79579,6 @@ var App = function (_React$Component) {
     key: '_findModule',
     value: function _findModule(moduleName, moduleList) {
       for (var i = 0; i < moduleList.length; i++) {
-        console.log(moduleList[i].module);
         if (moduleList[i].module === moduleName) return moduleList[i];
       }
     }
@@ -79634,6 +79628,8 @@ var App = function (_React$Component) {
     value: function saveStyle(autoSave) {
       var _this3 = this;
 
+      if (window.fetchActive > 0) return;
+      window.fetchActive++;
       var validated = this.validator.validate(this.state);
       if (!validated.valid) {
         // TODO: Improve error messages
@@ -79648,7 +79644,7 @@ var App = function (_React$Component) {
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
         credentials: 'same-origin' }).then(function (response) {
-        return response.json();
+        window.fetchActive--;return response.json();
       }).then(function (json) {
         console.log(JSON.stringify(json));
         _this3.setState({ saved: true, hasSaved: true, id: json.id });

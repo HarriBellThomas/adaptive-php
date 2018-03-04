@@ -16,8 +16,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.validator = new Validation();
-    alert(Object.keys(this.props).length);
-
+    window.fetchActive = 0;
     const defaultState = [
       {
         module: 'linkHighlighter',
@@ -148,14 +147,12 @@ export default class App extends React.Component {
       const moduleNames = defaultState.map(module => module.module);
 
       const propsCopy = {...this.props.props};
-      alert(typeof propsCopy.defaultStyle);
       moduleNames.forEach(name => {
           if(!this._findModule(name, propsCopy.modules)) {
             propsCopy.modules.push(this._findModule(name, defaultState));
           }
         }
       )
-      alert(JSON.stringify(propsCopy));
       this.state = propsCopy;
     }
 
@@ -214,6 +211,8 @@ export default class App extends React.Component {
   }
 
   saveStyle(autoSave) {
+    if(window.fetchActive > 0) return;
+    window.fetchActive++;
     const validated = this.validator.validate(this.state);
     if(!validated.valid) {
       // TODO: Improve error messages
@@ -229,7 +228,7 @@ export default class App extends React.Component {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
       },
       credentials: 'same-origin'})
-      .then((response) => (response.json()))
+      .then((response) => {window.fetchActive--; return response.json()})
       .then((json) => {
          console.log(JSON.stringify(json));
          this.setState({saved: true, hasSaved: true, id: json.id});
