@@ -13,8 +13,15 @@ use Illuminate\Support\Facades\DB;
 class StyleController extends Controller
 {
     public function show($id) {
+
+        $schema = "";
+
         $style = Style::findOrFail($id);
         $styleDetails = json_decode($style['style']);
+        $details = [];
+        foreach ($styleDetails as $detail) {
+            $details[$details["module"]] = $details["properties"];
+        }
         return view('style.show', ['style' => $style, 'details' => $styleDetails]);
     }
 

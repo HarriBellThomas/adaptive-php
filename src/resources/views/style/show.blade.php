@@ -48,7 +48,26 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6">
-            <table class="border--round">
+
+            <ul class="accordion accordion-1" style="min-height: 0px;">
+                @foreach($details as $key => $prop)
+                <li class="">
+                    <div class="accordion__title">
+                        <span class="h5">{{$key}}</span>
+                    </div>
+                    <div class="accordion__content">
+                        <p class="lead">
+                            Stack follows the BEM naming convention that focusses on logical code readability that is reflected in both the HTML and CSS. Interactive elements such as accordions and tabs follow the same markup patterns making rapid development easier for developers and beginners alike.
+                        </p>
+                        <p class="lead">
+                            Add to this the thoughtfully presented documentation, featuring code highlighting, snippets, class customizer explanation and you've got yourself one powerful value package.
+                        </p>
+                    </div>
+                </li>
+                @endforeach
+            </ul>
+
+            <!-- <table class="border--round">
                 <thead>
                     <tr>
                         <th>Feature</th>
@@ -57,11 +76,11 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>2</td>
+                        <td>Link Highlighting</td>
+                        <td></td>
                     </tr>
                 </tbody>
-            </table>
+            </table> -->
         </div>
         <div class="col-sm-6">
             <iframe src="/preview/embedded?adaptive_demo={{$style['id']}}" style="min-height:800px;border-radius: 5px;border-color: rgba(162, 162, 162, 0.2);border-style: solid;border-width: 2px;"></iframe>
