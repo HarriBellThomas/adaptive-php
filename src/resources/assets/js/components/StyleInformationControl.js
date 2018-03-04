@@ -30,7 +30,7 @@ export default class StyleInformationControl extends React.Component {
 
 
   render() {
-  
+
 
     return (
       <div className='style-information-control'>
@@ -46,21 +46,6 @@ export default class StyleInformationControl extends React.Component {
         <input type='checkbox'
                checked={this.props.values.defaultStyle}
                onChange={this.handleDefaultToggle} />
-
-        <p>Enable auto captioning of images?</p>
-        <div className='center-wrapper'>
-          <div className='toggle-wrapper'>
-            <ToggleButton value={this.props.values.visionToolsEnabled}
-                          onToggle={(value) => this.handleToggle('visionTools', value)} />
-          </div>
-        </div>
-        <p>Enable dark mode?</p>
-        <div className='center-wrapper'>
-          <div className='toggle-wrapper'>
-          <ToggleButton value={this.props.values.darkModeEnabled}
-                        onToggle={(value) => this.handleToggle('darkMode', value)} />
-          </div>
-        </div>
 
       <br />
     </div>

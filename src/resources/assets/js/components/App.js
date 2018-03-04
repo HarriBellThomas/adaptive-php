@@ -285,9 +285,7 @@ export default class App extends React.Component {
       <StyleInformationControl values={{title: this.state.title,
                                         tags: this.state.tags,
                                         saved: this.state.saved,
-                                        defaultStyle: this.state.defaultStyle,
-                                        visionToolsEnabled: this._findModule('visionTools', this.state.modules).properties.enabled,
-                                        darkModeEnabled: this._findModule('darkMode', this.state.modules).properties.enabled,}}
+                                        defaultStyle: this.state.defaultStyle,}}
                                onChange={this.styleInformationControlOnChange}
                                onBlur={this.autoSave}/>
                            </div>
@@ -350,7 +348,9 @@ export default class App extends React.Component {
                           showMouse: this._findModule('showMouse', this.state.modules).properties,
                           typeWarning: this._findModule('typeWarning', this.state.modules).properties,
                           magnifier: this._findModule('magnifier', this.state.modules).properties,
-                          passwordReveal: this._findModule('passwordReveal', this.state.modules).properties}}
+                          passwordReveal: this._findModule('passwordReveal', this.state.modules).properties,
+                          darkMode: this._findModule('darkMode', this.state.modules).properties,
+                          visionTools: this._findModule('visionTools', this.state.modules).properties,}}
                  onChange={this.updateModule} />
              </div>
    </TabPanel>

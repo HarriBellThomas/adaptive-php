@@ -95,6 +95,17 @@ export default class ExtraTools extends React.Component {
                            step={1}
                            onChange={this.speedBarChange('passwordReveal', 'timeDelay')} />
             </OnOff>
+
+            <OnOff onToggle={this.toggle('darkMode')}
+                   value={this.props.values.darkMode.enabled}
+                   name='dark mode'>
+
+            </OnOff>
+            <OnOff onToggle={this.toggle('visionTools')}
+                   value={this.props.values.visionTools.enabled}
+                   name='vision tools'>
+
+            </OnOff>
           </div>
         </div>
       </div>
