@@ -282,6 +282,7 @@ export default class App extends React.Component {
      </TabList>
 
     <TabPanel>
+      <div className='tab-pane'>
       <StyleInformationControl values={{title: this.state.title,
                                         tags: this.state.tags,
                                         saved: this.state.saved,
@@ -290,17 +291,22 @@ export default class App extends React.Component {
                                         darkModeEnabled: this._findModule('darkMode', this.state.modules).properties.enabled,}}
                                onChange={this.styleInformationControlOnChange}
                                onBlur={this.autoSave}/>
+                           </div>
     </TabPanel>
    <TabPanel>
+     <div className='tab-pane'>
      <TextSizeChanger text='An example link'
                       values={this._findModule('linkHighlighter', this.state.modules).properties}
                       onChange={(values, callback, action) => this.updateModule('linkHighlighter', values, callback, action)}
                       onBlur={this.autoSave}/>
+                  </div>
    </TabPanel>
    <TabPanel>
+     <div className='tab-pane'>
      <MouseControl values={this._findModule('clickDelay', this.state.modules).properties}
                    onChange={(values, callback) => this.updateModule('clickDelay', values)}
                    onBlur={this.autoSave}/>
+               </div>
    </TabPanel>
    <TabPanel>
      <Tabs forceRenderTabPanel>
@@ -309,37 +315,45 @@ export default class App extends React.Component {
          <Tab>Color Blindness Corrections</Tab>
        </TabList>
        <TabPanel>
+         <div className='tab-pane'>
          <ImageContainer imageurl='/images/froggy.jpg'
                          width={500}
                          height={500}
                          values={this._findModule('colourManipulations', this.state.modules).properties}
                          onChange={(values, callback, action) => this.updateModule('colourManipulations', values, callback, action)}
                          onBlur={this.autoSave}/>
+                     </div>
        </TabPanel>
        <TabPanel>
+         <div className='tab-pane'>
          <ColorBlindnessControl imageurl='/images/flowers.jpg'
                                 width={500}
                                 height={500}
                                 values={this._findModule('imageColourShifter', this.state.modules).properties}
                                 onChange={(values, callback, action) => this.updateModule('imageColourShifter', values, callback, action)}
                                 onBlur={this.autoSave}/>
+                            </div>
        </TabPanel>
       </Tabs>
    </TabPanel>
    <TabPanel>
+     <div className='tab-pane'>
      <ParagraphControl values={this._findModule('paragraphReader', this.state.modules).properties}
                        onChange={(values, callback, action) => this.updateModule('paragraphReader', values, callback, action)}
                        onBlur={this.autoSave}
                        speed={1}/>
+                   </div>
    </TabPanel>
 
    <TabPanel>
+     <div className='tab-pane'>
      <ExtraTools values={{speedBar: this._findModule('speedBar', this.state.modules).properties,
                           showMouse: this._findModule('showMouse', this.state.modules).properties,
                           typeWarning: this._findModule('typeWarning', this.state.modules).properties,
                           magnifier: this._findModule('magnifier', this.state.modules).properties,
                           passwordReveal: this._findModule('passwordReveal', this.state.modules).properties}}
                  onChange={this.updateModule} />
+             </div>
    </TabPanel>
   </Tabs>
 
