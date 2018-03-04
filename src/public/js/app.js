@@ -80619,7 +80619,7 @@ var ExtraTools = function (_React$Component) {
             { className: 'col-md-12' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
-              { className: 'control-panel' },
+              { className: '' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
                 { onToggle: this.toggle('speedBar'),

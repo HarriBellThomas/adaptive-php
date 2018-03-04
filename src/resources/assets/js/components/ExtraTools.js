@@ -36,7 +36,7 @@ export default class ExtraTools extends React.Component {
     <div className='extra-tools'>
       <div className='row'>
         <div className='col-md-12'>
-          <div className='control-panel'>
+          <div className=''>
             <OnOff onToggle={this.toggle('speedBar')}
                    value={this.props.values.speedBar.enabled}
                    name='speed bar'>
