@@ -36,7 +36,7 @@ class StyleController extends Controller
                 $details[$detail->module] = $detail->properties;
             }
         }
-        return view('style.show', ['style' => $style, 'details' => $styleDetails]);
+        return view('style.show', ['style' => $style, 'details' => $details]);
     }
 
     public function index() {
