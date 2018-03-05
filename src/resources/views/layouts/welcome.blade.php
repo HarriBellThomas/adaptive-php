@@ -62,11 +62,11 @@
                     <div class="col-md-5 text-right text-left-xs text-left-sm">
                         <div class="bar__module">
                           @guest
-                            <a class="btn btn--sm type--uppercase" href="/">
+                            <!-- <a class="btn btn--sm type--uppercase" href="/">
                                 <span class="btn__text">
                                     Sign Up Free
                                 </span>
-                            </a>
+                            </a> -->
                           @else
                             <a class="btn btn--sm type--uppercase" href='/home'>
                               {{Auth::user()['user_name']}}

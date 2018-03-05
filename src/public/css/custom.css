@@ -1,4 +1,8 @@
 /*! Place your custom styles here */
+html {
+    background-color: #252525 !important;
+}
+
 span#we-support img {
     margin-bottom: 0;
     height: 35px;
@@ -19,7 +23,7 @@ body {
 }
 
 .custom-footer {
-    margin-top: 5em;
+    /* margin-top: 5em; */
 }
 
 #page-title {
