@@ -55,6 +55,11 @@ li.adaptive-style-tag {
                                 <span>
                                     <strong>{{ $users[ $style['user_id'] ]['user_name'] }}</strong>
                                 </span>
+                                <a class="btn btn--sm" href="#" onclick="alert('change preview')" style="padding: 0 0.7em;line-height: 1.3em;margin-left: 1em;background-color: #37a9d6;border-color: #37a9d6;">
+                                    <div style="color: white;font-size: 0.8em;font-weight: 800;">
+                                        Load Preview
+                                    </div>
+                                </a>
                             </div>
                             <div class="card__meta">
                                 @if($ratings[$style['id']] > 0)
