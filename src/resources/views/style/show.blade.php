@@ -57,16 +57,6 @@
                     </div>
                     <div class="accordion__content">
                         <table class="border--round">
-                            <tbody>
-                                @foreach($detail as $k => $p)
-                                    @if($p != "")
-                                    <tr>
-                                        <td>{{$k}}</td>
-                                        <td>{{$p}}</td>
-                                    </tr>
-                                    @endif
-                                @endforeach
-                            </tbody>
                         </table>
                     </div>
                 </li>

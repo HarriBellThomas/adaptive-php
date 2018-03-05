@@ -19,7 +19,8 @@ if (window.location.hash && window.location.hash === "#_=_") {
         document.body.scrollTop = scrollV;
         document.body.scrollLeft = scrollH;
     }
-    }
+}
+
 function changeDefault(str) {
     if (str == "") {
         return;
