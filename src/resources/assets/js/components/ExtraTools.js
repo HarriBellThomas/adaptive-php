@@ -41,12 +41,13 @@ export default class ExtraTools extends React.Component {
                    value={this.props.values.speedBar.enabled}
                    name='speed bar'>
 
+                  <div className='logic-block'>
                    <p>Speed: {this.props.values.speedBar.speed.toFixed(2).slice(0, -1)}</p>
                   <Slider min={0.2}
                           max={2}
                           value={this.props.values.speedBar.speed}
                           step={0.1}
-                          onChange={this.speedBarChange('speedBar', 'speed')}/>
+                          onChange={this.speedBarChange('speedBar', 'speed')}/></div>
 
             </OnOff>
 
@@ -70,30 +71,35 @@ export default class ExtraTools extends React.Component {
             <OnOff onToggle={this.toggle('magnifier')}
                    value={this.props.values.magnifier.enabled}
                    name='magnifier'>
+                   <div className='logic-block'>
+
                    <p>Zoom level: {this.props.values.magnifier.zoom.toFixed(2).slice(0, -1)}</p>
                    <Slider min={1.5}
                            max={2.5}
                            value={this.props.values.magnifier.zoom}
                            step={0.1}
-                           onChange={this.speedBarChange('magnifier', 'zoom')}/>
+                           onChange={this.speedBarChange('magnifier', 'zoom')}/></div>
 
-                        <p>Magnifier size: {this.props.values.magnifier.size}</p>
+                  <div className='logic-block'>
+                  <p>Magnifier size: {this.props.values.magnifier.size}</p>
                   <Slider min={200}
                           max={500}
                           value={this.props.values.magnifier.size}
                           step={15}
-                          onChange={this.speedBarChange('magnifier', 'size')}/>
+                          onChange={this.speedBarChange('magnifier', 'size')}/></div>
             </OnOff>
 
             <OnOff onToggle={this.toggle('passwordReveal')}
                    value={this.props.values.passwordReveal.enabled}
                    name='password reveal'>
+
+                   <div className='logic-block'>
                    <p>Time delay: {this.props.values.passwordReveal.timeDelay}</p>
                    <Slider min={0}
                            max={5}
                            value={this.props.values.passwordReveal.timeDelay}
                            step={1}
-                           onChange={this.speedBarChange('passwordReveal', 'timeDelay')} />
+                           onChange={this.speedBarChange('passwordReveal', 'timeDelay')} /></div>
             </OnOff>
 
             <OnOff onToggle={this.toggle('darkMode')}

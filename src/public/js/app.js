@@ -5058,7 +5058,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "#root {\n  font-family: -apple-system, system-ui, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"; }\n  #root .size-btn {\n    background-color: #252525;\n    color: white;\n    height: 40px;\n    width: 40px;\n    font-size: 20pt;\n    margin: 5px;\n    margin-bottom: 0px;\n    border: none; }\n  #root .size-btn:focus {\n    outline: none; }\n  #root .size-btn:hover {\n    background-color: #0c0c0c; }\n  #root .increase {\n    border-width: 2px 2px 2px 2px; }\n  #root .decrease {\n    border-width: 2px 2px 2px 2px; }\n  #root .value-input input {\n    text-align: center;\n    border-width: 0px 0px 3px 0px;\n    width: 40px;\n    height: 25px;\n    padding: 0px;\n    margin: 0px;\n    border-color: #4a90e2;\n    font-size: 18pt; }\n  #root .value-input input:focus {\n    outline: none;\n    text-emphasis: bold; }\n  #root .text-size-changer {\n    align-items: center; }\n  #root .center-wrapper {\n    text-align: center; }\n  #root .toggle-wrapper {\n    display: inline-block; }\n  #root .button-bar {\n    display: inline-block;\n    margin: 10px 0; }\n  #root .text-container {\n    display: inline-block;\n    margin: 5px;\n    padding: 5px;\n    align: right; }\n  #root .text-container p {\n    display: inline-block; }\n  #root p {\n    font-size: 18pt; }\n  #root .control-panel {\n    float: left;\n    display: inline;\n    margin: 5px;\n    padding-top: 15px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n    padding-right: 5px;\n    border: #252525;\n    border-style: solid;\n    width: 100%;\n    height: 100%;\n    align-items: center;\n    text-align: center; }\n  #root .extra-tools .control-panel {\n    width: 32%; }\n  #root .control-panel p {\n    font-size: 1.2em;\n    margin-bottom: 0.4em;\n    margin-top: 1.5em; }\n  #root .image-sandbox {\n    padding: 10px; }\n  #root .text-container a {\n    cursor: pointer;\n    text-decoration: underline; }\n  #root .value-input {\n    all: default;\n    font-size: 18pt; }\n  #root .my-btn {\n    white-space: nowrap;\n    color: #252525;\n    background-color: white;\n    border-style: solid;\n    border-radius: 3px;\n    border-width: 4px;\n    text-transform: uppercase;\n    font-weight: bolder;\n    margin: auto !important;\n    font-size: 22pt;\n    padding: 15px 15px !important;\n    vertical-align: middle;\n    border-color: #252525 !important;\n    outline: none;\n    box-shadow: none !important;\n    cursor: pointer; }\n\n@-webkit-keyframes fill {\n  to {\n    background-size: 100% 0; } }\n\n@keyframes fill {\n  to {\n    background-size: 100% 0; } }\n  #root .cnh_holding button {\n    background: -webkit-linear-gradient(white, white) #4a90e2 no-repeat 0 0;\n    background: linear-gradient(white, white) #4a90e2 no-repeat 0 0;\n    mix-blend-mode: multiply;\n    background-size: 100% 100%;\n    -webkit-animation: fill 2s forwards;\n    animation: fill 2s forwards; }\n  #root .style-information-control {\n    border-style: solid;\n    border-width: 0px;\n    border-color: #92003a;\n    padding: 10px; }\n    #root .style-information-control p {\n      padding: 10px;\n      margin: 0; }\n  #root .title-input {\n    display: inline;\n    border-width: 2px;\n    border-style: solid;\n    width: 400px !important;\n    height: 40px !important;\n    font-weight: 700;\n    padding: 10px;\n    margin: 0px 10px;\n    border-color: #92003a;\n    outline: none;\n    font-size: 18pt; }\n  #root .save-btn {\n    box-shadow: none !important;\n    font-size: 22pt;\n    padding: 15px;\n    padding-bottom: 15px;\n    width: 100px;\n    height: 50px; }\n  #root .clear-styles {\n    all: initial; }\n  #root .tab-pane {\n    border-style: solid;\n    border-width: 2px;\n    border-color: #92003a;\n    padding: 10px; }\n  #root .react-tagsinput {\n    border: 2px solid #92013a !important;\n    margin: 10px !important; }\n    #root .react-tagsinput .react-tagsinput-input {\n      background: none !important;\n      border: none !important; }\n  #root .save-button {\n    padding: 0.4em 2em;\n    margin-top: 2em;\n    color: white;\n    border-radius: 4px;\n    background-color: #92013a;\n    border-color: #92013a;\n    font-weight: 800; }\n", ""]);
+exports.push([module.i, "#root {\n  font-family: -apple-system, system-ui, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"; }\n  #root .size-btn {\n    background-color: #252525;\n    color: white;\n    height: 25px;\n    width: 25px;\n    font-size: 10pt;\n    margin: 5px;\n    margin-bottom: 0px;\n    border: none; }\n  #root .size-btn:focus {\n    outline: none; }\n  #root .size-btn:hover {\n    background-color: #0c0c0c; }\n  #root .increase {\n    border-width: 2px 2px 2px 2px; }\n  #root .decrease {\n    border-width: 2px 2px 2px 2px; }\n  #root .value-input input {\n    text-align: center;\n    border-width: 0px 0px 2px 0px;\n    width: 40px;\n    height: 25px;\n    padding: 0px;\n    margin: 0px;\n    border-color: #92013a;\n    font-size: 1em;\n    font-weight: 800; }\n  #root .value-input input:focus {\n    outline: none;\n    text-emphasis: bold; }\n  #root .text-size-changer {\n    align-items: center; }\n  #root .center-wrapper {\n    text-align: center; }\n  #root .toggle-wrapper {\n    display: inline-block; }\n  #root .button-bar {\n    display: inline-block;\n    margin: 10px 0; }\n  #root .text-container {\n    display: inline-block;\n    margin: 5px;\n    padding: 5px;\n    align: right; }\n  #root .text-container p {\n    display: inline-block; }\n  #root p {\n    font-size: 18pt; }\n  #root .control-panel {\n    float: left;\n    display: inline;\n    margin: 5px;\n    padding-top: 15px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n    padding-right: 5px;\n    border: #252525;\n    border-style: solid;\n    width: 100%;\n    height: 100%;\n    align-items: center;\n    text-align: center; }\n  #root .extra-tools .control-panel {\n    width: 32%; }\n  #root .control-panel p {\n    font-size: 1.2em;\n    margin-bottom: 0.4em;\n    margin-top: 0em; }\n  #root .image-sandbox {\n    padding: 10px; }\n  #root .text-container a {\n    cursor: pointer;\n    text-decoration: underline; }\n  #root .value-input {\n    all: default;\n    font-size: 1em; }\n  #root .my-btn {\n    white-space: nowrap;\n    color: #252525;\n    background-color: white;\n    border-style: solid;\n    border-radius: 3px;\n    border-width: 4px;\n    text-transform: uppercase;\n    font-weight: bolder;\n    margin: auto !important;\n    font-size: 22pt;\n    padding: 15px 15px !important;\n    vertical-align: middle;\n    border-color: #252525 !important;\n    outline: none;\n    box-shadow: none !important;\n    cursor: pointer; }\n\n@-webkit-keyframes fill {\n  to {\n    background-size: 100% 0; } }\n\n@keyframes fill {\n  to {\n    background-size: 100% 0; } }\n  #root .cnh_holding button {\n    background: -webkit-linear-gradient(white, white) #4a90e2 no-repeat 0 0;\n    background: linear-gradient(white, white) #4a90e2 no-repeat 0 0;\n    mix-blend-mode: multiply;\n    background-size: 100% 100%;\n    -webkit-animation: fill 2s forwards;\n    animation: fill 2s forwards; }\n  #root .style-information-control {\n    border-style: solid;\n    border-width: 0px;\n    border-color: #92003a;\n    padding: 10px; }\n    #root .style-information-control p {\n      padding: 10px;\n      margin: 0; }\n  #root .title-input {\n    display: inline;\n    border-width: 2px;\n    border-style: solid;\n    width: 400px !important;\n    height: 40px !important;\n    font-weight: 700;\n    padding: 10px;\n    margin: 0px 10px;\n    border-color: #92003a;\n    outline: none;\n    font-size: 18pt; }\n  #root .save-btn {\n    box-shadow: none !important;\n    font-size: 22pt;\n    padding: 15px;\n    padding-bottom: 15px;\n    width: 100px;\n    height: 50px; }\n  #root .clear-styles {\n    all: initial; }\n  #root .tab-pane {\n    border-style: solid;\n    border-width: 2px;\n    border-color: #92003a;\n    padding: 10px; }\n  #root .react-tagsinput {\n    border: 2px solid #92013a !important;\n    margin: 10px !important; }\n    #root .react-tagsinput .react-tagsinput-input {\n      background: none !important;\n      border: none !important; }\n  #root .save-button {\n    padding: 0.4em 2em;\n    margin-top: 2em;\n    color: white;\n    border-radius: 4px;\n    background-color: #92013a;\n    border-color: #92013a;\n    font-weight: 800; }\n  #root .logic-block {\n    padding: 40px 0; }\n  #root .notice-saved {\n    margin-top: 50px; }\n", ""]);
 
 // exports
 
@@ -5088,7 +5088,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "/* Inspired by https://codepen.io/gabrielferreira/pen/oYxNVy */\n#root input[type=\"radio\"] {\n  display: none; }\n  #root input[type=\"radio\"]:checked + div .box {\n    background-color: #4a90e2; }\n    #root input[type=\"radio\"]:checked + div .box span {\n      color: white; }\n      #root input[type=\"radio\"]:checked + div .box span:before {\n        opacity: 1; }\n  #root input[type=\"radio\"]:checked + .box {\n    background-color: #4a90e2; }\n    #root input[type=\"radio\"]:checked + .box span {\n      color: white; }\n      #root input[type=\"radio\"]:checked + .box span:before {\n        opacity: 1; }\n\n#root .box {\n  display: flex;\n  align-items: center;\n  margin: 5px;\n  padding: 5px;\n  width: 130px;\n  height: 130px;\n  text-align: center;\n  overflow-wrap: break-word;\n  font-family: 'Open Sans', sans-serif;\n  cursor: pointer;\n  font-size: 18pt;\n  position: relative;\n  color: white;\n  background-color: #252525;\n  transition: all 0.2s ease;\n  will-change: transition; }\n  #root .box:active {\n    transform: translateY(10px); }\n  #root .box:hover {\n    background-color: #0c0c0c; }\n  #root .box span {\n    display: inline-block;\n    text-align: center; }\n", ""]);
+exports.push([module.i, "/* Inspired by https://codepen.io/gabrielferreira/pen/oYxNVy */\n#root input[type=\"radio\"] {\n  display: none; }\n  #root input[type=\"radio\"]:checked + div .box {\n    background-color: #4a90e2; }\n    #root input[type=\"radio\"]:checked + div .box span {\n      color: white; }\n      #root input[type=\"radio\"]:checked + div .box span:before {\n        opacity: 1; }\n  #root input[type=\"radio\"]:checked + .box {\n    background-color: #4a90e2; }\n    #root input[type=\"radio\"]:checked + .box span {\n      color: white; }\n      #root input[type=\"radio\"]:checked + .box span:before {\n        opacity: 1; }\n\n#root .box {\n  display: flex;\n  align-items: center;\n  margin: 5px;\n  padding: 5px;\n  width: 130px;\n  height: 40px;\n  text-align: center;\n  overflow-wrap: break-word;\n  font-family: -apple-system, system-ui, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n  cursor: pointer;\n  font-size: 1em;\n  position: relative;\n  color: white;\n  background-color: #252525;\n  transition: all 0.2s ease;\n  will-change: transition; }\n  #root .box:active {\n    transform: translateY(10px); }\n  #root .box:hover {\n    background-color: #0c0c0c; }\n  #root .box span {\n    display: inline-block;\n    text-align: center; }\n", ""]);
 
 // exports
 
@@ -80681,16 +80681,20 @@ var ExtraTools = function (_React$Component) {
                   value: this.props.values.speedBar.enabled,
                   name: 'speed bar' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'p',
-                  null,
-                  'Speed: ',
-                  this.props.values.speedBar.speed.toFixed(2).slice(0, -1)
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 0.2,
-                  max: 2,
-                  value: this.props.values.speedBar.speed,
-                  step: 0.1,
-                  onChange: this.speedBarChange('speedBar', 'speed') })
+                  'div',
+                  { className: 'logic-block' },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'p',
+                    null,
+                    'Speed: ',
+                    this.props.values.speedBar.speed.toFixed(2).slice(0, -1)
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 0.2,
+                    max: 2,
+                    value: this.props.values.speedBar.speed,
+                    step: 0.1,
+                    onChange: this.speedBarChange('speedBar', 'speed') })
+                )
               ),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
@@ -80716,27 +80720,35 @@ var ExtraTools = function (_React$Component) {
                   value: this.props.values.magnifier.enabled,
                   name: 'magnifier' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'p',
-                  null,
-                  'Zoom level: ',
-                  this.props.values.magnifier.zoom.toFixed(2).slice(0, -1)
+                  'div',
+                  { className: 'logic-block' },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'p',
+                    null,
+                    'Zoom level: ',
+                    this.props.values.magnifier.zoom.toFixed(2).slice(0, -1)
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 1.5,
+                    max: 2.5,
+                    value: this.props.values.magnifier.zoom,
+                    step: 0.1,
+                    onChange: this.speedBarChange('magnifier', 'zoom') })
                 ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 1.5,
-                  max: 2.5,
-                  value: this.props.values.magnifier.zoom,
-                  step: 0.1,
-                  onChange: this.speedBarChange('magnifier', 'zoom') }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'p',
-                  null,
-                  'Magnifier size: ',
-                  this.props.values.magnifier.size
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 200,
-                  max: 500,
-                  value: this.props.values.magnifier.size,
-                  step: 15,
-                  onChange: this.speedBarChange('magnifier', 'size') })
+                  'div',
+                  { className: 'logic-block' },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'p',
+                    null,
+                    'Magnifier size: ',
+                    this.props.values.magnifier.size
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 200,
+                    max: 500,
+                    value: this.props.values.magnifier.size,
+                    step: 15,
+                    onChange: this.speedBarChange('magnifier', 'size') })
+                )
               ),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */],
@@ -80744,16 +80756,20 @@ var ExtraTools = function (_React$Component) {
                   value: this.props.values.passwordReveal.enabled,
                   name: 'password reveal' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'p',
-                  null,
-                  'Time delay: ',
-                  this.props.values.passwordReveal.timeDelay
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 0,
-                  max: 5,
-                  value: this.props.values.passwordReveal.timeDelay,
-                  step: 1,
-                  onChange: this.speedBarChange('passwordReveal', 'timeDelay') })
+                  'div',
+                  { className: 'logic-block' },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'p',
+                    null,
+                    'Time delay: ',
+                    this.props.values.passwordReveal.timeDelay
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_rangeslider___default.a, { min: 0,
+                    max: 5,
+                    value: this.props.values.passwordReveal.timeDelay,
+                    step: 1,
+                    onChange: this.speedBarChange('passwordReveal', 'timeDelay') })
+                )
               ),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__OnOff__["a" /* default */], { onToggle: this.toggle('darkMode'),
                 value: this.props.values.darkMode.enabled,
