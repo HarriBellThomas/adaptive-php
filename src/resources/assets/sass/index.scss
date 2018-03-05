@@ -5,9 +5,9 @@
   .size-btn {
       background-color: #252525;
       color: white;
-      height: 40px;
-      width: 40px;
-      font-size: 20pt;
+      height: 25px;
+      width: 25px;
+      font-size: 10pt;
       margin: 5px;
       margin-bottom: 0px;
       border: none;
@@ -31,14 +31,15 @@
 
   .value-input input {
     text-align: center;
-    border-width: 0px 0px 3px 0px;
+    border-width: 0px 0px 2px 0px;
     width: 40px;
     height: 25px;
     padding: 0px;
     margin: 0px;
-    border-color: #4a90e2;
+    border-color: #92013a;
 
-    font-size: 18pt;
+    font-size: 1em;
+    font-weight: 800;
     // font-family: 'Open Sans', sans-serif;
   }
 
@@ -104,7 +105,7 @@
     // display: 'inline';
     font-size: 1.2em;
     margin-bottom: 0.4em;
-    margin-top: 1.5em;
+    margin-top: 0em;
     // font-family: 'Open Sans', sans-serif;
   }
 
@@ -120,7 +121,7 @@
 
   .value-input {
     all:default;
-    font-size: 18pt;
+    font-size: 1em;
     // font-family: 'Open Sans', sans-serif;
   }
 
@@ -235,5 +236,13 @@
     background-color: #92013a;
     border-color: #92013a;
     font-weight: 800;
+  }
+
+  .logic-block {
+      padding: 40px 0;
+  }
+
+  .notice-saved {
+      margin-top: 50px;
   }
 }
