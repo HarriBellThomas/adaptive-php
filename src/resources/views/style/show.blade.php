@@ -49,12 +49,16 @@
     <div class="row">
         <div class="col-sm-6">
             <div class="row" style="margin-bottom: 30px;">
+                @if($owner)
                 <div class="col-sm-6">
                     <a class="btn btn--primary" href="/style/{{$style['id']}}/edit" style="width:100%;">
                     	<span class="btn__text">Edit</span>
                     </a>
                 </div>
                 <div class="col-sm-6">
+                @else
+                <div class="col-sm-12">
+                @endif
                     <a class="btn btn--primary-2" href="/preview/full?adaptive_demo={{$style['id']}}" style="width:100%;">
                     	<span class="btn__text">Fullscreen Preview</span>
                     </a>
