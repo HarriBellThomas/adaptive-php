@@ -91,8 +91,8 @@
         </div>
     </div>
 
-<pre><?php print_r($details); ?></pre>
-<pre><?php print_r($sd); ?></pre>
+<!-- <pre><?php //print_r($details); ?></pre> -->
+<!-- <pre><?php //print_r($sd); ?></pre> -->
 
   <div class="row" style="margin-top:100px;">
       <div class="col-sm-6 col-sm-offset-3">
