@@ -14,6 +14,7 @@ class StyleController extends Controller
 {
     public function show($id) {
         $style = Style::findOrFail($id);
+        $owner = (Auth::user()->id == $style["user_id"]);
         $styleDetails = json_decode($style['style']);
         $details = [];
         foreach ($styleDetails->modules as $detail) {
@@ -34,7 +35,7 @@ class StyleController extends Controller
                 $details[$detail->module] = $detail->properties;
             }
         }
-        return view('style.show', ['style' => $style, 'details' => $details, 'sd' => $styleDetails]);
+        return view('style.show', ['style' => $style, 'details' => $details, 'sd' => $styleDetails, 'owner' => $owner]);
     }
 
     public function index() {
