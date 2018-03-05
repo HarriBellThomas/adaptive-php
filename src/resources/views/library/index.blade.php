@@ -118,7 +118,7 @@ li.adaptive-style-tag {
             @endif
         </div>
         <div class="col-sm-5">
-            <iframe src="/preview/embedded?adaptive_demo=1" style="min-height:800px;border-radius: 5px;border-color: rgba(162, 162, 162, 0.2);border-style: solid;border-width: 2px;"></iframe>
+            <iframe src="/preview/embedded?adaptive_demo=0" style="min-height:800px;border-radius: 5px;border-color: rgba(162, 162, 162, 0.2);border-style: solid;border-width: 2px;"></iframe>
         </div>
 
         @endif
