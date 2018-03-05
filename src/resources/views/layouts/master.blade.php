@@ -72,7 +72,7 @@
                     logout
                 </a> -->
                 <li class="dropdown">
-                    <span class="dropdown__trigger">{{Auth::user()['user_name']}}</span>
+                    {{Auth::user()['user_name']}} • <a href="/logout">Logout</a>
                 </li>
                 @endguest
             </ul>
