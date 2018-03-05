@@ -20,7 +20,7 @@ class StyleController extends Controller
             if($detail->module == "colourManipulations") {
                 foreach ($detail->properties as $key => $det) {
                     if($key == "enabled") continue;
-                    else if($key == "nightShifter") {
+                    else if($key == "nightShifter" || $key == "invert") {
                         $r = [];
                         $r["enabled"] = $det;
                         $details[$key] = $r;
