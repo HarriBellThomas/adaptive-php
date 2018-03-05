@@ -50,7 +50,8 @@ export default class App extends React.Component {
           },
           changeContrast: {
             factor: 1,
-          }
+          },
+          nightShifter: false,
         }
       },
 

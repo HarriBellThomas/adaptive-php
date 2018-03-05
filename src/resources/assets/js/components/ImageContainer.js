@@ -4,6 +4,8 @@ import ColorTools from './ColorTools';
 import FilterableImage from './FilterableImage';
 import ValueInput from './ValueInput';
 import ControlPanel from './ControlPanel';
+import ToggleButton from 'react-toggle-button';
+
 
 export default class ImageContainer extends React.Component {
   constructor(props) {
@@ -105,6 +107,14 @@ export default class ImageContainer extends React.Component {
                 description='Contrast '
                 tip='Change the contrast of webpages.'
                 onBlur={this.props.onBlur}/>
+
+              <div className='logic-block'>
+                <p>Enable night shifter?</p>
+                <div className='center-wrapper'><div className='toggle-wrapper'>
+                  <ToggleButton value={this.props.values.nightShifter}
+                                onToggle={(value) => this.props.onChange({nightShifter: !value})} />
+                            </div> </div>
+              </div>
             </ControlPanel>
           </div>
 
