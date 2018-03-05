@@ -20,11 +20,13 @@ export default class Picker extends React.Component {
     const buttons = this.props.values.map(this.produceButton);
 
     return (
-      <RadioGroup name={this.props.name}
-                  selectedValue={this.props.value}
-                  onChange={this.props.onChange}>
-                  {buttons}
-      </RadioGroup>
+      <div className='logic-block'>
+        <RadioGroup name={this.props.name}
+                    selectedValue={this.props.value}
+                    onChange={this.props.onChange}>
+                    {buttons}
+        </RadioGroup>
+      </div>
     );
   }
 }

@@ -81807,11 +81807,15 @@ var Picker = function (_React$Component) {
       var buttons = this.props.values.map(this.produceButton);
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_1_react_radio_group__["RadioGroup"],
-        { name: this.props.name,
-          selectedValue: this.props.value,
-          onChange: this.props.onChange },
-        buttons
+        'div',
+        { className: 'logic-block' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          __WEBPACK_IMPORTED_MODULE_1_react_radio_group__["RadioGroup"],
+          { name: this.props.name,
+            selectedValue: this.props.value,
+            onChange: this.props.onChange },
+          buttons
+        )
       );
     }
   }]);
