@@ -52,6 +52,7 @@ export default class App extends React.Component {
             factor: 1,
           },
           nightShifter: false,
+          invert: false,
         }
       },
 

@@ -79477,7 +79477,8 @@ var App = function (_React$Component) {
         changeContrast: {
           factor: 1
         },
-        nightShifter: false
+        nightShifter: false,
+        invert: false
       }
     }, {
       module: 'imageColourShifter',
@@ -81047,6 +81048,28 @@ var ImageContainer = function (_React$Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_toggle_button___default.a, { value: this.props.values.nightShifter,
                       onToggle: function onToggle(value) {
                         return _this2.props.onChange({ nightShifter: !value });
+                      } })
+                  ),
+                  ' '
+                )
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'logic-block' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'p',
+                  null,
+                  'Invert?'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'div',
+                  { className: 'center-wrapper' },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'toggle-wrapper' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_toggle_button___default.a, { value: this.props.values.invert,
+                      onToggle: function onToggle(value) {
+                        return _this2.props.onChange({ invert: !value });
                       } })
                   ),
                   ' '

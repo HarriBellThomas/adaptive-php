@@ -115,6 +115,14 @@ export default class ImageContainer extends React.Component {
                                 onToggle={(value) => this.props.onChange({nightShifter: !value})} />
                             </div> </div>
               </div>
+
+              <div className='logic-block'>
+                <p>Invert?</p>
+                <div className='center-wrapper'><div className='toggle-wrapper'>
+                  <ToggleButton value={this.props.values.invert}
+                                onToggle={(value) => this.props.onChange({invert: !value})} />
+                            </div> </div>
+              </div>
             </ControlPanel>
           </div>
 
