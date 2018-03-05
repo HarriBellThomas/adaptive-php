@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\DB;
 class StyleController extends Controller
 {
     public function show($id) {
-
-        $schema = "";
-
         $style = Style::findOrFail($id);
         $styleDetails = json_decode($style['style']);
         $details = [];
@@ -36,7 +33,7 @@ class StyleController extends Controller
                 $details[$detail->module] = $detail->properties;
             }
         }
-        return view('style.show', ['style' => $style, 'details' => $details]);
+        return view('style.show', ['style' => $style, 'details' => $details, 'sd' => $styleDetails]);
     }
 
     public function index() {

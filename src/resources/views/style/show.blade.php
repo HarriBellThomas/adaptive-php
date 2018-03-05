@@ -50,7 +50,27 @@
         <div class="col-sm-6">
 
             <ul class="accordion accordion-2" style="min-height: 0px;">
-                
+                @foreach($details as $key => $detail)
+                <li class="">
+                    <div class="accordion__title">
+                        <span class="h5">{{$key}}</span>
+                    </div>
+                    <div class="accordion__content">
+                        <table class="border--round">
+                            <tbody>
+                                @foreach($detail as $k => $p)
+                                    @if($p != "")
+                                    <tr>
+                                        <td>{{$k}}</td>
+                                        <td>{{$p}}</td>
+                                    </tr>
+                                    @endif
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                @endforeach
             </ul>
 
             <!-- <table class="border--round">
@@ -74,6 +94,7 @@
     </div>
 
 <pre><?php print_r($details); ?></pre>
+<pre><?php print_r($sd); ?></pre>
   <div class="row" style="margin-top:100px;">
       <div class="col-sm-6 col-sm-offset-3">
           <h2>Reviews</h2>
