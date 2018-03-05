@@ -22,7 +22,7 @@ class StyleController extends Controller
                     if($key == "enabled") continue;
                     else if($key == "nightShifter" || $key == "invert") {
                         $r = [];
-                        $r["enabled"] = "true";
+                        $r["enabled"] = ($det != "" || $det != null) ? $det : "true";
                         $details[$key] = $r;
                     }
                     else {
