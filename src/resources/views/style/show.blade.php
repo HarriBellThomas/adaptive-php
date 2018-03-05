@@ -73,28 +73,15 @@
                 @endforeach
             </ul>
 
-            <!-- <table class="border--round">
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th>Settings</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Link Highlighting</td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table> -->
         </div>
         <div class="col-sm-6">
             <iframe src="/preview/embedded?adaptive_demo={{$style['id']}}" style="min-height:800px;border-radius: 5px;border-color: rgba(162, 162, 162, 0.2);border-style: solid;border-width: 2px;"></iframe>
         </div>
     </div>
 
-<pre><?php print_r($details); ?></pre>
-<pre><?php print_r($sd); ?></pre>
+<!-- <pre><?php //print_r($details); ?></pre> -->
+<!-- <pre><?php //print_r($sd); ?></pre> -->
+
   <div class="row" style="margin-top:100px;">
       <div class="col-sm-6 col-sm-offset-3">
           <h2>Reviews</h2>
