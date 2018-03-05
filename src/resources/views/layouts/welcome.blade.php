@@ -97,12 +97,12 @@
                         <img alt="Image" class="logo" src="{{url('images/logo-light.png')}}" />
                         <ul class="list-inline list--hover">
                             <li>
-                                <a href="index.html#">
+                                <a href="#">
                                     <span class="type--fine-print">Get Started</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="#">
                                     <span class="type--fine-print">help@adaptive.org.uk</span>
                                 </a>
                             </li>
@@ -111,22 +111,22 @@
                     <div class="col-sm-6 text-right text-center-xs">
                         <ul class="social-list list-inline list--hover">
                             <li>
-                                <a href="index.html#">
+                                <a href="#">
                                     <i class="socicon socicon-google icon icon--xs"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="#">
                                     <i class="socicon socicon-twitter icon icon--xs"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="#">
                                     <i class="socicon socicon-facebook icon icon--xs"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="#">
                                     <i class="socicon socicon-instagram icon icon--xs"></i>
                                 </a>
                             </li>
@@ -143,8 +143,8 @@
                     <div class="col-sm-6 text-right text-center-xs">
                         <span class="type--fine-print">&copy;
                             <span class="update-year"></span> The Adaptive Team</span>
-                        <a class="type--fine-print" href="index.html#">Privacy Policy</a>
-                        <a class="type--fine-print" href="index.html#">Legal</a>
+                        <a class="type--fine-print" href="#">Privacy Policy</a>
+                        <a class="type--fine-print" href="#">Legal</a>
                     </div>
                 </div>
                 <!--end of row-->
