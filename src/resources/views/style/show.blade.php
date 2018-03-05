@@ -48,6 +48,18 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-6">
+                    <a class="btn btn--primary" href="edit">
+                    	<span class="btn__text">Edit</span>
+                    </a>
+                </div>
+                <div class="col-sm-6">
+                    <a class="btn btn--primary" href="/preview/full?adaptive_demo={{$style['id']}}">
+                    	<span class="btn__text">Fullscreen Preview</span>
+                    </a>
+                </div>
+            </div>
 
             <ul class="accordion accordion-2" style="min-height: 0px;">
                 @foreach($details as $key => $detail)
