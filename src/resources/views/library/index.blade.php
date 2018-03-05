@@ -55,7 +55,7 @@ li.adaptive-style-tag {
                                 <span>
                                     <strong>{{ $users[ $style['user_id'] ]['user_name'] }}</strong>
                                 </span>
-                                <a class="btn btn--sm" href="#" onclick="document.getElementById('iframeID').src='/preview/embedded?adaptive_demo={{$style['id']}}';" style="padding: 0 0.7em;line-height: 1.3em;margin-left: 1em;background-color: #37a9d6;border-color: #37a9d6;">
+                                <a class="btn btn--sm" href="#" onclick="document.getElementById('inline-preview').src='/preview/embedded?adaptive_demo={{$style['id']}}';" style="padding: 0 0.7em;line-height: 1.3em;margin-left: 1em;background-color: #37a9d6;border-color: #37a9d6;">
                                     <div style="color: white;font-size: 0.8em;font-weight: 800;">
                                         Load Preview
                                     </div>
@@ -118,7 +118,7 @@ li.adaptive-style-tag {
             @endif
         </div>
         <div class="col-sm-5">
-            <iframe src="/preview/embedded?adaptive_demo=0" style="min-height:800px;border-radius: 5px;border-color: rgba(162, 162, 162, 0.2);border-style: solid;border-width: 2px;"></iframe>
+            <iframe id="inline-preview" src="/preview/embedded?adaptive_demo=0" style="min-height:800px;border-radius: 5px;border-color: rgba(162, 162, 162, 0.2);border-style: solid;border-width: 2px;"></iframe>
         </div>
 
         @endif
