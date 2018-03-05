@@ -55,7 +55,7 @@
                     </a>
                 </div>
                 <div class="col-sm-6">
-                    <a class="btn btn--primary" href="/preview/full?adaptive_demo={{$style['id']}}">
+                    <a class="btn btn--primary-2" href="/preview/full?adaptive_demo={{$style['id']}}">
                     	<span class="btn__text">Fullscreen Preview</span>
                     </a>
                 </div>
