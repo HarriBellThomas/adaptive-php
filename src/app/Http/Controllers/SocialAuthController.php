@@ -21,7 +21,7 @@ class SocialAuthController extends Controller {
                 $redirect = json_decode(base64_decode($data))->redirect_url;
                 return redirect()->to($redirect.'#'.base64_encode('{"user_id":"'. auth()->user()->id .'", "style_id":""}'));
             }
-            return redirect()->to('/home');
+            return redirect()->to('/home#');
         }
     }
 
