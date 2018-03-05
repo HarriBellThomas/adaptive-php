@@ -48,14 +48,14 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6">
-            <div class="row">
+            <div class="row" style="margin-bottom: 30px;">
                 <div class="col-sm-6">
-                    <a class="btn btn--primary" href="edit">
+                    <a class="btn btn--primary" href="/style/{{$style['id']}}/edit" style="width:100%;">
                     	<span class="btn__text">Edit</span>
                     </a>
                 </div>
                 <div class="col-sm-6">
-                    <a class="btn btn--primary-2" href="/preview/full?adaptive_demo={{$style['id']}}">
+                    <a class="btn btn--primary-2" href="/preview/full?adaptive_demo={{$style['id']}}" style="width:100%;">
                     	<span class="btn__text">Fullscreen Preview</span>
                     </a>
                 </div>
