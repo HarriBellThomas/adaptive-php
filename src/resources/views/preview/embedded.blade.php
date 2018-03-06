@@ -92,7 +92,7 @@
     </div>
     <!-- /.container -->
 
-    <script src="https://js.adaptive.org.uk/adaptive.js?"></script>
+    <script src="https://js.adaptive.org.uk/adaptive.js?<?php echo time(); ?>"></script>
     <script type="text/javascript">
     function clicked(node) {
         confirm("Link clicked.");
