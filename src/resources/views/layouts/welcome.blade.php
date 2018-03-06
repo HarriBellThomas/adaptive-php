@@ -96,14 +96,14 @@
                     <div class="col-sm-6">
                         <img alt="Image" class="logo" src="{{url('images/logo-light.png')}}" />
                         <ul class="list-inline list--hover">
-                            <li>
+                            <!-- <li>
                                 <a href="#">
                                     <span class="type--fine-print">Get Started</span>
                                 </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a href="#">
-                                    <span class="type--fine-print">help@adaptive.org.uk</span>
+                                    <span class="type--fine-print">hello@adaptive.org.uk</span>
                                 </a>
                             </li>
                         </ul>
@@ -143,8 +143,8 @@
                     <div class="col-sm-6 text-right text-center-xs">
                         <span class="type--fine-print">&copy;
                             <span class="update-year"></span> The Adaptive Team</span>
-                        <a class="type--fine-print" href="#">Privacy Policy</a>
-                        <a class="type--fine-print" href="#">Legal</a>
+                        <!-- <a class="type--fine-print" href="#">Privacy Policy</a>
+                        <a class="type--fine-print" href="#">Legal</a> -->
                     </div>
                 </div>
                 <!--end of row-->
@@ -153,20 +153,20 @@
         </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="{{url('js/flickity.min.js')}}"></script>
+    <!-- <script src="{{url('js/flickity.min.js')}}"></script>
     <script src="{{url('js/easypiechart.min.js')}}"></script>
-    <script src="{{url('js/parallax.js')}}"></script>
+    <script src="{{url('js/parallax.js')}}"></script> -->
     <script src="{{url('js/typed.min.js')}}"></script>
-    <script src="{{url('js/datepicker.js')}}"></script>
+    <!-- <script src="{{url('js/datepicker.js')}}"></script>
     <script src="{{url('js/isotope.min.js')}}"></script>
     <script src="{{url('js/ytplayer.min.js')}}"></script>
-    <script src="{{url('js/lightbox.min.js')}}"></script>
+    <script src="{{url('js/lightbox.min.js')}}"></script> -->
     <script src="{{url('js/granim.min.js')}}"></script>
-    <script src="{{url('js/jquery.steps.min.js')}}"></script>
+    <!-- <script src="{{url('js/jquery.steps.min.js')}}"></script>
     <script src="{{url('js/countdown.min.js')}}"></script>
     <script src="{{url('js/twitterfetcher.min.js')}}"></script>
     <script src="{{url('js/spectragram.min.js')}}"></script>
-    <script src="{{url('js/smooth-scroll.min.js')}}"></script>
+    <script src="{{url('js/smooth-scroll.min.js')}}"></script> -->
     <script src="{{url('js/scripts.js')}}"></script>
   </body>
   </html>

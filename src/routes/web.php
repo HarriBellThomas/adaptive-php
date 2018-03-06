@@ -33,7 +33,7 @@ Route::get('/api/login', function() {
 });
 
 Route::get('/project', function() {
-  return view('project');
+  return redirect()->route("root");
 });
 
 Route::auth();
