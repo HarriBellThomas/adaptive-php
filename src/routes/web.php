@@ -32,6 +32,10 @@ Route::get('/api/login', function() {
   return view('api.login');
 });
 
+Route::get('/project', function() {
+  return view('project');
+});
+
 Route::auth();
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
