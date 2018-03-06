@@ -12,8 +12,8 @@
                     <span class="h1 inline-block typed-text typed-text--cursor color--primary" data-typed-strings="the colour blind., seizure sufferers., the visually impaired., the deaf.">colour blindness.</span>
                 </div>
                 <p class="lead">
-                    The internet is an amazing place, yet not everyone currently feels at home here.<br>Let's change that.
-                </p>
+                	Some people don’t feel at home on the web.<br>Let's change that.
+		</p>
                 <br>
                 <div>
                 <a class="btn btn--icon bg--facebook" href="{{url('redirect/facebook')}}">
