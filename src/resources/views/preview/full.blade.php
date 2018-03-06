@@ -73,7 +73,7 @@
 
           <!-- Blog Post -->
           <div class="card mb-4">
-            <img class="card-img-top" src="{{url('images/preview/1.jpg')}}" alt="Card image cap">
+            <img class="card-img-top" src="{{url('images/preview/1.jpg')}}">
             <div class="card-body">
               <h2 class="card-title">Post Title</h2>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam.</p>
@@ -88,7 +88,7 @@
 
           <!-- Blog Post -->
           <div class="card mb-4">
-            <img class="card-img-top" src="{{url('images/preview/2.jpg')}}" alt="Card image cap">
+            <img class="card-img-top" src="{{url('images/preview/2.jpg')}}">
             <div class="card-body">
               <h2 class="card-title">Post Title</h2>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam.</p>
@@ -103,7 +103,7 @@
 
           <!-- Blog Post -->
           <div class="card mb-4">
-            <img class="card-img-top" src="{{url('images/preview/3.jpg')}}" alt="Card image cap">
+            <img class="card-img-top" src="{{url('images/preview/3.jpg')}}">
             <div class="card-body">
               <h2 class="card-title">Post Title</h2>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam.</p>
