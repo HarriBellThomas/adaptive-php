@@ -1,5 +1,6 @@
 @extends('layouts.welcome')
 @section('title', 'Adaptive')
+<meta name="google-site-verification" content="gaK2jX6ZUcxBMcK_h5myfXrtZNaToE4OtfAdyEQwZQg" />
 
 @section('content')
 
